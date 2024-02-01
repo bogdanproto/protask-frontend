@@ -1,7 +1,11 @@
+import Theme from "../Theme/Theme";
+import UserInfo from "../UserInfo/UserInfo";
+
 export const Header = () => {
   return (
-    <>
-      <h2>I am Header</h2>
-    </>
+    <header>
+      <Theme/>
+      <UserInfo/>
+    </header>
   );
 };
