@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { setSuccesMsgUser } from '../reducers';
+import { setErrorAuth, setSuccesMsgUser } from '../reducers';
 
 import {
   handleFulfilledAvatar,
@@ -8,6 +8,7 @@ import {
   handleFulfilledProfile,
   handleFulfilledRefresh,
   handleFulfilledSignUp,
+  handleFulfilledTheme,
   handlePendingAuth,
   handleRejectedAuth,
 } from '../handleStatus';
@@ -19,9 +20,10 @@ import {
   updUserAvatar,
   updUserProfile,
 } from '../operations';
+import { updUserTheme } from '../operations/updUserTheme';
 
 const initialState = {
-  user: { name: null, email: null, avatarCloudURL: null },
+  user: { name: null, email: null, avatarCloudURL: null, theme: 'light' },
   token: null,
   isLoggedIn: false,
   errorAuth: null,
@@ -34,6 +36,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setSuccesMsgUser: setSuccesMsgUser,
+    setErrorAuth: setErrorAuth,
   },
   extraReducers: builder => {
     builder
@@ -43,6 +46,7 @@ const authSlice = createSlice({
       .addCase(refreshUser.fulfilled, handleFulfilledRefresh)
       .addCase(updUserAvatar.fulfilled, handleFulfilledAvatar)
       .addCase(updUserProfile.fulfilled, handleFulfilledProfile)
+      .addCase(updUserTheme.fulfilled, handleFulfilledTheme)
       .addMatcher(
         isAnyOf(
           signUpUser.pending,
@@ -50,7 +54,8 @@ const authSlice = createSlice({
           logOutUser.pending,
           refreshUser.pending,
           updUserAvatar.pending,
-          updUserProfile.pending
+          updUserProfile.pending,
+          updUserTheme.pending
         ),
         handlePendingAuth
       )
@@ -61,7 +66,8 @@ const authSlice = createSlice({
           logOutUser.rejected,
           refreshUser.rejected,
           updUserAvatar.rejected,
-          updUserProfile.rejected
+          updUserProfile.rejected,
+          updUserTheme.rejected
         ),
         handleRejectedAuth
       );
