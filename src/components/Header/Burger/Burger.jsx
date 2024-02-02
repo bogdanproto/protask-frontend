@@ -1,7 +1,6 @@
-const UserInfo = () => {
+const Burger = () => {
   return (
-    <>
-      <span>Ivetta</span>
+    <div>
       <button
         class="menu-toggle js-open-menu"
         aria-expanded="false"
@@ -11,8 +10,8 @@ const UserInfo = () => {
           <use href="./images/icons.svg#burger-btn"></use>
         </svg>
       </button>
-    </>
+    </div>
   );
 };
 
-export default UserInfo;
+export default Burger;

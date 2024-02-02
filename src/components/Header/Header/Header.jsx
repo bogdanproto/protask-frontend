@@ -1,11 +1,16 @@
-import Theme from "../Theme/Theme";
-import UserInfo from "../UserInfo/UserInfo";
+import Burger from '../Burger/Burger';
+import Theme from '../Theme/Theme';
+import UserInfo from '../UserInfo/UserInfo';
+import { HeaderWrap, ThemeUserWrap } from './Header.styled';
 
 export const Header = () => {
   return (
-    <header>
-      <Theme/>
-      <UserInfo/>
-    </header>
+    <HeaderWrap>
+      <Burger />
+      
+        <Theme />
+        <UserInfo />
+     
+    </HeaderWrap>
   );
 };
