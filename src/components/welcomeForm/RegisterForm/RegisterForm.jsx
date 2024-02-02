@@ -1,12 +1,34 @@
 import { useDispatch } from 'react-redux';
-
+import { Notify } from 'notiflix';
 // import { register } from 'redux/auth/auth-operations';
-import handleSubmit from 'helpers/AuthPage/RegisterForm.jsx';
-import { Form, Input, Label, Button } from './RegisterForm.styled';
+
+import { Form, Input, Label, Button } from './RegisterForm.styled.js';
 
 const RegisterForm = () => {
 
   const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    )
+      .unwrap()
+      .then(originalPromiseResult => {
+        Notify.success(`${originalPromiseResult.user.name} welcome!`);
+      })
+      .catch(() => {
+        Notify.failure("Sorry, something's wrong");
+      });
+
+    form.reset();
+  };
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">

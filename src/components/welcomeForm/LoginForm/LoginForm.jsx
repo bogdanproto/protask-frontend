@@ -1,12 +1,33 @@
 
 import { useDispatch } from 'react-redux';
-import handleSubmit from 'helpers/AuthPage/LoginForm.jsx';
-import { Form, Input, Label, Button } from './LoginForm.styled';
+import { Notify } from 'notiflix';
+import { Form, Input, Label, Button } from './LoginForm.styled.js';
 // import { logIn } from 'redux/auth/auth-operations';
 
 export const LoginForm = () => {
   
   const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    dispatch(
+      logIn({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    )
+      .unwrap()
+      .then(originalPromiseResult => {
+        Notify.success(`${originalPromiseResult.user.name} welcome back!`);
+      })
+      .catch(() => {
+        Notify.failure('Incorrect login or password');
+      });
+
+    form.reset();
+  };
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
