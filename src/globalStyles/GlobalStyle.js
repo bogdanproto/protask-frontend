@@ -6,13 +6,14 @@ export const GlobalStyle = createGlobalStyle`
     /* GENERAL */
 
     body {
-        font-family: var(--font-primary);
+         font-family: "Poppins";
         font-size: 14px;
         line-height: 1.28;
         font-weight: 400;
         color: ${p => p.theme.colors.fontColor};
         background-color: ${p => p.theme.colors.background};
         margin: 0;
+        letter-spacing: -0.04em;
     }
 
     img {
@@ -26,6 +27,23 @@ export const GlobalStyle = createGlobalStyle`
         border-top: 1px solid ${p => p.theme.colors.fontColor};
     }
 
+    .container {
+        width: 100%;
+        max-width: 375px;
+        padding-inline: 20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (min-width: 768px) {
+            max-width: 768px;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 1440px;
+            padding-inline: 24px;
+        }
+    }
+
     /* TYPOGRAPHY */
 
     h1,
@@ -37,11 +55,11 @@ export const GlobalStyle = createGlobalStyle`
         margin-top: 0;
         margin-bottom: 0.5em;
         font-weight: 600;
+        letter-spacing: -0.02em;
     }
 
     h1 {
         font-size: 28px;
-        letter-spacing: -0.04em;
         font-weight: 600;
 
         @media (min-width: 768px) {
@@ -51,7 +69,6 @@ export const GlobalStyle = createGlobalStyle`
 
     h2 {
         font-size: 28px;
-        letter-spacing: -0.04em;
         font-weight: 500;
     }
 
@@ -93,11 +110,6 @@ export const GlobalStyle = createGlobalStyle`
         transition: color ${p => p.theme.cubicTransition};
     }
 
-    button:hover,
-    button:focus {
-        //color: ${p => p.theme.colors.white};
-    }
-
     .btn.btn-plus {
         border-radius: 6px;
         padding: 8px 10px;
@@ -113,7 +125,7 @@ export const GlobalStyle = createGlobalStyle`
 
     .btn.btn-primary {
         border-radius: 8px;
-        padding: 14px;
+        padding: 10px;
         background-color: ${p => p.theme.colors.accentColor};
         color: ${p => p.theme.colors.fontColor};
         transition: background-color ${p => p.theme.cubicTransition};
@@ -128,7 +140,7 @@ export const GlobalStyle = createGlobalStyle`
     .btn.btn-secondary {
         border-radius: 8px;
         padding: 14px;
-        background-color: ${p => p.theme.colors.background};
+        background-color: ${p => p.theme.colors.black};
         color: ${p => p.theme.colors.white};
         transition: background-color ${p => p.theme.cubicTransition};
         min-width: 287px;
@@ -147,6 +159,7 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 8px;
         border: 1px solid ${p => p.theme.colors.accentColor};
         background-color: transparent;
+        color: ${p => p.theme.colors.inputColor};
         transition: border-color ${p => p.theme.cubicTransition};
     }
 
@@ -154,20 +167,9 @@ export const GlobalStyle = createGlobalStyle`
     textarea:focus {
         border: 1px solid ${p => p.theme.colors.accentColorHover};
         outline: none;
-        color: ${p => p.theme.colors.white}
     }
 
     label {
        display: none;
-    }
-
-    :root {
-
-    /* 
-    ==============
-    FONTS
-    ==============
-    */
-    --font-primary: Poppins, sans-serif;
     }
 `;

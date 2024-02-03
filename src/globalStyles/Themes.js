@@ -2,6 +2,7 @@ export const themeBlack = {
   colors: {
     background: '#161616',
     fontColor: '#161616',
+    inputColor: '#fff',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -19,6 +20,7 @@ export const themeLight = {
   colors: {
     background: '#fdfdfd',
     fontColor: '#161616',
+    inputColor: '#161616',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -36,6 +38,7 @@ export const themeViolet = {
   colors: {
     background: '#ecedfd',
     fontColor: '#161616',
+    inputColor: '#161616',
     white: '#fff',
     black: '#212121',
     accentColor: '#5255bc',
