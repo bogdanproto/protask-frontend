@@ -1,10 +1,10 @@
 export const pathAuth = Object.freeze({
-  BASE: '/auth',
-  SIGNUP: '/auth/signup',
-  LOGIN: '/auth/login',
-  LOGOUT: '/auth/logout',
-  CURRENT: '/auth/current',
-  AVATAR: '/auth/avatar',
-  PROFILE: '/auth/profile',
-  THEME: '/auth/theme',
+  BASE: '/api/auth',
+  SIGNUP: '/api/auth/signup',
+  LOGIN: '/api/auth/signin',
+  LOGOUT: '/api/auth/logout',
+  CURRENT: '/api/auth/current',
+  AVATAR: '/api/auth/avatar',
+  PROFILE: '/api/auth/profile',
+  THEME: '/api/auth/theme',
 });
