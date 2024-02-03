@@ -1,7 +1,7 @@
 export const routes = Object.freeze({
-  WELCOME: 'welcome',
+  WELCOME_ROUTE: '/welcome',
   AUTH: '/auth',
-  AUTHID: '/auth/:id',
+  AUTH_ID: 'auth/:id',
   HOME: '/home',
-  HOMEBORDNAME: '/home/:boardName',
+  HOME_BORD_NAME: 'home/:boardName',
 });
