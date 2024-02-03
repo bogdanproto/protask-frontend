@@ -1,5 +1,7 @@
 import React from 'react';
+import { useParams } from 'react-router';
 
 export const Board = () => {
-  return <div>Board</div>;
+  const { boardName } = useParams();
+  return <div>Board ${boardName}</div>;
 };

@@ -59,7 +59,9 @@ export const RoutesComp = () => {
                 component={<Home />}
               />
             }
-          />
+          >
+            <Route path={routes.HOME_BORD_NAME} element={<Board />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
