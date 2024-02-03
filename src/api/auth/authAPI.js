@@ -49,3 +49,8 @@ export const updateUserProfileAPI = async obj => {
   const { data } = await taskAPI.patch(pathAuth.PROFILE, obj);
   return data;
 };
+
+export const updateUserThemeAPI = async obj => {
+  const { data } = await taskAPI.patch(pathAuth.THEME, obj);
+  return data;
+};

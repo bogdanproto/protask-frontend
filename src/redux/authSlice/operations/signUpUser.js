@@ -5,7 +5,9 @@ import { asyncThunkDecoratorUser } from 'helpers';
 export const signUpUser = createAsyncThunk(
   'authUser/signUpUser',
   asyncThunkDecoratorUser(async obj => {
-    const { token, user } = await signUpAPI(obj);
+    const {
+      data: { token, user },
+    } = await signUpAPI(obj);
     setAuthToken(token);
 
     return {

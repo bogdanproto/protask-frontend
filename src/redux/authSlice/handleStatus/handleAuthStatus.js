@@ -25,7 +25,7 @@ export const handleFulfilledLogIn = (state, action) => {
 //--------------LogOut User-----------------
 
 export const handleFulfilledLogOut = state => {
-  state.user = { name: null, email: null, avatar: null };
+  state.user = { name: null, email: null, avatar: null, theme: 'light' };
   state.token = null;
   state.isLoggedIn = false;
   state.errorAuth = null;
@@ -59,6 +59,16 @@ export const handleFulfilledProfile = (state, action) => {
   state.user = { ...state.user, ...action.payload };
 
   state.successMsg = successNotify.PROFILE;
+  state.isLoading = false;
+  state.errorAuth = null;
+};
+
+//--------------Theme User-----------------
+
+export const handleFulfilledTheme = (state, action) => {
+  const { theme } = action.payload;
+  state.user.theme = theme;
+
   state.isLoading = false;
   state.errorAuth = null;
 };
