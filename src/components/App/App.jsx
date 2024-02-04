@@ -4,7 +4,7 @@ export const App = () => {
   return (
     <>
       <div className="container">
-        {/* <h1>WELCOME TO OUR PROJECT</h1> */}
+        <h1>WELCOME TO OUR PROJECT</h1>
         <RoutesComp />
         {/* <Header />
         <AnyComponent /> */}
