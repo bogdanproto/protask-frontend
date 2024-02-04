@@ -10,8 +10,8 @@ export const HeaderWrap = styled.header`
   height: 60px;
   width: 100%;
   padding: 14px 20px;
-  background-color: #161616;
-  color: #ffffff;
+  background-color: green;
+  color: ${p => p.theme.colors.white};
 `;
 
 export const ThemeInfoWrap = styled.div`

@@ -1,22 +1,26 @@
 import { useSelector } from 'react-redux';
 import { HeaderAvatar } from './UserInfo.styled';
+import sprite from 'data/svg/sprite.svg';
 
 const UserInfo = () => {
-  const userName = useSelector(state => state.name.name);
-
-  const buttonClick=()=>{
-    console.log("is button")
-  }
+  let userName = useSelector(state => state.authUser.user.userName);
+if(!userName){
+  userName = "Lolita"
+}
+  const buttonClick = () => {    
+    console.log("its button");
+  };
   return (
     <HeaderAvatar>
       <span>{userName}</span>
-      <button onClick={buttonClick}
-        class="menu-toggle js-open-menu"
+      <button
+        onClick={buttonClick}
+        className="menu-toggle js-open-menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg class="burger-icon">
-          <use href="./images/icons.svg#burger-btn"></use>
+        <svg className="burger-icon" width="32" height="32">
+          <use href={sprite + '#icon-user'}></use>
         </svg>
       </button>
     </HeaderAvatar>

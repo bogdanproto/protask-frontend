@@ -7,5 +7,5 @@ export * from './Const/customStylesSelect.js';
 export * from './Const/optionSelect.js';
 export * from './Const/colors.js';
 
-//from redux
-export * from './Redax/dispatchBody.js';
+//from helpers
+export * from './helpers/dispatchBody.js';

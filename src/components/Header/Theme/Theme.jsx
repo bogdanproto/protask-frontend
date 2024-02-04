@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Select from 'react-select';
 import { customStyles, options, setColor } from '../index.js';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { ThemeContext } from 'styled-components';
+
 const HeaderThemeSelect = () => {
-  const color = useSelector(state => state.theme.value);
+  const theme = useContext(ThemeContext);
+  const color = useSelector(state => state.authUser.user.theme);
+
   const [selectedOption, setSelectedOption] = useState(color);
   const dispatch = useDispatch();
-
-  dispatch(setColor(selectedOption));
+  useEffect(() => {
+    dispatch(setColor(selectedOption));
+  }, [dispatch,selectedOption]);
 
   return (
     <div className="header-theme-select">
@@ -17,7 +22,7 @@ const HeaderThemeSelect = () => {
         onChange={setSelectedOption}
         options={options}
         placeholder={selectedOption}
-        styles={customStyles} // Передаємо власні стилі
+        styles={customStyles(theme)} // Передаємо власні стилі
       />
     </div>
   );

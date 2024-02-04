@@ -14,7 +14,11 @@ button{
     border: none;
 }
 .burger-icon{
+    
     width: 32px;
     height: 32px;
+}
+svg{
+    stroke:red;
 }
 `

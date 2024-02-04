@@ -1,16 +1,19 @@
+import sprite from 'data/svg/sprite.svg';
+import { Menu } from './Burger.styled';
+
 const Burger = () => {
   return (
-    <div>
+    <Menu>
       <button
-        class="menu-toggle js-open-menu"
+        className="menu-toggle js-open-menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg class="burger-icon" width="32" height="22">
-          <use href="./images/icons.svg#burger-btn"></use>
+        <svg className="burger-icon" width="32" height="22">
+          <use href={sprite + '#icon-menu'}></use>
         </svg>
       </button>
-    </div>
+    </Menu>
   );
 };
 
