@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     /* GENERAL */
 
     body {
-         font-family: "Poppins";
+        font-family: "Poppins";
         font-size: 14px;
         line-height: 1.28;
         font-weight: 400;
@@ -106,38 +106,51 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-size: inherit;
         font-weight: 500;
+        line-height: inherit;
         color: ${p => p.theme.colors.fontColor};
         transition: color ${p => p.theme.cubicTransition};
     }
 
     .btn.btn-plus {
+        line-height: 0;
         border-radius: 6px;
         padding: 8px 10px;
-        background-color: ${p => p.theme.colors.accentColor};
+        background-color: ${p => p.theme.colors.btnPlus};
         color: ${p => p.theme.colors.fontColor};
         transition: background-color ${p => p.theme.cubicTransition};
+
+        &.btn-small {
+            padding: 7px;
+            background-color: ${p => p.theme.colors.btnSmall};
+
+            svg {
+                stroke: ${p => p.theme.colors.black};
+            }
+        }
     }
 
     .btn.btn-plus:hover,
     .btn.btn-plus:focus {
-        background-color: ${p => p.theme.colors.accentColorHover};
+        background-color: ${p => p.theme.colors.btnPlusHover};
     }
 
     .btn.btn-primary {
+        height: 49px;
         border-radius: 8px;
         padding: 10px;
-        background-color: ${p => p.theme.colors.accentColor};
-        color: ${p => p.theme.colors.fontColor};
+        background-color: ${p => p.theme.colors.btnPrimary};
+        color: ${p => p.theme.colors.btnBackground};
         transition: background-color ${p => p.theme.cubicTransition};
         min-width: 287px;
     }
 
     .btn.btn-primary:hover,
     .btn.btn-primary:focus {
-        background-color: ${p => p.theme.colors.accentColorHover};
+        background-color: ${p => p.theme.colors.btnPrimaryHover};
     }
 
     .btn.btn-secondary {
+        height: 49px;
         border-radius: 8px;
         padding: 14px;
         background-color: ${p => p.theme.colors.black};
@@ -151,13 +164,44 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${p => p.theme.colors.accentColorHover};
     }
 
+    .btn.btn-logout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        color: ${p => p.theme.colors.logoutText};
+
+        @media (min-width: 1440px) {
+            font-size: 16px;
+        }
+
+        svg {
+            fill: transparent;
+            stroke: ${p => p.theme.colors.logoutIcon};
+            transition: stroke ${p => p.theme.cubicTransition};
+        }
+    }
+
+    .btn.btn-logout:hover,
+    .btn.btn-logout:focus {
+         svg {
+            stroke: ${p => p.theme.colors.logoutIconHover};
+        }
+    }
+
 
     /* FORMS */
 
-    input {
+    textarea {
+        resize: none;   
+        min-height: 120px;
+    }
+
+    input, textarea {
+        min-width: 287px;
         padding: 14px 18px;
         border-radius: 8px;
-        border: 1px solid ${p => p.theme.colors.accentColor};
+        border: 1px solid ${p => p.theme.colors.inputBorder};
         background-color: transparent;
         color: ${p => p.theme.colors.inputColor};
         transition: border-color ${p => p.theme.cubicTransition};
