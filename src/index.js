@@ -4,6 +4,7 @@ import { App } from 'components/App/App';
 import { Provider } from 'react-redux';
 import { persistor, store } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'globalStyles/GlobalStyle';
@@ -15,8 +16,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={theme.themeViolet}>
+          <BrowserRouter>
           <App />
           <GlobalStyle />
+             </BrowserRouter>
         </ThemeProvider>
       </PersistGate>
     </Provider>

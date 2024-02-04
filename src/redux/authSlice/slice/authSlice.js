@@ -25,7 +25,7 @@ import { updUserTheme } from '../operations/updUserTheme';
 const initialState = {
   user: { userName: null, email: null, avatarCloudURL: null, theme: 'light' },
   token: null,
-  isLoggedIn: false,
+  isLoggedIn: true,
   errorAuth: null,
   successMsg: null,
   isLoading: null,
