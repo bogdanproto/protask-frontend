@@ -1,10 +1,11 @@
-import { Header } from 'components/Header';
+import { AnyComponent, Header } from 'components/Header';
 
 export const App = () => {
   return (
     <>
       <h1>WELCOME TO OUR PROJECT</h1>
       <Header />
+      <AnyComponent />
     </>
   );
 };
