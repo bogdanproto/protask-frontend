@@ -6,11 +6,11 @@ import { HeaderWrap, ThemeInfoWrap } from './Header.styled';
 export const Header = () => {
   return (
     <HeaderWrap>
-      <Burger />
-      <ThemeInfoWrap>
-        <Theme />
-        <UserInfo />
-      </ThemeInfoWrap>
+        <Burger />
+        <ThemeInfoWrap>
+          <Theme />
+          <UserInfo />
+        </ThemeInfoWrap>
     </HeaderWrap>
   );
 };
