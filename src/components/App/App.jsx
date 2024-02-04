@@ -6,7 +6,11 @@ export const App = () => {
       {/* <h1>WELCOME TO OUR PROJECT</h1> */}
       <RoutesComp />
       {/* <Header />
-      <AnyComponent /> */}
+      <AnyComponent /> 
+      <Welcome /> 
+      
+      
+      */}
     </>
   );
 };

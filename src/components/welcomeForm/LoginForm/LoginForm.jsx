@@ -1,62 +1,54 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Formik, Field, Form } from 'formik';
 
-import { useDispatch } from 'react-redux';
-import { Notify } from 'notiflix';
-import { Form, Input, Label, Button } from './LoginForm.styled.js';
-// import { logIn } from 'redux/auth/auth-operations';
 
-export const LoginForm = () => {
-  
-  const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
+const Login = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const form = e.currentTarget;
-    dispatch(
-      // logIn({
-      //   email: form.elements.email.value,
-      //   password: form.elements.password.value,
-      // })
-    )
-      .unwrap()
-      .then(originalPromiseResult => {
-        Notify.success(`${originalPromiseResult.user.name} welcome back!`);
-      })
-      .catch(() => {
-        Notify.failure('Incorrect login or password');
-      });
+const LoginForm = () => (
+  <div>
+    <h1> Log In </h1>
+    <Formik
+      initialValues={{
+        email: '',
+        password: '',
+      }}
 
-    form.reset();
-  };
-
-  return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
-      <Label>
-       
-        <Input
-          type="email"
-          name="email"
-          pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."
-          title="Email may contain letters, numbers, an apostrophe, and must be followed by '@' domain name '.' domain suffix. For example Taras@ukr.ua, adrian@gmail.com, JacobM3rcer@hotmail.com"
-          required
-          placeholder="Enter your email"
-        />
-      </Label>
-      <Label>
-       
-        <Input
-          type="password"
-          name="password"
-          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-          title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters. For example TgeV23592, 3Greioct."
-          required
-          placeholder="Enter your password"
-        />
-      </Label>
-      <Button type="submit">Log In Now</Button>
+      validate={(values) => {
+           const errors = {};
+           
+           if (!values.email) {
+             errors.email = "Required";
+           } else if (
+             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+           ) {
+             errors.email = "Invalid email address";
+           }
+           if (!values.password) {
+             errors.password = "Required";
+           }
+           return errors;
+      }}
       
-    </Form>
-  );
-};
+      onSubmit={async (values) => {
+        await Login(500);
+        alert(JSON.stringify(values, null, 2));
+      }}
+    >
+      
+        <Form>
+          <Field id="email" name="email" placeholder="Enter your email" />
+
+          <Field id="password" name="password" placeholder="Confirm a password" />
+
+          <button type="submit"> Log In Now  </button>
+        </Form>
+  
+    </Formik>
+  </div>
+);
+
+// ReactDOM.render(<LoginForm />, document.getElementById('root'));
 
 export default LoginForm;
