@@ -1,5 +1,6 @@
 import { AnyComponent, Header } from 'components/Header';
-import { LoginForm, RegisterForm } from 'components/WelcomeForm';
+import { Welcome } from 'pages';
+
 
 
 
@@ -14,7 +15,7 @@ export const App = () => {
       <h1>WELCOME TO OUR PROJECT</h1>
       <Header />
       <AnyComponent />
-      <welcomeForm />
+      <Welcome/>
     </>
   );
 };
