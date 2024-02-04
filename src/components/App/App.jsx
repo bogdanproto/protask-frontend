@@ -1,4 +1,3 @@
-import { AnyComponent, Header } from 'components/Header';
 import { RoutesComp } from 'components/Routes/RoutesComp';
 
 export const App = () => {
