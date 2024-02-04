@@ -21,7 +21,9 @@ export const refreshUser = createAsyncThunk(
 
       setAuthToken(token);
 
-      const { user } = await refreshUserAPI();
+      const {
+        data: { user },
+      } = await refreshUserAPI();
       return {
         user,
         token,

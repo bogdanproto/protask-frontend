@@ -5,7 +5,9 @@ import { asyncThunkDecoratorUser } from 'helpers';
 export const logInUser = createAsyncThunk(
   'authUser/logInUser',
   asyncThunkDecoratorUser(async obj => {
-    const { token, user } = await logInAPI(obj);
+    const {
+      data: { token, user },
+    } = await logInAPI(obj);
     setAuthToken(token);
 
     return {

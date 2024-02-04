@@ -6,14 +6,22 @@ import { persistor, store } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
 
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from 'globalStyles/GlobalStyle';
+import * as theme from 'globalStyles/index';
+import 'data/fonts/index';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ThemeProvider theme={theme.themeViolet}>
+          <BrowserRouter>
           <App />
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
+          <GlobalStyle />
+             </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
