@@ -1,5 +1,5 @@
 import { AnyComponent, Header } from 'components/Header';
-import { LoginForm, RegisterForm } from 'components/welcomeForm';
+import { LoginForm, RegisterForm } from 'components/WelcomeForm';
 
 
 
@@ -14,7 +14,7 @@ export const App = () => {
       <h1>WELCOME TO OUR PROJECT</h1>
       <Header />
       <AnyComponent />
-      <welcomeForm/>
+      <welcomeForm />
     </>
   );
 };
