@@ -10,10 +10,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 14px;
         line-height: 1.28;
         font-weight: 400;
-        color: ${p => p.theme.colors.fontColor};
+        /* color: ${p => p.theme.colors.fontColor};
         background-color: ${p => p.theme.colors.background};
         margin: 0;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.04em; */
     }
 
     img {
@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
         border-top: 1px solid ${p => p.theme.colors.fontColor};
     }
 
-    .container {
+    /* .container {
         width: 100%;
         max-width: 375px;
         padding-inline: 20px;
@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
             max-width: 1440px;
             padding-inline: 24px;
         }
-    }
+    } */
 
     /* TYPOGRAPHY */
 
@@ -52,10 +52,8 @@ export const GlobalStyle = createGlobalStyle`
     h4,
     h5,
     h6 {
-        margin-top: 0;
-        margin-bottom: 0.5em;
-        font-weight: 600;
-        letter-spacing: -0.02em;
+        margin: 0;
+    
     }
 
     h1 {
@@ -73,8 +71,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        margin-top: 0;
-        margin-bottom: 0.5em;
+        margin: 0;
         letter-spacing: -0.02em;
         line-height: 1.28;
     }
