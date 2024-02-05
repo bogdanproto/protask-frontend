@@ -46,3 +46,36 @@
 
 Якщо потрібні додаткові пакети то просто встановлюєте але обов’язково пишете про
 це тімліду.
+
+### Глобальні стилі
+
+1. базова стилізація тегів і деяких класів відповідно до теми додана у Global
+   Styles
+2. клас .container це загальний контейнер для аплікації (зразу всередині root)
+
+### Загальні компоненти
+
+1. Btn - різні види кнопок. Варіанти імпорту
+
+<Btn variant="plus"></Btn>
+
+<Btn variant="plusSmall"></Btn>
+
+<Btn type="submit" text="Send" variant="primaryWithIcon"></Btn>
+
+<Btn text="Create" variant="primary"></Btn>
+
+<Btn text="Registration" variant="secondary"></Btn>
+
+<Btn text="Log In"></Btn>
+
+<Btn text="Log Out" variant="logout"></Btn>
+
+variant це варіант кнопки (plus - кнопка з + всередині, plusSmall - мала кнопка
+з + для зміни аватарки користувача, primaryWithIcon - кнопка з + і текстом,
+primary - кнопка тільки з текстом, secondary - чорна кнопка для реєстрації на
+головній, коли варіант відсутній - кнопка для логіну на головній, logout - для
+логауту) text - текст у кнопці type - по замовчуванні button, можна передати
+інші типи як submit
+
+2. Logo. Імпортується так <Logo></Logo> Змінюється відповідно до теми

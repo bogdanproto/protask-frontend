@@ -1,11 +1,14 @@
-import { AnyComponent, Header } from 'components/Header';
+import { RoutesComp } from 'components/Routes/RoutesComp';
 
 export const App = () => {
   return (
     <>
-      <h1>WELCOME TO OUR PROJECT</h1>
-      <Header />
-      <AnyComponent />
+      <div className="container">
+        <h1>WELCOME TO OUR PROJECT</h1>
+        <RoutesComp />
+        {/* <Header />
+        <AnyComponent /> */}
+      </div>
     </>
   );
 };
