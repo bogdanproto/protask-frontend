@@ -1,12 +1,13 @@
+import  { LoginForm }  from 'components/welcomeForm/LoginForm/LoginForm.jsx';
 
 export default function Login() {
   return (
-    
-      <div>
+    <LoginForm />
+      // <div>
 
-          <title>Log In</title>
+      //     <title>Log In</title>
        
-      </div>
+      // </div>
     
   );
 }
