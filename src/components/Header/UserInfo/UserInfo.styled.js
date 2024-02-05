@@ -19,6 +19,6 @@ button{
     height: 32px;
 }
 svg{
-    stroke:red;
+    fill:${p => p.theme.colors.btnSmall};
 }
 `

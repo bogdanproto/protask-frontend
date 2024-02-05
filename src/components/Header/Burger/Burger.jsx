@@ -1,10 +1,16 @@
 import sprite from 'data/svg/sprite.svg';
 import { Menu } from './Burger.styled';
 
-const Burger = () => {
+export const Burger = () => {
+
+  const handleClick = () => {
+    console.log(`it's burger click`);
+  };
+
   return (
     <Menu>
       <button
+        onClick={handleClick}
         className="menu-toggle js-open-menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -16,5 +22,3 @@ const Burger = () => {
     </Menu>
   );
 };
-
-export default Burger;

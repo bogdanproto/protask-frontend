@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { ThemeContext } from 'styled-components';
 
-const HeaderThemeSelect = () => {
+export const HeaderThemeSelect = () => {
   const theme = useContext(ThemeContext);
   const color = useSelector(state => state.authUser.user.theme);
 
@@ -28,4 +28,3 @@ const HeaderThemeSelect = () => {
   );
 };
 
-export default HeaderThemeSelect;

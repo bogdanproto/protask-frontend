@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { object, string } from 'yup';
 import { EditProfileTitle, FormWrap, StyledForm } from './EditProfile.styled';
-import sprite from 'data/svg/sprite.svg';
+import { ProfileIcon } from 'components/EditProfile/index.js';
 
 const schema = object({
   userName: string().min(3, 'Too Short!').max(20, 'Too Long!'),
@@ -11,7 +11,7 @@ const schema = object({
   password: string().min(6),
 });
 
-const EditProfile = () => {
+export const EditProfile = () => {
   const [values, setValues] = useState('');
   // const dispatch = useDispatch();
 
@@ -39,14 +39,9 @@ const EditProfile = () => {
       onSubmit={handleSubmit}
     >
       <div className="container">
-        
         <FormWrap>
           <EditProfileTitle>Edit profile</EditProfileTitle>
-          <button type='submit'>
-          <svg className="burger-icon" width="68" height="68">
-          <use href={sprite + '#icon-user'}></use>
-        </svg>
-          </button>
+          <ProfileIcon />
           <StyledForm autoComplete="off">
             <Field
               type="text"
@@ -86,7 +81,11 @@ const EditProfile = () => {
               // value={formik.values.name}
             />
             <ErrorMessage name="password" />
-            <button className='btn btn-primary' variant="contained" type="submit">
+            <button
+              className="btn btn-primary"
+              variant="contained"
+              type="submit"
+            >
               Send
             </button>
           </StyledForm>
@@ -95,5 +94,3 @@ const EditProfile = () => {
     </Formik>
   );
 };
-
-export default EditProfile;

@@ -8,7 +8,7 @@ if(!userName){
   userName = "Lolita"
 }
   const buttonClick = () => {    
-    console.log("its button");
+    console.log("it's avatar button");
   };
   return (
     <HeaderAvatar>

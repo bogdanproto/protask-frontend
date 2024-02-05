@@ -1,5 +1,4 @@
-import Burger from '../Burger/Burger';
-import Theme from '../Theme/Theme';
+import {Burger, HeaderThemeSelect} from 'components/Header/index.js';
 import UserInfo from '../UserInfo/UserInfo';
 import { HeaderWrap, ThemeInfoWrap } from './Header.styled';
 
@@ -8,7 +7,7 @@ export const Header = () => {
     <HeaderWrap>
         <Burger />
         <ThemeInfoWrap>
-          <Theme />
+          <HeaderThemeSelect />
           <UserInfo />
         </ThemeInfoWrap>
     </HeaderWrap>

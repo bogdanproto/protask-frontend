@@ -1,4 +1,4 @@
-import EditProfile from 'components/EditProfile/EditProfile';
+import {EditProfile} from 'components/EditProfile/index.js';
 import { RoutesComp } from 'components/Routes/RoutesComp';
 
 export const App = () => {
