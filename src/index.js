@@ -11,7 +11,8 @@ import { GlobalStyle } from 'globalStyles/GlobalStyle';
 import * as theme from 'globalStyles/index';
 import 'data/fonts/index';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

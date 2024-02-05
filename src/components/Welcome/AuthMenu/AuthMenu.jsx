@@ -1,3 +1,4 @@
+import { routes } from 'const';
 import { BtnLink } from '../BtnLink/BtnLink';
 import { AuthMenuStyled } from './AuthMenu.styled';
 import { LinkStyled } from './Link.Styled';
@@ -5,8 +6,8 @@ import { LinkStyled } from './Link.Styled';
 export const AuthMenu = () => {
   return (
     <AuthMenuStyled>
-      <BtnLink to={`/auth/register`}>Registration</BtnLink>
-      <LinkStyled to={`/auth/login`}>Log In</LinkStyled>
+      <BtnLink to={routes.AUTH_REGISTER}>Registration</BtnLink>
+      <LinkStyled to={routes.AUTH_LOGIN}>Log In</LinkStyled>
     </AuthMenuStyled>
   );
 };
