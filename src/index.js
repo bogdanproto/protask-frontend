@@ -17,9 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={theme.themeViolet}>
           <BrowserRouter>
-          <App />
-          <GlobalStyle />
-             </BrowserRouter>
+            <App />
+            <GlobalStyle />
+          </BrowserRouter>
         </ThemeProvider>
       </PersistGate>
     </Provider>

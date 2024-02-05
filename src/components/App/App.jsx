@@ -8,11 +8,9 @@ export const App = () => {
       <div className="container">
         <h1>WELCOME TO OUR PROJECT</h1>
         <RoutesComp />
-        {/* {/* <Header />
-        <AnyComponent /> */}
-        {/* <LoginForm />
-        <RegisterForm /> */}
 
+        {/* <Header />
+        <AnyComponent /> */}
       </div>
     </>
   );
