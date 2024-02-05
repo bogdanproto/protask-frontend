@@ -10,8 +10,6 @@ export const App = () => {
         <RoutesComp />
         {/* {/* <Header />
         <AnyComponent /> */}
-        {/* <LoginForm /> */}
-        <RegisterForm /> 
       </div>
     </>
   );
