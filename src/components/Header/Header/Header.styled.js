@@ -11,7 +11,7 @@ export const HeaderWrap = styled.header`
   width: 100%;
   padding: 14px 20px;
   background-color: green;
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.inputColor};
 
 
   @media (min-width: 1440px) {
