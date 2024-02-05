@@ -12,6 +12,12 @@ export const HeaderWrap = styled.header`
   padding: 14px 20px;
   background-color: green;
   color: ${p => p.theme.colors.white};
+
+
+  @media (min-width: 1440px) {
+    justify-content: right;
+        }
+
 `;
 
 export const ThemeInfoWrap = styled.div`
