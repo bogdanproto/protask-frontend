@@ -1,4 +1,5 @@
 import { RoutesComp } from 'components/Routes/RoutesComp';
+import { LogoSvg } from 'components/common';
 
 export const App = () => {
   return (
@@ -8,6 +9,7 @@ export const App = () => {
         <RoutesComp />
         {/* <Header />
         <AnyComponent /> */}
+        <LogoSvg />
       </div>
     </>
   );
