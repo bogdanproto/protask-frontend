@@ -1,54 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from "yup";
 
 
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string()
+     .min(5, 'Too Short!')
+     .max(12, 'Too Long!')
+     .required('Required'),
+ });
 
-const Login = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const LoginForm = () => (
-  <div>
-    <h1> Log In </h1>
-    <Formik
-      initialValues={{
+const initialValues={
         email: '',
         password: '',
-      }}
+} 
+      
+export const LoginForm = () => {
 
-      validate={(values) => {
-           const errors = {};
-           
-           if (!values.email) {
-             errors.email = "Required";
-           } else if (
-             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-           ) {
-             errors.email = "Invalid email address";
-           }
-           if (!values.password) {
-             errors.password = "Required";
-           }
-           return errors;
-      }}
-      
-      onSubmit={async (values) => {
-        await Login(500);
-        alert(JSON.stringify(values, null, 2));
-      }}
-    >
-      
-        <Form>
+  const handleSubmit = (values, {resetForm}) => {
+    console.log(values);
+    resetForm()
+  }
+
+  return (
+    <div>
+     <h1> Log In </h1>
+
+    <Formik 
+    initialValues={initialValues} 
+    onSubmit={handleSubmit}
+    validationSchema={LoginSchema}>
+    <Form autoComplete='off'>
           <Field id="email" name="email" placeholder="Enter your email" />
-
+          <ErrorMessage component="div" name="email" />
+          
           <Field id="password" name="password" placeholder="Confirm a password" />
+          <ErrorMessage component="div" name="password" />
+
 
           <button type="submit"> Log In Now  </button>
         </Form>
   
-    </Formik>
-  </div>
-);
+      </Formik>
+      </div>
+  );
+}
 
-// ReactDOM.render(<LoginForm />, document.getElementById('root'));
+ReactDOM.render(<LoginForm />, document.getElementById('root'));
 
-export default LoginForm;

@@ -1,57 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from "yup";
 
-const Register = (ms) => new Promise((r) => setTimeout(r, ms));
+const RegisterSchema = Yup.object().shape({
+  name: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string()
+     .min(5, 'Too Short!')
+     .max(12, 'Too Long!')
+     .required('Required'),
+});
+ 
+const initialValues = {
+  name: '',
+  email: '',
+  password: '',
+}
 
-const RegisterForm = () => (
-  <div>
-    <h1>Registration</h1>
-    <Formik
-      initialValues={{
-        name: '',
-        email: '',
-        password: '',
-      }}
 
-      validate={(values) => {
-           const errors = {};
-           if (!values.name) {
-             errors.fullname = "Required";
-           }
+export const RegisterForm = () => {
 
-           if (!values.email) {
-             errors.email = "Required";
-           } else if (
-             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-           ) {
-             errors.email = "Invalid email address";
-           }
-           if (!values.password) {
-             errors.password = "Required";
-           }
-           return errors;
-         }}
-
-      onSubmit={async (values) => {
-        await Register(500);
-        alert(JSON.stringify(values, null, 2));
-      }}
-    >
+  const handleSubmit = (values, {resetForm}) => {
+    console.log(values);
+    resetForm()
+  }
+  return (
+    <div>
+      <h1>Registration</h1>
+      <Formik
+      initialValues={initialValues} 
+        onSubmit={handleSubmit}
+        validationSchema={RegisterSchema}>
         <Form>
           <Field id="name" name="name" placeholder="Enter your name" />
-
+          <ErrorMessage component="div" name="name" />
           <Field id="email" name="email" placeholder="Enter your email" />
-
-          <Field  id="password"  name="password" placeholder="Create a password" type="email" />
-
+          <ErrorMessage component="div" name="email" />
+          <Field id="password" name="password" placeholder="Create a password" type="email" />
+<ErrorMessage component="div" name="password" />
           <button type="submit">
             Register Now
           </button>
         </Form>
       
-    </Formik>
-  </div>
-);
+      </Formik>
+    </div>
+  );
+}
 
 ReactDOM.render(<RegisterForm />, document.getElementById('root'));
+
+
+
