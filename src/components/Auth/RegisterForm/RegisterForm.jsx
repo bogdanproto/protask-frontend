@@ -1,70 +1,74 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { FormAuthStyled } from '../common/Form/FormAuth.styled';
+import { InputAuth } from '../common/InputAuth/InputAuth';
+import { ButtonAuth } from '../common/ButtonAuth/ButtonAuth';
+import { InputBoxErr } from 'components/common';
+import { registerSchema } from 'const';
+import { InputPassword } from '../common/InputPassword/InputPassword';
 
 export const RegisterForm = () => {
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      userName: '',
       email: '',
+      password: '',
     },
-    validationSchema: Yup.object({
-      firstName: Yup.string()
-        .max(15, 'Must be 15 characters or less')
-        .required('Required'),
-      lastName: Yup.string()
-        .max(20, 'Must be 20 characters or less')
-        .required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
-    }),
+    validationSchema: registerSchema,
+
     onSubmit: values => {
       console.log(values);
     },
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="firstName">First Name</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.firstName}
-      />
-      {formik.touched.firstName && formik.errors.firstName ? (
-        <div>{formik.errors.firstName}</div>
-      ) : null}
+    <FormAuthStyled onSubmit={formik.handleSubmit}>
+      <InputBoxErr>
+        <InputAuth
+          id="userName"
+          name="userName"
+          type="text"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.userName}
+          placeholder="Enter your name"
+        />
+        {formik.touched.userName && formik.errors.userName ? (
+          <div>{formik.errors.userName}</div>
+        ) : null}
+      </InputBoxErr>
 
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.lastName}
-      />
-      {formik.touched.lastName && formik.errors.lastName ? (
-        <div>{formik.errors.lastName}</div>
-      ) : null}
+      <InputBoxErr>
+        <InputAuth
+          id="email"
+          name="email"
+          type="text"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+          placeholder="Enter your email"
+        />
+        {formik.touched.email && formik.errors.email ? (
+          <div>{formik.errors.email}</div>
+        ) : null}
+      </InputBoxErr>
 
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.email}
-      />
-      {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
-      ) : null}
+      <InputBoxErr>
+        <InputPassword
+          id="password"
+          name="password"
+          type="password"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
+          placeholder="Create a password"
+        />
+        {formik.touched.password && formik.errors.password ? (
+          <div>{formik.errors.password}</div>
+        ) : null}
+      </InputBoxErr>
 
-      <button type="submit">Submit</button>
-    </form>
+      <ButtonAuth type="submit">Register Now</ButtonAuth>
+    </FormAuthStyled>
   );
 };

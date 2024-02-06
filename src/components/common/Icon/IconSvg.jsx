@@ -1,8 +1,8 @@
-import Icons from './../../../data/svg/sprite.svg'
+import Icons from 'data/svg/sprite.svg';
 
-export const IconSvg = ({ id, className }) => {
+export const IconSvg = ({ id, className, ...props }) => {
   return (
-    <svg className={className}>
+    <svg className={className} {...props}>
       <use href={Icons + '#icon-' + id} />
     </svg>
   );
