@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { InputAuthStyled } from '../InputAuth/InputAuth.styled';
-import { Icon, IconButton } from 'components/common';
-import { IconSvg } from 'components/common/Icon/IconSvg';
+import { IconButton } from 'components/common';
+import { LuEye } from 'react-icons/lu';
+import { InputPasswordStyled } from './InputPassword.styled';
 
 export const InputPassword = ({ type, ...props }) => {
   const [showText, setShowText] = useState(false);
@@ -11,11 +12,11 @@ export const InputPassword = ({ type, ...props }) => {
   };
 
   return (
-    <>
+    <InputPasswordStyled>
       <InputAuthStyled type={showText ? 'text' : 'password'} {...props} />
       <IconButton type="button" onClick={toggleShowText}>
-        <IconSvg fill="#c62222" id={'user'} />
+        <LuEye color="rgba(255, 255, 255, 0.3)" fontSize="18px" />
       </IconButton>
-    </>
+    </InputPasswordStyled>
   );
 };

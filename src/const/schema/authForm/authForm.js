@@ -16,3 +16,15 @@ export const registerSchema = Yup.object({
     .trim()
     .required('password is required'),
 });
+
+export const loginSchema = Yup.object({
+  email: Yup.string()
+    .email('invalid email address')
+    .trim()
+    .required('email is required'),
+  password: Yup.string()
+    .min(8, 'must be 8 characters or more')
+    .max(64, 'must be 64 characters or less')
+    .trim()
+    .required('password is required'),
+});

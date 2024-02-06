@@ -1,9 +1,3 @@
-import { IconButtonStyled } from './IconButton.styled';
-
 export const IconButton = ({ children, ...props }) => {
-  return (
-    <>
-      <IconButtonStyled {...props}>{children}</IconButtonStyled>
-    </>
-  );
+  return <button {...props}>{children}</button>;
 };
