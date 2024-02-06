@@ -1,11 +1,19 @@
 import { Header } from 'components/Header';
 import { RoutesComp } from 'components/Routes/RoutesComp';
-// import  { LoginForm }  from 'components/welcomeForm/LoginForm/LoginForm.jsx';
-// import  { RegisterForm } from 'components/welcomeForm/RegisterForm/RegisterForm.jsx';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/authSlice/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
+<<<<<<< HEAD
       <div className="container">
         <h1>WELCOME TO OUR PROJECT</h1>
         <RoutesComp />
@@ -13,6 +21,9 @@ export const App = () => {
         {/* <Header />
         <AnyComponent /> */}
       </div>
+=======
+      <RoutesComp />
+>>>>>>> f858055387599acb0eefed2edcb7b76301b54301
     </>
   );
 };
