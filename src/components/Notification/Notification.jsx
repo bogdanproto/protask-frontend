@@ -3,6 +3,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
 
+
 export const NotificationBox = ({ type, message }) => {
     const [open, setOpen] = React.useState(true);
     const dispatch = useDispatch();
