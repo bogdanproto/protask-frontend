@@ -28,6 +28,11 @@ export const themeBlack = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
+
+    // =============
+    titleColor: '#FFFFFF',
+    backgroundColor: '#1F1F1F',
+    // =============
   },
   spacing: value => `${value * 4}px`,
 };
@@ -54,8 +59,17 @@ export const themeLight = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
+
+    // =============
+
+    backgroundColor: '#F6F6F7',
+    headerBackgroundColor: '#FCFCFC',
+    sidebarBackgroundColor: '#FFFFFF',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
+  // spacing: value => `${value * 4}px`,
+  spacing: value => `${value * 2}px`,
 };
 
 export const themeViolet = {
