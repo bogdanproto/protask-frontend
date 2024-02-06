@@ -1,4 +1,5 @@
 import { RoutesComp } from 'components/Routes/RoutesComp';
+import { Sidebar} from 'components/Sidebar'
 
 export const App = () => {
   return (
@@ -8,6 +9,7 @@ export const App = () => {
         <RoutesComp />
         {/* <Header />
         <AnyComponent /> */}
+        <Sidebar></Sidebar>
       </div>
     </>
   );
