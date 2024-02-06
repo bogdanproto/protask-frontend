@@ -4,7 +4,7 @@ export const pathAuth = Object.freeze({
   LOGIN: '/api/auth/signin',
   LOGOUT: '/api/auth/logout',
   CURRENT: '/api/auth/current',
-  AVATAR: '/api/auth/avatar',
-  PROFILE: '/api/auth/profile',
-  THEME: '/api/auth/theme',
+  AVATAR: '/api/user/avatar',
+  PROFILE: '/api/user/profile',
+  THEME: '/api/user/theme',
 });
