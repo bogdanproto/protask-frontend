@@ -44,7 +44,7 @@ export const RoutesComp = () => {
             }
           />
 
-          <Route path={routes.AUTH_ID} element={<Auth />} />
+          {/* <Route path={routes.AUTH_ID} element={<Auth />} /> */}
           <Route
             path={routes.AUTH_ID}
             element={
