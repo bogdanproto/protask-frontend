@@ -1,11 +1,18 @@
-import { Link } from 'react-router-dom';
+import {
+  AuthMenu,
+  ImgWelcome,
+  WelcomeBackGround,
+  WelcomeTitle,
+} from 'components/Welcome';
+import { LogoWithText } from 'components/common';
 
 export const Welcome = () => {
   return (
-    <>
-      <h3>Welcom</h3>
-      <Link to={`/auth/login`}> login </Link>
-      <Link to={`/auth/register`}>register </Link>
-    </>
+    <WelcomeBackGround>
+      <ImgWelcome />
+      <LogoWithText />
+      <WelcomeTitle />
+      <AuthMenu />
+    </WelcomeBackGround>
   );
 };
