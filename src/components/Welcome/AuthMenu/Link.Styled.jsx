@@ -8,5 +8,5 @@ export const LinkStyled = styled(NavLink)`
 
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.black};
+  color: '#212121';
 `;

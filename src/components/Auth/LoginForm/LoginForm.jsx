@@ -4,43 +4,27 @@ import { FormAuthStyled } from '../common/Form/FormAuth.styled';
 import { InputAuth } from '../common/InputAuth/InputAuth';
 import { ButtonAuth } from '../common/ButtonAuth/ButtonAuth';
 import { InputBoxErr } from 'components/common';
-import { registerSchema } from 'const';
+import { loginSchema } from 'const';
 import { InputPassword } from '../common/InputPassword/InputPassword';
 import { useDispatch } from 'react-redux';
-import { signUpUser } from 'redux/authSlice/operations';
+import { logInUser } from 'redux/authSlice/operations';
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
-      userName: '',
       email: '',
       password: '',
     },
-    validationSchema: registerSchema,
+    validationSchema: loginSchema,
 
     onSubmit: values => {
-      dispatch(signUpUser(values));
+      dispatch(logInUser(values));
     },
   });
 
   return (
     <FormAuthStyled onSubmit={formik.handleSubmit}>
-      <InputBoxErr>
-        <InputAuth
-          id="userName"
-          name="userName"
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.userName}
-          placeholder="Enter your name"
-        />
-        {formik.touched.userName && formik.errors.userName ? (
-          <div>{formik.errors.userName}</div>
-        ) : null}
-      </InputBoxErr>
-
       <InputBoxErr>
         <InputAuth
           id="email"
@@ -64,14 +48,14 @@ export const RegisterForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
-          placeholder="Create a password"
+          placeholder="Confirme a password"
         />
         {formik.touched.password && formik.errors.password ? (
           <div>{formik.errors.password}</div>
         ) : null}
       </InputBoxErr>
 
-      <ButtonAuth type="submit">Register Now</ButtonAuth>
+      <ButtonAuth type="submit">Log In Now</ButtonAuth>
     </FormAuthStyled>
   );
 };

@@ -88,10 +88,10 @@ export const GlobalStyle = createGlobalStyle`
         transition: color ${p => p.theme.cubicTransition};
     }
 
-    a:hover,
+    /* a:hover,
     a:focus {
         color: ${p => p.theme.colors.accentColor};
-    }
+    } */
 
 
     /* BUTTONS */
