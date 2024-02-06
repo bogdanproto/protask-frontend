@@ -1,16 +1,18 @@
 import { RoutesComp } from 'components/Routes/RoutesComp';
-import { Sidebar} from 'components/Sidebar'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/authSlice/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
-      <div className="container">
-        <h1>WELCOME TO OUR PROJECT</h1>
-        <RoutesComp />
-        {/* <Header />
-        <AnyComponent /> */}
-        <Sidebar></Sidebar>
-      </div>
+      <RoutesComp />
     </>
   );
 };
