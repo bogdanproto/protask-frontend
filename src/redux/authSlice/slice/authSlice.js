@@ -23,7 +23,7 @@ import {
 import { updUserTheme } from '../operations/updUserTheme';
 
 const initialState = {
-  user: { userName: null, email: null, avatarCloudURL: null, theme: 'light' },
+  user: { userName: "margo", email: "qqq@qq", avatarCloudURL: null, theme: 'light' },
   token: null,
   isLoggedIn: false,
   errorAuth: null,

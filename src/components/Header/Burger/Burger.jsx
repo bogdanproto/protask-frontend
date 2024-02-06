@@ -15,10 +15,12 @@ export const Burger = () => {
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg className="burger-icon" width="32" height="22">
-          <use href={sprite + '#icon-menu'}></use>
+        <svg className="burger-icon" width="24" height="24">
+          <use href={sprite + '#icon-burger_menu'}></use>
         </svg>
       </button>
     </Menu>
   );
 };
+
+

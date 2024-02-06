@@ -16,14 +16,17 @@ export const EditProfile = () => {
   const [values, setValues] = useState('');
   // const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(values);
-    setValues(prevState => [...prevState, values]);
-  }, []);
+  const { userName, email } = useSelector(state => state.authUser.user);
+const ggg = getNewField(userName, email, values.userName, values.email);
+  // useEffect(() => {
+    
+  //   dispatch(ggg);
+  // }, [dispatch, ggg]);
+
+  // console.log(getNewField(userName, email, values.userName, values.email));
 
   const handleSubmit = (values, actions) => {
-    const sss = getNewField(values);
-    setValues(sss);
+    setValues(values);
     actions.resetForm();
   };
 

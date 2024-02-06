@@ -1,17 +1,30 @@
-import sprite from 'data/svg/sprite.svg';
-import { ProfileIconBtn } from './ProfileIcon.styled';
+import { useRef } from 'react';
+import { ProfileAvatar } from 'components/EditProfile/index.js';
+import { ProfileIconWrap } from './ProfileIcon.styled';
 
-export const ProfileIcon = () => {
-    
-    return ( 
-        <ProfileIconBtn type="submit">
-        <svg className="burger-icon" width="68" height="68">
-          <use href={sprite + '#icon-user'}></use>
-        </svg>
-        <svg className="burger-icon-plus" width="24" height="24">
-          <use href={sprite + '#icon-plus'}></use>
-        </svg>
-      </ProfileIconBtn>
-     );
-}
- 
+export const ProfileIcon = ({ onChange }) => {
+  const inputRef = useRef(null);
+  const handleClick = () => {
+    if (inputRef.current) {
+      inputRef.current.click();
+    }
+  };
+
+
+  
+  return (
+    <ProfileIconWrap>
+      <div onClick={handleClick} style={{ cursor: 'pointer' }}>
+        <ProfileAvatar />
+      </div>
+
+      <input
+        type="file"
+        ref={inputRef}
+        style={{ display: 'none' }}
+        onChange={onChange}
+      />
+      <label htmlFor="fileInput" />
+    </ProfileIconWrap>
+  );
+};
