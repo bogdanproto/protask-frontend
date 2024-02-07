@@ -6,13 +6,30 @@ import { Btn } from 'components/common/Btn/Btn';
 export const BoardsList = () => {
     const projects = [{
         _id: 1,
-        icon: 'icon-project',
+        icon: 'icon-project_hexagon',
         name: 'Project office'
     }, {
         _id: 2,
-        icon: 'icon-puzzle',
+        icon: 'icon-project_puzzle',
         name: 'Neon Light Project'
-        }]
+    }, {
+        _id: 3,
+        icon: 'icon-project_colors',
+        name: 'Neon Light Project'
+    }, {
+        _id: 4,
+        icon: 'icon-project_container',
+        name: 'Neon Light Project'
+    }, {
+        _id: 5,
+        icon: 'icon-project_hexagon',
+        name: 'Neon Light Project'
+    }, {
+        _id: 6,
+        icon: 'icon-project_lightning',
+        name: 'Neon Light Project'
+    }
+    ]
     
     const [isActive, setActive] = useState(null);
 

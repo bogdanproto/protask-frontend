@@ -5,4 +5,8 @@ export const BtnContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
+
+    button {
+        line-height: 0;
+    }
 `;

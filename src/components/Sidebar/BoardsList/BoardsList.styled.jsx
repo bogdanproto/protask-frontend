@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Boards = styled.div`
-    padding: 70px 0 116px 0;
+    padding: 60px 0 0 0;
 
     @media (min-width: 768px) {
-        padding: 60px 0 294px 0;
+        padding: 60px 0 0 0;
     }
 
     @media (min-width: 1440px) {
-        padding: 60px 0 40px 0;
+        padding: 60px 0 0 0;
     }
 `;
 
@@ -40,7 +40,7 @@ export const CreateButton = styled.div`
     }
 
     span {
-        max-width: 75px;
+        max-width: 76px;
     }
 `;
 
