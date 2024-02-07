@@ -7,29 +7,43 @@ export const CardForm = ({}) => {
       <h1>Sign Up</h1>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
+          title: '',
+          description: '',
+          priority: '',
         }}
-        onSubmit={async values => {
-          await new Promise(r => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
+        onSubmit={() => {}}
       >
         <Form>
-          <label htmlFor="firstName">First Name</label>
-          <Field id="firstName" name="firstName" placeholder="Jane" />
+          <label htmlFor="title">First Name</label>
+          <Field id="title" name="title" placeholder="Title" />
 
-          <label htmlFor="lastName">Last Name</label>
-          <Field id="lastName" name="lastName" placeholder="Doe" />
-
-          <label htmlFor="email">Email</label>
+          <label htmlFor="description">Last Name</label>
           <Field
-            id="email"
-            name="email"
-            placeholder="jane@acme.com"
-            type="email"
+            id="description"
+            name="description"
+            placeholder="Description"
           />
+
+          <div id="my-radio-group">Label color</div>
+          <div role="group" aria-labelledby="my-radio-group">
+            <label>
+              <Field type="radio" name="priority" value="Low" />
+              One
+            </label>
+            <label>
+              <Field type="radio" name="priority" value="Medium" />
+              Two
+            </label>
+            <label>
+              <Field type="radio" name="priority" value="High" />
+              Two
+            </label>
+            <label>
+              <Field type="radio" name="priority" value="Without" />
+              Two
+            </label>
+            <div>Picked: </div>
+          </div>
           <button type="submit">Submit</button>
         </Form>
       </Formik>

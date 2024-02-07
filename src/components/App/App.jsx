@@ -1,3 +1,4 @@
+import { CardForm } from 'components/CardForm/CardForm';
 import { NotifyModule } from 'components/Notify';
 import { RoutesComp } from 'components/Routes/RoutesComp';
 import { useEffect } from 'react';
@@ -13,8 +14,9 @@ export const App = () => {
 
   return (
     <>
+      <CardForm />
       <NotifyModule />
-      <RoutesComp />
+      {/* <RoutesComp /> */}
     </>
   );
 };
