@@ -13,8 +13,8 @@ export const App = () => {
 
   return (
     <>
-    <Header />
-      {/* <RoutesComp /> */}
+    <Header/>
+      <RoutesComp />
     </>
   );
 };
