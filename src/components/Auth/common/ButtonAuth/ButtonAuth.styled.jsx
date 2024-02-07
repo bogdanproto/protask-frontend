@@ -11,7 +11,7 @@ export const ButtonAuthStyled = styled.button`
   padding: 0px;
   gap: 8px;
 
-  background: ${props => props.theme.colors.btnPrimary};
+  background: #bedbb0;
   border-radius: 8px;
 
   font-weight: 500;
@@ -22,7 +22,8 @@ export const ButtonAuthStyled = styled.button`
 
   color: ${props => props.theme.colors.black};
 
-  &:hover {
-    background: ${props => props.theme.colors.btnPrimaryHover};
+  &:hover,
+  &:focus {
+    background: #9dc888;
   }
 `;
