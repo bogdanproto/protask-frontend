@@ -19,6 +19,7 @@ export const Title = styled.h2`
     color: ${p => p.theme.colors.logoutText};
     margin-bottom: 8px;
     padding-inline: 14px;
+    letter-spacing: -0.02em;
 
     @media (min-width: 768px) {
         padding-inline: 24px;
@@ -29,18 +30,20 @@ export const CreateButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #ffffff1a;
-    border-bottom: 1px solid #ffffff1a;
+    border-top: 1px solid ${p => p.theme.colors.sidebarBorder};
+    border-bottom: 1px solid ${p => p.theme.colors.sidebarBorder};
     padding-block: 14px;
     color: ${p => p.theme.colors.logoutText};
-    padding-inline: 14px;
+    margin-inline: 14px;
 
     @media (min-width: 768px) {
-        padding-inline: 24px;
+        margin-inline: 24px;
     }
 
     span {
         max-width: 76px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
     }
 `;
 
@@ -64,8 +67,8 @@ export const Item = styled.li`
 
     &.active {
         opacity: 1;
-        background-color: #ffffff40;
-        border-right: 4px solid ${p => p.theme.colors.logoutText};
+        background-color: ${p => p.theme.colors.sidebarTabActive};
+        border-right: 4px solid ${p => p.theme.colors.sidebarBorder2};
     }
 
     svg {
@@ -78,6 +81,7 @@ export const Item = styled.li`
         margin-bottom: 0;
         font-weight: 500;
         font-size: 14px;
+        letter-spacing: -0.02em;
     }
   
 `;

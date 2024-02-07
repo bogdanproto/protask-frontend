@@ -8,5 +8,9 @@ export const BtnContainer = styled.div`
 
     button {
         line-height: 0;
+
+        svg {
+            opacity: 0.5;
+        }
     }
 `;

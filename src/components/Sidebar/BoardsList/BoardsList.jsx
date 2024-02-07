@@ -15,19 +15,19 @@ export const BoardsList = () => {
     }, {
         _id: 3,
         icon: 'icon-project_colors',
-        name: 'Neon Light Project'
+        name: 'Neon Dark Project'
     }, {
         _id: 4,
         icon: 'icon-project_container',
-        name: 'Neon Light Project'
+        name: 'Test Project'
     }, {
         _id: 5,
         icon: 'icon-project_hexagon',
-        name: 'Neon Light Project'
+        name: 'My Project'
     }, {
         _id: 6,
         icon: 'icon-project_lightning',
-        name: 'Neon Light Project'
+        name: 'Lorem ipsum Project'
     }
     ]
     

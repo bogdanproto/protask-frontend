@@ -42,7 +42,7 @@ export const SidebarStyled = styled.aside`
   width: 100%;
   max-width: 225px;
   padding-block: 14px;
-  background-color: ${p => p.theme.colors.accentColorHover};
+  background-color: ${p => p.theme.colors.sidebarBackground};
   display: flex;
   flex-direction: column;
 
@@ -53,7 +53,6 @@ export const SidebarStyled = styled.aside`
 `;
 
 export const LogoLink = styled(Link)`
-  color: ${p => p.theme.colors.logoutText};
   display: flex;
   align-items: center;
   gap: 8px;
@@ -72,22 +71,24 @@ export const LogoLink = styled(Link)`
   div {
     width: 32px;
     height: 32px;
-    background-color: ${p => p.theme.colors.btnSmall};
+    background-color: ${p => p.theme.colors.logoBackground};
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     svg {
-      fill: ${p => p.theme.colors.btnPrimary};
+      fill: ${p => p.theme.colors.logoIcon};
     }
   }
   
 `;
 
 export const LogoText = styled.span`
-    color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.logoutText};
     font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
 `;
 
 export const LogOut = styled.div`
