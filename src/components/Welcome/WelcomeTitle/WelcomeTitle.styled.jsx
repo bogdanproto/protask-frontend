@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WelcomeTitleStyled = styled.h1`
-  width: 335px;
+  min-width: 335px;
 
   font-weight: 400;
   font-size: 14px;
@@ -11,9 +11,9 @@ export const WelcomeTitleStyled = styled.h1`
 
   color: ${props => props.theme.colors.fontColor};
 
-  @media (min-width: 375px) and (max-width: 767px) {
+  @media (min-width: 767px) {
+    width: 473px;
+    height: 36px;
   }
 
-  @media (min-width: 768px) and (max-width: 1439px) {
-  }
 `;

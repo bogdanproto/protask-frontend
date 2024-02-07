@@ -20,5 +20,6 @@ export const InputAuthStyled = styled.input`
 
   &:focus {
     opacity: 1;
+    border: 1px solid #bedbb0;
   }
 `;
