@@ -10,8 +10,6 @@ export const HeaderThemeSelect = () => {
   const theme = useContext(ThemeContext);
   const color = useSelector(state => state.authUser.user.theme);
 
-console.log(theme);
-
   const [selectedOption, setSelectedOption] = useState(color);
   const dispatch = useDispatch();
   useEffect(() => {

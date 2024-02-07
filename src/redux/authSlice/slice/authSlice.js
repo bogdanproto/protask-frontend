@@ -23,7 +23,7 @@ import { updUserTheme } from '../operations/updUserTheme';
 import { setErrorAuth, setSuccesMsgUser } from '../reducers';
 
 const initialState = {
-  user: { userName: "margo", email: "qqq@qq", avatarCloudURL: null, theme: 'light' },
+  user: {  userName: null, email: null, avatarCloudURL: null, theme: 'light' },
   token: null,
   isLoggedIn: false,
   errorAuth: null,
