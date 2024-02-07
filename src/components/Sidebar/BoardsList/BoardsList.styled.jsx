@@ -51,6 +51,24 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   padding-block: 40px;
+  max-height: 22vh;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: ${p => p.theme.colors.accentColor}; 
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${p => p.theme.colors.accentColorHover}; 
+  }
 `;
 
 export const Item = styled.li`

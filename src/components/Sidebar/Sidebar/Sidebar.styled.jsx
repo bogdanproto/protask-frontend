@@ -9,11 +9,14 @@ export const Backdrop = styled.div`
   position: fixed;
   overflow: auto;
   height: 100vh;
+  transform: translateX(-100%);
+  transition: transform ${p => p.theme.cubicTransition};
 
   @media (min-width: 1440px) {
     width: fit-content;
     position: static;
     height: auto;
+    transform: translateX(0);
   }
 
   /* width */
@@ -38,7 +41,7 @@ export const Backdrop = styled.div`
 `;
 
 export const SidebarStyled = styled.aside`
-  //height: 100vh;
+  height: 100vh;
   width: 100%;
   max-width: 225px;
   padding-block: 14px;
