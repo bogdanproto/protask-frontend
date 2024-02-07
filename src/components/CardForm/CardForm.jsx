@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 
-export const CardForm = () => {
+export const CardForm = ({}) => {
   return (
     <div>
       <h1>Sign Up</h1>
