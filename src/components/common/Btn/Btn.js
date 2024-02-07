@@ -1,7 +1,7 @@
 import sprite from 'data/svg/sprite.svg';
 import { Button } from './Btn.styled';
 
-export const Btn = ({ text, variant, type = 'button' }) => {
+export const Btn = ({ text, variant, type = 'button', clickAction }) => {
   let iconSize;
   let className;
 
@@ -32,7 +32,7 @@ export const Btn = ({ text, variant, type = 'button' }) => {
   );
 
   return (
-    <Button type={type} className={className}>
+    <Button type={type} className={className} onClick={clickAction}>
       {variant &&
         variant !== 'secondary' &&
         variant !== 'primary' &&

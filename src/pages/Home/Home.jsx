@@ -6,7 +6,6 @@ import { logOutUser } from 'redux/authSlice/operations';
 import { Sidebar } from 'components/Sidebar'
 
 export const Home = () => {
-  
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -18,7 +17,7 @@ export const Home = () => {
       
       <Link to={`/home/test`}> testBoard </Link>
       <Button onClick={handleClick}>LogOut</Button>
-      
+
       <Sidebar></Sidebar>
     </div>
   );
