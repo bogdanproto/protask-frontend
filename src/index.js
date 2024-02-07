@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider theme={theme.themeLight}>
+        <ThemeProvider theme={theme.themeViolet}>
           <BrowserRouter>
             <App />
             <GlobalStyle />

@@ -1,5 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { setErrorAuth, setSuccesMsgUser } from '../reducers';
 
 import {
   handleFulfilledAvatar,
@@ -21,6 +20,7 @@ import {
   updUserProfile,
 } from '../operations';
 import { updUserTheme } from '../operations/updUserTheme';
+import { setErrorAuth, setSuccesMsgUser } from '../reducers';
 
 const initialState = {
   user: { userName: "margo", email: "qqq@qq", avatarCloudURL: null, theme: 'light' },
@@ -35,8 +35,8 @@ const authSlice = createSlice({
   name: 'authUser',
   initialState,
   reducers: {
-    setSuccesMsgUser: setSuccesMsgUser,
-    setErrorAuth: setErrorAuth,
+    toSeSuccesMsgUser: setSuccesMsgUser,
+    toSetErrorAuth: setErrorAuth,
   },
   extraReducers: builder => {
     builder
@@ -73,5 +73,7 @@ const authSlice = createSlice({
       );
   },
 });
+
+export const { toSeSuccesMsgUser, toSetErrorAuth } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;

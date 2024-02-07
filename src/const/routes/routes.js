@@ -5,5 +5,5 @@ export const routes = Object.freeze({
   AUTH_LOGIN: '/auth/login',
   AUTH_REGISTER: '/auth/register',
   HOME: '/home',
-  HOME_BORD_NAME: 'home/:boardName',
+  HOME_BORD_NAME: '/home/:boardName',
 });
