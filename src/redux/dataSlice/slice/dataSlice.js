@@ -8,7 +8,8 @@ import {
 } from '../handleStatus';
 
 const initialState = {
-  tasks: [],
+  boards: [],
+  columns: [],
   error: null,
   isLoading: null,
   successMsg: null,
@@ -18,7 +19,7 @@ const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    setSuccesMsgData: setSuccesMsgData,
+    toSetSuccesMsgData: setSuccesMsgData,
   },
   extraReducers: builder => {
     builder
@@ -29,3 +30,4 @@ const dataSlice = createSlice({
 });
 
 export const dataReducer = dataSlice.reducer;
+export const { toSetSuccesMsgData } = dataSlice.actions;
