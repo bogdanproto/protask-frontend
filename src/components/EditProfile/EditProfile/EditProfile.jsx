@@ -5,19 +5,14 @@ import { object, string } from 'yup';
 import { EditProfileTitle, FormWrap, StyledForm } from './EditProfile.styled';
 import { ProfileIcon } from 'components/EditProfile/index.js';
 import { getNewField } from '../index.js';
-
-const schema = object({
-  userName: string().min(3, 'Too Short!').max(20, 'Too Long!'),
-  email: string().email(),
-  password: string().min(6),
-});
+import { registerSchema } from 'const/index.js';
 
 export const EditProfile = () => {
   const [values, setValues] = useState('');
   // const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(values);
+    // console.log(values);
     setValues(prevState => [...prevState, values]);
   }, []);
 
@@ -29,7 +24,7 @@ export const EditProfile = () => {
 
   return (
     <Formik
-      validationSchema={schema}
+      validationSchema={registerSchema}
       initialValues={{
         userName: '',
         email: '',
@@ -52,9 +47,9 @@ export const EditProfile = () => {
               // onChange={handleChange}
               // value={formik.values.name}
             />
-            {/* {formik.touched.name && formik.errors.name ? ( */}
-            {/* <div className="FormikErr">{formik.errors.name}</div> */}
-            {/* ) : null} */}
+            {/* formik.touched.name && formik.errors.name ? (
+             <div className="FormikErr">{formik.errors.name}</div> 
+            ) : null */}
             <ErrorMessage name="userName" />
             <Field
               type="email"
@@ -68,18 +63,30 @@ export const EditProfile = () => {
             {/* {formik.touched.number && formik.errors.number ? (
             <div className="FormikErr">{formik.errors.number}</div>
           ) : null} */}
-            <ErrorMessage name="email" />
+            <ErrorMessage name="email" />            
             <Field
-              type="text"
-              id="password"
-              name="password"
+              type="password"
+              id="newPassword"
+              name="newPassword"
               placeholder="Enter new password ..."
+              label="newPassword"
+              variant="outlined"
+              // onChange={handleChange}
+              // value={formik.values.name}
+            />
+            <ErrorMessage name="password" />
+            <Field
+              type="password"
+              id="currentPassword"
+              name="password"
+              placeholder="Enter current password ..."
               label="password"
               variant="outlined"
               // onChange={handleChange}
               // value={formik.values.name}
             />
             <ErrorMessage name="password" />
+
             <button
               className="btn btn-primary"
               variant="contained"

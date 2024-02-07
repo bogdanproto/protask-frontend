@@ -1,17 +1,23 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ProfileAvatar } from 'components/EditProfile/index.js';
 import { ProfileIconWrap } from './ProfileIcon.styled';
+import { useDispatch } from 'react-redux';
+import { updUserAvatar } from 'redux/authSlice/operations/index.js';
 
-export const ProfileIcon = ({ onChange }) => {
+export const ProfileIcon = () => {
+  const [file, setFile] = useState(null);
   const inputRef = useRef(null);
+  const dispatch = useDispatch();
+
   const handleClick = () => {
     if (inputRef.current) {
       inputRef.current.click();
     }
   };
+  const handleFileChange = evt => setFile(evt.target.files[0]);
 
+  dispatch(updUserAvatar(file));
 
-  
   return (
     <ProfileIconWrap>
       <div onClick={handleClick} style={{ cursor: 'pointer' }}>
@@ -22,7 +28,7 @@ export const ProfileIcon = ({ onChange }) => {
         type="file"
         ref={inputRef}
         style={{ display: 'none' }}
-        onChange={onChange}
+        onChange={handleFileChange}
       />
       <label htmlFor="fileInput" />
     </ProfileIconWrap>

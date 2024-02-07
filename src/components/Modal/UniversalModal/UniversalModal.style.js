@@ -9,12 +9,12 @@ const modalStyles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    padding: '20px',
+    // padding: '20px',
     backgroundColor: 'white',
     borderRadius: '5px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-    width: 'auto',
-    height: 'auto',
+    width: "fit-content",
+    height: "fit-content",
   },
 };
 

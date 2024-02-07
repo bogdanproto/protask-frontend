@@ -4,6 +4,7 @@ import { customStyles, options, setColor } from '../index.js';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ThemeContext } from 'styled-components';
+import { updUserTheme } from 'redux/authSlice/operations/index.js';
 
 export const HeaderThemeSelect = () => {
   const theme = useContext(ThemeContext);
@@ -12,7 +13,7 @@ export const HeaderThemeSelect = () => {
   const [selectedOption, setSelectedOption] = useState(color);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setColor(selectedOption));
+    dispatch(updUserTheme(selectedOption));
   }, [dispatch,selectedOption]);
 
   return (

@@ -7,5 +7,3 @@ export * from './Theme/Theme.jsx';
 export * from './Const/customStylesSelect.js';
 export * from './Const/optionSelect.js';
 
-//from helpers
-export * from './helpers/dispatchBody.js';

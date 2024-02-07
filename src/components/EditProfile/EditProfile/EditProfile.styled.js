@@ -4,8 +4,6 @@ import { Form } from 'formik';
 export const FormWrap = styled.div`
   display: flex;
   flex-direction: column;
-
-  padding: 24px 0;  
 `;
 
 export const EditProfileTitle = styled.h3`

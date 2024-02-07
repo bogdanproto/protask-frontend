@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import UniversalModal from '../UniversalModal/UniversalModal';
 import { ModalTitle, ModalCloseButton } from './ModalComponent.styled';
+import { EditProfile } from 'components/EditProfile';
 
 const ModalComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,7 @@ const ModalComponent = () => {
       <button onClick={openModal}>Open modal with close button</button>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
         <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
-        <ModalTitle>Modal Content</ModalTitle>
-        <h2>Please enter your email</h2>
-        <input />
-        <button>send</button>
+        <EditProfile/>
       </UniversalModal>
     </div>
   );
