@@ -5,15 +5,16 @@ export const MainDashboardContainer = styled.div`
   flex-direction: row;
   height: calc(100vh - 116px);
   overflow-x: scroll;
+  overflow-y: no-scroll;
   gap: ${p => p.theme.spacing(9)};
   padding-left: ${p => p.theme.spacing(12)};
-  background-color: tomato;
+  /* background-color: tomato; */
 `;
 
 export const Column = styled.div`
   /* min-width: 292px; */
   width: 350px;
-  background-color: tomato;
+  /* background-color: tomato; */
   outline: 2px solid green;
   display: grid;
   gap: 20px;

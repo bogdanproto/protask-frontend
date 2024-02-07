@@ -1,17 +1,32 @@
-import { Btn } from 'components/common/Btn/Btn';
+import { LuPencil } from 'react-icons/lu';
+import { PiTrashSimpleBold } from 'react-icons/pi';
 import { CardsList } from '../CardsList/CardsList';
-import { ColumnTitlePlate } from './Column.styled';
+import { AddCardBtn } from '../AddCardBtn/AddCardBtn';
+import {
+  ColumnContainer,
+  ColumnTitlePlate,
+  ButtonBox,
+  CtrlButton,
+} from './Column.styled';
 
-export const Column = ({ title, _id }) => {
+export const Column = ({ column: { title } }) => {
   return (
-    <>
+    <ColumnContainer>
       <ColumnTitlePlate>
-        <p>{title}</p>
+        <h3>{title}</h3>
+        <ButtonBox>
+          <CtrlButton>
+            <LuPencil size={16} />
+          </CtrlButton>
+          <CtrlButton>
+            <PiTrashSimpleBold size={16} />
+          </CtrlButton>
+        </ButtonBox>
       </ColumnTitlePlate>
+
       <CardsList />
-      <Btn>
-        <p>Add another card</p>
-      </Btn>
-    </>
+
+      <AddCardBtn />
+    </ColumnContainer>
   );
 };

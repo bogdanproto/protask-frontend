@@ -5,7 +5,7 @@ export const Filters = () => {
   return (
     <FiltersButton>
       <FiFilter size={16} />
-      Filters
+      <p>Filters</p>
     </FiltersButton>
   );
 };
