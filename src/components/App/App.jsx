@@ -1,3 +1,4 @@
+import { Header } from 'components/Header';
 import { RoutesComp } from 'components/Routes/RoutesComp';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -12,7 +13,8 @@ export const App = () => {
 
   return (
     <>
-      <RoutesComp />
+    <Header/>
+      {/* <RoutesComp /> */}
     </>
   );
 };
