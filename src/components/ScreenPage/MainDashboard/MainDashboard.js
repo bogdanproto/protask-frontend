@@ -1,74 +1,12 @@
-import { MainDashboardContainer, Column } from './MainDashboard.styled';
+import { AddColumnBtn } from './AddColumnBtn/AddColumnBtn';
+import { ColumnsList } from './ColumnsList/ColumnsList';
+import { MainDashboardContainer } from './MainDashboard.styled';
 
 export const MainDashboard = () => {
   return (
     <MainDashboardContainer>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
-      <Column>
-        <div>Title</div>
-        <div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-          <div>Card</div>
-        </div>
-        <div>BUTTON</div>
-      </Column>
+      <ColumnsList />
+      <AddColumnBtn />
     </MainDashboardContainer>
   );
 };

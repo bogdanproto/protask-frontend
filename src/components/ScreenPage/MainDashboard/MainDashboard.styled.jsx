@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const MainDashboardContainer = styled.div`
-  outline: 1px solid tomato;
-  background-color: lightblue;
-  padding-left: ${p => p.theme.spacing(12)};
-  display: grid;
-  column-gap: ${p => p.theme.spacing(9)};
-  grid-template-columns: repeat(auto-fit, 350px);
-  grid-auto-flow: column;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 116px);
   overflow-x: scroll;
+  gap: ${p => p.theme.spacing(9)};
+  padding-left: ${p => p.theme.spacing(12)};
+  background-color: tomato;
 `;
 
 export const Column = styled.div`

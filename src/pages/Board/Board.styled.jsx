@@ -13,13 +13,13 @@ export const FakeBox = styled.div`
 export const FakeHeader = styled.div`
   height: 68px;
 
-  background-color: ${p => p.theme.colors.headerBackgroundColor};
+  background-color: ${p => p.theme.colors.thirdBackgroundColor};
   background-color: darkgray;
 `;
 
 export const FakeSidebar = styled.div`
   width: 260px;
   height: 100vh;
-  background-color: ${p => p.theme.colors.sidebarBackgroundColor};
+  background-color: ${p => p.theme.colors.secondBackgroundColor};
   background-color: darkgray;
 `;

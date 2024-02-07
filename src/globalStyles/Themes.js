@@ -4,6 +4,10 @@ const defaultTheme = {
   labelBlue: '#8FA1D0',
   labelRosa: '#E09CB5',
   labelGreen: '#BEDBB0',
+
+  spacing: value => `${value * 2}px`,
+
+  radius: '8px',
 };
 
 export const themeBlack = {
@@ -62,14 +66,13 @@ export const themeLight = {
 
     // =============
 
-    backgroundColor: '#F6F6F7',
-    headerBackgroundColor: '#FCFCFC',
-    sidebarBackgroundColor: '#FFFFFF',
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
 
     // =============
   },
   // spacing: value => `${value * 4}px`,
-  spacing: value => `${value * 2}px`,
 };
 
 export const themeViolet = {
