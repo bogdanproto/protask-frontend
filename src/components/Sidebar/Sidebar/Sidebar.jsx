@@ -6,7 +6,6 @@ import {
   LogoText,
   LogOut,
 } from './Sidebar.styled';
-//import { LogoSvg } from 'components/common/LogoSvg/LogoSvg'
 import { Btn } from 'components/common/Btn/Btn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
@@ -23,7 +22,6 @@ export const Sidebar = () => {
           <div>
             <Icon width={12} height={16} id={'icon-logo-small'}></Icon>
           </div>
-          {/*<LogoSvg></LogoSvg>*/}
           <LogoText>Task Pro</LogoText>
         </LogoLink>
         <BoardsList></BoardsList>
