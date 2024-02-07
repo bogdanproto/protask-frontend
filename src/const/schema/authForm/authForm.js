@@ -7,7 +7,11 @@ export const registerSchema = Yup.object({
     .trim()
     .required('name is required'),
   email: Yup.string()
-    .email('invalid email address')
+    .email('Invalid email format')
+    .matches(
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+      'Invalid email format'
+    )
     .trim()
     .required('email is required'),
   password: Yup.string()
