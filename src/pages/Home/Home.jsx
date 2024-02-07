@@ -1,25 +1,18 @@
-import { Button } from 'components/common';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { logOutUser } from 'redux/authSlice/operations';
-import { Sidebar } from 'components/Sidebar'
+import { Sidebar } from 'components/Sidebar';
+import { getAllWallpapers } from 'redux/uiSlice/operations';
 
 export const Home = () => {
-  
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(logOutUser());
-  };
-  
+  useEffect(() => {
+    dispatch(getAllWallpapers());
+  }, [dispatch]);
+
   return (
-    <div>
-      
-      <Link to={`/home/test`}> testBoard </Link>
-      <Button onClick={handleClick}>LogOut</Button>
-      
+    <>
       <Sidebar></Sidebar>
-    </div>
+    </>
   );
 };
