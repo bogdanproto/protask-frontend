@@ -1,10 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Sidebar } from 'components/Sidebar';
+import { getAllWallpapers } from 'redux/uiSlice/operations';
 
 export const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllWallpapers());
+  }, [dispatch]);
+
   return (
-    <div>
-      <Link to={`/home/test`}> testBoard </Link>
-    </div>
+    <>
+      <Sidebar></Sidebar>
+    </>
   );
 };

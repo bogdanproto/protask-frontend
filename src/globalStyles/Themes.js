@@ -37,6 +37,13 @@ export const themeBlack = {
     titleColor: '#FFFFFF',
     backgroundColor: '#1F1F1F',
     // =============
+    sidebarBackground: '#121212',
+    sidebarTabActive: 'rgb(31 31 31 / 40%)',
+    sidebarBorder: 'rgba(255, 255, 255, 0.1)',
+    sidebarBorder2: '#bedbb0',
+    sidebarSupport: '#1f1f1f',
+    logoBackground: '#1f1f1f',
+    logoIcon: '#fff',
   },
   spacing: value => `${value * 4}px`,
 };
@@ -71,6 +78,13 @@ export const themeLight = {
     thirdBackgroundColor: '#FCFCFC',
 
     // =============
+    sidebarBackground: '#fff',
+    sidebarTabActive: 'rgb(246 246 247 / 40%)',
+    sidebarBorder: 'rgba(22, 22, 22, 0.1)',
+    sidebarBorder2: '#bedbb0',
+    sidebarSupport: '#f6f6f7',
+    logoBackground: '#1f1f1f',
+    logoIcon: '#fff',
   },
   // spacing: value => `${value * 4}px`,
 };
@@ -97,6 +111,13 @@ export const themeViolet = {
     logoutIcon: '#fff',
     logoutIconHover: '#B8BCFD',
     logoutText: '#fff',
+    sidebarBackground: '#5255bc',
+    sidebarTabActive: 'rgba(255, 255, 255, 0.25)',
+    sidebarBorder: 'rgba(255, 255, 255, 0.1)',
+    sidebarBorder2: '#fff',
+    sidebarSupport: 'rgba(236, 237, 253, 0.4)',
+    logoBackground: '#ecedfd',
+    logoIcon: '#5255bc',
   },
   spacing: value => `${value * 4}px`,
 };
