@@ -10,7 +10,7 @@ export const HeaderWrap = styled.header`
   height: 60px;
   width: 100%;
   padding: 14px 20px;
-  background-color: green;
+  background-color: ${p => p.theme.colors.background};
   color: ${p => p.theme.colors.inputColor};
 
 

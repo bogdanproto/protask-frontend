@@ -1,10 +1,14 @@
 import sprite from 'data/svg/sprite.svg';
 import { Menu } from './Burger.styled';
+import { useDispatch } from 'react-redux';
+import { switchVisibleSidebar } from 'redux/sidebarSlice';
 
 export const Burger = () => {
+const dispatch = useDispatch();
 
   const handleClick = () => {
-    console.log(`it's burger click`);
+    dispatch(switchVisibleSidebar(true));
+    console.log("burger click")
   };
 
   return (
