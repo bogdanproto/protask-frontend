@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Select from 'react-select';
-import { customStyles, options, setColor } from '../index.js';
+import { customStyles, options} from '../index.js';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ThemeContext } from 'styled-components';

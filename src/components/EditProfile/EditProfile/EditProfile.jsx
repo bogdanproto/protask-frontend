@@ -1,7 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { object, string } from 'yup';
 import { EditProfileTitle, FormWrap, StyledForm } from './EditProfile.styled';
 import { ProfileIcon } from 'components/EditProfile/index.js';
 import { getNewField } from '../index.js';
