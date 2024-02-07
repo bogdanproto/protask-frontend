@@ -8,6 +8,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getAllWallpapers());
+    // dispatch(logOutUser());
   }, [dispatch]);
 
   return (
