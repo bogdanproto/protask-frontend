@@ -6,4 +6,9 @@ export const PopUpAuthStyled = styled.div`
 
   background: #151515;
   border-radius: 8px;
+
+  @media (min-width: 768px) {
+    width: 424px;
+    height: 395px;
+  }
 `;

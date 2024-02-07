@@ -20,4 +20,9 @@ export const BtnLinkStyled = styled(NavLink)`
   letter-spacing: -0.02em;
 
   color: ${props => props.theme.colors.white};
+
+  @media (min-width: 375px)  {
+    width: 344px;
+    height: 49px;
+  }
 `;
