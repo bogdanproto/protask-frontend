@@ -23,11 +23,12 @@ export const CardForm = ({}) => {
     validationSchema: cardSchema,
 
     onSubmit: values => {
+      console.log(values);
       dispatch();
     },
   });
   return (
-    <div>
+    <>
       <h1>Sign Up</h1>
       <FormAuthStyled onSubmit={formik.handleSubmit}>
         <InputBoxErr>
@@ -134,6 +135,6 @@ export const CardForm = ({}) => {
 
         <ButtonAuth type="submit">Log In Now</ButtonAuth>
       </FormAuthStyled>
-    </div>
+    </>
   );
 };
