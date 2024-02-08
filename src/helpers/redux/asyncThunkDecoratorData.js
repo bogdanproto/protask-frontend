@@ -4,7 +4,7 @@ import { setErrorAuth } from 'redux/authSlice/reducers';
 
 export const asyncThunkDecoratorData = operation => async (arg, thunkAPI) => {
   try {
-    await operation(arg);
+    return await operation(arg);
   } catch (error) {
     if (error.response?.data?.code === errorNotify.user_unauthorized_token) {
       thunkAPI.dispatch(setErrorAuth());

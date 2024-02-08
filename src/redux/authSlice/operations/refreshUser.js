@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { refreshUserAPI, setAuthToken } from 'api';
-import { errorNotify } from 'const';
 import { handleError } from 'helpers';
 
 export const refreshUser = createAsyncThunk(
@@ -14,14 +13,16 @@ export const refreshUser = createAsyncThunk(
       if (!token) {
         return thunkAPI.rejectWithValue(
           handleError({
-            code: errorNotify.user_unauthorized_token,
+            code: 'user_unauthorized_token',
           })
         );
       }
 
       setAuthToken(token);
 
-      const { user } = await refreshUserAPI();
+      const {
+        data: { user },
+      } = await refreshUserAPI();
       return {
         user,
         token,
