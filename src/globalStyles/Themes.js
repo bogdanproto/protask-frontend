@@ -10,7 +10,7 @@ const defaultTheme = {
   radius: '8px',
 };
 
-export const themeBlack = {
+export const dark = {
   ...defaultTheme,
   logoPath: '#logo-white',
   colors: {
@@ -48,7 +48,7 @@ export const themeBlack = {
   spacing: value => `${value * 4}px`,
 };
 
-export const themeLight = {
+export const light = {
   ...defaultTheme,
   logoPath: '#logo-black',
   colors: {
@@ -89,7 +89,7 @@ export const themeLight = {
   // spacing: value => `${value * 4}px`,
 };
 
-export const themeViolet = {
+export const violet = {
   ...defaultTheme,
   logoPath: '#logo-violet',
   colors: {

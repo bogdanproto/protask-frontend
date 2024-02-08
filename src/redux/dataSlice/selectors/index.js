@@ -1,1 +1,1 @@
-export * from './selectorAuth';
+export * from './selectorBoard';
