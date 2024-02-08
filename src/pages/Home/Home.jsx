@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Header } from 'components/Header';
-import { EditProfile } from 'components/EditProfile';
 
 export const Home = () => {
   const dispatch = useDispatch();

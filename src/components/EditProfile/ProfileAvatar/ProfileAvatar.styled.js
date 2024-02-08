@@ -2,14 +2,19 @@ import styled from 'styled-components';
 
 export const ProfileIconBtn = styled.div`
   position: relative;
-  display: flex; 
+  display: flex;
+  width: 68px;
+  height: 68px;
 
   svg {
     display: block;
   }
 
-  .burger-icon {
+  .edit-profile-icon {
     fill: ${p => p.theme.colors.btnSmall};
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
   }
 
   .burger-icon-plus {
