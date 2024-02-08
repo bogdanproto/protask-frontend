@@ -14,8 +14,7 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <div >
-    <Header/>
+    <>
       <Sidebar></Sidebar>
       <Outlet />
     </>
