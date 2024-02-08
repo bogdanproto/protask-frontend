@@ -1,5 +1,3 @@
-
-
 import { NotifyModule } from 'components/Notify';
 import { RoutesComp } from 'components/Routes';
 import { useEffect } from 'react';
@@ -9,7 +7,6 @@ import { selectThemeUser, selectUpdating } from 'redux/authSlice/selectors';
 import { ThemeProvider } from 'styled-components';
 import * as theme from 'globalStyles/index.js';
 import { GlobalStyle } from 'globalStyles/GlobalStyle';
-
 
 export const App = () => {
   const dispatch = useDispatch();
