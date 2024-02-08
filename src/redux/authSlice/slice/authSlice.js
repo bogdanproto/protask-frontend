@@ -9,7 +9,9 @@ import {
   handleFulfilledSignUp,
   handleFulfilledTheme,
   handlePendingAuth,
+  handlePendingRefreshAuth,
   handleRejectedAuth,
+  handleRejectedRefreshAuth,
 } from '../handleStatus';
 import {
   logInUser,
@@ -29,6 +31,7 @@ const initialState = {
   errorAuth: null,
   successMsg: null,
   isLoading: null,
+  isUpdating: true,
 };
 
 const authSlice = createSlice({
@@ -43,16 +46,17 @@ const authSlice = createSlice({
       .addCase(signUpUser.fulfilled, handleFulfilledSignUp)
       .addCase(logInUser.fulfilled, handleFulfilledLogIn)
       .addCase(logOutUser.fulfilled, handleFulfilledLogOut)
-      .addCase(refreshUser.fulfilled, handleFulfilledRefresh)
       .addCase(updUserAvatar.fulfilled, handleFulfilledAvatar)
       .addCase(updUserProfile.fulfilled, handleFulfilledProfile)
       .addCase(updUserTheme.fulfilled, handleFulfilledTheme)
+      .addCase(refreshUser.pending, handlePendingRefreshAuth)
+      .addCase(refreshUser.fulfilled, handleFulfilledRefresh)
+      .addCase(refreshUser.rejected, handleRejectedRefreshAuth)
       .addMatcher(
         isAnyOf(
           signUpUser.pending,
           logInUser.pending,
           logOutUser.pending,
-          refreshUser.pending,
           updUserAvatar.pending,
           updUserProfile.pending,
           updUserTheme.pending
@@ -64,7 +68,6 @@ const authSlice = createSlice({
           signUpUser.rejected,
           logInUser.rejected,
           logOutUser.rejected,
-          refreshUser.rejected,
           updUserAvatar.rejected,
           updUserProfile.rejected,
           updUserTheme.rejected

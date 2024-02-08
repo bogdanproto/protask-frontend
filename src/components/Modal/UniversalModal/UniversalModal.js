@@ -1,13 +1,16 @@
 import React from 'react';
 import Modal from 'react-modal';
-// import { Modals } from './UM.style';
-import modalStyles from './UniversalModal.style';
+import modalStyles from './UniversalModal.styled';
 
 const UniversalModal = ({ isOpen, onClose, children }) => {
-  return (    
-    <Modal isOpen={isOpen} onRequestClose={onClose} style={modalStyles}>
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      style={modalStyles}
+      ariaHideApp={false}
+    >
       {children}
-      {/* <button onClick={onClose}>Close Modal</button> */}
     </Modal>
   );
 };
