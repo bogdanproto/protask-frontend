@@ -8,6 +8,7 @@ import { EditProfile } from 'components/EditProfile';
 
 const UserInfo = () => {
   let userName = useSelector(state => state.authUser.user.userName);
+  let avatarUrl = useSelector(state => state.authUser.user.avatarCloudURL);
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -36,9 +37,10 @@ const UserInfo = () => {
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg className="burger-icon" width="32" height="32">
-          <use href={sprite + '#icon-user'}></use>
-        </svg>
+       {avatarUrl? <img src={avatarUrl} alt=""className="edit-profile-icon" width="68" height="68"></img>:
+      <svg className="edit-profile-icon" width="32" height="32">
+        <use href={sprite + '#icon-user'}></use>
+      </svg>}
       </button>
     </HeaderAvatar>
   );

@@ -1,24 +1,26 @@
-const { default: styled } = require("styled-components");
+const { default: styled } = require('styled-components');
 
 export const HeaderAvatar = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
+  
+  /* border-radius: 6px; */
 
-
-button{
+  button {
     height: 32px;
     width: 32px;
     margin-left: 8px;
-    border-radius: 8px;
+    
     padding: 0;
     border: none;
-}
-.burger-icon{
     
-    width: 32px;
-    height: 32px;
-}
-svg{
-    fill:${p => p.theme.colors.btnSmall};
-}
-`
+  }
+  .edit-profile-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  svg {
+    fill: ${p => p.theme.colors.btnSmall};
+  }
+`;
