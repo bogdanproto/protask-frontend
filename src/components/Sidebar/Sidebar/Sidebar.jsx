@@ -27,12 +27,10 @@ export const Sidebar = () => {
     };
 
     window.addEventListener('resize', handleResize);
-
-    // При розмонтуванні компоненту видаляємо обробник подій
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // ефект потрібно виконати лише один раз, при монтуванні
+  }, []); 
 
   const screenVisible = false ? screenWidth < 1440 : screenWidth > 1440;
   const visible = screenVisible || burgerVisible;
