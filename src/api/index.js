@@ -5,3 +5,4 @@ export * from './data/dataAPI';
 export * from './data/boardAPI';
 export * from './data/columnAPI';
 export * from './data/dataAPI';
+export * from './data/cardAPI';

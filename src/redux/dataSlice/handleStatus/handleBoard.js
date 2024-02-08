@@ -1,14 +1,19 @@
 import { successNotify } from 'const';
 
 export const handleFulfilledGetAllBoards = (state, action) => {
-  state.boards = action.payload;
+  state.boards = action.payload.map(item => ({ ...item, isActive: false }));
 
   state.isLoading = false;
   state.error = null;
 };
 
 export const handleFulfilledGetBoardById = (state, action) => {
-  const { columns } = action.payload;
+  const { columns, _id } = action.payload;
+
+  state.boards = [...state.boards].map(item =>
+    item._id === _id ? { ...item, isActive: true } : item
+  );
+
   state.columns = columns;
 
   state.isLoading = false;
