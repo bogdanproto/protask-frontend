@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 
-export const Input = styled.input.attrs({ type: 'radio' })``;
+export const Input = styled.input.attrs({ type: 'radio' })`
+  position: absolute;
 
-export const LabelText = styled.span`
+  width: 16px;
+  height: 16px;
+
+  opacity: 0;
+  z-index: 1;
+
+  cursor: pointer;
+`;
+
+export const CustomRadio = styled.span`
   position: relative;
   box-sizing: border-box;
 
@@ -11,8 +21,6 @@ export const LabelText = styled.span`
   height: 14px;
   border-radius: 50%;
   vertical-align: text-top;
-  margin-right: 5px;
-  cursor: pointer;
   &:focus {
     opacity: 1;
   }
@@ -123,4 +131,23 @@ export const LabelText = styled.span`
         `;
     }
   }}
+`;
+
+export const RadioButtnonBox = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 8px;
+`;
+export const RadioContainer = styled.span`
+  position: relative;
+  display: block;
+`;
+
+export const Label = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #ffffff50;
+  margin-bottom: 4px;
 `;

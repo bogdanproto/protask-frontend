@@ -6,9 +6,13 @@ import { InputBoxErr } from 'components/common';
 import { ButtonAuth } from 'components/Auth/common/ButtonAuth/ButtonAuth';
 import { useDispatch } from 'react-redux';
 import { InputCardForm } from './InputCardForm/InputCardForm';
-import { InputRadio } from './InputRadio/InputRadio';
-import { Input, LabelText } from './InputRadio/InputRadio.styled';
-import { dark } from '@mui/material/styles/createPalette';
+import {
+  CustomRadio,
+  Input,
+  Label,
+  RadioButtnonBox,
+  RadioContainer,
+} from './InputRadio/InputRadio.styled';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -63,47 +67,53 @@ export const CardForm = () => {
             <div>{formik.errors.description}</div>
           ) : null}
         </InputBoxErr>
+        <div>
+          <Label id="checkbox-group">Label color</Label>
+          <RadioButtnonBox role="group" aria-labelledby="checkbox-group">
+            <RadioContainer>
+              <Input
+                type="radio"
+                name="priority"
+                value="low"
+                checked={formik.values.priority === 'low'}
+                onChange={formik.handleChange}
+              />
+              <CustomRadio $mode="low"></CustomRadio>
+            </RadioContainer>
+            <RadioContainer>
+              <Input
+                type="radio"
+                name="priority"
+                value="medium"
+                checked={formik.values.priority === 'medium'}
+                onChange={formik.handleChange}
+              />
+              <CustomRadio $mode="medium"></CustomRadio>
+            </RadioContainer>
+            <RadioContainer>
+              <Input
+                type="radio"
+                name="priority"
+                value="high"
+                checked={formik.values.priority === 'high'}
+                onChange={formik.handleChange}
+              />
+              <CustomRadio $mode="high"></CustomRadio>
+            </RadioContainer>
+            <RadioContainer>
+              <Input
+                type="radio"
+                name="priority"
+                value="default"
+                checked={formik.values.priority === 'default'}
+                onChange={formik.handleChange}
+              />
+              <CustomRadio $mode="default"></CustomRadio>
+            </RadioContainer>
+          </RadioButtnonBox>
+        </div>
 
-        <div>
-          <Input
-            type="radio"
-            name="priority"
-            value="low"
-            checked={formik.values.priority === 'low'}
-            onChange={formik.handleChange}
-          />
-          <LabelText $mode="low"></LabelText>
-        </div>
-        <div>
-          <Input
-            type="radio"
-            name="priority"
-            value="medium"
-            checked={formik.values.priority === 'medium'}
-            onChange={formik.handleChange}
-          />
-          <LabelText $mode="medium"></LabelText>
-        </div>
-        <div>
-          <Input
-            type="radio"
-            name="priority"
-            value="high"
-            checked={formik.values.priority === 'high'}
-            onChange={formik.handleChange}
-          />
-          <LabelText $mode="high"></LabelText>
-        </div>
-        <div>
-          <Input
-            type="radio"
-            name="priority"
-            value="default"
-            checked={formik.values.priority === 'default'}
-            onChange={formik.handleChange}
-          />
-          <LabelText $mode="default"></LabelText>
-        </div>
+        {/* <DatePickerBlock /> */}
 
         <ButtonAuth type="submit">Log In Now</ButtonAuth>
       </FormAuthStyled>
