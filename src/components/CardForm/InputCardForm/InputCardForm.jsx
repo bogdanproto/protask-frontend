@@ -1,9 +1,9 @@
-import React from 'react';
+import { InputCardStyled } from './InputCardForm.styled';
 
 export const InputCardForm = props => {
   return (
     <>
-      <InputCardForm {...props} />
+      <InputCardStyled {...props} />
     </>
   );
 };
