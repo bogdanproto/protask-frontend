@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ProfileAvatar } from 'components/EditProfile/index.js';
 import { ProfileIconWrap } from './ProfileIcon.styled';
 import { useDispatch } from 'react-redux';
@@ -16,7 +16,11 @@ export const ProfileIcon = () => {
   };
   const handleFileChange = evt => setFile(evt.target.files[0]);
 
-  dispatch(updUserAvatar(file));
+  useEffect(() => {
+    if (file) {
+      dispatch(updUserAvatar(file));
+    }
+  }, [file, dispatch]);
 
   return (
     <ProfileIconWrap>

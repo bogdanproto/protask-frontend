@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { editProfileSchema } from 'const/index.js';
-import { FormWrap, StyledForm } from './FormEditProfile.styled';
+import {  StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
 import { useSelector } from 'react-redux';
 
@@ -82,7 +82,7 @@ console.log(inputState)
           label="newPassword"
           variant="outlined"
           onChange={handleChange}
-          value={inputState.newPassword? inputState.newPassword: null}
+          value={inputState.newPassword? inputState.newPassword: ""}
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
