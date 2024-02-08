@@ -18,8 +18,6 @@ export const HeaderThemeSelect = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    //протестувати
-    console.log(selectedOption);
     dispatch(updUserTheme({ theme: selectedOption.value }));
   }, [dispatch, selectedOption]);
 

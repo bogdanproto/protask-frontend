@@ -1,33 +1,45 @@
 import { useFormik } from 'formik';
-import {  useState } from 'react';
+import { useState } from 'react';
 import { editProfileSchema } from 'const/index.js';
-import {  StyledForm } from './FormEditProfile.styled';
+import { StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updUserProfile } from 'redux/authSlice/operations';
 
-export const FormEditProfile = () => {
+export const FormEditProfile = ({...props}) => {
   const { userName, email } = useSelector(state => state.authUser.user);
-  const [inputState, setInputState] = useState({newPassword: ''});
+  const [inputState, setInputState] = useState({userName,email});
+
+  const [dddd, setDdd] = useState({});
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     actions.resetForm();
+    // dispatch(updUserProfile({userName,email})) //передаю в стейт
+    console.log(inputState);
+    console.log(dddd);
+    // props.closeModal();  //дописати якусь нотифікашку, що дані змінено
   };
 
-console.log(inputState)
-
-  // const handleChange = evt => {
-  //   const password = evt.target.value;
-  //   setInputState(password);
-  // };
+ 
 
   const handleChange = event => {
+    
     const { name, value } = event.target;
-    setInputState(prevState => ({
+    setInputState({ name, value });
+    setDdd(prevState => ({
       ...prevState,
       [name]: value,
     }));
+    console.log("event.target.name ----", event.target.name)
+    // setDdd({userName,value});
+    console.log("{ name, value } = event.target ----", {name, value})
+    console.log("dddd ---", dddd)
+    console.log("inputState ---", inputState);
   };
+
+  
 
   const formik = useFormik({
     initialValues: {
@@ -50,8 +62,9 @@ console.log(inputState)
           placeholder="Enter new nickName ..."
           label="userName"
           variant="outlined"
-          onChange={formik.handleChange}
+          onChange={handleChange}
           value={formik.values.userName}
+          
         />
         {formik.touched.userName && formik.errors.userName ? (
           <div>{formik.errors.userName}</div>
@@ -65,7 +78,7 @@ console.log(inputState)
           label="email"
           id="email"
           placeholder="Enter new email ..."
-          onChange={formik.handleChange}
+          onChange={handleChange}
           value={formik.values.email}
         />
         {formik.touched.email && formik.errors.email ? (
@@ -81,8 +94,8 @@ console.log(inputState)
           placeholder="Enter new password ..."
           label="newPassword"
           variant="outlined"
-          onChange={handleChange}
-          value={inputState.newPassword? inputState.newPassword: ""}
+          onChange={formik.handleChange}
+          value={inputState.newPassword ? inputState.newPassword : ''}
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
@@ -97,8 +110,8 @@ console.log(inputState)
           placeholder="Enter current password ..."
           label="currentPassword"
           variant="outlined"
-          disabled={inputState.newPassword? false: true }
-          onChange={handleChange}
+          disabled={inputState.newPassword ? false : true}
+          onChange={formik.handleChange}
           value={formik.values.currentPassword}
         />
         {formik.touched.currentPassword && formik.errors.currentPassword ? (
