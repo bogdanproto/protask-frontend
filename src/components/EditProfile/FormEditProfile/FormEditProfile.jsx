@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { editProfileSchema } from 'const/index.js';
 import { StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
-import { useDispatch, useSelector } from 'react-redux';
-import { updUserProfile } from 'redux/authSlice/operations';
+import {  useSelector } from 'react-redux';
+// import { updUserProfile } from 'redux/authSlice/operations';
 
 export const FormEditProfile = ({...props}) => {
   const { userName, email } = useSelector(state => state.authUser.user);
@@ -12,7 +12,7 @@ export const FormEditProfile = ({...props}) => {
 
   const [dddd, setDdd] = useState({});
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
     actions.resetForm();
