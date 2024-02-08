@@ -1,21 +1,21 @@
-import { Formik, Field,ErrorMessage } from 'formik';
+import { Formik, Field, ErrorMessage, Form } from 'formik';
 import { useEffect, useState } from 'react';
-import { EditProfileTitle, FormWrap, StyledForm } from '../EditProfile/EditProfile.styled';
-import { ProfileIcon } from 'components/EditProfile/index.js';
-import { registerSchema } from 'const/index.js';
 
-export const EditProfile = () => {
+import { registerSchema } from 'const/index.js';
+import { FormWrap } from './FormEditProfile.styled';
+
+export const FormEditProfile = () => {
   const [values, setValues] = useState('');
   // const dispatch = useDispatch();
 
-  useEffect(() => {
-    // console.log(values);
-    setValues(prevState => [...prevState, values]);
-  }, []);
+  // useEffect(() => {
+  //   // console.log(values);
+  //   setValues(prevState => [...prevState, values]);
+  // }, []);
 
   const handleSubmit = (values, actions) => {
-   console.log(values)
-    actions.resetForm();
+    console.log(values);
+    // actions.resetForm();
   };
 
   return (
@@ -24,15 +24,14 @@ export const EditProfile = () => {
       initialValues={{
         userName: '',
         email: '',
-        password: '',
+        newPassword: '',
+        currentPassword: '',
       }}
       onSubmit={handleSubmit}
     >
       <div className="container">
         <FormWrap>
-          <EditProfileTitle>Edit profile</EditProfileTitle>
-          <ProfileIcon />
-          <StyledForm autoComplete="off">
+          <Form autoComplete="off">
             <Field
               type="text"
               id="userName"
@@ -59,7 +58,7 @@ export const EditProfile = () => {
             {/* {formik.touched.number && formik.errors.number ? (
             <div className="FormikErr">{formik.errors.number}</div>
           ) : null} */}
-            <ErrorMessage name="email" />            
+            <ErrorMessage name="email" />
             <Field
               type="password"
               id="newPassword"
@@ -90,9 +89,12 @@ export const EditProfile = () => {
             >
               Send
             </button>
-          </StyledForm>
+          </Form>
         </FormWrap>
       </div>
     </Formik>
   );
 };
+
+
+

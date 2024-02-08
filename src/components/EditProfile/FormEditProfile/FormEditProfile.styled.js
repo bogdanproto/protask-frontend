@@ -5,8 +5,14 @@ export const FormWrap = styled.div`
   flex-direction: column;
 `;
 
-// export const StyledForm = styled(Form)`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 14px;
-// `;
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  input[disabled] {   
+    opacity: 0.5;   
+    background-color: #ccc; 
+    border:none;
+    }
+`;
+

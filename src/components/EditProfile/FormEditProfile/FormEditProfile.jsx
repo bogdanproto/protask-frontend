@@ -1,38 +1,47 @@
 import { useFormik } from 'formik';
 import { useEffect, useState } from 'react';
-import { registerSchema } from 'const/index.js';
-import { FormWrap } from './FormEditProfile.styled';
+import { editProfileSchema } from 'const/index.js';
+import { FormWrap, StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
+import { useSelector } from 'react-redux';
 
 export const FormEditProfile = () => {
-  const [values, setValues] = useState('');
-  // const dispatch = useDispatch();
-
-  useEffect(() => {
-    // console.log(values);
-    setValues(prevState => [...prevState, values]);
-  }, [values]);
+  const { userName, email } = useSelector(state => state.authUser.user);
+  const [inputState, setInputState] = useState({newPassword: ''});
 
   const handleSubmit = (values, actions) => {
     console.log(values);
     actions.resetForm();
   };
 
+console.log(inputState)
+
+  // const handleChange = evt => {
+  //   const password = evt.target.value;
+  //   setInputState(password);
+  // };
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setInputState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const formik = useFormik({
     initialValues: {
-      userName: '',
-      email: '',
+      userName: userName,
+      email: email,
       newPassword: '',
       currentPassword: '',
     },
     onSubmit: handleSubmit,
-    validationSchema: registerSchema,
+    validationSchema: editProfileSchema,
   });
 
   return (
-    //винести окремо
-
-    <FormWrap autoComplete="off" onSubmit={formik.handleSubmit}>
+    <StyledForm autoComplete="off" onSubmit={formik.handleSubmit}>
       <InputBoxErr>
         <input
           type="text"
@@ -42,10 +51,10 @@ export const FormEditProfile = () => {
           label="userName"
           variant="outlined"
           onChange={formik.handleChange}
-          value={formik.values.name}
+          value={formik.values.userName}
         />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+        {formik.touched.userName && formik.errors.userName ? (
+          <div>{formik.errors.userName}</div>
         ) : null}
       </InputBoxErr>
 
@@ -57,10 +66,10 @@ export const FormEditProfile = () => {
           id="email"
           placeholder="Enter new email ..."
           onChange={formik.handleChange}
-          value={formik.values.name}
+          value={formik.values.email}
         />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+        {formik.touched.email && formik.errors.email ? (
+          <div>{formik.errors.email}</div>
         ) : null}
       </InputBoxErr>
 
@@ -72,11 +81,11 @@ export const FormEditProfile = () => {
           placeholder="Enter new password ..."
           label="newPassword"
           variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.name}
+          onChange={handleChange}
+          value={inputState.newPassword? inputState.newPassword: null}
         />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+        {formik.touched.newPassword && formik.errors.newPassword ? (
+          <div>{formik.errors.newPassword}</div>
         ) : null}
       </InputBoxErr>
 
@@ -84,21 +93,22 @@ export const FormEditProfile = () => {
         <input
           type="password"
           id="currentPassword"
-          name="password"
+          name="currentPassword"
           placeholder="Enter current password ..."
-          label="password"
+          label="currentPassword"
           variant="outlined"
-          onChange={formik.handleChange}
-          value={formik.values.name}
+          disabled={inputState.newPassword? false: true }
+          onChange={handleChange}
+          value={formik.values.currentPassword}
         />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+        {formik.touched.currentPassword && formik.errors.currentPassword ? (
+          <div>{formik.errors.currentPassword}</div>
         ) : null}
       </InputBoxErr>
 
       <button className="btn btn-primary" variant="contained" type="submit">
         Send
       </button>
-    </FormWrap>
+    </StyledForm>
   );
 };
