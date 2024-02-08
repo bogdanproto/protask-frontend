@@ -1,17 +1,13 @@
 import styled from 'styled-components';
-import { Form } from 'formik';
-
-export const FormWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
 export const EditProfileTitle = styled.h3`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  letter-spacing: -0.02em;
+
   margin-bottom: 24px;
 `;
 
-export const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-`;
+

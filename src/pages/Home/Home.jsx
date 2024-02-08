@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
+import { Header } from 'components/Header';
+import { EditProfile } from 'components/EditProfile';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -11,8 +13,9 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div >
+    <Header/>
       <Sidebar></Sidebar>
-    </>
+    </div>
   );
 };
