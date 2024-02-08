@@ -4,6 +4,7 @@ import { Sidebar } from 'components/Sidebar';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
+import { Header } from 'components/Header';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ export const Home = () => {
 
   return (
     <>
+    <Header/>
       <Sidebar></Sidebar>
       <Outlet />
     </>

@@ -12,7 +12,11 @@ export const StyledForm = styled.form`
   input[disabled] {   
     opacity: 0.5;   
     background-color: #ccc; 
-    border:none;
+    border:none; 
+  }
+
+    input{
+      color: black;
     }
-`;
+`
 

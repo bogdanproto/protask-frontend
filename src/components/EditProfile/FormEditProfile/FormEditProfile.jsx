@@ -10,15 +10,15 @@ export const FormEditProfile = ({...props}) => {
   const { userName, email } = useSelector(state => state.authUser.user);
   const [inputState, setInputState] = useState({userName,email});
 
-  const [dddd, setDdd] = useState({});
+  // const [dddd, setDdd] = useState({});
 
   // const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
     actions.resetForm();
     // dispatch(updUserProfile({userName,email})) //передаю в стейт
-    console.log(inputState);
-    console.log(dddd);
+    // console.log(inputState);
+    // console.log(dddd);
     // props.closeModal();  //дописати якусь нотифікашку, що дані змінено
   };
 
@@ -28,15 +28,15 @@ export const FormEditProfile = ({...props}) => {
     
     const { name, value } = event.target;
     setInputState({ name, value });
-    setDdd(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-    console.log("event.target.name ----", event.target.name)
+    // setDdd(prevState => ({
+    //   ...prevState,
+    //   [name]: value,
+    // }));
+    // console.log("event.target.name ----", event.target.name)
     // setDdd({userName,value});
-    console.log("{ name, value } = event.target ----", {name, value})
-    console.log("dddd ---", dddd)
-    console.log("inputState ---", inputState);
+    // console.log("{ name, value } = event.target ----", {name, value})
+    // console.log("dddd ---", dddd)
+    // console.log("inputState ---", inputState);
   };
 
   
@@ -62,7 +62,7 @@ export const FormEditProfile = ({...props}) => {
           placeholder="Enter new nickName ..."
           label="userName"
           variant="outlined"
-          onChange={handleChange}
+          onChange={formik.handleChange}
           value={formik.values.userName}
           
         />
@@ -78,7 +78,7 @@ export const FormEditProfile = ({...props}) => {
           label="email"
           id="email"
           placeholder="Enter new email ..."
-          onChange={handleChange}
+          onChange={formik.handleChange}
           value={formik.values.email}
         />
         {formik.touched.email && formik.errors.email ? (
@@ -95,6 +95,7 @@ export const FormEditProfile = ({...props}) => {
           label="newPassword"
           variant="outlined"
           onChange={formik.handleChange}
+          // value={formik.values.newPassword}
           value={inputState.newPassword ? inputState.newPassword : ''}
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (

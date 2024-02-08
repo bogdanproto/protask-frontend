@@ -9,7 +9,7 @@ export const Backdrop = styled.div`
   position: fixed;
   overflow: auto;
   height: 100vh;
-  transform: translateX(${p => p.isVisible ? "0" : "-100%"});
+  transform: translateX(${p => p.isvisible === "true"? "0" : "-100%"});
   transition: transform ${p => p.theme.cubicTransition};
 
   @media (min-width: 1440px) {

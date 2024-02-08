@@ -42,7 +42,7 @@ export const Sidebar = () => {
   };
 
   return (
-    <Backdrop isVisible={visible} onClick={handleBackdropClick}>
+    <Backdrop isvisible={visible.toString()} onClick={handleBackdropClick}>
       <SidebarStyled>
         <LogoLink to={routes.HOME}>
           <div>
