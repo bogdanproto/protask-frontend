@@ -1,9 +1,13 @@
 const defaultTheme = {
   cubicTransition: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
-  labelGray: '#ffffff4d',
+  labelGray: '#6b6b6b',
   labelBlue: '#8FA1D0',
   labelRosa: '#E09CB5',
   labelGreen: '#BEDBB0',
+
+  spacing: value => `${value * 2}px`,
+
+  radius: '8px',
 };
 
 export const dark = {
@@ -17,7 +21,10 @@ export const dark = {
     btnPlus: '#BEDBB0',
     btnPlusHover: '#9DC888',
     btnPrimary: '#BEDBB0',
+    btnPrimaryColor: '#212121',
     btnPrimaryHover: '#9DC888',
+    backgroundModal: '#151515',
+    titleModalFontColor: '#fff',
     btnSmall: '#BEDBB0',
     inputColor: '#fff',
     inputBorder: '#BEDBB0',
@@ -28,6 +35,11 @@ export const dark = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
+
+    // =============
+    titleColor: '#FFFFFF',
+    backgroundColor: '#1F1F1F',
+    // =============
     sidebarBackground: '#121212',
     sidebarTabActive: 'rgb(31 31 31 / 40%)',
     sidebarBorder: 'rgba(255, 255, 255, 0.1)',
@@ -35,23 +47,39 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    filterFont: 'rgba(255, 255, 255, 0.5)',
+    filterFont2: '#fff',
+    filterModalBackground: '#151515',
+    modalFontLight: 'rgba(255, 255, 255, 0.5)',
+    filterBorder: 'rgba(255, 255, 255, 0.1)',
+
+    // =============
+
+    firstBackgroundColor: '1F1F1F',
+    secondBackgroundColor: '#121212',
+    thirdBackgroundColor: '#161616',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };
 
 export const light = {
   ...defaultTheme,
   logoPath: '#logo-black',
+
   colors: {
     background: '#fdfdfd',
     fontColor: '#161616',
     btnBackground: '#161616',
     btnColor: '#fff',
     btnPlus: '#BEDBB0',
+    backgroundModal: 'transparent',
+    titleModalFontColor: '#161616',
     btnPlusHover: '#9DC888',
     btnPrimary: '#BEDBB0',
     btnPrimaryHover: '#9DC888',
     btnSmall: '#BEDBB0',
+    btnPrimaryColor: '#212121',
     inputColor: '#161616',
     inputBorder: '#BEDBB0',
     white: '#fff',
@@ -61,6 +89,15 @@ export const light = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
+
     sidebarBackground: '#fff',
     sidebarTabActive: 'rgb(246 246 247 / 40%)',
     sidebarBorder: 'rgba(22, 22, 22, 0.1)',
@@ -68,8 +105,12 @@ export const light = {
     sidebarSupport: '#f6f6f7',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    filterFont: 'rgba(22, 22, 22, 0.8)',
+    filterFont2: '#161616',
+    filterModalBackground: '#fcfcfc',
+    modalFontLight: 'rgba(22, 22, 22, 0.5)',
+    filterBorder: 'rgba(22, 22, 22, 0.1)',
   },
-  spacing: value => `${value * 4}px`,
 };
 
 export const violet = {
@@ -81,8 +122,11 @@ export const violet = {
     btnBackground: '#fff',
     btnColor: '#161616',
     btnPlus: '#b8bcfd',
+    backgroundModal: 'transparent',
+    titleModalFontColor: '#161616',
     btnPlusHover: '#979CEA',
     btnPrimary: '#5255bc',
+    btnPrimaryColor: '#fff',
     btnPrimaryHover: '#7B7EDE',
     btnSmall: '#ECEDFD',
     inputColor: '#161616',
@@ -101,6 +145,18 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+    filterFont: 'rgba(22, 22, 22, 0.8)',
+    filterFont2: '#161616',
+    filterModalBackground: '#fcfcfc',
+    modalFontLight: 'rgba(22, 22, 22, 0.5)',
+    filterBorder: 'rgba(22, 22, 22, 0.1)',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };

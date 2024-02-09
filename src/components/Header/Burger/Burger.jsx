@@ -1,13 +1,13 @@
 import sprite from 'data/svg/sprite.svg';
 import { Menu } from './Burger.styled';
 import { useDispatch } from 'react-redux';
-import { isToggleSidebar } from 'redux/burgerSlice';
+import { toggleSidebar } from 'redux/uiSlice';
 
 export const Burger = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(isToggleSidebar());
+    dispatch(toggleSidebar());
   };
 
   return (
@@ -25,5 +25,3 @@ const dispatch = useDispatch();
     </Menu>
   );
 };
-
-
