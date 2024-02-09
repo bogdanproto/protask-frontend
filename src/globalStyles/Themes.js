@@ -35,6 +35,7 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    modalBackground: '#212121',
   },
   spacing: value => `${value * 4}px`,
 };
@@ -68,6 +69,7 @@ export const light = {
     sidebarSupport: '#f6f6f7',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    modalBackground: '#fff',
   },
   spacing: value => `${value * 4}px`,
 };
@@ -101,6 +103,7 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+    modalBackground: '#fff',
   },
   spacing: value => `${value * 4}px`,
 };
