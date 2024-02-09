@@ -5,6 +5,7 @@ import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
+import { HomePage, FakeBox } from './Home.styled';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -15,11 +16,12 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Header />
+    <HomePage>
       <Sidebar />
-
-      <Outlet />
-    </>
+      <FakeBox>
+        <Header />
+        <Outlet />
+      </FakeBox>
+    </HomePage>
   );
 };

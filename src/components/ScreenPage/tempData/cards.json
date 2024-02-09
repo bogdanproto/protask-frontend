@@ -1,0 +1,122 @@
+[
+    {
+        "_id": "65c2c2260d2d6ea6533be0ab",
+        "title": "The Watch Spot Design",
+        "description": "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+        "priority": "without",
+        "deadline": "21/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c22b0d2d6ea6533be0af",
+        "title": "Research and Analysis",
+        "description": "Conduct in-depth research and analysis on the project's topic, gather relevant data, and identify key insights to inform decision-making and project planning.",
+        "priority": "low",
+        "deadline": "--/--/----",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c22e0d2d6ea6533be0b3",
+        "title": "Concept Development",
+        "description": "Brainstorm and develop creative concepts and ideas that align with the project's objectives, considering factors such as target audience, messaging, and visual representation.",
+        "priority": "high",
+        "deadline": "12/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c2600d2d6ea6533be0b7",
+        "title": "Design and Prototyping SoYummy",
+        "description": "Create visually appealing and functional design prototypes based on the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.",
+        "priority": "low",
+        "deadline": "12/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c2690d2d6ea6533be0bb",
+        "title": "Content Creation",
+        "description": "Generate engaging and persuasive content for various project deliverables, such as presentations, reports, website copy, social media posts, and other communication channels.",
+        "priority": "medium",
+        "deadline": "15/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c2930d2d6ea6533be0c0",
+        "title": "Quiz Creation",
+        "description": "Create engaging and interactive quizzes using Kahoot's intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.",
+        "priority": "without",
+        "deadline": "12/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c29a0d2d6ea6533be0c4",
+        "title": "Reporting and Analytics",
+        "description": "Utilize TaskPro's reporting and analytics capabilities to gain insights into project progress, task distribution, and team performance. Generate reports to track project milestones and identify areas for improvement.",
+        "priority": "medium",
+        "deadline": "--/--/----",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    },
+    {
+        "_id": "65c2c29e0d2d6ea6533be0c8",
+        "title": "Publication of the project",
+        "description": "Review the project materials: Familiarize yourself with the project's content, including text, images, and any supplementary materials.",
+        "priority": "without",
+        "deadline": "22/02/2024",
+        "column": {
+            "_id": "65c2c0ec0d2d6ea6533be07f",
+            "title": "test-column-1"
+        },
+        "owner": {
+            "_id": "65bee0f32e6d3bc0046b65b3",
+            "userName": "IGOR"
+        }
+    }
+]
