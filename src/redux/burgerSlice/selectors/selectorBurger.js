@@ -1,0 +1,1 @@
+export const selectIsOpenSidebar = state => state.burger.isOpenSidebar;

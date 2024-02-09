@@ -20,8 +20,9 @@ export const Board = () => {
         <FakeHeader />
         <ScreenPage />
       </FakeBox>
-    </FakeContainer>)}
-
+    </FakeContainer>
+  );
+};
 
 // export const Board = () => {
 //   const { boardName } = useParams();

@@ -5,7 +5,7 @@ import { asyncThunkDecoratorUser } from 'helpers';
 export const updUserTheme = createAsyncThunk(
   'authUser/updateUserTheme',
   asyncThunkDecoratorUser(async obj => {
-    const { user } = await updateUserThemeAPI(obj);
-    return user;
+    const { data } = await updateUserThemeAPI(obj);
+    return data;
   })
 );

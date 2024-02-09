@@ -18,8 +18,3 @@ export const addBoard = createAsyncThunk(
     return data;
   })
 );
-
-// _id(pin):"65c4c012233c119056a4b597"
-// title(pin):"my new Board"
-// icon(pin):"star"
-// backgroundImg(pin):"65bd63bfbe42db36576cef07"

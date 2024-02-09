@@ -1,8 +1,10 @@
 import { taskAPI } from 'api/axiosConfig/axiosConfig';
 import { pathData } from 'const';
 
-export const getAllColumnsAPI = async obj => {
-  const { data } = await taskAPI.get(pathData.COLUMN_BASE, obj);
+export const getAllColumnsAPI = async boardId => {
+  const params = { boardId };
+
+  const { data } = await taskAPI.get(pathData.COLUMN_BASE, { params });
   return data;
 };
 
@@ -16,9 +18,7 @@ export const addColumnAPI = async obj => {
   return data;
 };
 
-export const updateColumnAPI = async obj => {
-  const _id = obj._id;
-  delete obj._id;
+export const updateColumnAPI = async ({ _id, ...obj }) => {
   const { data } = await taskAPI.put(`${pathData.COLUMN_BASE}/${_id}`, obj);
 
   return data;
