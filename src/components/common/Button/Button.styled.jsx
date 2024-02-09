@@ -20,7 +20,7 @@ export const ButtonStyled = styled.button`
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.btnPrimaryColor};
 
   &:hover {
     background: ${props => props.theme.colors.btnPrimaryHover};
