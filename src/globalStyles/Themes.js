@@ -1,9 +1,13 @@
 const defaultTheme = {
   cubicTransition: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
-  labelGray: '#ffffff4d',
+  labelGray: 'rgba(22, 22, 22, 0.3)',
   labelBlue: '#8FA1D0',
   labelRosa: '#E09CB5',
   labelGreen: '#BEDBB0',
+
+  spacing: value => `${value * 2}px`,
+
+  radius: '8px',
 };
 
 export const dark = {
@@ -28,6 +32,11 @@ export const dark = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
+
+    // =============
+    titleColor: '#FFFFFF',
+    backgroundColor: '#1F1F1F',
+    // =============
     sidebarBackground: '#121212',
     sidebarTabActive: 'rgb(31 31 31 / 40%)',
     sidebarBorder: 'rgba(255, 255, 255, 0.1)',
@@ -35,8 +44,15 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+
+    // =============
+
+    firstBackgroundColor: '1F1F1F',
+    secondBackgroundColor: '#121212',
+    thirdBackgroundColor: '#161616',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };
 
 export const light = {
@@ -61,6 +77,15 @@ export const light = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
+
     sidebarBackground: '#fff',
     sidebarTabActive: 'rgb(246 246 247 / 40%)',
     sidebarBorder: 'rgba(22, 22, 22, 0.1)',
@@ -69,7 +94,6 @@ export const light = {
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
   },
-  spacing: value => `${value * 4}px`,
 };
 
 export const violet = {
@@ -101,6 +125,13 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };
