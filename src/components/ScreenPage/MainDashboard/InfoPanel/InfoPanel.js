@@ -1,3 +1,4 @@
+import { BellIcon } from 'components/common/IconsLibrary';
 import {
   InfoContainer,
   Box,
@@ -26,7 +27,9 @@ export const InfoPanel = ({ priority, deadline }) => {
         </InfoBox>
       </Box>
       <Box>
-        <DeadlineSignal />
+        <DeadlineSignal>
+          <BellIcon size={16} />
+        </DeadlineSignal>
       </Box>
     </InfoContainer>
   );

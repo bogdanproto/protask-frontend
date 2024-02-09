@@ -16,12 +16,12 @@ const description =
 
 const priorityList = ['without', 'low', 'medium', 'high'];
 
-const priority = priorityList[0];
+const priority = priorityList[3];
 
 const deadline = '15/05/2023';
-console.log(priority);
 
 export const Card = () => {
+  console.log(priority);
   return (
     <CardContainer priority={priority}>
       <TopBox>

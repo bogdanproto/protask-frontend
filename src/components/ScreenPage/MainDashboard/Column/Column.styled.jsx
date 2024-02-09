@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 export const ColumnContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
+  align-items: start;
   gap: ${p => p.theme.spacing(7)};
   width: 350px;
-  overflow-y: no-scroll;
+  outline: 1px solid red;
+  background-color: tomato;
 `;
 
 export const ColumnTitlePlate = styled.div`
@@ -29,8 +32,16 @@ export const ButtonBox = styled.div`
   align-items: center;
 `;
 
-export const CtrlButton = styled.button`
-  display: flex;
+export const ActionButton = styled.button`
   padding: ${p => p.theme.spacing(2)};
-  color: rgba(22, 22, 22, 0.5);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: ${p => p.theme.colors.fontColor};
+
+  transition: all ${p => p.theme.cubicTransition};
+
+  &:hover {
+    color: ${p => p.theme.colors.accentColor};
+  }
 `;

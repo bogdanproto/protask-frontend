@@ -7,12 +7,11 @@ export const CardContainer = styled.div`
   position: relative;
   flex-direction: column;
   padding: ${p => p.theme.spacing(7)} ${p => p.theme.spacing(7)}
-    ${p => p.theme.spacing(7)} ${p => p.theme.spacing(12)};
+    ${p => p.theme.spacing(5)} ${p => p.theme.spacing(12)};
 
-  outline: 1px solid blueviolet;
+  /* outline: 1px solid blueviolet; */
   width: 334px;
   height: 154px;
-  margin: 300px 50%;
   border-radius: ${p => p.theme.radius};
   overflow: hidden;
 
@@ -33,7 +32,7 @@ export const CardContainer = styled.div`
 export const TopBox = styled.div`
   position: relative;
   height: 80px;
-  padding-bottom: 50px;
+  padding-right: ${p => p.theme.spacing(3)};
 
   overflow: hidden;
 
@@ -44,7 +43,7 @@ export const TopBox = styled.div`
     left: 0;
     bottom: 0;
 
-    width: 100%;
+    width: calc(100% - 6px);
     height: 1px;
 
     background-color: ${p => p.theme.colors.sidebarBorder};
@@ -77,10 +76,9 @@ export const CardDescription = styled.p`
 `;
 
 export const BottomBox = styled.div`
-  background-color: lightblue;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: ${p => p.theme.spacing(4)};
   align-items: center;
   height: 45px;
   padding-top: ${p => p.theme.spacing(7)};

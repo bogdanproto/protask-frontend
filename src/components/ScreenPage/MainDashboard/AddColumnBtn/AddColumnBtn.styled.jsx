@@ -14,6 +14,7 @@ export const AddColumnBtnContainer = styled.button`
   color: ${p => p.theme.colors.fontColor};
   font-size: 14px;
   transition: all ${p => p.theme.cubicTransition};
+  outline: 2px solid red;
 
   &:hover {
     color: ${p => p.theme.colors.accentColor};

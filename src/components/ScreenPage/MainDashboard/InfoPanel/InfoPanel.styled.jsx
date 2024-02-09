@@ -8,6 +8,7 @@ export const InfoContainer = styled.div`
   align-items: end;
   width: 220px;
   height: 31px;
+  padding-bottom: ${p => p.theme.spacing(2)};
 `;
 
 export const Box = styled.div`
@@ -59,6 +60,5 @@ export const PriorityIcon = styled.div`
 export const DeadlineSignal = styled.div`
   width: 16px;
   height: 16px;
-  background-color: ${p => p.theme.colors.accentColor};
   color: ${p => p.theme.colors.accentColor};
 `;

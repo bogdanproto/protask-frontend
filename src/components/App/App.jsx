@@ -8,7 +8,6 @@ import { ThemeProvider } from 'styled-components';
 import * as theme from 'globalStyles/index.js';
 import { GlobalStyle } from 'globalStyles/GlobalStyle';
 import { Board } from 'pages/Board/Board';
-import { Card } from 'components/ScreenPage/MainDashboard/Card/Card';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -24,8 +23,7 @@ export const App = () => {
       <NotifyModule />
       <GlobalStyle />
       {/* {!isUpdating && <RoutesComp />} */}
-      {/* <Board/> */}
-      <Card />
+      <Board />
     </ThemeProvider>
   );
 };

@@ -5,7 +5,7 @@ export const MainDashboardContainer = styled.div`
   flex-direction: row;
   height: calc(100vh - 116px);
   overflow-x: scroll;
-  overflow-y: no-scroll;
+  overflow-y: hidden;
   gap: ${p => p.theme.spacing(9)};
   padding-left: ${p => p.theme.spacing(12)};
   /* background-color: tomato; */

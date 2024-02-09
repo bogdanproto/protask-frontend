@@ -1,10 +1,10 @@
-import { BsPlusSquareFill } from 'react-icons/bs';
+import { PlusIcon } from '../../../common/IconsLibrary/index';
 import { AddColumnBtnContainer } from './AddColumnBtn.styled';
 
-export const AddColumnBtn = ({ text }) => {
+export const AddColumnBtn = () => {
   return (
     <AddColumnBtnContainer type="button">
-      <BsPlusSquareFill size={28} />
+      <PlusIcon size={28} fill={'white'} />
       <p>Add another column</p>
     </AddColumnBtnContainer>
   );

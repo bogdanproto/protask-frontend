@@ -7,6 +7,7 @@ export const FakeContainer = styled.div`
 
 export const FakeBox = styled.div`
   width: calc(100vw - 260px);
+
   /* width: 100vw; */
 `;
 

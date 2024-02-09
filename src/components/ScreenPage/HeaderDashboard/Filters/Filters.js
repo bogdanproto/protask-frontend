@@ -1,10 +1,10 @@
-import { FiFilter } from 'react-icons/fi';
+import { FilterIcon } from 'components/common/IconsLibrary/index';
 import { FiltersButton } from './Filters.styled';
 
 export const Filters = () => {
   return (
     <FiltersButton>
-      <FiFilter size={16} />
+      <FilterIcon size={16} />
       <p>Filters</p>
     </FiltersButton>
   );
