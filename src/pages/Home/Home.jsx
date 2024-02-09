@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
+import { Filters } from 'components/Filters';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
@@ -22,6 +23,7 @@ export const Home = () => {
         <Header />
         <Outlet />
       </FakeBox>
+      <Filters></Filters>
     </HomePage>
   );
 };
