@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 
 import { ScreenPage } from 'components/ScreenPage/index';
 
