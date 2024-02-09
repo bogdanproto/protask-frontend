@@ -1,6 +1,6 @@
 const defaultTheme = {
   cubicTransition: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
-  labelGray: '#ffffff4d',
+  labelGray: 'rgba(22, 22, 22, 0.3)',
   labelBlue: '#8FA1D0',
   labelRosa: '#E09CB5',
   labelGreen: '#BEDBB0',
