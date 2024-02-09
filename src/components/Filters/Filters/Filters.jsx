@@ -3,10 +3,8 @@ import { Icon } from 'components/common/Icon/Icon';
 import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
-//import Modal from 'react-modal';
     
 export const Filters = () => {
-    //let subtitle;
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
@@ -25,7 +23,7 @@ export const Filters = () => {
   
     return (
         <>
-            <FiltersStyled type="button" onClick={openModal} className='modalParent'>
+            <FiltersStyled type="button" onClick={openModal} id='filterButton'>
                 <Icon width={16} height={16} id={'icon-filter'}></Icon>
                 Filters
             </FiltersStyled>
@@ -37,8 +35,9 @@ export const Filters = () => {
                 style={customStyles}
                 contentLabel="Filters Modal"
                 ariaHideApp={false}
+                parentSelector={() => document.querySelector('#filterButton')}
                 >
-                <BtnClose onClick={closeModal}><IoMdClose /></BtnClose>
+                <BtnClose onClick={closeModal}><IoMdClose size={18}/></BtnClose>
                 <h2>Filters</h2>
                 <SublineRow>
                     <h3>Label color</h3>

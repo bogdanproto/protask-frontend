@@ -9,19 +9,25 @@ export const FiltersStyled = styled.button`
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: rgba(22, 22, 22, 0.8);
+    color: ${p => p.theme.colors.filterFont};
     display: flex;
     gap: 8px;
 
     svg {
         fill: transparent;
-        stroke: rgba(22, 22, 22, 0.8);
+        stroke: ${p => p.theme.colors.filterFont};
+    }
+
+    .ReactModalPortal {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 `;
 
 export const ModalStyled = styled(Modal)`
     box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
-    background: #fcfcfc;
+    background: ${p => p.theme.colors.filterModalBackground};
     border-radius: 8px;
     padding: 24px;
     width: 300px;
@@ -31,16 +37,16 @@ export const ModalStyled = styled(Modal)`
         font-weight: 500;
         font-size: 18px;
         letter-spacing: -0.02em;
-        color: #161616;
+        color: ${p => p.theme.colors.filterFont2};
         padding-bottom: 14px;
-        border-bottom: 1px solid rgba(22, 22, 22, 0.1);
+        border-bottom: 1px solid ${p => p.theme.colors.filterBorder};
     }
 
     h3 {
         font-weight: 500;
         font-size: 14px;
         letter-spacing: -0.02em;
-        color: #161616;
+        color: ${p => p.theme.colors.filterFont2};
         padding-block: 14px;
     }
 
@@ -49,7 +55,7 @@ export const ModalStyled = styled(Modal)`
         font-size: 12px;
         letter-spacing: -0.02em;
         text-decoration: underline;
-        color: rgba(22, 22, 22, 0.5);
+        color: ${p => p.theme.colors.modalFontLight};
     }
 `;
 
@@ -58,6 +64,10 @@ export const BtnClose = styled.button`
     position: absolute;
     top: 18px;
     right: 18px;
+
+    svg {
+        fill: ${p => p.theme.colors.filterFont2};
+    }
 `;
 
 export const SublineRow = styled.div`
@@ -68,11 +78,17 @@ export const SublineRow = styled.div`
 
 export const InputRow = styled.div`
     position: relative;
-    //padding-left: 22px;
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     label {
         display: block;
-        color: rgba(22, 22, 22, 0.5);
+        color: ${p => p.theme.colors.modalFontLight};
+        font-size: 12px;
+        letter-spacing: -0.02em;
     }
 
     input {
@@ -103,7 +119,7 @@ export const InputRow = styled.div`
         }
         &:checked {
             + label {
-                color: #161616;
+                color: ${p => p.theme.colors.filterFont2};
 
                 &:before {
                     background-color: ${p => p.theme.labelGray};
@@ -153,13 +169,21 @@ export const InputRow = styled.div`
 `;
 
 export const customStyles = {
+      overlay: {
+      position: 'absoltute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'transparent'
+    },
     content: {
-        position: 'absolute',
-        top: '50%',
+        //position: 'absolute',
+        //top: '50%',
         //left: '50%',
-        right: '0',
-        bottom: 'auto',
+        //right: '0',
+        //bottom: 'auto',
         //marginRight: '-50%',
-        transform: 'translateY(-50%)',
+        //transform: 'translateY(-50%)',
     },
 };
