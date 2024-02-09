@@ -1,45 +1,22 @@
 import { useFormik } from 'formik';
-// import { useState } from 'react';
 import { editProfileSchema } from 'const/index.js';
 import { StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
-import {  useSelector } from 'react-redux';
-// import { updUserProfile } from 'redux/authSlice/operations';
+import { updUserProfile } from 'redux/authSlice/operations';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const FormEditProfile = ({...props}) => {
-  const { userName, email } = useSelector(state => state.authUser.user);
-  // const [inputState, setInputState] = useState({userName,email});
 
-  // const [dddd, setDdd] = useState({});
 
-  // const dispatch = useDispatch();
-
-  const handleSubmit = (values, actions) => {
-    actions.resetForm();
-    // dispatch(updUserProfile({userName,email})) //передаю в стейт
-    // console.log(inputState);
-    // console.log(dddd);
-    // props.closeModal();  //дописати якусь нотифікашку, що дані змінено
-  };
-
- 
-
-  // const handleChange = event => {
-    
-  //   const { name, value } = event.target;
-  //   setInputState({ name, value });
-    // setDdd(prevState => ({
-    //   ...prevState,
-    //   [name]: value,
-    // }));
-    // console.log("event.target.name ----", event.target.name)
-    // setDdd({userName,value});
-    // console.log("{ name, value } = event.target ----", {name, value})
-    // console.log("dddd ---", dddd)
-    // console.log("inputState ---", inputState);
-  // };
+export const FormEditProfile = () => {
+  const {userName, email} = useSelector(state => state.authUser.user)
+  const dispatch = useDispatch();
 
   
+  const handleSubmit = (_, actions) => {
+    actions.resetForm();
+    console.log(formik.values);
+    dispatch(updUserProfile(formik.values));
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -52,9 +29,15 @@ export const FormEditProfile = ({...props}) => {
     validationSchema: editProfileSchema,
   });
 
+   const newPassword = formik.values.newPassword
+
+  // const enterValue =
+  //   Object.values(formik.values).find(elem => elem !== '') || null;
+
   return (
     <StyledForm autoComplete="off" onSubmit={formik.handleSubmit}>
       <InputBoxErr>
+      
         <input
           type="text"
           id="userName"
@@ -64,11 +47,11 @@ export const FormEditProfile = ({...props}) => {
           variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.userName}
-          
         />
         {formik.touched.userName && formik.errors.userName ? (
           <div>{formik.errors.userName}</div>
         ) : null}
+     
       </InputBoxErr>
 
       <InputBoxErr>
@@ -81,6 +64,7 @@ export const FormEditProfile = ({...props}) => {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
+        
         {formik.touched.email && formik.errors.email ? (
           <div>{formik.errors.email}</div>
         ) : null}
@@ -96,7 +80,6 @@ export const FormEditProfile = ({...props}) => {
           variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.newPassword}
-          // value={inputState.newPassword ? inputState.newPassword : ''}
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
@@ -105,13 +88,13 @@ export const FormEditProfile = ({...props}) => {
 
       <InputBoxErr>
         <input
-          type="password"
+          type="text"
           id="currentPassword"
           name="currentPassword"
           placeholder="Enter current password ..."
           label="currentPassword"
           variant="outlined"
-          // disabled={inputState.newPassword ? false : true}
+          disabled={newPassword ? false : true}
           onChange={formik.handleChange}
           value={formik.values.currentPassword}
         />
@@ -120,7 +103,12 @@ export const FormEditProfile = ({...props}) => {
         ) : null}
       </InputBoxErr>
 
-      <button className="btn btn-primary" variant="contained" type="submit">
+      <button
+        className="btn btn-primary"
+        variant="contained"
+        type="submit"
+        disabled={formik.dirty ? false : true}
+      >
         Send
       </button>
     </StyledForm>
