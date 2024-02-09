@@ -7,6 +7,8 @@ import { selectThemeUser, selectUpdating } from 'redux/authSlice/selectors';
 import { ThemeProvider } from 'styled-components';
 import * as theme from 'globalStyles/index.js';
 import { GlobalStyle } from 'globalStyles/GlobalStyle';
+import { Board } from 'pages/Board/Board';
+import { Card } from 'components/ScreenPage/MainDashboard/Card/Card';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +23,9 @@ export const App = () => {
     <ThemeProvider theme={theme[themeType]}>
       <NotifyModule />
       <GlobalStyle />
-      {!isUpdating && <RoutesComp />}
+      {/* {!isUpdating && <RoutesComp />} */}
+      {/* <Board/> */}
+      <Card />
     </ThemeProvider>
   );
 };
