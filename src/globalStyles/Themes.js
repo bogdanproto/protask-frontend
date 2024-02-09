@@ -4,9 +4,13 @@ const defaultTheme = {
   labelBlue: '#8FA1D0',
   labelRosa: '#E09CB5',
   labelGreen: '#BEDBB0',
+
+  spacing: value => `${value * 2}px`,
+
+  radius: '8px',
 };
 
-export const themeBlack = {
+export const dark = {
   ...defaultTheme,
   logoPath: '#logo-white',
   colors: {
@@ -28,6 +32,11 @@ export const themeBlack = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
+
+    // =============
+    titleColor: '#FFFFFF',
+    backgroundColor: '#1F1F1F',
+    // =============
     sidebarBackground: '#121212',
     sidebarTabActive: 'rgb(31 31 31 / 40%)',
     sidebarBorder: 'rgba(255, 255, 255, 0.1)',
@@ -40,11 +49,18 @@ export const themeBlack = {
     filterModalBackground: '#151515',
     modalFontLight: 'rgba(255, 255, 255, 0.5)',
     filterBorder: 'rgba(255, 255, 255, 0.1)',
+
+    // =============
+
+    firstBackgroundColor: '1F1F1F',
+    secondBackgroundColor: '#121212',
+    thirdBackgroundColor: '#161616',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };
 
-export const themeLight = {
+export const light = {
   ...defaultTheme,
   logoPath: '#logo-black',
   colors: {
@@ -66,6 +82,15 @@ export const themeLight = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
+
     sidebarBackground: '#fff',
     sidebarTabActive: 'rgb(246 246 247 / 40%)',
     sidebarBorder: 'rgba(22, 22, 22, 0.1)',
@@ -79,10 +104,9 @@ export const themeLight = {
     modalFontLight: 'rgba(22, 22, 22, 0.5)',
     filterBorder: 'rgba(22, 22, 22, 0.1)',
   },
-  spacing: value => `${value * 4}px`,
 };
 
-export const themeViolet = {
+export const violet = {
   ...defaultTheme,
   logoPath: '#logo-violet',
   colors: {
@@ -116,6 +140,13 @@ export const themeViolet = {
     filterModalBackground: '#fcfcfc',
     modalFontLight: 'rgba(22, 22, 22, 0.5)',
     filterBorder: 'rgba(22, 22, 22, 0.1)',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };

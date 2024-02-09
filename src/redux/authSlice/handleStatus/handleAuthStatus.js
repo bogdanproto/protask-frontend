@@ -39,6 +39,7 @@ export const handleFulfilledRefresh = (state, action) => {
   state.isLoading = false;
   state.errorAuth = null;
   state.isLoggedIn = true;
+  state.isUpdating = false;
   state.token = token;
   state.user = { ...state.user, ...user };
 };
@@ -81,5 +82,18 @@ export const handlePendingAuth = state => {
 
 export const handleRejectedAuth = (state, action) => {
   state.isLoading = false;
+  state.errorAuth = action.payload;
+};
+
+//---------------Pending and Rejected RefreshUser-------------------
+export const handlePendingRefreshAuth = state => {
+  state.isLoading = true;
+  state.errorAuth = null;
+  state.isUpdating = true;
+};
+
+export const handleRejectedRefreshAuth = (state, action) => {
+  state.isLoading = false;
+  state.isUpdating = false;
   state.errorAuth = action.payload;
 };

@@ -2,16 +2,13 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 
 export const FiltersStyled = styled.button`
-    position: absolute;
-    top: 0;
-    right: 0;
-
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.filterFont};
     display: flex;
     gap: 8px;
+    position: relative;
 
     svg {
         fill: transparent;

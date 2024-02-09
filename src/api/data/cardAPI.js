@@ -16,17 +16,13 @@ export const addCardAPI = async obj => {
   return data;
 };
 
-export const updateCardAPI = async obj => {
-  const _id = obj._id;
-  delete obj._id;
+export const updateCardAPI = async ({ _id, ...obj }) => {
   const { data } = await taskAPI.put(`${pathData.CARD_BASE}/${_id}`, obj);
 
   return data;
 };
 
-export const changeCardsColumnAPI = async obj => {
-  const _id = obj._id;
-  delete obj._id;
+export const changeCardsColumnAPI = async ({ _id, ...obj }) => {
   const { data } = await taskAPI.patch(
     `${pathData.CARD_BASE}/${_id}${pathData.CARD_CHANGE_COLUMN}`,
     obj

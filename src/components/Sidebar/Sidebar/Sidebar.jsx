@@ -10,13 +10,39 @@ import { Btn } from 'components/common/Btn/Btn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
 import { Icon } from 'components/common/Icon/Icon';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from 'redux/authSlice/operations';
+import { useEffect, useState } from 'react';
+import { toggleSidebar } from 'redux/uiSlice';
+import { selectIsOpenSidebar } from 'redux/uiSlice/selectors';
 
 export const Sidebar = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const burgerVisible = useSelector(selectIsOpenSidebar);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const screenVisible = false ? screenWidth < 1440 : screenWidth > 1440;
+  const visible = screenVisible || burgerVisible;
+
+  const handleBackdropClick = e => {
+    if (e.target === e.currentTarget) {
+      dispatch(toggleSidebar());
+    }
+  };
+
   return (
-    <Backdrop>
+    <Backdrop isvisible={visible.toString()} onClick={handleBackdropClick}>
       <SidebarStyled>
         <LogoLink to={routes.HOME}>
           <div>
