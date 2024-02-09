@@ -13,8 +13,8 @@ import { Icon } from 'components/common/Icon/Icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from 'redux/authSlice/operations';
 import { useEffect, useState } from 'react';
-import { selectIsOpenSidebar } from 'redux/burgerSlice/selectors';
-import { isToggleSidebar } from 'redux/burgerSlice';
+import { toggleSidebar } from 'redux/uiSlice';
+import { selectIsOpenSidebar } from 'redux/uiSlice/selectors';
 
 export const Sidebar = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -30,14 +30,14 @@ export const Sidebar = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); 
+  }, []);
 
   const screenVisible = false ? screenWidth < 1440 : screenWidth > 1440;
   const visible = screenVisible || burgerVisible;
 
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      dispatch(isToggleSidebar());
+      dispatch(toggleSidebar());
     }
   };
 

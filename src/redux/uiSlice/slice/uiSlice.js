@@ -8,6 +8,7 @@ import {
 
 const initialState = {
   wallpapers: [],
+  isOpenSidebar: false,
   error: null,
   isLoading: null,
 };
@@ -15,6 +16,11 @@ const initialState = {
 const uiSlice = createSlice({
   name: 'uiData',
   initialState,
+  reducers: {
+    toggleSidebar(state, action) {
+      state.isOpenSidebar = !state.isOpenSidebar;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getAllWallpapers.fulfilled, handleFulfilledGetAllWallpapers)
@@ -24,3 +30,4 @@ const uiSlice = createSlice({
 });
 
 export const uiReducer = uiSlice.reducer;
+export const { toggleSidebar } = uiSlice.actions;
