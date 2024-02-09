@@ -1,10 +1,12 @@
-import { BsPlusSquareFill } from 'react-icons/bs';
-import { AddCardBtnContainer } from './AddCardBtn.styled';
+import { PlusIcon } from '../../../common/IconsLibrary/index';
+import { AddCardBtnContainer, IconWrapper } from './AddCardBtn.styled';
 
 export const AddCardBtn = () => {
   return (
     <AddCardBtnContainer type="button">
-      <BsPlusSquareFill size={28} />
+      <IconWrapper>
+        <PlusIcon size={28} fill={'white'} />
+      </IconWrapper>
       <p>Add another card</p>
     </AddCardBtnContainer>
   );

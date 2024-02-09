@@ -44,8 +44,15 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+
+    // =============
+
+    firstBackgroundColor: '1F1F1F',
+    secondBackgroundColor: '#121212',
+    thirdBackgroundColor: '#161616',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };
 
 export const light = {
@@ -76,10 +83,9 @@ export const light = {
     firstBackgroundColor: '#F6F6F7',
     secondBackgroundColor: '#FFFFFF',
     thirdBackgroundColor: '#FCFCFC',
-    cardDescription: 'rgba(22, 22, 22, 0.7)',
-    cardInfoTitle: 'rgba(22, 22, 22, 0.5)',
 
     // =============
+
     sidebarBackground: '#fff',
     sidebarTabActive: 'rgb(246 246 247 / 40%)',
     sidebarBorder: 'rgba(22, 22, 22, 0.1)',
@@ -88,7 +94,6 @@ export const light = {
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
   },
-  // spacing: value => `${value * 4}px`,
 };
 
 export const violet = {
@@ -120,6 +125,13 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+
+    // =============
+
+    firstBackgroundColor: '#F6F6F7',
+    secondBackgroundColor: '#FFFFFF',
+    thirdBackgroundColor: '#FCFCFC',
+
+    // =============
   },
-  spacing: value => `${value * 4}px`,
 };

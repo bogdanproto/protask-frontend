@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { InfoPanel } from '../InfoPanel/InfoPanel';
 import { ActionPanel } from '../ActionPanel/ActionPanel';
 import {
@@ -8,28 +10,25 @@ import {
   BottomBox,
 } from './Card.styled';
 
-const title =
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non culpa';
+export const Card = ({ card }) => {
+  const [isExpanded, setExpanded] = useState(false);
 
-const description =
-  'Create visually appealing and functional design prototypes based on the approved concepts, ensuring seamless user experience and incorporating feedback for iterative improvements.';
+  const toggleHeight = () => {
+    setExpanded(!isExpanded);
+  };
 
-const priorityList = ['without', 'low', 'medium', 'high'];
-
-const priority = priorityList[3];
-
-const deadline = '15/05/2023';
-
-export const Card = () => {
-  console.log(priority);
   return (
-    <CardContainer priority={priority}>
-      <TopBox>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+    <CardContainer priority={card.priority}>
+      <TopBox className={isExpanded ? 'expanded' : ''} onClick={toggleHeight}>
+        <CardTitle className={isExpanded ? 'expanded' : ''}>
+          {card.title}
+        </CardTitle>
+        <CardDescription className={isExpanded ? 'expanded' : ''}>
+          {card.description}
+        </CardDescription>
       </TopBox>
       <BottomBox>
-        <InfoPanel priority={priority} deadline={deadline} />
+        <InfoPanel priority={card.priority} deadline={card.deadline} />
         <ActionPanel />
       </BottomBox>
     </CardContainer>

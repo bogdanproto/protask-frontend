@@ -8,10 +8,10 @@ export const HeaderDashboardContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: ${p => p.theme.colors.fontColor};
-  letter-spacing: -2%;
 `;
 
 export const BoardTitle = styled.h2`
   font-size: 18px;
+  color: ${p => p.theme.colors.fontColor};
+  letter-spacing: -0.02em;
 `;

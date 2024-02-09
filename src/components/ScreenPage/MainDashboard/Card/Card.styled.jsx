@@ -11,7 +11,7 @@ export const CardContainer = styled.div`
 
   /* outline: 1px solid blueviolet; */
   width: 334px;
-  height: 154px;
+  /* height: 154px; */
   border-radius: ${p => p.theme.radius};
   overflow: hidden;
 
@@ -33,6 +33,8 @@ export const TopBox = styled.div`
   position: relative;
   height: 80px;
   padding-right: ${p => p.theme.spacing(3)};
+  padding-bottom: ${p => p.theme.spacing(7)};
+  cursor: grab;
 
   overflow: hidden;
 
@@ -48,6 +50,11 @@ export const TopBox = styled.div`
 
     background-color: ${p => p.theme.colors.sidebarBorder};
   }
+
+  &.expanded {
+    height: 100%;
+    overflow: auto;
+  }
 `;
 
 export const CardTitle = styled.h4`
@@ -60,6 +67,12 @@ export const CardTitle = styled.h4`
   overflow: hidden;
   text-overflow: ellipsis;
   color: ${p => p.theme.colors.fontColor};
+
+  &.expanded {
+    white-space: wrap;
+    overflow: auto;
+    text-overflow: '';
+  }
 `;
 
 export const CardDescription = styled.p`
@@ -72,7 +85,14 @@ export const CardDescription = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${p => p.theme.colors.cardDescription};
+  color: ${p => p.theme.colors.fontColor};
+  opacity: 0.7;
+
+  &.expanded {
+    overflow: show;
+    text-overflow: '';
+    -webkit-line-clamp: 10;
+  }
 `;
 
 export const BottomBox = styled.div`

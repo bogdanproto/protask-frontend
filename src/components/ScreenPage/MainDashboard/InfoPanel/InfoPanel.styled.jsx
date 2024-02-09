@@ -31,7 +31,8 @@ export const InfoTitle = styled.h5`
   line-height: 12px;
   letter-spacing: -0.02em;
   text-transform: capitalize;
-  color: ${p => p.theme.colors.cardInfoTitle};
+  color: ${p => p.theme.colors.fontColor};
+  opacity: 0.5;
 `;
 
 export const InfoText = styled.p`

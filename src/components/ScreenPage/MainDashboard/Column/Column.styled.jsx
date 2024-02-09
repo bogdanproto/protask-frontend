@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const ColumnContainer = styled.div`
   display: flex;
-  position: relative;
+
   flex-direction: column;
   align-items: start;
   gap: ${p => p.theme.spacing(7)};
   width: 350px;
-  outline: 1px solid red;
-  background-color: tomato;
+  overflow: hidden;
 `;
 
 export const ColumnTitlePlate = styled.div`
@@ -23,7 +22,6 @@ export const ColumnTitlePlate = styled.div`
   background-color: ${p => p.theme.colors.secondBackgroundColor};
   color: ${p => p.theme.colors.fontColor};
   font-size: 14px;
-  outline: 2px solid red;
 `;
 
 export const ButtonBox = styled.div`
