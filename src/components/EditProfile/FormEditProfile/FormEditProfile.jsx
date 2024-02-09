@@ -4,6 +4,7 @@ import { StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
 import { updUserProfile } from 'redux/authSlice/operations';
 import { useDispatch, useSelector } from 'react-redux';
+import { InputPasswordFormStyle } from '../InputPasswordForm/InputPasswordForm.styled';
 
 
 
@@ -36,8 +37,7 @@ export const FormEditProfile = () => {
 
   return (
     <StyledForm autoComplete="off" onSubmit={formik.handleSubmit}>
-      <InputBoxErr>
-      
+      <InputBoxErr>      
         <input
           type="text"
           id="userName"
@@ -71,7 +71,8 @@ export const FormEditProfile = () => {
       </InputBoxErr>
 
       <InputBoxErr>
-        <input
+      
+        <InputPasswordFormStyle
           type="password"
           id="newPassword"
           name="newPassword"
@@ -80,14 +81,16 @@ export const FormEditProfile = () => {
           variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.newPassword}
+          eyeColor='#bbbaba'
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
         ) : null}
+        
       </InputBoxErr>
 
       <InputBoxErr>
-        <input
+        <InputPasswordFormStyle
           type="text"
           id="currentPassword"
           name="currentPassword"
@@ -97,6 +100,7 @@ export const FormEditProfile = () => {
           disabled={newPassword ? false : true}
           onChange={formik.handleChange}
           value={formik.values.currentPassword}
+          eyeColor = '#bbbaba'
         />
         {formik.touched.currentPassword && formik.errors.currentPassword ? (
           <div>{formik.errors.currentPassword}</div>
