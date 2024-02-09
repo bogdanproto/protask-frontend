@@ -18,42 +18,47 @@ export const NeedHelpForm = () => {
       dispatch(sendToHelpDesk(values));
     },
   });
-  return (
-    <NeedFormStyled onSubmit={formik.handleSubmit}>
-      <InputBoxErr>
-        <Input
-          id="email"
-          name="email"
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-          placeholder="Email address"
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
-        ) : null}
-      </InputBoxErr>
+    return (
+      <NeedFormStyled onSubmit={formik.handleSubmit}>
+        <Title>Need help</Title>
+        <InputBoxErr>
+          <Input
+            id="email"
+            name="email"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            placeholder="Email address"
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div>{formik.errors.email}</div>
+          ) : null}
+        </InputBoxErr>
 
-      <InputBoxErr>
-        <TextArea
-          id="comment"
-          name="comment"
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.comment}
-          placeholder="Comment"
-        />
-        {formik.touched.comment && formik.errors.comment ? (
-          <div>{formik.errors.comment}</div>
-        ) : null}
-      </InputBoxErr>
+        <InputBoxErr>
+          <TextArea
+            id="comment"
+            name="comment"
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.comment}
+            placeholder="Comment"
+          />
+          {formik.touched.comment && formik.errors.comment ? (
+            <div>{formik.errors.comment}</div>
+          ) : null}
+        </InputBoxErr>
 
-      <Button type="submit">Send</Button>
-    </NeedFormStyled>
-  );
+        <Button type="submit">Send</Button>
+      </NeedFormStyled>
+    );
 };
+
+const Title = styled.p`
+  color: ${({ theme }) => theme.colors.titleModalFontColor};
+`;
 
 const NeedFormStyled = styled.form`
   display: flex;

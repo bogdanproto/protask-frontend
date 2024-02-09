@@ -24,7 +24,7 @@ export const Support = () => {
           <Icon width={20} height={20} id={'icon-help_circle'}></Icon>
           <span>Need help?</span>
         </HelpButton>
-        <UniversalModal title="Need help?" isOpen={isOpen} onClose={close}>
+        <UniversalModal isOpen={isOpen} onClose={close}>
           <NeedHelpForm />
         </UniversalModal>
       </SupportBox>
