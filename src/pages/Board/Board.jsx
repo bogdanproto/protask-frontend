@@ -1,11 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import {
-  FakeContainer,
-  FakeBox,
-  FakeHeader,
-  FakeSidebar,
-} from './Board.styled';
+
 import { ScreenPage } from 'components/ScreenPage/index';
 
 // const content = true;
@@ -13,15 +8,7 @@ import { ScreenPage } from 'components/ScreenPage/index';
 
 export const Board = () => {
   // const { boardName } = useParams();
-  return (
-    <FakeContainer>
-      <FakeSidebar />
-      <FakeBox>
-        <FakeHeader />
-        <ScreenPage />
-      </FakeBox>
-    </FakeContainer>
-  );
+  return <ScreenPage />;
 };
 
 // export const Board = () => {

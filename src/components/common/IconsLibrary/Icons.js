@@ -189,14 +189,14 @@ export const PlusIcon = ({ size, fill }) => {
       <path
         d="M12 9.08331V14.9166"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M9.0835 12H14.9168"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </IconWrapper24>
   );

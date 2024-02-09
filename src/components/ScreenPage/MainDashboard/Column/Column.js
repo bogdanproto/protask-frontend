@@ -8,11 +8,11 @@ import {
   ActionButton,
 } from './Column.styled';
 
-export const Column = () => {
+export const Column = ({ column }) => {
   return (
     <ColumnContainer>
       <ColumnTitlePlate>
-        <h3>Test Column</h3>
+        <h3>{column.title}</h3>
         <ButtonBox>
           <ActionButton>
             <PencilIcon size={16} />
