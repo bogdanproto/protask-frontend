@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { HeaderAvatar } from './UserInfo.styled';
 import sprite from 'data/svg/sprite.svg';
 import { useState } from 'react';
-import { ModalCloseButton } from 'components/Modal/ModalComponent/ModalComponent.styled';
+// import { ModalCloseButton } from 'components/Modal/ModalComponent/ModalComponent.styled';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { EditProfile } from 'components/EditProfile';
 

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { editProfileSchema } from 'const/index.js';
 import { StyledForm } from './FormEditProfile.styled';
 import { InputBoxErr } from 'components/common';
@@ -8,7 +8,7 @@ import {  useSelector } from 'react-redux';
 
 export const FormEditProfile = ({...props}) => {
   const { userName, email } = useSelector(state => state.authUser.user);
-  const [inputState, setInputState] = useState({userName,email});
+  // const [inputState, setInputState] = useState({userName,email});
 
   // const [dddd, setDdd] = useState({});
 
@@ -24,10 +24,10 @@ export const FormEditProfile = ({...props}) => {
 
  
 
-  const handleChange = event => {
+  // const handleChange = event => {
     
-    const { name, value } = event.target;
-    setInputState({ name, value });
+  //   const { name, value } = event.target;
+  //   setInputState({ name, value });
     // setDdd(prevState => ({
     //   ...prevState,
     //   [name]: value,
@@ -37,7 +37,7 @@ export const FormEditProfile = ({...props}) => {
     // console.log("{ name, value } = event.target ----", {name, value})
     // console.log("dddd ---", dddd)
     // console.log("inputState ---", inputState);
-  };
+  // };
 
   
 
@@ -95,8 +95,8 @@ export const FormEditProfile = ({...props}) => {
           label="newPassword"
           variant="outlined"
           onChange={formik.handleChange}
-          // value={formik.values.newPassword}
-          value={inputState.newPassword ? inputState.newPassword : ''}
+          value={formik.values.newPassword}
+          // value={inputState.newPassword ? inputState.newPassword : ''}
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
@@ -111,7 +111,7 @@ export const FormEditProfile = ({...props}) => {
           placeholder="Enter current password ..."
           label="currentPassword"
           variant="outlined"
-          disabled={inputState.newPassword ? false : true}
+          // disabled={inputState.newPassword ? false : true}
           onChange={formik.handleChange}
           value={formik.values.currentPassword}
         />
