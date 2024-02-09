@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
@@ -13,6 +13,8 @@ import {
   RadioButtnonBox,
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
+import DatePicker from 'react-datepicker';
+import { DatePickerBlock, DatePickerField } from './DatePicker/DatePicker';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -20,12 +22,14 @@ const cardSchema = Yup.object().shape({
 });
 
 export const CardForm = () => {
+  const [startDate, setStartDate] = useState(new Date());
   // const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       title: '',
       description: '',
       priority: '',
+      date: '',
     },
     validationSchema: cardSchema,
 
@@ -112,8 +116,11 @@ export const CardForm = () => {
             </RadioContainer>
           </RadioButtnonBox>
         </div>
-
-        {/* <DatePickerBlock /> */}
+        <div>
+          <Label>Deadline</Label>
+          <DatePickerField name="date" />
+          />
+        </div>
 
         <ButtonAuth type="submit">Log In Now</ButtonAuth>
       </FormAuthStyled>
