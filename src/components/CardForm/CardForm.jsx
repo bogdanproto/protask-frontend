@@ -13,7 +13,7 @@ import {
   RadioButtnonBox,
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
-import { DatePickerStyled } from './DatePicker/DatePiker.styled';
+import { DatePickerStyled, IconStyled } from './DatePicker/DatePiker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 
@@ -22,14 +22,20 @@ const cardSchema = Yup.object().shape({
   description: Yup.string().required('Required'),
 });
 
-export const CardForm = () => {
+export const CardForm = ({
+  title = '',
+  description = '',
+  priority = '',
+  date = '',
+  action = 'Add',
+}) => {
   // const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
-      title: '',
-      description: '',
-      priority: '',
-      date: '',
+      title,
+      description,
+      priority,
+      date,
     },
     validationSchema: cardSchema,
 
@@ -41,7 +47,7 @@ export const CardForm = () => {
   return (
     <>
       <FormAuthStyled onSubmit={formik.handleSubmit}>
-        <h1>Sign Up</h1>
+        <h1> {action} card</h1>
         <InputBoxErr>
           <InputCardForm
             id="title"
@@ -127,12 +133,14 @@ export const CardForm = () => {
             onBlur={formik.handleBlur}
             selected={formik.values.date}
             dateFormat="MMMM  d"
-            minDate={new Date()}
             placeholderText={`Today,${format(new Date(), 'MMMM d')}`}
+            showIcon
+            icon={<IconStyled viewBox="0 0 18 18" />}
+            toggleCalendarOnIconClick
           />
         </div>
 
-        <ButtonAuth type="submit">Log In Now</ButtonAuth>
+        <ButtonAuth type="submit">{action}</ButtonAuth>
       </FormAuthStyled>
     </>
   );
