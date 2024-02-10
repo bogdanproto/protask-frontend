@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
 import { InputBoxErr } from 'components/common';
-import { ButtonAuth } from 'components/Auth/common/ButtonAuth/ButtonAuth';
+
 import { useDispatch } from 'react-redux';
 import { InputCardForm } from './InputCardForm/InputCardForm';
 import {
@@ -19,9 +19,10 @@ import {
   TitleStyled,
 } from './DatePicker/DatePiker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
+
 import { format } from 'date-fns';
-import { AddCardBtn } from 'components/ScreenPage/MainDashboard/AddCardBtn/AddCardBtn';
-import { CardBtn } from './CardBtn/CardBatn';
+
+import { CardBtn } from './CardBtn/CardBtn';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -34,6 +35,7 @@ export const CardForm = ({
   priority = '',
   date = '',
   action = 'Add',
+  closeModal,
 }) => {
   // const dispatch = useDispatch();
   const formik = useFormik({
@@ -143,10 +145,11 @@ export const CardForm = ({
             showIcon
             icon={<IconStyled viewBox="0 0 18 18" />}
             toggleCalendarOnIconClick
+            inputContainerClassName="test"
           />
         </div>
 
-        <CardBtn action={action} />
+        <CardBtn action={action} disabled={formik.dirty ? false : true} />
       </FormAuthStyled>
     </>
   );

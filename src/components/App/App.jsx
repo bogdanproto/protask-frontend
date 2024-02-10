@@ -1,4 +1,3 @@
-import { CardForm } from 'components/CardForm/CardForm';
 import { NotifyModule } from 'components/Notify';
 import { RoutesComp } from 'components/Routes';
 import { useEffect } from 'react';
@@ -20,10 +19,9 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={theme[themeType]}>
-      {/* //   <NotifyModule /> */}
+      // <NotifyModule />
       // <GlobalStyle />
-      {/* //   {!isUpdating && <RoutesComp />} */}
-      <CardForm />
+      // {!isUpdating && <RoutesComp />}
     </ThemeProvider>
   );
 };
