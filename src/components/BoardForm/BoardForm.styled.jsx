@@ -83,7 +83,7 @@ export const Icon = styled.svg`
   fill: transparent;
   transition: all 250ms linear;
   &.active {
-    transform: scale(1.3) rotate(360deg); // Исправил опечатку "scale" вместо "transform: scale"
+    transform: scale(1.3) rotate(360deg);
   }
 `;
 
