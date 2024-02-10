@@ -14,7 +14,7 @@ export const FormEditProfile = () => {
 
   const handleSubmit = (_, actions) => {
     actions.resetForm();
-    console.log(formik.values);
+    console.log(getFilledFields(formik.values));
     dispatch(updUserProfile(getFilledFields(formik.values)));
   };
 
