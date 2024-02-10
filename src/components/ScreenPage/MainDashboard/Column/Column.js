@@ -1,19 +1,21 @@
 import { useDispatch } from 'react-redux';
 import { useModal } from 'hooks/useModal';
 
+import { deleteColumn } from 'redux/dataSlice/operations';
+
+import { EditButtonWrapper } from 'components/common/EditButtonWrapper/EditButtonWrapper';
 import { PencilIcon, BasketIcon } from 'components/common/IconsLibrary';
 import { CardsList } from '../CardsList/CardsList';
+import { ColumnForm } from 'components/ColumnForm/ColumnForm';
+import { AddColumnCardButton } from 'components/common/AddColumnCardButton/AddColumnCardButton';
 import {
   ColumnContainer,
   ColumnTitlePlate,
   ButtonBox,
   ColumnTitle,
 } from './Column.styled';
-import { EditButtonWrapper } from 'components/common/EditButtonWrapper/EditButtonWrapper';
-import { AddColumnCardButton } from 'components/common/AddColumnCardButton/AddColumnCardButton';
+
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
-import { ColumnForm } from 'components/ColumnForm/ColumnForm';
-import { deleteColumn } from 'redux/dataSlice/operations';
 
 // ========================
 
