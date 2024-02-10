@@ -15,10 +15,15 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
-    <Header/>
-      <Sidebar></Sidebar>
-      <Outlet />
-    </>
+
+    <HomePage>
+      <Sidebar />
+      <FakeBox>
+        <Header />
+        <Outlet />
+      </FakeBox>
+      <Filters />
+    </HomePage>
+
   );
 };

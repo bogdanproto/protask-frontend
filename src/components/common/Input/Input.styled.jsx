@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const InputStyled = styled.input`
   box-sizing: border-box;
 
+  width: 100%;
   height: 49px;
 
   opacity: 0.4;
