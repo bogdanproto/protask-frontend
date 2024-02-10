@@ -1,9 +1,8 @@
 // пример модального окна с кнопкой закрытия
 import React, { useState } from 'react';
 import UniversalModal from '../UniversalModal/UniversalModal';
-import { ModalTitle } from './ModalComponent.styled';
 import { ModalCloseButton } from '../UniversalModal/UniversalModal.styled';
-import sprite from 'data/svg/sprite.svg';
+import { MdClose } from 'react-icons/md';
 
 const ModalComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +20,9 @@ const ModalComponent = () => {
       <button onClick={openModal}>Open modal with close button</button>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
         <ModalCloseButton onClick={closeModal}>
-          <svg width="18" height="18" stroke="black">
-            <use href={sprite + '#icon-close'}></use>
-          </svg>
+          <MdClose fill={`${p => p.theme.inputColor}`} />
         </ModalCloseButton>
-        <ModalTitle>Modal Content</ModalTitle>
+        <h2>Modal Content</h2>
         <h2>Please enter your email</h2>
         <input />
         <button>send</button>

@@ -47,19 +47,15 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    modalBackground: '#212121',
     filterFont: 'rgba(255, 255, 255, 0.5)',
     filterFont2: '#fff',
     filterModalBackground: '#151515',
     modalFontLight: 'rgba(255, 255, 255, 0.5)',
     filterBorder: 'rgba(255, 255, 255, 0.1)',
-
-    // =============
-
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
-
-    // =============
   },
 };
 
@@ -105,11 +101,15 @@ export const light = {
     sidebarSupport: '#f6f6f7',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+
+    modalBackground: '#fff',
+
     filterFont: 'rgba(22, 22, 22, 0.8)',
     filterFont2: '#161616',
     filterModalBackground: '#fcfcfc',
     modalFontLight: 'rgba(22, 22, 22, 0.5)',
     filterBorder: 'rgba(22, 22, 22, 0.1)',
+
   },
 };
 
@@ -145,6 +145,9 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+
+    modalBackground: '#fff',
+
     filterFont: 'rgba(22, 22, 22, 0.8)',
     filterFont2: '#161616',
     filterModalBackground: '#fcfcfc',

@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import * as theme from 'globalStyles/index.js';
 import { GlobalStyle } from 'globalStyles/GlobalStyle';
 
+
 export const App = () => {
   const dispatch = useDispatch();
   const isUpdating = useSelector(selectUpdating);
@@ -18,6 +19,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
+   
     <ThemeProvider theme={theme[themeType]}>
       <NotifyModule />
       <GlobalStyle />
