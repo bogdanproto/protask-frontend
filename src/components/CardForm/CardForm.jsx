@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
@@ -13,9 +13,9 @@ import {
   RadioButtnonBox,
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
-import DatePicker from 'react-datepicker';
-import CustomDatePicker, { DatePickerField } from './DatePicker/DatePicker';
 import { DatePickerStyled } from './DatePicker/DatePiker.styled';
+import 'react-datepicker/dist/react-datepicker.css';
+import { format } from 'date-fns';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -40,8 +40,8 @@ export const CardForm = () => {
   });
   return (
     <>
-      <h1>Sign Up</h1>
       <FormAuthStyled onSubmit={formik.handleSubmit}>
+        <h1>Sign Up</h1>
         <InputBoxErr>
           <InputCardForm
             id="title"
@@ -118,14 +118,17 @@ export const CardForm = () => {
         </div>
         <div>
           <Label>Deadline</Label>
-          <CustomDatePicker
+          <DatePickerStyled
             id="date"
-            name={'date'}
-            type="text"
-            onChange={formik.handleChange}
+            name="date"
+            onChange={date =>
+              formik.setFieldValue('date', format(date, 'MMMM d'))
+            }
             onBlur={formik.handleBlur}
-            value={formik.values.date.toString()}
-            placeholder="Description"
+            selected={formik.values.date}
+            dateFormat="MMMM  d"
+            minDate={new Date()}
+            placeholderText={`Today,${format(new Date(), 'MMMM d')}`}
           />
         </div>
 
