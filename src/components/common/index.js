@@ -7,3 +7,4 @@ export * from './Button/Button.jsx';
 export * from './Form/Form.styled.jsx';
 export * from './Formik/InputBoxErr/InputBoxErr.styled.jsx';
 export * from './IconButton/IconButton.jsx';
+export * from './AddButton/AddButton.jsx';

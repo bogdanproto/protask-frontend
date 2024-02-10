@@ -49,6 +49,7 @@ export const LoginForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.password}
           placeholder="Confirme a password"
+          eyeColor = "rgba(255, 255, 255, 0.3)"
         />
         {formik.touched.password && formik.errors.password ? (
           <div>{formik.errors.password}</div>

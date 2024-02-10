@@ -6,3 +6,4 @@ export * from './notification/successNotify';
 export * from './pathAPI/pathData';
 export * from './routes/routes';
 export * from './schema/authForm/authForm';
+export * from './schema/columnForm/columnForm';

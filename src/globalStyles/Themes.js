@@ -23,11 +23,14 @@ export const dark = {
     btnPrimary: '#BEDBB0',
     btnPrimaryColor: '#212121',
     btnPrimaryHover: '#9DC888',
+    btnDisabled: 'rgba(255, 255, 255, 0.3)',
     backgroundModal: '#151515',
     titleModalFontColor: '#fff',
     btnSmall: '#BEDBB0',
     inputColor: '#fff',
     inputBorder: '#BEDBB0',
+    iconBox: '#212121',
+    iconInvert: '#fff',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -47,19 +50,15 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+    modalBackground: '#212121',
     filterFont: 'rgba(255, 255, 255, 0.5)',
     filterFont2: '#fff',
     filterModalBackground: '#151515',
     modalFontLight: 'rgba(255, 255, 255, 0.5)',
     filterBorder: 'rgba(255, 255, 255, 0.1)',
-
-    // =============
-
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
-
-    // =============
   },
 };
 
@@ -78,10 +77,13 @@ export const light = {
     btnPlusHover: '#9DC888',
     btnPrimary: '#BEDBB0',
     btnPrimaryHover: '#9DC888',
+    btnDisabled: 'rgba(255, 255, 255, 0.3)',
     btnSmall: '#BEDBB0',
     btnPrimaryColor: '#212121',
     inputColor: '#161616',
     inputBorder: '#BEDBB0',
+    iconBox: '#212121',
+    iconInvert: '#fff',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -105,6 +107,9 @@ export const light = {
     sidebarSupport: '#f6f6f7',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
+
+    modalBackground: '#fff',
+
     filterFont: 'rgba(22, 22, 22, 0.8)',
     filterFont2: '#161616',
     filterModalBackground: '#fcfcfc',
@@ -128,7 +133,10 @@ export const violet = {
     btnPrimary: '#5255bc',
     btnPrimaryColor: '#fff',
     btnPrimaryHover: '#7B7EDE',
+    btnDisabled: 'rgba(255, 255, 255, 0.3)',
     btnSmall: '#ECEDFD',
+    iconBox: '#fff',
+    iconInvert: '#212121',
     inputColor: '#161616',
     inputBorder: '#5255bc66',
     white: '#fff',
@@ -145,6 +153,9 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+
+    modalBackground: '#fff',
+
     filterFont: 'rgba(22, 22, 22, 0.8)',
     filterFont2: '#161616',
     filterModalBackground: '#fcfcfc',
