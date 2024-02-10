@@ -14,7 +14,8 @@ import {
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
 import DatePicker from 'react-datepicker';
-import { DatePickerBlock, DatePickerField } from './DatePicker/DatePicker';
+import CustomDatePicker, { DatePickerField } from './DatePicker/DatePicker';
+import { DatePickerStyled } from './DatePicker/DatePiker.styled';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -22,7 +23,6 @@ const cardSchema = Yup.object().shape({
 });
 
 export const CardForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
   // const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -118,7 +118,14 @@ export const CardForm = () => {
         </div>
         <div>
           <Label>Deadline</Label>
-          <DatePickerField name="date" />
+          <CustomDatePicker
+            id="date"
+            name={'date'}
+            type="text"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.date.toString()}
+            placeholder="Description"
           />
         </div>
 
