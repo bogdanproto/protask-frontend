@@ -136,7 +136,7 @@ export const CardForm = ({
             id="date"
             name="date"
             onChange={date =>
-              formik.setFieldValue('date', format(date, 'MMMM d'))
+              formik.setFieldValue('date', format(date, 'yyyy-MM-dd'))
             }
             onBlur={formik.handleBlur}
             selected={formik.values.date}
