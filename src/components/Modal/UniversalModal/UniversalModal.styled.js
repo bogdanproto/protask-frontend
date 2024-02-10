@@ -1,4 +1,5 @@
 // ModalStyles.js
+
 import styled from 'styled-components';
 
 const modalStyles = {
@@ -10,7 +11,7 @@ const modalStyles = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: 'white',
+    backgroundColor: `${p => p.theme.modalBackground}`,
     borderRadius: '5px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
     width: 'fit-content',
