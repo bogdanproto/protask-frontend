@@ -20,7 +20,7 @@ export const ColumnTitlePlate = styled.div`
   height: 56px;
   border-radius: ${p => p.theme.radius};
   background-color: ${p => p.theme.colors.secondBackgroundColor};
-  `;
+`;
 
 export const ColumnTitle = styled.h3`
   font-size: 14px;
@@ -31,7 +31,7 @@ export const ColumnTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   color: ${p => p.theme.colors.fontColor};
-`
+`;
 
 export const ButtonBox = styled.div`
   display: flex;

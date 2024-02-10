@@ -5,25 +5,27 @@ import { ScreenPage, BoardNotFound } from './Board.styled';
 import { HeaderDashboard } from 'components/ScreenPage/HeaderDashboard/HeaderDashboard';
 import { MainDashboard } from 'components/ScreenPage/MainDashboard/MainDashboard';
 
-// ===== test temp data =====
-
-// const content = true;
-// const content = false;
-// ===== test temp data =====
+// ========================
 
 export const Board = () => {
   const activeBoard = useSelector(selectActiveBoard);
-  console.log(activeBoard);
 
   return (
     <>
-      {!activeBoard ? (
-        <BoardNotFound>PLEASE CHOOSE BOARD</BoardNotFound>
-      ) : (
+      {activeBoard ? (
         <ScreenPage>
-          <HeaderDashboard title={activeBoard?.title} />
+          <HeaderDashboard />
           <MainDashboard />
         </ScreenPage>
+      ) : (
+        <BoardNotFound>
+          <p>
+            Before starting your project, it is essential to create a board to
+            visualize and track all the necessary tasks and milestones. This
+            board serves as a powerful tool to organize the workflow and ensure
+            effective collaboration among team members.
+          </p>
+        </BoardNotFound>
       )}
     </>
   );

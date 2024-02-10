@@ -188,13 +188,13 @@ export const PlusIcon = ({ size, fill }) => {
       />
       <path
         d="M14 9.91663V18.0833"
-        stroke="white"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M9.9165 14H18.0832"
-        stroke="white"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
