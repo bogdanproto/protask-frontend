@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
+import { Filters } from 'components/Filters/Filters/Filters';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
+import { HomePage, FakeBox } from './Home.styled';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -15,7 +17,6 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-
     <HomePage>
       <Sidebar />
       <FakeBox>
@@ -24,6 +25,5 @@ export const Home = () => {
       </FakeBox>
       <Filters />
     </HomePage>
-
   );
 };
