@@ -6,7 +6,7 @@ export const updUserAvatar = createAsyncThunk(
   'authUser/updateUserAvatar',
   asyncThunkDecoratorUser(async file => {
     const {
-      user: { avatarCloudURL },
+      data: { avatarCloudURL },
     } = await updateUserAvatarAPI(file);
 
     return { avatarCloudURL };
