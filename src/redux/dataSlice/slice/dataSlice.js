@@ -41,7 +41,7 @@ import {
 
 const initialState = {
   boards: [],
-  columns: [],
+  columns: null,
   error: null,
   isLoading: null,
   successMsg: null,
