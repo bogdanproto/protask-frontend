@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
 import { Filters } from 'components/Filters';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
-import { getAllBoards, getBoardById } from 'redux/dataSlice/operations';
+import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
 import { HomePage, FakeBox } from './Home.styled';
 
