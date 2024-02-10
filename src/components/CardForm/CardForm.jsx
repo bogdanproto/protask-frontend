@@ -13,9 +13,15 @@ import {
   RadioButtnonBox,
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
-import { DatePickerStyled, IconStyled } from './DatePicker/DatePiker.styled';
+import {
+  DatePickerStyled,
+  IconStyled,
+  TitleStyled,
+} from './DatePicker/DatePiker.styled';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
+import { AddCardBtn } from 'components/ScreenPage/MainDashboard/AddCardBtn/AddCardBtn';
+import { CardBtn } from './CardBtn/CardBatn';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -47,7 +53,7 @@ export const CardForm = ({
   return (
     <>
       <FormAuthStyled onSubmit={formik.handleSubmit}>
-        <h1> {action} card</h1>
+        <TitleStyled> {action} card</TitleStyled>
         <InputBoxErr>
           <InputCardForm
             id="title"
@@ -140,7 +146,7 @@ export const CardForm = ({
           />
         </div>
 
-        <ButtonAuth type="submit">{action}</ButtonAuth>
+        <CardBtn action={action} />
       </FormAuthStyled>
     </>
   );
