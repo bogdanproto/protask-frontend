@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getPriorityColor } from 'helpers';
+import { getPriorityColor } from 'helpers/index';
 
 export const CardContainer = styled.div`
   background-color: ${p => p.theme.colors.secondBackgroundColor};
@@ -9,9 +9,7 @@ export const CardContainer = styled.div`
   padding: ${p => p.theme.spacing(7)} ${p => p.theme.spacing(7)}
     ${p => p.theme.spacing(5)} ${p => p.theme.spacing(12)};
 
-  /* outline: 1px solid blueviolet; */
   width: 334px;
-  /* height: 154px; */
   border-radius: ${p => p.theme.radius};
   overflow: hidden;
 

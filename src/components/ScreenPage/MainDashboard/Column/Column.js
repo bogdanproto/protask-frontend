@@ -1,31 +1,32 @@
 import { PencilIcon, BasketIcon } from 'components/common/IconsLibrary';
 import { CardsList } from '../CardsList/CardsList';
-import { AddCardBtn } from '../AddCardBtn/AddCardBtn';
 import {
   ColumnContainer,
   ColumnTitlePlate,
   ButtonBox,
-  ActionButton,
+  ColumnTitle,
 } from './Column.styled';
+import { EditButtonWrapper } from 'components/common/EditButtonWrapper/EditButtonWrapper';
+import { AddColumnCardButton } from 'components/common/AddColumnCardButton/AddColumnCardButton';
 
 export const Column = ({ column }) => {
   return (
     <ColumnContainer>
       <ColumnTitlePlate>
-        <h3>{column.title}</h3>
+        <ColumnTitle>{column.title}</ColumnTitle>
         <ButtonBox>
-          <ActionButton>
+          <EditButtonWrapper>
             <PencilIcon size={16} />
-          </ActionButton>
-          <ActionButton>
+          </EditButtonWrapper>
+          <EditButtonWrapper>
             <BasketIcon size={16} />
-          </ActionButton>
+          </EditButtonWrapper>
         </ButtonBox>
       </ColumnTitlePlate>
 
-      <CardsList />
+      <CardsList cards={column.cards} />
 
-      <AddCardBtn />
+      <AddColumnCardButton title="Add another card" />
     </ColumnContainer>
   );
 };

@@ -1,11 +1,10 @@
-import columns from '../../tempData/columns.json';
 import { List } from './ColumnsList.styled';
 import { Column } from '../Column/Column';
 
-export const ColumnsList = () => {
+export const ColumnsList = ({ items }) => {
   return (
     <List>
-      {columns.map(column => (
+      {items.map(column => (
         <li key={column._id}>
           <Column column={column} />
         </li>
