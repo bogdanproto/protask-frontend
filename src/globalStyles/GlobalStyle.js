@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
         object-fit: cover;
     }
 
+    svg {
+        //width: 100%;
+    }
+
     hr {
         border-top: 1px solid ${p => p.theme.colors.fontColor};
     }
