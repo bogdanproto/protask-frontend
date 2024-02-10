@@ -19,9 +19,9 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={theme[themeType]}>
-      // <NotifyModule />
-      // <GlobalStyle />
-      // {!isUpdating && <RoutesComp />}
+      <NotifyModule />
+      <GlobalStyle />
+      {!isUpdating && <RoutesComp />}
     </ThemeProvider>
   );
 };
