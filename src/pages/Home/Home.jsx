@@ -7,9 +7,9 @@ import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
 import { HomePage, FakeBox } from './Home.styled';
-import { BoardForm } from 'components/BoardForm/BoardForm';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
+import { CardForm } from 'components/CardForm/CardForm';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -28,13 +28,9 @@ export const Home = () => {
         <Outlet />
       </FakeBox>
       <Filters />
-      <button onClick={() => toggle()}>NewBoard</button>
+      <button onClick={() => toggle()}>NewCard</button>
       <UniversalModal isOpen={isOpen} onClose={close}>
-        <BoardForm
-          closeModal={close}
-          id={'65c7ca72d49ad1af54b5ec17'}
-          title={'First Board'}
-        />
+        <CardForm />
       </UniversalModal>
     </HomePage>
   );
