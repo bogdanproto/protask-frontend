@@ -5,7 +5,8 @@ import { asyncThunkDecoratorUser } from 'helpers';
 export const updUserProfile = createAsyncThunk(
   'authUser/updateUserProfile',
   asyncThunkDecoratorUser(async obj => {
-    const { user } = await updateUserProfileAPI(obj);
-    return user;
+    const { data } = await updateUserProfileAPI(obj);
+
+    return data;
   })
 );

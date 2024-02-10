@@ -6,17 +6,25 @@ import { updUserProfile } from 'redux/authSlice/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { InputPasswordFormStyle } from '../InputPasswordForm/InputPasswordForm.styled';
 import { getFilledFields } from '../helpers/getFilledFields';
+import { succesMsgSelectorUser } from 'redux/commonSelector';
+import { useEffect } from 'react';
 
-export const FormEditProfile = () => {
+export const FormEditProfile = ({ closeModal }) => {
   const { userName, email } = useSelector(state => state.authUser.user);
+  const isSuccessDispatch = useSelector(succesMsgSelectorUser);
 
   const dispatch = useDispatch();
 
   const handleSubmit = (_, actions) => {
     actions.resetForm();
-    console.log(formik.values);
     dispatch(updUserProfile(getFilledFields(formik.values)));
   };
+
+  useEffect(() => {
+    if (isSuccessDispatch) {
+      closeModal();
+    }
+  }, [closeModal, isSuccessDispatch]);
 
   const formik = useFormik({
     initialValues: {
