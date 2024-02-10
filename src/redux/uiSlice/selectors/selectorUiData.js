@@ -1,1 +1,1 @@
-export const selectWallPapers = state => state.wallpapers;
+export const selectWallPapers = state => state.uiData.wallpapers;
