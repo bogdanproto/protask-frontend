@@ -20,7 +20,7 @@ export const Home = () => {
       <Sidebar />
 
       <button
-        onClick={() => dispatch(getBoardById('65c79cfbd49ad1af54b5e72c'))}
+        onClick={() => dispatch(getBoardById('65c7ed52e2f5107b19750f7c'))}
       >
         Get board
       </button>
