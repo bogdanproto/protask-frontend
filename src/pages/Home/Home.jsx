@@ -23,7 +23,7 @@ export const Home = () => {
         <Header />
         <Outlet />
       </FakeBox>
-      <Filters></Filters>
+      <Filters />
     </HomePage>
   );
 };

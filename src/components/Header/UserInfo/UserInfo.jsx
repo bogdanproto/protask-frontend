@@ -20,17 +20,15 @@ const UserInfo = () => {
     setIsOpen(false);
   };
 
-
-  if(!userName){
-  userName = "Lolita"
-}
   return (
-    <HeaderAvatar >
+    <HeaderAvatar>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
-        <ModalCloseButton onClick={closeModal}><svg width="18" height="18" stroke="black">
-          <use href={sprite + '#icon-x-close'}></use>
-        </svg></ModalCloseButton>
-        <EditProfile closeModal={closeModal}/>
+        <ModalCloseButton onClick={closeModal}>
+          <svg width="18" height="18" stroke="black">
+            <use href={sprite + '#icon-x-close'}></use>
+          </svg>
+        </ModalCloseButton>
+        <EditProfile closeModal={closeModal} />
       </UniversalModal>
       <span>{userName}</span>
       <button
@@ -39,10 +37,19 @@ const UserInfo = () => {
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-       {avatarUrl? <img src={avatarUrl} alt=""className="edit-profile-icon" width="68" height="68"></img>:
-      <svg className="edit-profile-icon" width="32" height="32">
-        <use href={sprite + '#icon-user'}></use>
-      </svg>}
+        {avatarUrl ? (
+          <img
+            src={avatarUrl}
+            alt=""
+            className="edit-profile-icon"
+            width="68"
+            height="68"
+          ></img>
+        ) : (
+          <svg className="edit-profile-icon" width="32" height="32">
+            <use href={sprite + '#icon-user'}></use>
+          </svg>
+        )}
       </button>
     </HeaderAvatar>
   );
