@@ -5,18 +5,17 @@ import { InputBoxErr } from 'components/common';
 import { updUserProfile } from 'redux/authSlice/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { InputPasswordFormStyle } from '../InputPasswordForm/InputPasswordForm.styled';
-
-
+import { getFilledFields } from '../helpers/getFilledFields';
 
 export const FormEditProfile = () => {
-  const {userName, email} = useSelector(state => state.authUser.user)
+  const { userName, email } = useSelector(state => state.authUser.user);
+
   const dispatch = useDispatch();
 
-  
   const handleSubmit = (_, actions) => {
     actions.resetForm();
     console.log(formik.values);
-    dispatch(updUserProfile(formik.values));
+    dispatch(updUserProfile(getFilledFields(formik.values)));
   };
 
   const formik = useFormik({
@@ -30,14 +29,11 @@ export const FormEditProfile = () => {
     validationSchema: editProfileSchema,
   });
 
-   const newPassword = formik.values.newPassword
-
-  // const enterValue =
-  //   Object.values(formik.values).find(elem => elem !== '') || null;
+  const newPassword = formik.values.newPassword;
 
   return (
     <StyledForm autoComplete="off" onSubmit={formik.handleSubmit}>
-      <InputBoxErr>      
+      <InputBoxErr>
         <input
           type="text"
           id="userName"
@@ -51,7 +47,6 @@ export const FormEditProfile = () => {
         {formik.touched.userName && formik.errors.userName ? (
           <div>{formik.errors.userName}</div>
         ) : null}
-     
       </InputBoxErr>
 
       <InputBoxErr>
@@ -64,14 +59,13 @@ export const FormEditProfile = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
-        
+
         {formik.touched.email && formik.errors.email ? (
           <div>{formik.errors.email}</div>
         ) : null}
       </InputBoxErr>
 
       <InputBoxErr>
-      
         <InputPasswordFormStyle
           type="password"
           id="newPassword"
@@ -81,12 +75,11 @@ export const FormEditProfile = () => {
           variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.newPassword}
-          eyeColor='#bbbaba'
+          eyeColor="#bbbaba"
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
         ) : null}
-        
       </InputBoxErr>
 
       <InputBoxErr>
@@ -100,7 +93,7 @@ export const FormEditProfile = () => {
           disabled={newPassword ? false : true}
           onChange={formik.handleChange}
           value={formik.values.currentPassword}
-          eyeColor = '#bbbaba'
+          eyeColor="#bbbaba"
         />
         {formik.touched.currentPassword && formik.errors.currentPassword ? (
           <div>{formik.errors.currentPassword}</div>

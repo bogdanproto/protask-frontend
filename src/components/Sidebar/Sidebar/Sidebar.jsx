@@ -12,25 +12,16 @@ import { Support } from '../Support/Support';
 import { Icon } from 'components/common/Icon/Icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from 'redux/authSlice/operations';
-import { useEffect, useState } from 'react';
 import { toggleSidebar } from 'redux/uiSlice';
 import { selectIsOpenSidebar } from 'redux/uiSlice/selectors';
 
 export const Sidebar = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const burgerVisible = useSelector(selectIsOpenSidebar);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
+  const screenWidth = window.innerWidth;
 
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  console.log(window.innerWidth);
 
   const screenVisible = false ? screenWidth < 1440 : screenWidth > 1440;
   const visible = screenVisible || burgerVisible;
