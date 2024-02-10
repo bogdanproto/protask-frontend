@@ -21,8 +21,6 @@ export const Sidebar = () => {
 
   const screenWidth = window.innerWidth;
 
-  console.log(window.innerWidth);
-
   const screenVisible = false ? screenWidth < 1440 : screenWidth > 1440;
   const visible = screenVisible || burgerVisible;
 
