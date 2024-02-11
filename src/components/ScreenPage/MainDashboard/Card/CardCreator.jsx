@@ -9,7 +9,7 @@ export const CardCreator = ({ columnId }) => {
     <>
       <AddColumnCardButton title="Add another card" onClick={toggle} />
       <UniversalModal isOpen={isOpen} onClose={close}>
-        <CardForm columnId={columnId} />
+        <CardForm columnId={columnId} closeModal={close} />
       </UniversalModal>
     </>
   );
