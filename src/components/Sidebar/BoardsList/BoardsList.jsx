@@ -5,40 +5,12 @@ import { Btn } from 'components/common/Btn/Btn';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
 import { BoardForm } from 'components/BoardForm/BoardForm';
+import { useSelector } from 'react-redux';
+import { selectAllBoard } from 'redux/dataSlice/selectors';
 
 export const BoardsList = () => {
-  const projects = [
-    {
-      _id: 1,
-      icon: 'icon-project_hexagon',
-      name: 'Project office',
-    },
-    {
-      _id: 2,
-      icon: 'icon-project_puzzle',
-      name: 'Neon Light Project',
-    },
-    {
-      _id: 3,
-      icon: 'icon-project_colors',
-      name: 'Neon Dark Project',
-    },
-    {
-      _id: 4,
-      icon: 'icon-project_container',
-      name: 'Test Project',
-    },
-    {
-      _id: 5,
-      icon: 'icon-project_hexagon',
-      name: 'My Project',
-    },
-    {
-      _id: 6,
-      icon: 'icon-project_lightning',
-      name: 'Lorem ipsum Project',
-    },
-  ];
+  const allProjects = useSelector(selectAllBoard);
+  console.log(allProjects);
 
   const [isActive, setActive] = useState(null);
   const { isOpen, close, toggle } = useModal();
@@ -55,10 +27,9 @@ export const BoardsList = () => {
         <Btn onClick={toggle} variant="plus"></Btn>
       </CreateButton>
       <List>
-        {projects.map(item => (
+        {allProjects.map(item => (
           <Item
             key={item._id}
-            id={item._id}
             className={isActive === item._id ? 'active' : null}
             onClick={() => toggleClass(item._id)}
           >
