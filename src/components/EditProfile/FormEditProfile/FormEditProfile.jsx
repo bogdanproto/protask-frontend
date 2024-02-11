@@ -83,7 +83,7 @@ export const FormEditProfile = ({ closeModal }) => {
           variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.newPassword}
-          eyeColor="#bbbaba"
+          eyeColor="#4e4e4e"
         />
         {formik.touched.newPassword && formik.errors.newPassword ? (
           <div>{formik.errors.newPassword}</div>
@@ -101,7 +101,6 @@ export const FormEditProfile = ({ closeModal }) => {
           disabled={newPassword ? false : true}
           onChange={formik.handleChange}
           value={formik.values.currentPassword}
-          eyeColor="#bbbaba"
         />
         {formik.touched.currentPassword && formik.errors.currentPassword ? (
           <div>{formik.errors.currentPassword}</div>
