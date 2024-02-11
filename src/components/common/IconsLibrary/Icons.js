@@ -1,4 +1,10 @@
-import { IconWrapper16, IconWrapper18, IconWrapper28 } from './IconWrappers';
+import {
+  IconWrapper16,
+  IconWrapper18,
+  IconWrapper28,
+  IconWrapper28wh,
+  IconWrapper32,
+} from './IconWrappers';
 
 const styles15 = {
   stroke: 'currentColor',
@@ -14,6 +20,42 @@ const styles13 = {
   strokeOpacity: '1',
   strokeLinecap: 'round',
   strokeLinejoin: 'round',
+};
+
+export const LogoIcon = ({ width, height }) => {
+  return (
+    <IconWrapper28wh width={width} height={height}>
+      <path d="M6.663 30.054c0.489-2.543 0.905-5.22 1.494-7.897 0.29-1.401-0.063-1.999-1.63-1.892s-3.313 0.053-4.979 0c-1.666-0.054-1.965-0.892-1.005-2.088 4.726-5.836 9.506-11.6 14.268-17.347 0.534-0.651 1.15-1.115 2.028-0.625s0.697 1.098 0.552 1.829c-0.525 2.677-0.96 5.354-1.539 7.978-0.299 1.356 0.091 1.838 1.503 1.785 1.417-0.071 2.837-0.071 4.255 0 0.806 0 1.865-0.419 2.281 0.678s-0.462 1.562-0.905 2.213c-1.811 2.231-3.645 4.459-5.504 6.684-2.722 3.248-5.423 6.484-8.102 9.709-0.525 0.633-1.114 1.142-2.010 0.821s-0.706-1.080-0.706-1.847z"></path>
+    </IconWrapper28wh>
+  );
+};
+
+export const HelpIcon = ({ size }) => {
+  return (
+    <IconWrapper32 size={size}>
+      <path
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        strokeMiterlimit="4"
+        strokeWidth="2.88"
+        d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.969-13.333-13.333-13.333-13.333 5.97-13.333 13.333c0 7.364 5.97 13.333 13.333 13.333z"
+      ></path>
+      <path
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        strokeMiterlimit="4"
+        strokeWidth="2.88"
+        d="M12.12 12c0.313-0.891 0.932-1.643 1.747-2.121s1.772-0.654 2.703-0.494c0.931 0.16 1.776 0.644 2.384 1.366s0.941 1.637 0.94 2.582c0 2.667-4 4-4 4"
+      ></path>
+      <path
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        strokeMiterlimit="4"
+        strokeWidth="2.88"
+        d="M16 22.667h0.020"
+      ></path>
+    </IconWrapper32>
+  );
 };
 
 export const FilterIcon = ({ size }) => {
