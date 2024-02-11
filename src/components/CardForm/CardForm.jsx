@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
@@ -22,6 +22,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 
 import { CardBtn } from './CardBtn/CardBtn';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCard, updateCard } from 'redux/dataSlice/operations';
+import { succesMsgSelectorData } from 'redux/commonSelector';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -29,32 +32,43 @@ const cardSchema = Yup.object().shape({
 });
 
 export const CardForm = ({
+  cardId = null,
   title = '',
   description = '',
-  priority = '',
-  date = '',
-  action = 'Add',
+  priority = 'without',
+  deadline = '',
+  columnId,
   closeModal,
 }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const isSuccessDispatch = useSelector(succesMsgSelectorData);
   const formik = useFormik({
     initialValues: {
       title,
       description,
       priority,
-      date,
+      deadline,
     },
     validationSchema: cardSchema,
 
     onSubmit: values => {
-      console.log(values);
-      // dispatch();
+      if (cardId) {
+        dispatch(updateCard({ ...values, _id: cardId }));
+        return;
+      }
+      dispatch(addCard({ ...values, columnId }));
     },
   });
+
+  useEffect(() => {
+    if (isSuccessDispatch) {
+      closeModal();
+    }
+  }, [closeModal, isSuccessDispatch]);
   return (
     <>
       <FormAuthStyled onSubmit={formik.handleSubmit}>
-        <TitleStyled> {action} card</TitleStyled>
+        <TitleStyled> {cardId ? 'Edit card' : 'Add card'}</TitleStyled>
         <InputBoxErr>
           <InputCardForm
             id="title"
@@ -121,24 +135,24 @@ export const CardForm = ({
               <Input
                 type="radio"
                 name="priority"
-                value="default"
-                checked={formik.values.priority === 'default'}
+                value="without"
+                checked={formik.values.priority === 'without'}
                 onChange={formik.handleChange}
               />
-              <CustomRadio $mode="default"></CustomRadio>
+              <CustomRadio $mode="without"></CustomRadio>
             </RadioContainer>
           </RadioButtnonBox>
         </div>
         <div>
           <Label>Deadline</Label>
           <DatePickerStyled
-            id="date"
-            name="date"
-            onChange={date =>
-              formik.setFieldValue('date', format(date, 'yyyy-MM-dd'))
+            id="deadline"
+            name="deadline"
+            onChange={deadline =>
+              formik.setFieldValue('deadline', format(deadline, 'yyyy-MM-dd'))
             }
             onBlur={formik.handleBlur}
-            selected={formik.values.date}
+            selected={formik.values.deadline}
             dateFormat="MMMM  d"
             placeholderText={`Today,${format(new Date(), 'MMMM d')}`}
             showIcon
@@ -148,7 +162,10 @@ export const CardForm = ({
           />
         </div>
 
-        <CardBtn action={action} disabled={formik.dirty ? false : true} />
+        <CardBtn
+          action={cardId ? 'Edit' : 'Add'}
+          disabled={formik.dirty ? false : true}
+        />
       </FormAuthStyled>
     </>
   );

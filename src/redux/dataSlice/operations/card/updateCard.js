@@ -7,7 +7,7 @@ import { asyncThunkDecoratorData } from 'helpers/redux/asyncThunkDecoratorData';
 //   description;
 // priority: ["without priority", "low", "medium", "high"]';
 // deadline: Joi.date(),
-// columnId
+// cardId
 // }
 
 export const updateCard = createAsyncThunk(

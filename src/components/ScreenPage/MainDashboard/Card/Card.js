@@ -45,6 +45,7 @@ export const Card = ({
           description={description}
           priority={priority}
           deadline={deadline}
+          closeModal={close}
         />
       </UniversalModal>
     </CardContainer>

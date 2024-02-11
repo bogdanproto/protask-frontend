@@ -24,7 +24,7 @@ export const handleFulfilledAddColumn = (state, action) => {
 export const handleFulfilledUpdateColumn = (state, action) => {
   const newColumn = action.payload;
   state.columns = [...state.columns].map(item =>
-    item._id === newColumn._id ? newColumn : item
+    item._id === newColumn._id ? { ...item, title: newColumn.title } : item
   );
 
   state.successMsg = successNotify.COLUMN_UPDATE;
