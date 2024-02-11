@@ -47,7 +47,7 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
-    modalBackground: '#212121',
+    modalBackground: '#151515',
     filterFont: 'rgba(255, 255, 255, 0.5)',
     filterFont2: '#fff',
     filterModalBackground: '#151515',
