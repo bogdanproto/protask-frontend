@@ -11,7 +11,9 @@ export const handleFulfilledGetBoardById = (state, action) => {
   const { columns, _id } = action.payload;
 
   state.boards = [...state.boards].map(item =>
-    item._id === _id ? { ...item, isActive: true } : item
+    item._id === _id
+      ? { ...item, isActive: true }
+      : { ...item, isActive: false }
   );
 
   state.columns = columns;

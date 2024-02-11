@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
 import { customStyles, options } from '../index.js';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,21 +10,19 @@ import { selectWithAdaptSelector } from 'redux/authSlice/selectors/selectorAuth.
 export const HeaderThemeSelect = () => {
   const theme = useContext(ThemeContext);
   const color = useSelector(selectWithAdaptSelector);
-
-  const [selectedOption, setSelectedOption] = useState(color);
-
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(updUserTheme({ theme: selectedOption.value }));
-  }, [dispatch, selectedOption]);
+
+  const handleSelect = color => {
+    dispatch(updUserTheme({ theme: color.value }));
+  };
 
   return (
     <div className="header-theme-select">
       <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
+        defaultValue={color}
+        onChange={handleSelect}
         options={options}
-        placeholder={selectedOption}
+        placeholder={color}
         styles={customStyles(theme)} // Передаємо власні стилі
       />
     </div>

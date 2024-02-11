@@ -1,7 +1,7 @@
-import React from 'react';
 import Modal from 'react-modal';
-import modalStyles from './UniversalModal.styled';
+import modalStyles, { ModalCloseButton } from './UniversalModal.styled';
 import { useTheme } from 'styled-components';
+import { MdClose } from 'react-icons/md';
 
 const UniversalModal = ({ isOpen, onClose, children }) => {
   const theme = useTheme();
@@ -18,6 +18,9 @@ const UniversalModal = ({ isOpen, onClose, children }) => {
       }}
       ariaHideApp={false}
     >
+      <ModalCloseButton onClick={onClose}>
+        <MdClose fill={theme.colors.inputColor} />
+      </ModalCloseButton>
       {children}
     </Modal>
   );
