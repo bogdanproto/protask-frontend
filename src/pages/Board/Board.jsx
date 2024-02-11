@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectActiveBoard } from 'redux/dataSlice/selectors';
+import {
+  selectActiveBoard,
+  selectIsBoardsUploaded,
+} from 'redux/dataSlice/selectors';
 import { ScreenPage, BoardNotFound } from './Board.styled';
 import { HeaderDashboard } from 'components/ScreenPage/HeaderDashboard/HeaderDashboard';
 import { MainDashboard } from 'components/ScreenPage/MainDashboard/MainDashboard';
@@ -13,11 +16,15 @@ import { useParams } from 'react-router';
 export const Board = () => {
   const dispatch = useDispatch();
   const activeBoard = useSelector(selectActiveBoard);
+  const isBoardsUploaded = useSelector(selectIsBoardsUploaded);
   const { boardName } = useParams();
 
   useEffect(() => {
+    if (!isBoardsUploaded) {
+      return;
+    }
     dispatch(getBoardById(boardName));
-  }, [boardName, dispatch]);
+  }, [boardName, dispatch, isBoardsUploaded]);
 
   return (
     <>
