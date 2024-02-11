@@ -1,4 +1,3 @@
-import { Icon } from 'components/common/Icon/Icon';
 import { BtnContainer } from './BoardsItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteBoard } from 'redux/dataSlice/operations/board/deleteBoard';
@@ -7,6 +6,9 @@ import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useModal } from 'hooks/useModal';
 import { useNavigate } from 'react-router';
 import { routes } from 'const';
+import { getBoardIcon } from 'helpers/index';
+import { EditButton } from 'components/common/EditButton/EditButton.styled';
+import { BasketIcon, PencilIcon } from 'components/common/IconsLibrary/index';
 
 export const BoardsItem = ({ board, active }) => {
   const dispatch = useDispatch();
@@ -21,17 +23,17 @@ export const BoardsItem = ({ board, active }) => {
 
   return (
     <>
-      <Icon width={18} height={18} id={`icon-project_${board.icon}`}></Icon>
+      {getBoardIcon(board.icon)}
       <h3>{board.title}</h3>
 
       {active === true && (
         <BtnContainer>
-          <button type="button" data-id={board._id} onClick={toggle}>
-            <Icon width={16} height={16} id={'icon-pencil'}></Icon>
-          </button>
-          <button type="button" data-id={board._id} onClick={handleDelete}>
-            <Icon width={16} height={16} id={'icon-trash'}></Icon>
-          </button>
+          <EditButton type="button" data-id={board._id} onClick={toggle}>
+            <PencilIcon size={16} />
+          </EditButton>
+          <EditButton type="button" data-id={board._id} onClick={handleDelete}>
+            <BasketIcon size={16} />
+          </EditButton>
         </BtnContainer>
       )}
       <UniversalModal isOpen={isOpen} onClose={close}>
