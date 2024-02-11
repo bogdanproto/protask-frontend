@@ -6,27 +6,25 @@ import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
 import { HomePage, Main } from './Home.styled';
-import { selectAllBoard } from 'redux/dataSlice/selectors';
+import { selectIsBoardsUploaded } from 'redux/dataSlice/selectors';
 import { selectWallPapers } from 'redux/uiSlice/selectors';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const isBoardExist = useSelector(selectAllBoard);
+  const isBoardsExist = useSelector(selectIsBoardsUploaded);
   const isWallpapersExist = useSelector(selectWallPapers);
 
   useEffect(() => {
-    if (isWallpapersExist.length) {
-      return;
-    } else {
-      dispatch(getAllWallpapers());
-    }
-
-    if (isBoardExist.length) {
-      return;
-    } else {
+    if (!isBoardsExist) {
       dispatch(getAllBoards());
     }
-  }, [dispatch, isBoardExist.length, isWallpapersExist.length]);
+  }, [dispatch, isBoardsExist]);
+
+  useEffect(() => {
+    if (!isWallpapersExist.length) {
+      dispatch(getAllWallpapers());
+    }
+  }, [dispatch, isWallpapersExist.length]);
 
   return (
     <HomePage>
