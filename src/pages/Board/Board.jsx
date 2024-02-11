@@ -1,14 +1,23 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectActiveBoard } from 'redux/dataSlice/selectors';
 import { ScreenPage, BoardNotFound } from './Board.styled';
 import { HeaderDashboard } from 'components/ScreenPage/HeaderDashboard/HeaderDashboard';
 import { MainDashboard } from 'components/ScreenPage/MainDashboard/MainDashboard';
+import { useEffect } from 'react';
+import { getBoardById } from 'redux/dataSlice/operations';
+import { useParams } from 'react-router';
 
 // ========================
 
 export const Board = () => {
+  const dispatch = useDispatch();
   const activeBoard = useSelector(selectActiveBoard);
+  const { boardName } = useParams();
+
+  useEffect(() => {
+    dispatch(getBoardById(boardName));
+  }, [boardName, dispatch]);
 
   return (
     <>
