@@ -1,5 +1,6 @@
 import { HeaderDashboardContainer, BoardTitle } from './HeaderDashboard.styled';
-import { Filters } from './Filters/Filters';
+//import { Filters } from './Filters/Filters';
+import { Filters } from 'components/Filters';
 
 // ========================
 

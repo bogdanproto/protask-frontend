@@ -71,6 +71,20 @@ export const SublineRow = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    > label {
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: -0.02em;
+        text-decoration: underline;
+        color: ${p => p.theme.colors.modalFontLight};
+        display: inline;
+        cursor: pointer;
+    }
+
+    > input {
+        display: none;
+    }
 `;
 
 export const InputRow = styled.div`
@@ -86,6 +100,7 @@ export const InputRow = styled.div`
         color: ${p => p.theme.colors.modalFontLight};
         font-size: 12px;
         letter-spacing: -0.02em;
+        cursor: pointer;
     }
 
     input {
