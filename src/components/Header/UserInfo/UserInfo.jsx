@@ -23,11 +23,6 @@ const UserInfo = () => {
   return (
     <HeaderAvatar>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
-        <ModalCloseButton onClick={closeModal}>
-          <svg width="18" height="18" stroke="black">
-            <use href={sprite + '#icon-x-close'}></use>
-          </svg>
-        </ModalCloseButton>
         <EditProfile closeModal={closeModal} />
       </UniversalModal>
       <span>{userName}</span>
