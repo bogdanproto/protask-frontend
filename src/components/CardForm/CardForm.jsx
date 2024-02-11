@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
 import { InputBoxErr } from 'components/common';
 
-import { useDispatch } from 'react-redux';
 import { InputCardForm } from './InputCardForm/InputCardForm';
 import {
   CustomRadio,
