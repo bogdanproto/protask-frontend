@@ -10,7 +10,15 @@ import {
   BottomBox,
 } from './Card.styled';
 
-export const Card = ({ card }) => {
+import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
+import { CardForm } from 'components/CardForm/CardForm';
+import { useModal } from 'hooks/useModal';
+// ========================
+
+export const Card = ({
+  card: { _id, title, description, priority, deadline },
+}) => {
+  const { isOpen, close, toggle } = useModal();
   const [isExpanded, setExpanded] = useState(false);
 
   const toggleHeight = () => {
@@ -18,19 +26,26 @@ export const Card = ({ card }) => {
   };
 
   return (
-    <CardContainer priority={card.priority}>
+    <CardContainer priority={priority}>
       <TopBox className={isExpanded ? 'expanded' : ''} onClick={toggleHeight}>
-        <CardTitle className={isExpanded ? 'expanded' : ''}>
-          {card.title}
-        </CardTitle>
+        <CardTitle className={isExpanded ? 'expanded' : ''}>{title}</CardTitle>
         <CardDescription className={isExpanded ? 'expanded' : ''}>
-          {card.description}
+          {description}
         </CardDescription>
       </TopBox>
       <BottomBox>
-        <InfoPanel priority={card.priority} deadline={card.deadline} />
-        <ActionPanel />
+        <InfoPanel priority={priority} deadline={deadline} />
+        <ActionPanel cardId={_id} onEditButton={toggle} />
       </BottomBox>
+      <UniversalModal isOpen={isOpen} onClose={close}>
+        <CardForm
+          cardId={_id}
+          title={title}
+          description={description}
+          priority={priority}
+          deadline={deadline}
+        />
+      </UniversalModal>
     </CardContainer>
   );
 };

@@ -6,7 +6,6 @@ import { Outlet } from 'react-router';
 import { getAllBoards, getBoardById } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
 import { HomePage, Main } from './Home.styled';
-import { BoardForm } from 'components/BoardForm/BoardForm';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
 import { CardForm } from 'components/CardForm/CardForm';

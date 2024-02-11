@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+
 import { useModal } from 'hooks/useModal';
 
 import { deleteColumn } from 'redux/dataSlice/operations';
@@ -21,7 +22,6 @@ import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 
 export const Column = ({ column: { _id, title, cards } }) => {
   const dispatch = useDispatch();
-
   const { isOpen, close, toggle } = useModal();
 
   const onDeleteButton = columnId => {

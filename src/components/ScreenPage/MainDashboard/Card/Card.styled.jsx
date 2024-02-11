@@ -29,10 +29,10 @@ export const CardContainer = styled.div`
 
 export const TopBox = styled.div`
   position: relative;
-  height: 80px;
+  min-height: 80px;
   padding-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};
-  cursor: grab;
+  cursor: zoom-in;
 
   overflow: hidden;
 
@@ -51,7 +51,7 @@ export const TopBox = styled.div`
 
   &.expanded {
     height: 100%;
-    overflow: auto;
+    cursor: zoom-out;
   }
 `;
 
@@ -89,7 +89,7 @@ export const CardDescription = styled.p`
   &.expanded {
     overflow: show;
     text-overflow: '';
-    -webkit-line-clamp: 10;
+    -webkit-line-clamp: 50;
   }
 `;
 
