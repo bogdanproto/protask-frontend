@@ -1,25 +1,32 @@
-import React from 'react';
-// import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
 
-import { ScreenPage } from 'components/ScreenPage/index';
+import { selectActiveBoard } from 'redux/dataSlice/selectors';
+import { ScreenPage, BoardNotFound } from './Board.styled';
+import { HeaderDashboard } from 'components/ScreenPage/HeaderDashboard/HeaderDashboard';
+import { MainDashboard } from 'components/ScreenPage/MainDashboard/MainDashboard';
 
-// const content = true;
-// const content = false;
+// ========================
 
 export const Board = () => {
-  // const { boardName } = useParams();
-  return <ScreenPage />;
+  const activeBoard = useSelector(selectActiveBoard);
+
+  return (
+    <>
+      {activeBoard ? (
+        <ScreenPage>
+          <HeaderDashboard boardTitle={activeBoard.title} />
+          <MainDashboard boardId={activeBoard._id} />
+        </ScreenPage>
+      ) : (
+        <BoardNotFound>
+          <p>
+            Before starting your project, it is essential to create a board to
+            visualize and track all the necessary tasks and milestones. This
+            board serves as a powerful tool to organize the workflow and ensure
+            effective collaboration among team members.
+          </p>
+        </BoardNotFound>
+      )}
+    </>
+  );
 };
-
-// export const Board = () => {
-//   const { boardName } = useParams();
-
-//   return (
-//     <>
-//       <h1>{`Board ${boardName}`}</h1>;
-//       {/* <button onClick={() => dispath(deleteBoard('65c4ca89233c119056a4b7b2'))}>
-//         AddBoard
-//       </button> */}
-//     </>
-//   );
-// };

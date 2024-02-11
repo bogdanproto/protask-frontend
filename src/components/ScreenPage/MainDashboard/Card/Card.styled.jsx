@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getPriorityColor } from 'helpers';
+import { getPriorityColor } from 'helpers/index';
 
 export const CardContainer = styled.div`
   background-color: ${p => p.theme.colors.secondBackgroundColor};
@@ -9,9 +9,7 @@ export const CardContainer = styled.div`
   padding: ${p => p.theme.spacing(7)} ${p => p.theme.spacing(7)}
     ${p => p.theme.spacing(5)} ${p => p.theme.spacing(12)};
 
-  /* outline: 1px solid blueviolet; */
   width: 334px;
-  /* height: 154px; */
   border-radius: ${p => p.theme.radius};
   overflow: hidden;
 
@@ -31,12 +29,12 @@ export const CardContainer = styled.div`
 
 export const TopBox = styled.div`
   position: relative;
-  height: 80px;
+  min-height: 80px;
   padding-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};
-  cursor: grab;
+  cursor: zoom-in;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 
   &::after {
     content: '';
@@ -53,7 +51,7 @@ export const TopBox = styled.div`
 
   &.expanded {
     height: 100%;
-    overflow: auto;
+    cursor: zoom-out;
   }
 `;
 
@@ -91,14 +89,14 @@ export const CardDescription = styled.p`
   &.expanded {
     overflow: show;
     text-overflow: '';
-    -webkit-line-clamp: 10;
+    -webkit-line-clamp: 50;
   }
 `;
 
 export const BottomBox = styled.div`
   display: flex;
   flex-direction: row;
-  gap: ${p => p.theme.spacing(4)};
+  justify-content: space-between;
   align-items: center;
   height: 45px;
   padding-top: ${p => p.theme.spacing(7)};

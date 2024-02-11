@@ -1,10 +1,12 @@
 import { HeaderDashboardContainer, BoardTitle } from './HeaderDashboard.styled';
 import { Filters } from './Filters/Filters';
 
-export const HeaderDashboard = () => {
+// ========================
+
+export const HeaderDashboard = ({ boardTitle }) => {
   return (
     <HeaderDashboardContainer>
-      <BoardTitle>Project office</BoardTitle>
+      <BoardTitle>{boardTitle}</BoardTitle>
       <Filters type="button" />
     </HeaderDashboardContainer>
   );
