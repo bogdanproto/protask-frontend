@@ -4,7 +4,7 @@ import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 import { useDispatch } from 'react-redux';
-import { selectFilteredCards } from 'redux/dataSlice/selectors';
+import { switchFilterCards } from 'redux/uiSlice';
     
 export const Filters = () => {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export const Filters = () => {
 
     const handleClick = evt => {
         console.log(evt.target.value);
-        dispatch(selectFilteredCards(evt.target.value))
+        dispatch(switchFilterCards(evt.target.value))
     }
   
     return (
@@ -44,7 +44,9 @@ export const Filters = () => {
                 <h2>Filters</h2>
                 <SublineRow>
                     <h3>Label color</h3>
-                    <button type="button">Show  all</button>
+                    {/*<button type="button" id="" onClick={handleClick}>Show  all</button>*/}
+                    <Input type="radio" id="all" value="" name="filter" onClick={handleClick}></Input>
+                    <label htmlFor='all'>Show  all</label>
                 </SublineRow>
 
                 <InputRow>

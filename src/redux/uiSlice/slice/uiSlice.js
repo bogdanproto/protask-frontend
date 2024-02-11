@@ -34,4 +34,4 @@ const uiSlice = createSlice({
 });
 
 export const uiReducer = uiSlice.reducer;
-export const { toggleSidebar } = uiSlice.actions;
+export const { toggleSidebar, switchFilterCards } = uiSlice.actions;
