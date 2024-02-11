@@ -52,7 +52,7 @@ export const dark = {
     sidebarSupport: '#1f1f1f',
     logoBackground: '#1f1f1f',
     logoIcon: '#fff',
-    modalBackground: '#212121',
+    modalBackground: '#161616',
     filterFont: 'rgba(255, 255, 255, 0.5)',
     filterFont2: '#fff',
     filterModalBackground: '#151515',
@@ -61,6 +61,7 @@ export const dark = {
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
+  
   },
 };
 
