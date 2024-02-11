@@ -3,22 +3,25 @@ import { Icon } from 'components/common/Icon/Icon';
 import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from "react-icons/io";
+import { useDispatch } from 'react-redux';
+import { selectFilteredCards } from 'redux/dataSlice/selectors';
     
 export const Filters = () => {
+    const dispatch = useDispatch();
+
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
         setIsOpen(true);
     }
 
-    /*
-    function afterOpenModal() {
-        subtitle.style.color = '#f00';
-    }
-    */
-
     function closeModal() {
         setIsOpen(false);
+    }
+
+    const handleClick = evt => {
+        console.log(evt.target.value);
+        dispatch(selectFilteredCards(evt.target.value))
     }
   
     return (
@@ -45,19 +48,19 @@ export const Filters = () => {
                 </SublineRow>
 
                 <InputRow>
-                    <Input type="radio" id="without" value="without" name="filter"></Input>
+                    <Input type="radio" id="without" value="without" name="filter" onClick={handleClick}></Input>
                     <label htmlFor='without'>Without priority</label>
                 </InputRow>
                 <InputRow>
-                    <Input type="radio" id="low" value="low" name="filter"></Input>
+                    <Input type="radio" id="low" value="low" name="filter" onClick={handleClick}></Input>
                     <label htmlFor='low'>Low</label>
                 </InputRow>
                 <InputRow>
-                    <Input type="radio" id="medium" value="medium" name="filter"></Input>
+                    <Input type="radio" id="medium" value="medium" name="filter" onClick={handleClick}></Input>
                     <label htmlFor='medium'>Medium</label>
                 </InputRow>
                 <InputRow>
-                    <Input type="radio" id="high" value="high" name="filter"></Input>
+                    <Input type="radio" id="high" value="high" name="filter" onClick={handleClick}></Input>
                     <label htmlFor='high'>High</label>
                 </InputRow>
             </ModalStyled>
