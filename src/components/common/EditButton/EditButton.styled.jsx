@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const EditButtonWrapper = styled.button`
+export const EditButton = styled.button`
   width: 24px;
   height: 24px;
   border-radius: 50%;

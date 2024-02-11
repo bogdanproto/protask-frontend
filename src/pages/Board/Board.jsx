@@ -14,7 +14,7 @@ export const Board = () => {
     <>
       {activeBoard ? (
         <ScreenPage>
-          <HeaderDashboard />
+          <HeaderDashboard boardTitle={activeBoard.title} />
           <MainDashboard />
         </ScreenPage>
       ) : (

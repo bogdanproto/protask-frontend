@@ -5,9 +5,9 @@ import {
   ButtonTitle,
 } from './AddColumnCardButton.styled';
 
-export const AddColumnCardButton = ({ title }) => {
+export const AddColumnCardButton = ({ title, onClick }) => {
   return (
-    <AddButtonContainer type="button">
+    <AddButtonContainer type="button" onClick={onClick}>
       <IconWrapper>
         <PlusIcon size={28} fill={'white'} />
       </IconWrapper>

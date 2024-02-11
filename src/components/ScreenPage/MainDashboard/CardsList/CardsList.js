@@ -1,14 +1,14 @@
 import { List } from './CardsList.styled';
-import { Card } from '../Card/Card';
+import { Card } from 'components/ScreenPage/MainDashboard/Card/Card';
 
 // ========================
 
-export const CardsList = ({ cards }) => {
+export const CardsList = ({ columnId, cards }) => {
   return (
     <List>
       {cards.map(card => (
         <li key={card._id}>
-          <Card card={card} />
+          <Card columnId={columnId} card={card} />
         </li>
       ))}
     </List>

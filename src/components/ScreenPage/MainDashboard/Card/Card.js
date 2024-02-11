@@ -16,6 +16,7 @@ import { useModal } from 'hooks/useModal';
 // ========================
 
 export const Card = ({
+  columnId,
   card: { _id, title, description, priority, deadline },
 }) => {
   const { isOpen, close, toggle } = useModal();
@@ -35,7 +36,7 @@ export const Card = ({
       </TopBox>
       <BottomBox>
         <InfoPanel priority={priority} deadline={deadline} />
-        <ActionPanel cardId={_id} onEditButton={toggle} />
+        <ActionPanel columnId={columnId} cardId={_id} onEditButton={toggle} />
       </BottomBox>
       <UniversalModal isOpen={isOpen} onClose={close}>
         <CardForm

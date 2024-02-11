@@ -34,7 +34,7 @@ export const TopBox = styled.div`
   padding-bottom: ${p => p.theme.spacing(7)};
   cursor: zoom-in;
 
-  overflow: hidden;
+  /* overflow: hidden; */
 
   &::after {
     content: '';
@@ -96,7 +96,7 @@ export const CardDescription = styled.p`
 export const BottomBox = styled.div`
   display: flex;
   flex-direction: row;
-  gap: ${p => p.theme.spacing(4)};
+  justify-content: space-between;
   align-items: center;
   height: 45px;
   padding-top: ${p => p.theme.spacing(7)};

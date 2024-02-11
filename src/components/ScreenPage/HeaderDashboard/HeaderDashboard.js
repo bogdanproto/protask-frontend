@@ -1,17 +1,12 @@
-import { useSelector } from 'react-redux';
-
-import { selectActiveBoard } from 'redux/dataSlice/selectors';
 import { HeaderDashboardContainer, BoardTitle } from './HeaderDashboard.styled';
 import { Filters } from './Filters/Filters';
 
 // ========================
 
-export const HeaderDashboard = () => {
-  const activeBoard = useSelector(selectActiveBoard);
-
+export const HeaderDashboard = ({ boardTitle }) => {
   return (
     <HeaderDashboardContainer>
-      <BoardTitle>{activeBoard?.title}</BoardTitle>
+      <BoardTitle>{boardTitle}</BoardTitle>
       <Filters type="button" />
     </HeaderDashboardContainer>
   );
