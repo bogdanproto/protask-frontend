@@ -12,9 +12,9 @@ export const RoutesComp = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path={routes.ROOT} element={<Layout />}>
           <Route
-            path="/"
+            path={routes.ROOT}
             element={
               <RedirectedRoute
                 redirectTo1={routes.HOME}
