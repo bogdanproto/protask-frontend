@@ -7,6 +7,7 @@ import { deleteColumn } from 'redux/dataSlice/operations';
 import { EditButton } from 'components/common/EditButton/EditButton.styled';
 import { PencilIcon, BasketIcon } from 'components/common/IconsLibrary';
 import { CardsList } from '../CardsList/CardsList';
+
 import {
   ColumnContainer,
   ColumnTitlePlate,
@@ -44,7 +45,7 @@ export const Column = ({ column: { _id, title, cards } }) => {
 
       <CardsList columnId={_id} cards={cards} />
 
-      <CardCreator />
+      <CardCreator columnId={_id} />
 
       <UniversalModal isOpen={isOpen} onClose={close}>
         <ColumnForm closeModal={close} columnId={_id} title={title} />
