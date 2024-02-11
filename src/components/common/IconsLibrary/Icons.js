@@ -1,4 +1,4 @@
-import { IconWrapper16, IconWrapper18, IconWrapper24 } from './IconWrappers';
+import { IconWrapper16, IconWrapper18, IconWrapper28 } from './IconWrappers';
 
 const styles15 = {
   stroke: 'currentColor',
@@ -181,23 +181,23 @@ export const HexagonIcon = ({ size }) => {
 
 export const PlusIcon = ({ size, fill }) => {
   return (
-    <IconWrapper24 size={size}>
+    <IconWrapper28 size={size}>
       <path
-        d="M18 0H6C2.68629 0 0 2.68629 0 6V18C0 21.3137 2.68629 24 6 24H18C21.3137 24 24 21.3137 24 18V6C24 2.68629 21.3137 0 18 0Z"
-        fill="currentColor"
+        d="M22 0H6C2.68629 0 0 2.68629 0 6V22C0 25.3137 2.68629 28 6 28H22C25.3137 28 28 25.3137 28 22V6C28 2.68629 25.3137 0 22 0Z"
+        fill="#161616"
       />
       <path
-        d="M12 9.08331V14.9166"
+        d="M14 9.91663V18.0833"
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M9.0835 12H14.9168"
+        d="M9.9165 14H18.0832"
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </IconWrapper24>
+    </IconWrapper28>
   );
 };

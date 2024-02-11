@@ -1,16 +1,17 @@
 import styled from 'styled-components';
+import { getButtonColor } from 'helpers/index';
 
-export const AddCardBtnContainer = styled.button`
+export const AddButtonContainer = styled.button`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: ${p => p.theme.spacing(4)};
-  width: 334px;
+  min-width: 334px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
-  background-color: ${p => p.theme.colors.accentColor};
+  background-color: ${getButtonColor};
   color: ${p => p.theme.colors.fontColor};
   font-size: 14px;
   transition: all ${p => p.theme.cubicTransition};
@@ -24,4 +25,17 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const ButtonTitle = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  color: ${p => p.theme.colors.fontColor};
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AddColumnBtnContainer = styled.button`
+export const CardBtnStyled = styled.button`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -10,17 +10,17 @@ export const AddColumnBtnContainer = styled.button`
   min-width: 334px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
-  background-color: ${p => p.theme.colors.secondBackgroundColor};
+  background-color: ${p => p.theme.colors.btnPrimary};
   color: ${p => p.theme.colors.fontColor};
   font-size: 14px;
   transition: all ${p => p.theme.cubicTransition};
 
   &:hover {
-    background-color: ${p => p.theme.colors.accentColor};
+    background-color: ${p => p.theme.colors.btnPrimaryHover};
   }
 `;
 
-export const IconWrapper = styled.div`
+export const IconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

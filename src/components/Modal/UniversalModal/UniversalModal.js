@@ -13,7 +13,7 @@ const UniversalModal = ({ isOpen, onClose, children }) => {
         ...modalStyles,
         content: {
           ...modalStyles.content,
-          backgroundColor: theme.colors.background,
+          backgroundColor: theme.colors.modalBackground,
         },
       }}
       ariaHideApp={false}

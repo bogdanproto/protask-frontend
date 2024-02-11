@@ -54,8 +54,12 @@ export const List = styled.ul`
   max-height: 22vh;
   overflow: auto;
 
+    @media (min-width: 1440px) {
+        max-height: 32vh;
+    }
+
   &::-webkit-scrollbar {
-    width: 2px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-track {
@@ -86,7 +90,7 @@ export const Item = styled.li`
     &.active {
         opacity: 1;
         background-color: ${p => p.theme.colors.sidebarTabActive};
-        border-right: 4px solid ${p => p.theme.colors.sidebarBorder2};
+        //border-right: 4px solid ${p => p.theme.colors.sidebarBorder2};
     }
 
     svg {

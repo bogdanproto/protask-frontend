@@ -23,11 +23,14 @@ export const dark = {
     btnPrimary: '#BEDBB0',
     btnPrimaryColor: '#212121',
     btnPrimaryHover: '#9DC888',
+    btnDisabled: 'gray',
     backgroundModal: '#151515',
     titleModalFontColor: '#fff',
     btnSmall: '#BEDBB0',
     inputColor: '#fff',
     inputBorder: '#BEDBB0',
+    iconBox: '#212121',
+    iconInvert: '#fff',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -35,6 +38,8 @@ export const dark = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
+    iconMainColor: 'rgba(255, 255, 255, 0.5',
+    iconActiveColor: 'rgba(255, 255, 255, 1',
 
     // =============
     titleColor: '#FFFFFF',
@@ -74,10 +79,13 @@ export const light = {
     btnPlusHover: '#9DC888',
     btnPrimary: '#BEDBB0',
     btnPrimaryHover: '#9DC888',
+    btnDisabled: 'gray',
     btnSmall: '#BEDBB0',
     btnPrimaryColor: '#212121',
     inputColor: '#161616',
     inputBorder: '#BEDBB0',
+    iconBox: '#212121',
+    iconInvert: '#fff',
     white: '#fff',
     black: '#212121',
     accentColor: '#BEDBB0',
@@ -85,6 +93,8 @@ export const light = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
+    iconMainColor: 'rgba(22, 22, 22, 0.5)',
+    iconActiveColor: 'rgba(22, 22, 22, 1)',
 
     // =============
 
@@ -109,7 +119,6 @@ export const light = {
     filterModalBackground: '#fcfcfc',
     modalFontLight: 'rgba(22, 22, 22, 0.5)',
     filterBorder: 'rgba(22, 22, 22, 0.1)',
-
   },
 };
 
@@ -128,7 +137,10 @@ export const violet = {
     btnPrimary: '#5255bc',
     btnPrimaryColor: '#fff',
     btnPrimaryHover: '#7B7EDE',
+    btnDisabled: 'gray',
     btnSmall: '#ECEDFD',
+    iconBox: '#fff',
+    iconInvert: '#212121',
     inputColor: '#161616',
     inputBorder: '#5255bc66',
     white: '#fff',
@@ -145,6 +157,9 @@ export const violet = {
     sidebarSupport: 'rgba(236, 237, 253, 0.4)',
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
+
+    iconMainColor: 'rgba(22, 22, 22, 0.5)',
+    iconActiveColor: 'rgba(22, 22, 22, 1)',
 
     modalBackground: '#fff',
 
