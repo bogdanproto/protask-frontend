@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     svg {
-        //width: 100%;
+        /* width: 100%; */
     }
 
     hr {

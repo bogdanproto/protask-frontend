@@ -31,8 +31,8 @@ export const Sidebar = () => {
   };
 
   return (
-    <Backdrop isvisible={visible.toString()} onClick={handleBackdropClick}>
-      <SidebarStyled>
+    <Backdrop $isvisible={visible.toString()} onClick={handleBackdropClick}>
+      <SidebarStyled $isvisible={visible.toString()}>
         <LogoLink to={routes.HOME}>
           <div>
             <Icon width={12} height={16} id={'icon-logo-small'}></Icon>

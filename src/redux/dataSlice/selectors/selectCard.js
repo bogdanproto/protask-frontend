@@ -1,10 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { selectFilterCards } from 'redux/uiSlice/selectors';
 
-export const selectCardByColumn = state => state.data.columns;
+export const selectAllCardsOfBoard = state => state.data.columns;
 
-export const selectFilteredCards = createSelector(
-  [selectFilterCards, selectCardByColumn],
+export const selectFilteredCardsOfBoard = createSelector(
+  [selectFilterCards, selectAllCardsOfBoard],
   (filter, columns) => {
     return columns
       ? columns.map(column => {

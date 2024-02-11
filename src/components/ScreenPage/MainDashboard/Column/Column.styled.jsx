@@ -15,31 +15,26 @@ export const ColumnTitlePlate = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: ${p => p.theme.spacing(9)} ${p => p.theme.spacing(10)};
+  padding: ${p => p.theme.spacing(8)};
   width: 334px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
   background-color: ${p => p.theme.colors.secondBackgroundColor};
-  color: ${p => p.theme.colors.fontColor};
+`;
+
+export const ColumnTitle = styled.h3`
   font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${p => p.theme.colors.fontColor};
 `;
 
 export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
-
-export const ActionButton = styled.button`
-  padding: ${p => p.theme.spacing(2)};
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  color: ${p => p.theme.colors.fontColor};
-
-  transition: all ${p => p.theme.cubicTransition};
-
-  &:hover {
-    color: ${p => p.theme.colors.accentColor};
-  }
 `;

@@ -1,37 +1,40 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Sidebar } from 'components/Sidebar';
-import { Filters } from 'components/Filters';
 import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { Outlet } from 'react-router';
 import { getAllBoards } from 'redux/dataSlice/operations';
 import { Header } from 'components/Header';
-import { HomePage, FakeBox } from './Home.styled';
-import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
-import { useModal } from 'hooks/useModal';
-import { CardForm } from 'components/CardForm/CardForm';
+import { HomePage, Main } from './Home.styled';
+import { selectAllBoard } from 'redux/dataSlice/selectors';
+import { selectWallPapers } from 'redux/uiSlice/selectors';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const { isOpen, close, toggle } = useModal();
+  const isBoardExist = useSelector(selectAllBoard);
+  const isWallpapersExist = useSelector(selectWallPapers);
 
   useEffect(() => {
-    dispatch(getAllBoards());
-    dispatch(getAllWallpapers());
-  }, [dispatch]);
+    if (isWallpapersExist.length) {
+      return;
+    } else {
+      dispatch(getAllWallpapers());
+    }
+
+    if (isBoardExist.length) {
+      return;
+    } else {
+      dispatch(getAllBoards());
+    }
+  }, [dispatch, isBoardExist.length, isWallpapersExist.length]);
 
   return (
     <HomePage>
       <Sidebar />
-      <FakeBox>
+      <Main>
         <Header />
         <Outlet />
-      </FakeBox>
-      <Filters />
-      <button onClick={() => toggle()}>NewCard</button>
-      <UniversalModal isOpen={isOpen} onClose={close}>
-        <CardForm />
-      </UniversalModal>
+      </Main>
     </HomePage>
   );
 };

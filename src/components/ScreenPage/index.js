@@ -1,1 +1,2 @@
-export * from './ScreenPage/ScreenPage';
+export * from './HeaderDashboard/HeaderDashboard';
+export * from "./MainDashboard/MainDashboard"
