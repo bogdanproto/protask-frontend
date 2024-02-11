@@ -9,7 +9,6 @@ import { HomePage, Main } from './Home.styled';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
 import { CardForm } from 'components/CardForm/CardForm';
-import { Tooltip } from 'components/ScreenPage/MainDashboard/Tooltip/Tooltip';
 
 export const Home = () => {
   const dispatch = useDispatch();

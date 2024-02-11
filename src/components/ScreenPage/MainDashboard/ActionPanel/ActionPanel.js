@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeCardsColumn, deleteCard } from 'redux/dataSlice/operations';
+import { deleteCard } from 'redux/dataSlice/operations';
 
 import {
   MoveIcon,
@@ -38,9 +38,9 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
     setTooltipOpen(!isTooltipOpen);
   };
 
-  const onChangeColumnButton = () => {
-    dispatch(changeCardsColumn());
-  };
+  // const onChangeColumnButton = () => {
+  //   dispatch(changeCardsColumn());
+  // };
 
   const onDeleteButton = cardId => {
     dispatch(deleteCard(cardId));

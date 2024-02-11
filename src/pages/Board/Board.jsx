@@ -15,7 +15,7 @@ export const Board = () => {
       {activeBoard ? (
         <ScreenPage>
           <HeaderDashboard boardTitle={activeBoard.title} />
-          <MainDashboard />
+          <MainDashboard boardId={activeBoard._id} />
         </ScreenPage>
       ) : (
         <BoardNotFound>

@@ -39,12 +39,9 @@ import {
   handleFulfilledChangeCardsColumn,
 } from '../handleStatus/handleCard';
 
-import columns from '../../../components/ScreenPage/tempData/columns.json';
-
 const initialState = {
   boards: [],
   columns: null,
-  // columns: columns,
   error: null,
   isLoading: null,
   successMsg: null,
