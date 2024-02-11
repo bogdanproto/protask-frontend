@@ -9,11 +9,11 @@ import {
 import { Btn } from 'components/common/Btn/Btn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
-import { Icon } from 'components/common/Icon/Icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from 'redux/authSlice/operations';
 import { toggleSidebar } from 'redux/uiSlice';
 import { selectIsOpenSidebar } from 'redux/uiSlice/selectors';
+import { LogoIcon } from 'components/common/IconsLibrary/index';
 
 export const Sidebar = () => {
   const burgerVisible = useSelector(selectIsOpenSidebar);
@@ -35,7 +35,7 @@ export const Sidebar = () => {
       <SidebarStyled $isvisible={visible.toString()}>
         <LogoLink to={routes.HOME}>
           <div>
-            <Icon width={12} height={16} id={'icon-logo-small'}></Icon>
+            <LogoIcon width={12} height={16}/>
           </div>
           <LogoText>Task Pro</LogoText>
         </LogoLink>
