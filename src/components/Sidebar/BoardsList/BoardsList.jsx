@@ -7,16 +7,20 @@ import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useSelector } from 'react-redux';
 import { selectActiveBoard, selectAllBoard } from 'redux/dataSlice/selectors';
 import { useNavigate } from 'react-router';
-import { routes } from 'const';
 
 export const BoardsList = () => {
-  const boards = useSelector(selectAllBoard);
-  const activeBoard = useSelector(selectActiveBoard);
   const navigate = useNavigate();
+
   const { isOpen, close, toggle } = useModal();
 
-  const handleClick = id => {
-    navigate(`${routes.HOME}/${id}`);
+  const boards = useSelector(selectAllBoard);
+  const activeBoard = useSelector(selectActiveBoard);
+
+  const handleClick = (id, evt) => {
+    if (evt.target?.closest('button')) {
+      return;
+    }
+    navigate(id);
   };
 
   return (
@@ -31,7 +35,7 @@ export const BoardsList = () => {
           <Item
             key={item._id}
             className={activeBoard?._id === item._id ? 'active' : null}
-            onClick={() => handleClick(item._id)}
+            onClick={evt => handleClick(item._id, evt)}
           >
             <BoardsItem
               board={item}

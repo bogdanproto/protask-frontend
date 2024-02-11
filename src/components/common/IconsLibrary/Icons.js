@@ -2,7 +2,7 @@ import { IconWrapper16, IconWrapper18, IconWrapper28 } from './IconWrappers';
 
 const styles15 = {
   stroke: 'currentColor',
-  strokeOpacity: '0.5',
+  strokeOpacity: '1',
   strokeWidth: '1.5',
   strokeLinecap: 'round',
   strokeLinejoin: 'round',
@@ -11,7 +11,7 @@ const styles15 = {
 const styles13 = {
   stroke: 'currentColor',
   strokeWidth: '1.5',
-  strokeOpacity: '0.5',
+  strokeOpacity: '1',
   strokeLinecap: 'round',
   strokeLinejoin: 'round',
 };

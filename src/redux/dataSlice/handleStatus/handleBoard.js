@@ -33,7 +33,7 @@ export const handleFulfilledAddBoard = (state, action) => {
 export const handleFulfilledUpdateBoard = (state, action) => {
   const newBoard = action.payload;
   state.boards = [...state.boards].map(item =>
-    item._id === newBoard._id ? newBoard : item
+    item._id === newBoard._id ? { ...item, title: newBoard.title } : item
   );
 
   state.successMsg = successNotify.BOARD_UPDATE;

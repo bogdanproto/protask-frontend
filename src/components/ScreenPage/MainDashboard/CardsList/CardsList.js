@@ -6,7 +6,6 @@ import { selectFilteredCardsOfBoard } from 'redux/dataSlice/selectors';
 // ========================
 
 export const CardsList = ({ columnId, cards }) => {
-  //const dispatch = useDispatch();
   const visibleCards = useSelector(selectFilteredCardsOfBoard);
 
   return (
