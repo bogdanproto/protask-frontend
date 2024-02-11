@@ -1,9 +1,6 @@
 import { useSelector } from 'react-redux/';
 
-import {
-  selectAllCardsOfBoard,
-  // selectFilteredCardsOfBoard,
-} from 'redux/dataSlice/selectors';
+import { selectFilteredCardsOfBoard } from 'redux/dataSlice/selectors';
 
 import { List } from './ColumnsList.styled';
 import { Column } from '../Column/Column';
@@ -11,8 +8,7 @@ import { Column } from '../Column/Column';
 // ========================
 
 export const ColumnsList = () => {
-  const columns = useSelector(selectAllCardsOfBoard);
-  // const columns = useSelector(selectFilteredCardsOfBoard);
+  const columns = useSelector(selectFilteredCardsOfBoard);
 
   return (
     <List>
