@@ -2,10 +2,8 @@ import { useSelector } from 'react-redux';
 import { HeaderAvatar } from './UserInfo.styled';
 import sprite from 'data/svg/sprite.svg';
 import { useState } from 'react';
-// import { ModalCloseButton } from 'components/Modal/ModalComponent/ModalComponent.styled';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { EditProfile } from 'components/EditProfile';
-import { ModalCloseButton } from 'components/Modal/UniversalModal/UniversalModal.styled';
 
 const UserInfo = () => {
   let userName = useSelector(state => state.authUser.user.userName);
@@ -23,11 +21,6 @@ const UserInfo = () => {
   return (
     <HeaderAvatar>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
-        <ModalCloseButton onClick={closeModal}>
-          <svg width="18" height="18" stroke="black">
-            <use href={sprite + '#icon-x-close'}></use>
-          </svg>
-        </ModalCloseButton>
         <EditProfile closeModal={closeModal} />
       </UniversalModal>
       <span>{userName}</span>
