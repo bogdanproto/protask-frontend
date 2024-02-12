@@ -6,7 +6,7 @@ import {
   BtnClose,
   SublineRow,
 } from './Filters.styled';
-import { Icon } from 'components/common/Icon/Icon';
+import { FilterIcon } from 'components/common/IconsLibrary/index';
 import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
@@ -33,8 +33,8 @@ export const Filters = () => {
   return (
     <>
       <FiltersStyled type="button" onClick={openModal} id="filterButton">
-        <Icon width={16} height={16} id={'icon-filter'}></Icon>
-        Filters
+        <FilterIcon size={16} />
+        <p>Filters</p>
       </FiltersStyled>
 
       <ModalStyled
