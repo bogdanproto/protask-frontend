@@ -6,9 +6,9 @@ import { useModal } from 'hooks/useModal';
 import { useNavigate } from 'react-router';
 import { routes } from 'const';
 import { getBoardIcon } from 'helpers/index';
-import { EditButton } from 'components/common/EditButton/EditButton.styled';
 import { BasketIcon, PencilIcon } from 'components/common/IconsLibrary/index';
 import { BoardForm } from 'components/BoardForm/BoardForm';
+import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
 
 export const BoardsItem = ({ board, active }) => {
   const dispatch = useDispatch();
@@ -28,12 +28,16 @@ export const BoardsItem = ({ board, active }) => {
 
       {active === true && (
         <BtnContainer>
-          <EditButton type="button" data-id={board._id} onClick={toggle}>
+          <ActionButton type="button" data-id={board._id} onClick={toggle}>
             <PencilIcon size={16} />
-          </EditButton>
-          <EditButton type="button" data-id={board._id} onClick={handleDelete}>
+          </ActionButton>
+          <ActionButton
+            type="button"
+            data-id={board._id}
+            onClick={handleDelete}
+          >
             <BasketIcon size={16} />
-          </EditButton>
+          </ActionButton>
         </BtnContainer>
       )}
       <UniversalModal isOpen={isOpen} onClose={close}>

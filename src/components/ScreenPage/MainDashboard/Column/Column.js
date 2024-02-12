@@ -4,7 +4,6 @@ import { useModal } from 'hooks/useModal';
 
 import { deleteColumn } from 'redux/dataSlice/operations';
 
-import { EditButton } from 'components/common/EditButton/EditButton.styled';
 import { PencilIcon, BasketIcon } from 'components/common/IconsLibrary';
 import { CardsList } from '../CardsList/CardsList';
 
@@ -18,6 +17,7 @@ import {
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { AddCardButton } from '../AddCardButton/AddCardButton';
 import { ColumnForm } from 'components/ColumnForm/ColumnForm';
+import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
 
 // ========================
 
@@ -34,12 +34,12 @@ export const Column = ({ column: { _id, title, cards } }) => {
       <ColumnTitlePlate>
         <ColumnTitle>{title}</ColumnTitle>
         <ButtonBox>
-          <EditButton type="button" onClick={() => toggle()}>
+          <ActionButton type="button" onClick={() => toggle()}>
             <PencilIcon size={16} />
-          </EditButton>
-          <EditButton type="button" onClick={() => onDeleteButton(_id)}>
+          </ActionButton>
+          <ActionButton type="button" onClick={() => onDeleteButton(_id)}>
             <BasketIcon size={16} />
-          </EditButton>
+          </ActionButton>
         </ButtonBox>
       </ColumnTitlePlate>
 

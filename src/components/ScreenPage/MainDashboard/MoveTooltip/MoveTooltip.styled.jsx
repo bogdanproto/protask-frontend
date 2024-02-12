@@ -1,32 +1,17 @@
 import styled from 'styled-components';
 import Modal from 'react-modal';
 
-export const TooltipContainer = styled.div`
-  position: absolute;
-  bottom: calc(-100% + 18px);
-  right: 62px;
-  overflow: visible;
-  /* transform: translateX(-50%); */
-
-  width: 135px;
+export const TooltipContainer = styled(Modal)`
+  width: 750px;
 
   padding: ${p => p.theme.spacing(5)} 0;
   background-color: ${p => p.theme.colors.thirdBackgroundColor};
-  /* outline: 2px solid tomato; */
+  outline: 2px solid tomato;
   border-radius: 12px;
-
-  /* scale: 0; */
-  z-index: 99;
-
-  /* &.opened {
-    scale: 1;
-  } */
-
-  
+  background-color: tomato;
 
   &:hover {
     color: ${p => p.theme.colors.accentColor};
-    
   }
 `;
 
@@ -64,3 +49,23 @@ export const ColumnTitle = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
+export const customStyles = {
+  overlay: {
+    position: 'absoltute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'transparent',
+  },
+  content: {
+    //position: 'absolute',
+    //top: '50%',
+    //left: '50%',
+    //right: '0',
+    //bottom: 'auto',
+    //marginRight: '-50%',
+    //transform: 'translateY(-50%)',
+  },
+};
