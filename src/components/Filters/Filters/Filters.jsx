@@ -12,7 +12,6 @@ import { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { switchFilterCards } from 'redux/uiSlice';
-import { FilterIcon } from 'components/common/IconsLibrary/index';
 
 export const Filters = () => {
   const dispatch = useDispatch();
