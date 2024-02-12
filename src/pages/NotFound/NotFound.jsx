@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Answer,
   DogImage,
   FlagImage,
   Mystery,
@@ -21,19 +22,22 @@ export const NotFound = () => {
   return (
     <NotFoundStyled>
       <NotFoundTitle>Oh!</NotFoundTitle>
-      
-      <ParagraphText>We can’t sniff out the page you are looking for.</ParagraphText>
+
+      <ParagraphText>
+        We can’t sniff out the page you are looking for.
+      </ParagraphText>
       <ParagraphErr>Page not found</ParagraphErr>
       <Paragraph404>404</Paragraph404>
-      <NotFoundButton><Link to="/">Back to home</Link></NotFoundButton>
+      <NotFoundButton>
+        <Link to="/">Back to home</Link>
+      </NotFoundButton>
       <Mystery>
         <Question>Who are the best?</Question>
+        <Answer>Ukrainians are the best!!!</Answer>
         <FlagImage src={flagImage} width="150" alt="flag" />
-        Ukrainians are the best!!!
       </Mystery>
       <SpotImage src={spotImage} width="150" alt="dog" />
       <DogImage src={dogImage} width="150" alt="dog" />
-      
     </NotFoundStyled>
   );
 };
