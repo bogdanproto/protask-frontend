@@ -9,4 +9,5 @@ export const successNotify = Object.freeze({
   CARD_ADD: 'New card was created successfully',
   CARD_UPDATE: 'Card was updated successfully',
   CARD_DELETE: 'Card was deleted successfully',
+  HELP: 'Your message was delivered successfully',
 });

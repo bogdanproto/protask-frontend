@@ -26,7 +26,7 @@ export const Support = () => {
           <span>Need help?</span>
         </HelpButton>
         <UniversalModal isOpen={isOpen} onClose={close}>
-          <NeedHelpForm />
+          <NeedHelpForm closeModal={close} />
         </UniversalModal>
       </SupportBox>
     </>
