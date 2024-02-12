@@ -3,10 +3,10 @@ import { BoardsItem } from 'components/Sidebar/BoardsItem/BoardsItem';
 import { Btn } from 'components/common/Btn/Btn';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
-import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useSelector } from 'react-redux';
 import { selectActiveBoard, selectAllBoard } from 'redux/dataSlice/selectors';
 import { useNavigate } from 'react-router';
+import { BoardForm } from 'components/BoardForm/BoardForm';
 
 export const BoardsList = () => {
   const navigate = useNavigate();

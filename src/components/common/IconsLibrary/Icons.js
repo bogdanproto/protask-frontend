@@ -243,3 +243,14 @@ export const PlusIcon = ({ size, fill }) => {
     </IconWrapper28>
   );
 };
+
+export const listBoardIcon = [
+  { id: 'project', component: <ProjectIcon /> },
+  { id: 'star', component: <StarIcon /> },
+  { id: 'loading', component: <LoadingIcon /> },
+  { id: 'puzzle', component: <PuzzleIcon /> },
+  { id: 'container', component: <ContainerIcon /> },
+  { id: 'lightning', component: <LightningIcon /> },
+  { id: 'colors', component: <ColorsIcon /> },
+  { id: 'hexagon', component: <HexagonIcon /> },
+];

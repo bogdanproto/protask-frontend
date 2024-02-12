@@ -8,3 +8,5 @@ export * from './Form/Form.styled.jsx';
 export * from './Formik/InputBoxErr/InputBoxErr.styled.jsx';
 export * from './IconButton/IconButton.jsx';
 export * from './AddButton/AddButton.jsx';
+export * from './RadioBtn/RadioBtn.jsx';
+export * from './RadioBtn/RadioBtn.styled.jsx';

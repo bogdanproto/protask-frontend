@@ -25,10 +25,11 @@ import { CardBtn } from './CardBtn/CardBtn';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCard, updateCard } from 'redux/dataSlice/operations';
 import { succesMsgSelectorData } from 'redux/commonSelector';
+import { TextAreaCardStyled } from './InputCardForm/InputCardForm.styled';
 
 const cardSchema = Yup.object().shape({
-  title: Yup.string().required('Required'),
-  description: Yup.string().required('Required'),
+  title: Yup.string().min(2).required('Title is required'),
+  description: Yup.string().required('Description is required'),
 });
 
 export const CardForm = ({
@@ -36,7 +37,7 @@ export const CardForm = ({
   title = '',
   description = '',
   priority = 'without',
-  deadline = '',
+  deadline = new Date(),
   columnId,
   closeModal,
 }) => {
@@ -85,7 +86,7 @@ export const CardForm = ({
         </InputBoxErr>
 
         <InputBoxErr>
-          <InputCardForm
+          <TextAreaCardStyled
             id="description"
             name="description"
             type="text"
@@ -152,9 +153,13 @@ export const CardForm = ({
               formik.setFieldValue('deadline', format(deadline, 'yyyy-MM-dd'))
             }
             onBlur={formik.handleBlur}
-            selected={formik.values.deadline}
+            selected={
+              formik.values.deadline
+                ? new Date(formik.values.deadline)
+                : new Date()
+            }
             dateFormat="MMMM  d"
-            placeholderText={`Today,${format(new Date(), 'MMMM d')}`}
+            placeholderText={format(new Date(), 'MMMM d')}
             showIcon
             icon={<IconStyled viewBox="0 0 18 18" />}
             toggleCalendarOnIconClick
