@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { getPriorityColor } from 'helpers/index';
 
 export const CardContainer = styled.div`
-  position: relative;
   background-color: ${p => p.theme.colors.secondBackgroundColor};
   display: flex;
   position: relative;
@@ -29,6 +28,7 @@ export const CardContainer = styled.div`
 `;
 
 export const TopBox = styled.div`
+  position: relative;
   min-height: 80px;
   margin-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};

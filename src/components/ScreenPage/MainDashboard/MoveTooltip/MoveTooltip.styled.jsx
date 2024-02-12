@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-export const TooltipContainer = styled.div`
-  position: absolute;
-  bottom: calc(-100% + 18px);
-  right: 62px;
+// export const TooltipContainer = styled.div`
+//   position: absolute;
+//   bottom: calc(-100% + 18px);
+//   right: 62px;
 
-  width: 135px;
+//   width: 135px;
 
-  padding: ${p => p.theme.spacing(5)} 0;
-  background-color: ${p => p.theme.colors.thirdBackgroundColor};
-  outline: 2px solid tomato;
-  border-radius: 12px;
+//   padding: ${p => p.theme.spacing(5)} 0;
+//   background-color: ${p => p.theme.colors.thirdBackgroundColor};
+//   outline: 2px solid tomato;
+//   border-radius: 12px;
 
-  z-index: 9999999;
+//   z-index: 9999999;
 
-  &:hover {
-    color: ${p => p.theme.colors.accentColor};
-  }
-`;
+//   &:hover {
+//     color: ${p => p.theme.colors.accentColor};
+//   }
+// `;
 
 export const TargetColumnsList = styled.ul`
   display: grid;
@@ -52,4 +52,10 @@ export const ColumnTitle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const Div = styled.div`
+  width: 130px;
+  height: 50px;
+  background-color: tomato;
 `;
