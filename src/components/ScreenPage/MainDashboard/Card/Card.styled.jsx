@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { getPriorityColor } from 'helpers/index';
 
 export const CardContainer = styled.div`
+  position: relative;
   background-color: ${p => p.theme.colors.secondBackgroundColor};
   display: flex;
   position: relative;

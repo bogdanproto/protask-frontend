@@ -61,7 +61,6 @@ export const dark = {
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
-  
   },
 };
 
@@ -102,6 +101,7 @@ export const light = {
     firstBackgroundColor: '#F6F6F7',
     secondBackgroundColor: '#FFFFFF',
     thirdBackgroundColor: '#FCFCFC',
+    scrollbarThumbColor: '#E8E8E8',
 
     // =============
 

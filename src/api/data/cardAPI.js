@@ -22,10 +22,10 @@ export const updateCardAPI = async ({ _id, ...obj }) => {
   return data;
 };
 
-export const changeCardsColumnAPI = async ({ _id, ...obj }) => {
+export const changeCardsColumnAPI = async ({ _id, columnId }) => {
   const { data } = await taskAPI.patch(
     `${pathData.CARD_BASE}/${_id}${pathData.CARD_CHANGE_COLUMN}`,
-    obj
+    { columnId }
   );
 
   return data;

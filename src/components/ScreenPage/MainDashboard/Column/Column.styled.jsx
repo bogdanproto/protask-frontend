@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ColumnContainer = styled.div`
   display: flex;
-
   flex-direction: column;
   align-items: start;
   gap: ${p => p.theme.spacing(7)};

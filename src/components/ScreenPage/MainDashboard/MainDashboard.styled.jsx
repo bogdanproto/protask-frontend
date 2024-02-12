@@ -10,12 +10,22 @@ export const MainDashboardContainer = styled.div`
   gap: ${p => p.theme.spacing(9)};
   padding-left: ${p => p.theme.spacing(12)};
   padding-right: ${p => p.theme.spacing(10)};
-`;
 
-export const Column = styled.div`
-  width: 350px;
+  &::-webkit-scrollbar {
+    height: 12px;
+  }
 
-  outline: 2px solid green;
-  display: grid;
-  gap: 20px;
+  &::-webkit-scrollbar-track {
+    background: ${p => p.theme.colors.secondBackgroundColor};
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${p => p.theme.colors.scrollbarThumbColor};
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${p => p.theme.colors.accentColor};
+  }
 `;
