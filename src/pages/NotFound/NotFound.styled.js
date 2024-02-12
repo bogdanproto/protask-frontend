@@ -114,10 +114,15 @@ export const Question = styled.p`
         }
 `;
 
-export const Mystery = styled.p`
+export const Mystery = styled.div`
   position: absolute;
   top: 50%;
   left: 8%;
+  text-align: left;
+ `;
+
+export const Answer = styled.p`
+  
   font-size: 12px;
   height: 200px;
   width: 300px;
