@@ -3,10 +3,11 @@ import SupportLogoDesktop from 'data/img/img_help_desktop.png';
 import SupportLogoTablet from 'data/img/img_help_tablet.png';
 import SupportLogoMobile from 'data/img/img_help_mobile.png';
 import { supportText } from 'data';
-import { Icon } from 'components/common/Icon/Icon';
 import { useModal } from '../../../hooks/useModal';
 import { NeedHelpForm } from './NeedHelpForm';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
+import { HelpIcon } from 'components/common/IconsLibrary/index';
+
 
 export const Support = () => {
   const { isOpen, open, close } = useModal();
@@ -21,7 +22,7 @@ export const Support = () => {
         </picture>
         <p>{supportText}</p>
         <HelpButton onClick={open} type="button">
-          <Icon width={20} height={20} id={'icon-help_circle'}></Icon>
+          <HelpIcon size={20} />
           <span>Need help?</span>
         </HelpButton>
         <UniversalModal isOpen={isOpen} onClose={close}>
