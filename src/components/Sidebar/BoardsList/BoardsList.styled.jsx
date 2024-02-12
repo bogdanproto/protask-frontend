@@ -82,6 +82,7 @@ export const Item = styled.li`
     padding-block: 20px;
     padding-inline: 14px;
     opacity: 0.5;
+    color: ${p => p.theme.colors.logoutText};
 
     @media (min-width: 768px) {
         padding-inline: 24px;
@@ -94,7 +95,6 @@ export const Item = styled.li`
     }
 
     svg {
-        stroke: ${p => p.theme.colors.logoutText};
         fill: transparent;
     }
 

@@ -6,12 +6,13 @@ import {
   BtnClose,
   SublineRow,
 } from './Filters.styled';
-import { Icon } from 'components/common/Icon/Icon';
 import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { switchFilterCards } from 'redux/uiSlice';
+import { FilterIcon } from 'components/common/IconsLibrary/index';
+
 
 export const Filters = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export const Filters = () => {
   return (
     <>
       <FiltersStyled type="button" onClick={openModal} id="filterButton">
-        <Icon width={16} height={16} id={'icon-filter'}></Icon>
+        <FilterIcon size={16} />
         Filters
       </FiltersStyled>
 

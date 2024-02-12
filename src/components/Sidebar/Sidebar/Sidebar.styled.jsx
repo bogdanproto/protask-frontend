@@ -9,6 +9,7 @@ export const Backdrop = styled.div`
   position: fixed;
   overflow: auto;
   height: 100vh;
+  z-index: 2;
   opacity: ${p => p.$isvisible === "true" ? "1" : "0"};
   visibility: ${p => p.$isvisible === "true" ? "visible" : "hidden"};
   transition: opacity ${p => p.theme.cubicTransition};
