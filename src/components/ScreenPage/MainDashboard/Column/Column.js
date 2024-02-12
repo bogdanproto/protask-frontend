@@ -16,8 +16,8 @@ import {
 } from './Column.styled';
 
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
-import { ColumnForm } from 'components/ColumnForm/ColumnForm';
-import { CardCreator } from '../Card/CardCreator';
+import { AddCardButton } from '../AddCardButton/AddCardButton';
+import { CardForm } from 'components/CardForm/CardForm';
 
 // ========================
 
@@ -45,10 +45,10 @@ export const Column = ({ column: { _id, title, cards } }) => {
 
       <CardsList columnId={_id} cards={cards} />
 
-      <CardCreator columnId={_id} />
+      <AddCardButton columnId={_id} onClick={toggle} />
 
       <UniversalModal isOpen={isOpen} onClose={close}>
-        <ColumnForm closeModal={close} columnId={_id} title={title} />
+        <CardForm columnId={_id} closeModal={close} />
       </UniversalModal>
     </ColumnContainer>
   );

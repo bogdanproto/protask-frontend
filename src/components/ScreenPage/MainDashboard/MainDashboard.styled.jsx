@@ -9,13 +9,12 @@ export const MainDashboardContainer = styled.div`
 
   gap: ${p => p.theme.spacing(9)};
   padding-left: ${p => p.theme.spacing(12)};
-  /* background-color: tomato; */
+  padding-right: ${p => p.theme.spacing(10)};
 `;
 
 export const Column = styled.div`
-  /* min-width: 292px; */
   width: 350px;
-  /* background-color: tomato; */
+
   outline: 2px solid green;
   display: grid;
   gap: 20px;
