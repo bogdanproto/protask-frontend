@@ -1,31 +1,24 @@
 import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { FormAuthStyled } from 'components/Auth/common/Form/FormAuth.styled';
-import { InputBoxErr } from 'components/common';
-
-import { InputCardForm } from './InputCardForm/InputCardForm';
+import { Input, AddButton, InputBoxErr } from 'components/common';
 import {
   CustomRadio,
-  Input,
+  InputRadio,
   Label,
   RadioButtnonBox,
   RadioContainer,
 } from './InputRadio/InputRadio.styled';
-import {
-  DatePickerStyled,
-  IconStyled,
-  TitleStyled,
-} from './DatePicker/DatePiker.styled';
-import 'react-datepicker/dist/react-datepicker.css';
+import { TitleStyled } from './DatePicker/DatePiker.styled';
 
-import { format } from 'date-fns';
-
-import { CardBtn } from './CardBtn/CardBtn';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCard, updateCard } from 'redux/dataSlice/operations';
 import { succesMsgSelectorData } from 'redux/commonSelector';
 import { TextAreaCardStyled } from './InputCardForm/InputCardForm.styled';
+import { BoardFormStyled } from 'components/BoardForm/BoardForm.styled';
+
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from 'dayjs';
 
 const cardSchema = Yup.object().shape({
   title: Yup.string().min(2).required('Title is required'),
@@ -37,27 +30,40 @@ export const CardForm = ({
   title = '',
   description = '',
   priority = 'without',
-  deadline = new Date(),
+  deadline,
   columnId,
   closeModal,
 }) => {
   const dispatch = useDispatch();
   const isSuccessDispatch = useSelector(succesMsgSelectorData);
+
   const formik = useFormik({
     initialValues: {
       title,
       description,
       priority,
-      deadline,
+      deadline: deadline ? dayjs(deadline) : dayjs(),
     },
     validationSchema: cardSchema,
 
     onSubmit: values => {
       if (cardId) {
-        dispatch(updateCard({ ...values, _id: cardId }));
+        dispatch(
+          updateCard({
+            ...values,
+            _id: cardId,
+            deadline: dayjs(values.deadline).format('YYYY-MM-DD'),
+          })
+        );
         return;
       }
-      dispatch(addCard({ ...values, columnId }));
+      dispatch(
+        addCard({
+          ...values,
+          columnId,
+          deadline: dayjs(values.deadline).format('YYYY-MM-DD'),
+        })
+      );
     },
   });
 
@@ -66,12 +72,13 @@ export const CardForm = ({
       closeModal();
     }
   }, [closeModal, isSuccessDispatch]);
+
   return (
     <>
-      <FormAuthStyled onSubmit={formik.handleSubmit}>
+      <BoardFormStyled onSubmit={formik.handleSubmit}>
         <TitleStyled> {cardId ? 'Edit card' : 'Add card'}</TitleStyled>
         <InputBoxErr>
-          <InputCardForm
+          <Input
             id="title"
             name="title"
             type="text"
@@ -103,7 +110,7 @@ export const CardForm = ({
           <Label id="checkbox-group">Label color</Label>
           <RadioButtnonBox role="group" aria-labelledby="checkbox-group">
             <RadioContainer>
-              <Input
+              <InputRadio
                 type="radio"
                 name="priority"
                 value="low"
@@ -113,7 +120,7 @@ export const CardForm = ({
               <CustomRadio $mode="low"></CustomRadio>
             </RadioContainer>
             <RadioContainer>
-              <Input
+              <InputRadio
                 type="radio"
                 name="priority"
                 value="medium"
@@ -123,7 +130,7 @@ export const CardForm = ({
               <CustomRadio $mode="medium"></CustomRadio>
             </RadioContainer>
             <RadioContainer>
-              <Input
+              <InputRadio
                 type="radio"
                 name="priority"
                 value="high"
@@ -133,7 +140,7 @@ export const CardForm = ({
               <CustomRadio $mode="high"></CustomRadio>
             </RadioContainer>
             <RadioContainer>
-              <Input
+              <InputRadio
                 type="radio"
                 name="priority"
                 value="without"
@@ -146,32 +153,36 @@ export const CardForm = ({
         </div>
         <div>
           <Label>Deadline</Label>
-          <DatePickerStyled
-            id="deadline"
-            name="deadline"
-            onChange={deadline =>
-              formik.setFieldValue('deadline', format(deadline, 'yyyy-MM-dd'))
-            }
-            onBlur={formik.handleBlur}
-            selected={
-              formik.values.deadline
-                ? new Date(formik.values.deadline)
-                : new Date()
-            }
-            dateFormat="MMMM  d"
-            placeholderText={format(new Date(), 'MMMM d')}
-            showIcon
-            icon={<IconStyled viewBox="0 0 18 18" />}
-            toggleCalendarOnIconClick
-            inputContainerClassName="test"
+
+          <DatePicker
+            value={formik.values.deadline}
+            onChange={date => {
+              formik.setFieldValue('deadline', date);
+            }}
+            format={`MMMM DD`}
+            minDate={dayjs()}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                '& .MuiOutlinedInput-input:focus': {
+                  borderWidth: '0',
+                },
+
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderWidth: '0',
+                },
+                '& .MuiInputBase-input': {
+                  padding: '0',
+                  color: '#BEDBB0',
+                },
+              },
+            }}
           />
         </div>
 
-        <CardBtn
-          action={cardId ? 'Edit' : 'Add'}
-          disabled={formik.dirty ? false : true}
-        />
-      </FormAuthStyled>
+        <AddButton type="submit" disabled={!formik.dirty}>
+          {cardId ? 'Edit' : 'Add'}
+        </AddButton>
+      </BoardFormStyled>
     </>
   );
 };

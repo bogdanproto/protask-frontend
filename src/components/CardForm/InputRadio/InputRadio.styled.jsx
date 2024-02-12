@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Input = styled.input.attrs({ type: 'radio' })`
+export const InputRadio = styled.input.attrs({ type: 'radio' })`
   position: absolute;
 
   width: 16px;
@@ -30,7 +30,7 @@ export const CustomRadio = styled.span`
       case 'low':
         return `
           background: #8fa1d0;
-          ${Input}:checked + && {
+          ${InputRadio}:checked + && {
             background: transparent;
             border: 1px solid #8fa1d0;
               &:before {
@@ -56,7 +56,7 @@ export const CustomRadio = styled.span`
       case 'medium':
         return `
           background: #E09CB5;
-          ${Input}:checked + && {
+          ${InputRadio}:checked + && {
             background: transparent;
             border: 1px solid #E09CB5;
               &:before {
@@ -82,7 +82,7 @@ export const CustomRadio = styled.span`
       case 'high':
         return `
           background: #BEDBB0;
-          ${Input}:checked + && {
+          ${InputRadio}:checked + && {
             background: transparent;
             border: 1px solid #BEDBB0;
               &:before {
@@ -107,7 +107,7 @@ export const CustomRadio = styled.span`
       default:
         return `
             background: #FFFFFF30;
-          ${Input}:checked + && {
+          ${InputRadio}:checked + && {
             background: transparent;
             border: 1px solid #FFFFFF30;
               &:before {
@@ -148,6 +148,6 @@ export const Label = styled.div`
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  color: #ffffff50;
+  color: ${props => props.theme.colors.titleColor};
   margin-bottom: 4px;
 `;
