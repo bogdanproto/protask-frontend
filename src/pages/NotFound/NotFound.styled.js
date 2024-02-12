@@ -8,51 +8,92 @@ export const NotFoundStyled = styled.div`
   color: white;
   padding: 20px;
   text-align: center;
+
+
+  @media (min-width: 1440px) {
+    padding: 40px;
+        }
+
 `;
 
 export const NotFoundTitle = styled.h6`
   font-family: 'Ultra', sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 10px;
+
+ 
+  @media (min-width: 1440px) {
+    font-size: 60px;
+        }
 `;
 
 export const ParagraphText = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 10px;
+
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+        }
 `;
 
 export const Paragraph404 = styled.p`
   font-weight: 600;
-  font-size: 130px;
+  font-size: 100px;
   margin-bottom: 10px;
   color: #6a63fe;
+
+ 
+  @media (min-width: 1440px) {
+    font-size: 130px;
+        }
 `;
 
-export const NotFoundButton = styled.button`
+export const NotFoundButton = styled.div`
   font-weight: 800;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 10px;
   background-color: white;
+  width: fit-content;
   color: #212121;
-  padding: 10px 15px;
+  padding: 8px 10px;
   margin: 0 auto;
   border-bottom: 4px solid #fac515;
   border-left: 1px solid #fac515;
   border-right: 4px solid #fac515;
   border-top: 1px solid #fac515;
-  border-radius: 6px;
+  border-radius: 6px;  
+  cursor: pointer;
+
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+        }
 `;
 
 export const ParagraphErr = styled.p`
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 10px;
+
+  @media (min-width: 1440px) {
+    font-size: 30px;
+        }
 `;
 
 export const DogImage = styled.img`
   position: absolute;
-  width: 150px;
+  width: 120px;
   bottom: 10%;
   right: 10%;
+
+  @media (min-width: 768px) {
+    width: 150px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 150px;
+        }
 `;
 
 export const SpotImage = styled.img`
@@ -63,17 +104,29 @@ export const SpotImage = styled.img`
 `;
 
 export const Question = styled.p`
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+        }
 `;
 
 export const Mystery = styled.p`
   position: absolute;
   top: 50%;
   left: 8%;
-  font-size: 15px;
+  font-size: 12px;
   height: 200px;
   width: 300px;
+  text-align: left;
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+        }
 `;
 
 export const FlagImage = styled.img`
