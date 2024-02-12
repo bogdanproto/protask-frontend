@@ -23,7 +23,7 @@ export const Notification = ({ type, message }) => {
     <Snackbar
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={open}
-      autoHideDuration={6000}
+      autoHideDuration={3000}
       onClose={handleClose}
     >
       <Alert onClose={handleClose} severity={type} sx={{ width: '100%' }}>

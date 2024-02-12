@@ -2,13 +2,13 @@ import { BtnContainer } from './BoardsItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteBoard } from 'redux/dataSlice/operations/board/deleteBoard';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
-import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useModal } from 'hooks/useModal';
 import { useNavigate } from 'react-router';
 import { routes } from 'const';
 import { getBoardIcon } from 'helpers/index';
 import { EditButton } from 'components/common/EditButton/EditButton.styled';
 import { BasketIcon, PencilIcon } from 'components/common/IconsLibrary/index';
+import { BoardForm } from 'components/BoardForm/BoardForm';
 
 export const BoardsItem = ({ board, active }) => {
   const dispatch = useDispatch();
@@ -37,7 +37,13 @@ export const BoardsItem = ({ board, active }) => {
         </BtnContainer>
       )}
       <UniversalModal isOpen={isOpen} onClose={close}>
-        <BoardForm closeModal={close} id={board._id} title={board.title} />
+        <BoardForm
+          closeModal={close}
+          boardId={board._id}
+          title={board.title}
+          icon={board.icon}
+          backgroundImg={board.backgroundImg}
+        />
       </UniversalModal>
     </>
   );

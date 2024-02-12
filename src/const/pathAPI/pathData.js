@@ -1,5 +1,5 @@
 export const pathData = Object.freeze({
-  HELP_DESK: '/api/helpdesk',
+  HELP_DESK: '/needhelp',
   BOARD_BASE: '/api/boards',
   COLUMN_BASE: '/api/columns',
   CARD_BASE: '/api/cards',

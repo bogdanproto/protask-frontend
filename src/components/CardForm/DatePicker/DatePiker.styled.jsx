@@ -25,7 +25,7 @@ export const IconStyled = styled(RiArrowDropDownLine)`
   width: 18px;
   height: 18px;
   padding: 0 !important;
-  righ: -120px;
+  left: 80px;
 `;
 
 export const TitleStyled = styled.h1`

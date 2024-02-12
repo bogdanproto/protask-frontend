@@ -214,7 +214,7 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
-    label {
+    /* label {
        display: none;
-    }
+    } */
 `;
