@@ -12,7 +12,7 @@ export const CardContainer = styled.div`
 
   width: 334px;
   border-radius: ${p => p.theme.radius};
-  overflow: hidden;
+  overflow-x: hidden;
 
   &::before {
     content: '';
@@ -29,26 +29,11 @@ export const CardContainer = styled.div`
 `;
 
 export const TopBox = styled.div`
-  position: relative;
   min-height: 80px;
-  padding-right: ${p => p.theme.spacing(3)};
+  margin-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};
+  border-bottom: 1px solid ${p => p.theme.colors.sidebarBorder};
   cursor: zoom-in;
-
-  /* overflow: hidden; */
-
-  &::after {
-    content: '';
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: calc(100% - 6px);
-    height: 1px;
-
-    background-color: ${p => p.theme.colors.sidebarBorder};
-  }
 
   &.expanded {
     height: 100%;

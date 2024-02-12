@@ -13,20 +13,10 @@ import {
 } from 'components/common/IconsLibrary';
 import { ActionContainer } from './ActionPanel.styled';
 
-import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
-// import { customStyles } from '../MoveTooltip/MoveTooltip.styled';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: 'tomato,',
-  },
-};
+import {
+  ActionButton,
+  MoveButton,
+} from 'components/common/ActionButton/ActionButton.styled';
 
 // ========================
 
@@ -40,14 +30,6 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
 
   const [isTooltipOpen, setTooltipOpen] = useState(false);
 
-  const openTooltip = () => {
-    setTooltipOpen(true);
-  };
-
-  const closeTooltip = () => {
-    setTooltipOpen(false);
-  };
-
   const onDeleteButton = cardId => {
     dispatch(deleteCard(cardId));
   };
@@ -55,22 +37,16 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
   return (
     <ActionContainer>
       {availableColumns.length !== 0 && (
-        <ActionButton
-          id={cardId}
-          onClick={openTooltip}
-          // onMouseLeave={closeTooltip}
+        <MoveButton
+          onClick={() => setTooltipOpen(true)}
+          onMouseLeave={() => setTooltipOpen(false)}
         >
           <MoveIcon size={16} />
-        </ActionButton>
+        </MoveButton>
       )}
-      <MoveTooltip
-        isOpen={isTooltipOpen}
-        onRequestClose={closeTooltip}
-        style={customStyles}
-        parentSelector={() => document.querySelector({ cardId })}
-        cardId={cardId}
-        targetColumns={availableColumns}
-      />
+      {isTooltipOpen && (
+        <MoveTooltip cardId={cardId} targetColumns={availableColumns} />
+      )}
 
       <ActionButton type="button" onClick={onEditButton}>
         <PencilIcon size={16} />
