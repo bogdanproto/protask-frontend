@@ -38,8 +38,8 @@ export const dark = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#fff',
-    iconMainColor: 'rgba(255, 255, 255, 0.5',
-    iconActiveColor: 'rgba(255, 255, 255, 1',
+    iconMainColor: '#FFFFFF83',
+    iconActiveColor: '#FFFFFF',
 
     // =============
     titleColor: '#FFFFFF',
@@ -61,7 +61,6 @@ export const dark = {
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
-  
   },
 };
 
@@ -94,8 +93,8 @@ export const light = {
     logoutIcon: '#BEDBB0',
     logoutIconHover: '#9DC888',
     logoutText: '#161616',
-    iconMainColor: 'rgba(22, 22, 22, 0.5)',
-    iconActiveColor: 'rgba(22, 22, 22, 1)',
+    iconMainColor: '#16161683',
+    iconActiveColor: '#161616',
 
     // =============
 
@@ -159,8 +158,8 @@ export const violet = {
     logoBackground: '#ecedfd',
     logoIcon: '#5255bc',
 
-    iconMainColor: 'rgba(22, 22, 22, 0.5)',
-    iconActiveColor: 'rgba(22, 22, 22, 1)',
+    iconMainColor: '#16161683',
+    iconActiveColor: '#161616',
 
     modalBackground: '#fff',
 

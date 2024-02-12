@@ -7,7 +7,7 @@ export const AddButtonStyled = styled.button`
   justify-content: center;
   align-items: center;
   gap: ${p => p.theme.spacing(4)};
-  width: 334px;
+  width: 100%;
   height: 56px;
   border-radius: ${p => p.theme.radius};
   background-color: ${({ theme }) => theme.colors.btnPrimary};
