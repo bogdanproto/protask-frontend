@@ -28,15 +28,14 @@ export const TextAreaCardStyled = styled.textarea`
   width: 100%;
   height: 49px;
 
-  background: #1f1f1f;
   opacity: 0.4;
-  border: 1px solid #bedbb0;
+  border: 1px solid ${props => props.theme.colors.inputBorder};
   box-shadow: 0px 4px 16px rgba(22, 22, 22, 0.08);
   border-radius: 8px;
 
   letter-spacing: -0.02em;
 
-  color: #ffffff;
+  color: ${props => props.theme.colors.inputColor};
 
   &:focus {
     opacity: 1;
