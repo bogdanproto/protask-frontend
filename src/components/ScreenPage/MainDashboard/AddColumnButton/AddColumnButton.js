@@ -1,17 +1,17 @@
-import { PlusIcon } from '../IconsLibrary/index';
+import { PlusIcon } from 'components/common/IconsLibrary/index';
 import {
   AddButtonContainer,
   IconWrapper,
   ButtonTitle,
-} from './AddColumnCardButton.styled';
+} from './AddColumnButton.styled';
 
-export const AddColumnCardButton = ({ title, onClick }) => {
+export const AddColumnButton = ({ onClick }) => {
   return (
     <AddButtonContainer type="button" onClick={onClick}>
       <IconWrapper>
         <PlusIcon size={28} fill={'white'} />
       </IconWrapper>
-      <ButtonTitle>{title}</ButtonTitle>
+      <ButtonTitle>Add another column</ButtonTitle>
     </AddButtonContainer>
   );
 };

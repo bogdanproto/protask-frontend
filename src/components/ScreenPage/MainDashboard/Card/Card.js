@@ -28,7 +28,10 @@ export const Card = ({
 
   return (
     <CardContainer priority={priority}>
-      <TopBox className={isExpanded ? 'expanded' : ''} onClick={toggleHeight}>
+      <TopBox
+        className={isExpanded ? 'expanded' : ''}
+        onDoubleClick={toggleHeight}
+      >
         <CardTitle className={isExpanded ? 'expanded' : ''}>{title}</CardTitle>
         <CardDescription className={isExpanded ? 'expanded' : ''}>
           {description}

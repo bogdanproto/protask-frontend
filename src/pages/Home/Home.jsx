@@ -1,18 +1,26 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+// import { Outlet } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { Sidebar } from 'components/Sidebar';
-import { getAllWallpapers } from 'redux/uiSlice/operations';
-import { Outlet } from 'react-router';
+
 import { getAllBoards } from 'redux/dataSlice/operations';
-import { Header } from 'components/Header';
-import { HomePage, Main } from './Home.styled';
+import { getAllWallpapers } from 'redux/uiSlice/operations';
 import { selectIsBoardsUploaded } from 'redux/dataSlice/selectors';
 import { selectWallPapers } from 'redux/uiSlice/selectors';
+
+import { Sidebar } from 'components/Sidebar';
+import { Header } from 'components/Header';
+import { StartPage } from 'components/ScreenPage/StartPage/StartPage';
+import { Board } from 'pages/Board/Board';
+import { HomePage, Main } from './Home.styled';
+
+// ========================
 
 export const Home = () => {
   const dispatch = useDispatch();
   const isBoardsExist = useSelector(selectIsBoardsUploaded);
   const isWallpapersExist = useSelector(selectWallPapers);
+  const { boardName } = useParams();
 
   useEffect(() => {
     if (!isBoardsExist) {
@@ -31,7 +39,9 @@ export const Home = () => {
       <Sidebar />
       <Main>
         <Header />
-        <Outlet />
+        {!boardName ? <StartPage /> : <Board />}
+
+        {/* <Outlet /> */}
       </Main>
     </HomePage>
   );

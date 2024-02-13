@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  outline: 2 px solid pink;
   width: 350px;
   max-height: calc(100vh - 292px);
 
@@ -11,4 +10,23 @@ export const List = styled.ul`
   grid-auto-rows: minmax(154px);
   overflow-y: auto;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${p => p.theme.colors.scrollbarThumbColor};
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${p => p.theme.colors.fontColor};
+    background: rgba(22, 22, 22, 0.1);
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${p => p.theme.colors.accentColor};
+  }
 `;

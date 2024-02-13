@@ -2,24 +2,28 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 
 export const FiltersStyled = styled.button`
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.02em;
-    color: ${p => p.theme.colors.filterFont};
-    display: flex;
-    gap: 8px;
-    position: relative;
+position: relative;
+  display: flex;
+  align-items: center;
+  gap: ${p => p.theme.spacing(4)};
+  padding: ${p => p.theme.spacing(2)} 0 ${p => p.theme.spacing(2)} ${p => p.theme.spacing(2)};
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: ${p => p.theme.colors.filterFont};
 
-    svg {
-        fill: transparent;
-        stroke: ${p => p.theme.colors.filterFont};
-    }
+  transition: all ${p => p.theme.cubicTransition};
 
-    .ReactModalPortal {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
+  &:hover {
+    color: ${p => p.theme.colors.accentColor};
+  }
+
+  .ReactModalPortal {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 `;
 
 export const ModalStyled = styled(Modal)`

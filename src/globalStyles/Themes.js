@@ -101,6 +101,7 @@ export const light = {
     firstBackgroundColor: '#F6F6F7',
     secondBackgroundColor: '#FFFFFF',
     thirdBackgroundColor: '#FCFCFC',
+    scrollbarThumbColor: '#E8E8E8',
 
     // =============
 
