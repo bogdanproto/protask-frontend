@@ -18,12 +18,12 @@ export const MainDashboard = ({ boardId }) => {
   const { isOpen, close, toggle } = useModal();
   // const columns = useSelector(selectFilteredCardsOfBoard);
   const columns = useSelector(selectAllColumn);
-
+  console.log(columns);
   return (
     <MainDashboardContainer>
-      {/* {columns && <ColumnsList columns={columns} />} */}
+      {columns && <ColumnsList columns={columns} />}
 
-      <ColumnsList columns={columns} />
+      {/* <ColumnsList columns={columns} /> */}
 
       <AddColumnButton
         type="button"

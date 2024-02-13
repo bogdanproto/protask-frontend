@@ -8,26 +8,29 @@ export const ColumnsList = ({ columns }) => {
   return (
     <DragDropContext onDragEnd={() => console.log('drag drop event')}>
       <Droppable droppableId="ROOT" type="group">
-        {provided => (
-          <div {...provided.droppableProps} ref={provided.innerRef}>
+        {(provided, snapshot) => (
+          <List
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            isDraggingOver={snapshot.isDraggingOver}
+          >
             {columns.map((column, index) => (
               <Draggable
                 draggableId={column._id}
                 key={column._id}
                 index={index}
               >
-                {provided => {
-                  <div
-                    style={{
-                      width: '300px',
-                      height: '300px',
-                      backgroundColor: 'tomato',
-                    }}
+                {(provided, snapshot) => {
+                  <Column
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    ref={provided.innerRef}
+                    isDragging={snapshot.isDragging}
                   />;
                 }}
               </Draggable>
             ))}
-          </div>
+          </List>
         )}
       </Droppable>
     </DragDropContext>
