@@ -1,4 +1,3 @@
-import { routes } from 'const/routes/routes.js';
 import {
   Backdrop,
   SidebarStyled,

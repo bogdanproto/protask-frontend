@@ -45,10 +45,10 @@ export const BoardForm = ({
   });
 
   useEffect(() => {
-    if (isSuccessDispatch) {
+    if (isSuccessDispatch && formik.dirty) {
       closeModal();
     }
-  }, [closeModal, isSuccessDispatch]);
+  }, [closeModal, formik.dirty, isSuccessDispatch]);
 
   return (
     <>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { LogoSvgStyled } from 'components/common/LogoSvg/LogoSvg.styled';
 
 export const Backdrop = styled.div`
