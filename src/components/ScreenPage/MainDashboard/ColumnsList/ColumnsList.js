@@ -10,8 +10,8 @@ export const ColumnsList = ({ columns }) => {
       <Droppable droppableId="ROOT" type="group">
         {(provided, snapshot) => (
           <List
-            ref={provided.innerRef}
             {...provided.droppableProps}
+            ref={provided.innerRef}
             isDraggingOver={snapshot.isDraggingOver}
           >
             {columns.map((column, index) => (
@@ -20,14 +20,13 @@ export const ColumnsList = ({ columns }) => {
                 key={column._id}
                 index={index}
               >
-                {(provided, snapshot) => {
+                {provided => (
                   <Column
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     ref={provided.innerRef}
-                    isDragging={snapshot.isDragging}
-                  />;
-                }}
+                  />
+                )}
               </Draggable>
             ))}
           </List>
@@ -36,3 +35,19 @@ export const ColumnsList = ({ columns }) => {
     </DragDropContext>
   );
 };
+
+// export const ColumnsList = ({ columns }) => {
+//   return (
+//     <DragDropContext onDragEnd={() => console.log('drag drop event')}>
+//       <Droppable droppableId="ROOT" type="group">
+//         {provided => (
+//           <List ref={provided.innerRef} {...provided.droppableProps}>
+//             {columns.map(column => (
+//               <Column column={column} />
+//             ))}
+//           </List>
+//         )}
+//       </Droppable>
+//     </DragDropContext>
+//   );
+// };
