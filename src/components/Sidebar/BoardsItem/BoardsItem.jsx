@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { deleteBoard } from 'redux/dataSlice/operations/board/deleteBoard';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
-import { useNavigate } from 'react-router';
-import { routes } from 'const';
 import { getBoardIcon } from 'helpers/index';
 import { BasketIcon, PencilIcon } from 'components/common/IconsLibrary/index';
 import { BoardForm } from 'components/BoardForm/BoardForm';
 import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
+import { useNavigate } from 'react-router';
+import { routes } from 'const';
 
 export const BoardsItem = ({ board, active }) => {
   const dispatch = useDispatch();

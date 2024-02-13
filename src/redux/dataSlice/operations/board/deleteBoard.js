@@ -8,6 +8,7 @@ export const deleteBoard = createAsyncThunk(
   'data/deleteBoard',
   asyncThunkDecoratorData(async id => {
     const { data } = await deleteBoardAPI(id);
+
     return data;
   })
 );

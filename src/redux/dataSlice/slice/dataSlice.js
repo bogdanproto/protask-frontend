@@ -41,6 +41,10 @@ import {
 
 const initialState = {
   boards: [],
+  boardStatus: {
+    activeBoard: null,
+    isBoardLoaded: false,
+  },
   columns: null,
   error: null,
   isLoading: null,
@@ -52,6 +56,9 @@ const dataSlice = createSlice({
   initialState,
   reducers: {
     toSetSuccesMsgData: setSuccesMsgData,
+    toSetActiveBoard: (state, action) => {
+      state.activeBoard = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -114,4 +121,4 @@ const dataSlice = createSlice({
 });
 
 export const dataReducer = dataSlice.reducer;
-export const { toSetSuccesMsgData } = dataSlice.actions;
+export const { toSetSuccesMsgData, toSetActiveBoard } = dataSlice.actions;
