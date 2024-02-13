@@ -6,15 +6,12 @@ import { selectAllColumn } from 'redux/dataSlice/selectors';
 
 import { getAvailableColumns } from 'helpers';
 
-import {
-  MoveIcon,
-  PencilIcon,
-  BasketIcon,
-} from 'components/common/IconsLibrary';
+import { PencilIcon, BasketIcon } from 'components/common/IconsLibrary';
 import { ActionContainer } from './ActionPanel.styled';
 
 import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
-// import { MoveTooltip } from '../MoveTooltip/MoveTooltip';
+import { MoveTooltip } from '../MoveTooltip/MoveTooltip';
+import Tooltip from '@mui/material/Tooltip';
 
 // ========================
 
@@ -25,9 +22,7 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
     () => getAvailableColumns(columns, columnId),
     [columns, columnId]
   );
-
-  // const [isTooltipOpen, setTooltipOpen] = useState(false);
-
+  console.log(availableColumns);
   const onDeleteButton = cardId => {
     dispatch(deleteCard(cardId));
   };
@@ -35,18 +30,19 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
   return (
     <ActionContainer>
       {availableColumns.length !== 0 && (
-        <ActionButton type="button">
-          <MoveIcon size={16} />
-        </ActionButton>
+        <MoveTooltip cardId={cardId} columns={availableColumns} />
       )}
 
-      <ActionButton type="button" onClick={onEditButton}>
-        <PencilIcon size={16} />
-      </ActionButton>
-
-      <ActionButton type="button" onClick={() => onDeleteButton(cardId)}>
-        <BasketIcon size={16} />
-      </ActionButton>
+      <Tooltip title="Edit" placement="top">
+        <ActionButton type="button" onClick={onEditButton}>
+          <PencilIcon size={16} />
+        </ActionButton>
+      </Tooltip>
+      <Tooltip title="Delete" placement="top">
+        <ActionButton type="button" onClick={() => onDeleteButton(cardId)}>
+          <BasketIcon size={16} />
+        </ActionButton>
+      </Tooltip>
     </ActionContainer>
   );
 };
