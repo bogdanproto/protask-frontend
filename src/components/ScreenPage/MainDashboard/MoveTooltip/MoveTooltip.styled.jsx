@@ -1,23 +1,33 @@
 import styled from 'styled-components';
 
-// export const TooltipContainer = styled.div`
-//   position: absolute;
-//   bottom: calc(-100% + 18px);
-//   right: 62px;
+export const MoveButton = styled.div`
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
 
-//   width: 135px;
+  transition: all ${p => p.theme.cubicTransition};
 
-//   padding: ${p => p.theme.spacing(5)} 0;
-//   background-color: ${p => p.theme.colors.thirdBackgroundColor};
-//   outline: 2px solid tomato;
-//   border-radius: 12px;
+  svg {
+    color: ${p => p.theme.colors.fontColor};
+    opacity: 0.5;
+  }
 
-//   z-index: 9999999;
+  &:hover {
+    background-color: ${p => p.theme.colors.accentColor};
+  }
 
-//   &:hover {
-//     color: ${p => p.theme.colors.accentColor};
-//   }
-// `;
+  .ReactModalPortal {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+`;
 
 export const TargetColumnsList = styled.ul`
   display: grid;

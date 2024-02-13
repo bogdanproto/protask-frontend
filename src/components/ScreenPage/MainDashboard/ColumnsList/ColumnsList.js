@@ -3,7 +3,7 @@ import { Column } from '../Column/Column';
 
 // ========================
 
-export const ColumnsList = ({columns}) => {
+export const ColumnsList = ({ columns }) => {
   return (
     <List>
       {columns.map(column => (
