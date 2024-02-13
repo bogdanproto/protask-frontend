@@ -49,7 +49,7 @@ export const Column = ({ column: { _id, title, cards } }) => {
         </ButtonBox>
       </ColumnTitlePlate>
 
-      {cards && <CardsList columnId={_id} cards={cards} />}
+      {/* {cards && <CardsList columnId={_id} cards={cards} />} */}
 
       <AddCardButton columnId={_id} />
 
