@@ -1,42 +1,62 @@
-// import { useDispatch } from 'react-redux';
+import { MoveIcon } from 'components/common/IconsLibrary';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeCardsColumn } from 'redux/dataSlice/operations';
+import Tooltip from '@mui/material/Tooltip';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
-// import { MoveIcon } from 'components/common/IconsLibrary';
-// import {
-//   TooltipContainer,
-//   TargetColumnsList,
-//   TargetColumnButton,
-//   ColumnTitle,
-//   Div,
-// } from './MoveTooltip.styled';
-// import { changeCardsColumn } from 'redux/dataSlice/operations';
+import { IconButton } from '@mui/material';
 
-// // ========================
+export const MoveTooltip = ({ cardId, columns }) => {
+  const dispatch = useDispatch();
 
-// export const MoveTooltip = ({ cardId, targetColumns }) => {
-//   const dispatch = useDispatch();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-//   const onMoveButton = ({ _id, columnId }) => {
-//     dispatch(changeCardsColumn({ _id, columnId }));
-//   };
-//   return <Div>{cardId}</Div>;
-// };
+  const moveCard = ({ _id, columnId }) => {
+    dispatch(changeCardsColumn({ _id, columnId }));
+  };
 
-// return (
-//   <TooltipContainer className="opened">
-//     <TargetColumnsList>
-//       {targetColumns.map(column => (
-//         <li key={column._id}>
-//           <TargetColumnButton
-//             type="button"
-//             onClick={() =>
-//               onMoveButton({ _id: cardId, columnId: column._id })
-//             }
-//           >
-//             <ColumnTitle>{column.title}</ColumnTitle>
-//             <MoveIcon size={16} />
-//           </TargetColumnButton>
-//         </li>
-//       ))}
-//     </TargetColumnsList>
-//   </TooltipContainer>
-// );
+  return (
+    <>
+      <Tooltip title="Move" placement="top">
+        <IconButton
+          size="small"
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <MoveIcon size={16} />
+        </IconButton>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          {columns.map(column => (
+            <MenuItem
+              key={column._id}
+              onClick={() => moveCard({ _id: cardId, columnId: column._id })}
+            >
+              <p>{column.title}</p>
+              <MoveIcon size={16} />
+            </MenuItem>
+          ))}
+        </Menu>
+      </Tooltip>
+    </>
+  );
+};

@@ -18,6 +18,7 @@ import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { AddCardButton } from '../AddCardButton/AddCardButton';
 import { ColumnForm } from 'components/ColumnForm/ColumnForm';
 import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
+import Tooltip from '@mui/material/Tooltip';
 
 // ========================
 
@@ -34,12 +35,17 @@ export const Column = ({ column: { _id, title, cards } }) => {
       <ColumnTitlePlate>
         <ColumnTitle>{title}</ColumnTitle>
         <ButtonBox>
-          <ActionButton type="button" onClick={() => toggle()}>
-            <PencilIcon size={16} />
-          </ActionButton>
-          <ActionButton type="button" onClick={() => onDeleteButton(_id)}>
-            <BasketIcon size={16} />
-          </ActionButton>
+          <Tooltip title="Edit" placement="top">
+            <ActionButton type="button" onClick={() => toggle()}>
+              <PencilIcon size={16} />
+            </ActionButton>
+          </Tooltip>
+
+          <Tooltip title="Delete" placement="top">
+            <ActionButton type="button" onClick={() => onDeleteButton(_id)}>
+              <BasketIcon size={16} />
+            </ActionButton>
+          </Tooltip>
         </ButtonBox>
       </ColumnTitlePlate>
 
