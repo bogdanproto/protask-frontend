@@ -11,7 +11,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -21,5 +20,4 @@ root.render(
       </LocalizationProvider>
     </PersistGate>
   </Provider>
-  // </React.StrictMode>
 );

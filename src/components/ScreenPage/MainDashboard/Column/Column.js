@@ -19,6 +19,7 @@ import { AddCardButton } from '../AddCardButton/AddCardButton';
 import { ColumnForm } from 'components/ColumnForm/ColumnForm';
 import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
 import Tooltip from '@mui/material/Tooltip';
+import { Droppable } from 'react-beautiful-dnd';
 
 // ========================
 
@@ -31,31 +32,36 @@ export const Column = ({ column: { _id, title, cards } }) => {
   };
 
   return (
-    <ColumnContainer>
-      <ColumnTitlePlate>
-        <ColumnTitle>{title}</ColumnTitle>
-        <ButtonBox>
-          <Tooltip title="Edit" placement="top">
-            <ActionButton type="button" onClick={() => toggle()}>
-              <PencilIcon size={16} />
-            </ActionButton>
-          </Tooltip>
+    <Droppable droppableId={_id}>
+      {provided => (
+        <ColumnContainer {...provided.droppableProps} ref={provided.innerRef}>
+          <ColumnTitlePlate>
+            <ColumnTitle>{title}</ColumnTitle>
+            <ButtonBox>
+              <Tooltip title="Edit" placement="top">
+                <ActionButton type="button" onClick={() => toggle()}>
+                  <PencilIcon size={16} />
+                </ActionButton>
+              </Tooltip>
 
-          <Tooltip title="Delete" placement="top">
-            <ActionButton type="button" onClick={() => onDeleteButton(_id)}>
-              <BasketIcon size={16} />
-            </ActionButton>
-          </Tooltip>
-        </ButtonBox>
-      </ColumnTitlePlate>
+              <Tooltip title="Delete" placement="top">
+                <ActionButton type="button" onClick={() => onDeleteButton(_id)}>
+                  <BasketIcon size={16} />
+                </ActionButton>
+              </Tooltip>
+            </ButtonBox>
+          </ColumnTitlePlate>
 
-      {/* {cards && <CardsList columnId={_id} cards={cards} />} */}
+          {cards.length > 0 && <CardsList columnId={_id} cards={cards} />}
 
-      <AddCardButton columnId={_id} />
+          <AddCardButton columnId={_id} />
 
-      <UniversalModal isOpen={isOpen} onClose={close}>
-        <ColumnForm columnId={_id} closeModal={close} title={title} />
-      </UniversalModal>
-    </ColumnContainer>
+          <UniversalModal isOpen={isOpen} onClose={close}>
+            <ColumnForm columnId={_id} closeModal={close} title={title} />
+          </UniversalModal>
+          {provided.placeholder}
+        </ColumnContainer>
+      )}
+    </Droppable>
   );
 };
