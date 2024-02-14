@@ -4,7 +4,6 @@ export const HomePage = styled.div`
   display: flex;
   width: 100vw;
   background-color: ${p => p.theme.colors.homepageBackgroundColor};
-  /* background-color: tomato; */
 `;
 
 export const Main = styled.div`

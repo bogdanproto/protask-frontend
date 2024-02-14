@@ -20,7 +20,9 @@ export const ButtonAuthStyled = styled.button`
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.black};
+  color: #161616;
+
+  transition: all ${p => p.theme.cubicTransition};
 
   &:hover,
   &:focus {

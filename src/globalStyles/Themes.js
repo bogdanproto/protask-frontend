@@ -18,6 +18,8 @@ export const dark = {
     sidebarBackground: '#121212',
     headerBackgroundColor: '#161616',
     homepageBackgroundColor: '#1F1F1F',
+    authPopupBackgroundColor: '#151515',
+    modalPopupBackgroundColor: '#151515',
 
     // ======= Fonts =======
 
@@ -46,6 +48,8 @@ export const light = {
     sidebarBackground: '#FFFFFF',
     headerBackgroundColor: '#FCFCFC',
     homepageBackgroundColor: '#F6F6F7',
+    authPopupBackgroundColor: '#151515',
+    modalPopupBackgroundColor: '#FCFCFC',
 
     // ======= Fonts =======
 
@@ -74,6 +78,8 @@ export const violet = {
     sidebarBackground: '#5255bc',
     headerBackgroundColor: '#FFFFFF',
     homepageBackgroundColor: '#ECEDFD',
+    authPopupBackgroundColor: '#151515',
+    modalPopupBackgroundColor: '#FCFCFC',
 
     // ======= Fonts =======
 
@@ -91,5 +97,6 @@ export const violet = {
     // ======= Accent colors =======
 
     mainAccentColor: '#5255BC',
+    secondAccentColor: '#9DC888',
   },
 };

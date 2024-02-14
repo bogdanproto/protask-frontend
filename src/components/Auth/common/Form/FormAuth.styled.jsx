@@ -6,7 +6,6 @@ export const FormAuthStyled = styled.form`
   gap: 18px;
 
   border-radius: 8px;
-  background: #151515;
 
   button {
     margin-top: 10px;
