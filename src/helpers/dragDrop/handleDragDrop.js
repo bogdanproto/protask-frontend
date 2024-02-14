@@ -52,3 +52,50 @@
 //     items: newDestinationCards,
 //   };
 // };
+
+// ==========================================
+
+// ColumnsList
+
+// return (
+//   <DragDropContext onDragEnd={handleDraqDrop}>
+//     <Droppable droppableId="ROOT" type="group">
+//       {provided => (
+//         <List {...provided.droppableProps} ref={provided.innerRef}>
+//           {columns.map((column, index) => (
+//             <Draggable
+//               draggableId={column._id}
+//               key={column._id}
+//               index={index}
+//             >
+//               {provided => (
+//                 <div
+//                   {...provided.draggableProps}
+//                   {...provided.dragHandleProps}
+//                   ref={provided.innerRef}
+//                 >
+//                   <Column column={column} />
+//                 </div>
+//               )}
+//             </Draggable>
+//           ))}
+//           {provided.placeholder}
+//         </List>
+//       )}
+//     </Droppable>
+//   </DragDropContext>
+// );
+
+// ======================================
+
+// function bgcolorChange(props) {
+//   return props.isDragging
+//     ? 'lightgreen'
+//     : props.isDraggable
+//     ? props.isBacklog
+//       ? '#F2D7D5'
+//       : '#DCDCDC'
+//     : props.isBacklog
+//     ? '#F2D7D5'
+//     : '#FFFADA';
+// }

@@ -6,6 +6,7 @@ export const ColumnContainer = styled.div`
   align-items: start;
   gap: ${p => p.theme.spacing(7)};
   width: 350px;
+  height: 100%;
   overflow: hidden;
 `;
 

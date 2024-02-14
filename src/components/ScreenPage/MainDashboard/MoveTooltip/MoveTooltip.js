@@ -25,8 +25,8 @@ export const MoveTooltip = ({ cardId, columns }) => {
   };
 
   return (
-    <>
-      <Tooltip title="Move" placement="top">
+    <Tooltip title="Move" placement="top">
+      <>
         <IconButton
           size="small"
           id="basic-button"
@@ -56,7 +56,7 @@ export const MoveTooltip = ({ cardId, columns }) => {
             </MenuItem>
           ))}
         </Menu>
-      </Tooltip>
-    </>
+      </>
+    </Tooltip>
   );
 };

@@ -37,33 +37,4 @@ export const ColumnsList = ({ columns }) => {
       </List>
     </DragDropContext>
   );
-
-  // return (
-  //   <DragDropContext onDragEnd={handleDraqDrop}>
-  //     <Droppable droppableId="ROOT" type="group">
-  //       {provided => (
-  //         <List {...provided.droppableProps} ref={provided.innerRef}>
-  //           {columns.map((column, index) => (
-  //             <Draggable
-  //               draggableId={column._id}
-  //               key={column._id}
-  //               index={index}
-  //             >
-  //               {provided => (
-  //                 <div
-  //                   {...provided.draggableProps}
-  //                   {...provided.dragHandleProps}
-  //                   ref={provided.innerRef}
-  //                 >
-  //                   <Column column={column} />
-  //                 </div>
-  //               )}
-  //             </Draggable>
-  //           ))}
-  //           {provided.placeholder}
-  //         </List>
-  //       )}
-  //     </Droppable>
-  //   </DragDropContext>
-  // );
 };
