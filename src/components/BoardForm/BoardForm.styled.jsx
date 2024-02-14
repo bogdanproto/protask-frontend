@@ -7,7 +7,6 @@ export const BoardFormStyled = styled.form`
 
   width: 335px;
 
-  padding: 24px;
   border-radius: 8px;
   background: tomato;
 
