@@ -11,12 +11,12 @@ import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 
 // ========================
 
-export const MainDashboard = ({ boardId }) => {
+export const MainDashboard = ({ boardId, wallpaper }) => {
   const { isOpen, close, toggle } = useModal();
   const columns = useSelector(selectFilteredCardsOfBoard);
 
   return (
-    <MainDashboardContainer>
+    <MainDashboardContainer wallpaper={wallpaper}>
       {columns && <ColumnsList columns={columns} />}
 
       <AddColumnButton
