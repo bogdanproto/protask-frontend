@@ -4,6 +4,18 @@ import { Card } from 'components/ScreenPage/MainDashboard/Card/Card';
 
 // ========================
 
+// function bgcolorChange(props) {
+//   return props.isDragging
+//     ? 'lightgreen'
+//     : props.isDraggable
+//     ? props.isBacklog
+//       ? '#F2D7D5'
+//       : '#DCDCDC'
+//     : props.isBacklog
+//     ? '#F2D7D5'
+//     : '#FFFADA';
+// }
+
 export const CardsList = ({ columnId, cards }) => {
   return (
     <List>

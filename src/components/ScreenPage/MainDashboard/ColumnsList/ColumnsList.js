@@ -1,63 +1,42 @@
 import { List } from './ColumnsList.styled';
 import { Column } from '../Column/Column';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
+import { useDispatch } from 'react-redux';
+import { changeCardsColumn } from 'redux/dataSlice/operations';
+import { useState } from 'react';
 
 // ========================
 
 export const ColumnsList = ({ columns }) => {
+  // const [draggedCardId, setDraggedCardId] = useState(null);
+  const dispatch = useDispatch();
+
+  // const getDraggedCardId = cardId => {
+  //   console.log('test', draggedCardId);
+  //   setDraggedCardId(cardId);
+  // };
+
+  // console.log('state', draggedCardId);
+
   const handleDraqDrop = results => {
-    const { source, destination, type } = results;
+    console.log(results);
+    const { source, destination, draggableId } = results;
+
+    // if (!draggedCardId) return;
 
     if (!destination) return;
 
-    if (
-      source.droppableId === destination.droppableId &&
-      source.index === destination.index
-    )
+    if (source.droppableId === destination.droppableId) {
       return;
-
-    if (type === 'group') {
-      const reorderedColumns = [...columns];
-
-      const sourceIndex = source.index;
-      const destinationIndex = destination.index;
-
-      const [removedColumn] = reorderedColumns.splice(sourceIndex, 1);
-      reorderedColumns.splice(destinationIndex, 0, removedColumn);
-
-      return reorderedColumns;
     }
 
-    const columnSourceIndex = columns.findIndex(
-      column => column._id === source.droppableId
+    // console.log('dispatch', draggedCardId);
+    dispatch(
+      changeCardsColumn({
+        _id: draggableId,
+        columnId: destination.droppableId,
+      })
     );
-
-    const columnDestinationIndex = columns.findIndex(
-      column => column._id === destination.droppableId
-    );
-
-    const newSourceCards = [...columns[columnSourceIndex].cards];
-
-    const newDestinationCards =
-      source.droppableId !== destination.droppableId
-        ? [...columns[columnDestinationIndex].cards]
-        : newSourceCards;
-
-    const [deletedCards] = newSourceCards.splice(source.index, 1);
-
-    newDestinationCards.splice(destination.index, 0, deletedCards);
-
-    const newColumns = [...columns];
-
-    newColumns[columnSourceIndex] = {
-      ...columns[columnSourceIndex],
-      items: newSourceCards,
-    };
-
-    newColumns[columnDestinationIndex] = {
-      ...columns[columnDestinationIndex],
-      items: newDestinationCards,
-    };
   };
 
   return (
