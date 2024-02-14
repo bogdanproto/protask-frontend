@@ -9,7 +9,7 @@ export const BoardFormStyled = styled.form`
 
   padding: 24px;
   border-radius: 8px;
-  background: ${props => props.theme.colors.backgroundModal};
+  background: tomato;
 
   button {
     margin-top: 10px;
@@ -23,13 +23,13 @@ export const BoardFormStyled = styled.form`
 
     letter-spacing: -0.02em;
 
-    color: ${props => props.theme.colors.titleColor};
+    color: ${props => props.theme.colors.mainFontColor};
   }
 
   h2 {
     font-size: 14px;
     line-height: 21px;
     letter-spacing: -0.02em;
-    color: ${props => props.theme.colors.titleColor};
+    color: ${props => props.theme.colors.mainFontColor};
   }
 `;

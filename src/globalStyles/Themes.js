@@ -18,6 +18,7 @@ export const dark = {
     sidebarBackground: '#121212',
     headerBackgroundColor: '#161616',
     homepageBackgroundColor: '#1F1F1F',
+    cardBackgroundColor: '#121212',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#151515',
 
@@ -25,18 +26,31 @@ export const dark = {
 
     mainFontColor: '#FFFFFF',
     secondFontColor: '#FFFFFF',
+    thirdFontColor: 'rgba(255, 255, 255, 0.5)',
 
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#BEDBB0',
     addColumnIconColor: '#FFFFFF',
+    addColumnIconColor2: '#161616',
     addCardButtonColor: '#161616',
+    addCardButtonColor2: '#FFFFFF',
     actionButtonColor: '#FFFFFF',
     exitButtonColor: '#BEDBB0',
 
     // ======= Accent colors =======
 
     mainAccentColor: '#BEDBB0',
+    secondAccentColor: '#9DC888',
+
+    // ======= Scrollbar =======
+
+    scrollbarTrackColor: 'rgba(255, 255, 255, 0.08)',
+    scrollbarThumbColor: '#121212',
+
+    // ======= Other decors =======
+
+    cardLineColor: 'rgba(255, 255, 255, 0.1)',
   },
 };
 
@@ -48,6 +62,7 @@ export const light = {
     sidebarBackground: '#FFFFFF',
     headerBackgroundColor: '#FCFCFC',
     homepageBackgroundColor: '#F6F6F7',
+    cardBackgroundColor: '#FFFFFF',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#FCFCFC',
 
@@ -55,18 +70,31 @@ export const light = {
 
     mainFontColor: '#161616',
     secondFontColor: '#161616',
+    thirdFontColor: 'rgba(22, 22, 22, 0.7)',
 
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#BEDBB0',
     addColumnIconColor: '#161616',
+    addColumnIconColor2: '#FFFFFF',
     addCardButtonColor: '#161616',
+    addCardButtonColor2: '#FFFFFF',
     actionButtonColor: '#161616',
     exitButtonColor: '#BEDBB0',
 
     // ======= Accent colors =======
 
     mainAccentColor: '#BEDBB0',
+    secondAccentColor: '#9DC888',
+
+    // ======= Scrollbar =======
+
+    scrollbarTrackColor: '#FFFFFF',
+    scrollbarThumbColor: '#E8E8E8',
+
+    // ======= Other decors =======
+
+    cardLineColor: 'rgba(22, 22, 22, 0.1)',
   },
 };
 
@@ -78,6 +106,7 @@ export const violet = {
     sidebarBackground: '#5255bc',
     headerBackgroundColor: '#FFFFFF',
     homepageBackgroundColor: '#ECEDFD',
+    cardBackgroundColor: '#FFFFFF',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#FCFCFC',
 
@@ -85,12 +114,15 @@ export const violet = {
 
     mainFontColor: '#161616',
     secondFontColor: '#FFFFFF',
+    thirdFontColor: 'rgba(22, 22, 22, 0.7)',
 
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#B8BCFD',
     addColumnIconColor: '#5255BC',
+    addColumnIconColor2: '#FFFFFF',
     addCardButtonColor: '#FFFFFF',
+    addCardButtonColor2: '#161616',
     actionButtonColor: '#161616',
     exitButtonColor: '#FFFFFF',
 
@@ -98,5 +130,14 @@ export const violet = {
 
     mainAccentColor: '#5255BC',
     secondAccentColor: '#9DC888',
+
+    // ======= Scrollbar =======
+
+    scrollbarTrackColor: '#FFFFFF',
+    scrollbarThumbColor: '#B8BCFD',
+
+    // ======= Other decors =======
+
+    cardLineColor: 'rgba(22, 22, 22, 0.7)',
   },
 };

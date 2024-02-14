@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 import { IconButton } from '@mui/material';
+import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
 
 export const MoveTooltip = ({ cardId, columns }) => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ export const MoveTooltip = ({ cardId, columns }) => {
     <Tooltip title="Move" placement="top">
       <>
         <IconButton
+          color="#FFFFFF"
           size="small"
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -35,7 +37,9 @@ export const MoveTooltip = ({ cardId, columns }) => {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
-          <MoveIcon size={16} />
+          <ActionButton style={{ width: 16, height: 16 }}>
+            <MoveIcon size={16} />
+          </ActionButton>
         </IconButton>
         <Menu
           id="basic-menu"

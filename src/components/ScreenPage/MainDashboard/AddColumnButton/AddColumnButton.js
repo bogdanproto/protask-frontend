@@ -9,7 +9,7 @@ export const AddColumnButton = ({ onClick }) => {
   return (
     <AddButtonContainer type="button" onClick={onClick}>
       <IconWrapper>
-        <PlusIcon size={28} fill={'white'} />
+        <PlusIcon size={28} />
       </IconWrapper>
       <ButtonTitle>Add another column</ButtonTitle>
     </AddButtonContainer>

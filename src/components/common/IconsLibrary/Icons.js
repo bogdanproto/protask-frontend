@@ -221,22 +221,22 @@ export const HexagonIcon = ({ size }) => {
   );
 };
 
-export const PlusIcon = ({ size, fill }) => {
+export const PlusIcon = ({ size, fill, color }) => {
   return (
     <IconWrapper28 size={size}>
       <path
         d="M22 0H6C2.68629 0 0 2.68629 0 6V22C0 25.3137 2.68629 28 6 28H22C25.3137 28 28 25.3137 28 22V6C28 2.68629 25.3137 0 22 0Z"
-        fill="#161616"
+        fill={fill}
       />
       <path
         d="M14 9.91663V18.0833"
-        stroke={fill}
+        stroke= 'currentColor'
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M9.9165 14H18.0832"
-        stroke={fill}
+        d="M9.91663 14H18.0833"
+        stroke='currentColor'
         strokeLinecap="round"
         strokeLinejoin="round"
       />

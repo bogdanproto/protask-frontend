@@ -16,17 +16,16 @@ export const List = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${p => p.theme.colors.scrollbarThumbColor};
+    background-color: ${p => p.theme.colors.scrollbarTrackColor};
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: ${p => p.theme.colors.fontColor};
-    background: rgba(22, 22, 22, 0.1);
+    background-color: ${p => p.theme.colors.scrollbarThumbColor};
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.colors.accentColor};
+    background-color: ${p => p.theme.colors.mainAccentColor};
   }
 `;
