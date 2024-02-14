@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FormAuthStyled = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 
   border-radius: 8px;
 
