@@ -7,12 +7,6 @@ import { errorNotify } from 'const';
 export const NotifyModule = () => {
   const { isLoading, error, succesMsg } = useSelector(notifySelector);
 
-  console.log('error', error);
-  console.log(
-    'errorNotify.user_unauthorized_token',
-    errorNotify.user_unauthorized_token
-  );
-
   return (
     <>
       {isLoading && <Loader />}
