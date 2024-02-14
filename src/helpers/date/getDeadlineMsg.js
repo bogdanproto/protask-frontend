@@ -10,5 +10,5 @@ export const getDeadlineMsg = deadline => {
     ? 'Deadline has passed'
     : 'Deadline';
 
-  return { msg, isToday };
+  return { msg, isToday, daysRest };
 };

@@ -63,6 +63,6 @@ export const DeadlineSignal = styled.div`
   height: 16px;
 
   cursor: pointer;
-  color: ${({ theme, $isToday }) =>
-    $isToday ? '#dc3030' : theme.colors.accentColor};
+  color: ${({ theme, $isPast }) =>
+    $isPast ? '#dc3030' : theme.colors.accentColor};
 `;
