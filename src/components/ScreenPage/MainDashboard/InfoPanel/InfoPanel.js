@@ -13,7 +13,7 @@ import { Tooltip } from '@mui/material';
 import { getDeadlineMsg } from 'helpers';
 
 export const InfoPanel = ({ priority, deadline }) => {
-  const { msg, isToday } = getDeadlineMsg(deadline);
+  const { msg, isToday, daysRest } = getDeadlineMsg(deadline);
 
   return (
     <InfoContainer>
@@ -33,7 +33,7 @@ export const InfoPanel = ({ priority, deadline }) => {
       <Box>
         <Tooltip title={msg} placement="top">
           {isToday ? (
-            <DeadlineSignal $isToday={isToday}>
+            <DeadlineSignal $isPast={daysRest < 0}>
               <BellIcon size={16} />
             </DeadlineSignal>
           ) : (
