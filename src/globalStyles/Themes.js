@@ -13,14 +13,21 @@ const defaultTheme = {
 export const dark = {
   ...defaultTheme,
   colors: {
+    // ======= Logo =======
+
+    logoBackgroundColor: '#1F1F1F',
+    logoFillColor: '#FFFFFF',
+
     // ======= Backgrounds =======
 
-    sidebarBackground: '#121212',
+    sidebarBackgroundColor: '#121212',
     headerBackgroundColor: '#161616',
     homepageBackgroundColor: '#1F1F1F',
     cardBackgroundColor: '#121212',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#151515',
+    activeBoardBackgroundColor: 'rgba(31, 31, 31, 0.4)',
+    needHelpBackgroundColor: '#1F1F1F',
 
     // ======= Fonts =======
 
@@ -51,20 +58,28 @@ export const dark = {
     // ======= Other decors =======
 
     cardLineColor: 'rgba(255, 255, 255, 0.1)',
+    sidebarLineColor: 'rgba(255, 255, 255, 0.1)',
   },
 };
 
 export const light = {
   ...defaultTheme,
   colors: {
+    // ======= Logo =======
+
+    logoBackgroundColor: '#1F1F1F',
+    logoFillColor: '#FFFFFF',
+
     // ======= Backgrounds =======
 
-    sidebarBackground: '#FFFFFF',
+    sidebarBackgroundColor: '#FFFFFF',
     headerBackgroundColor: '#FCFCFC',
     homepageBackgroundColor: '#F6F6F7',
     cardBackgroundColor: '#FFFFFF',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#FCFCFC',
+    activeBoardBackgroundColor: 'rgba(246, 246, 247, 0.4)',
+    needHelpBackgroundColor: '#F6F6F7',
 
     // ======= Fonts =======
 
@@ -95,20 +110,28 @@ export const light = {
     // ======= Other decors =======
 
     cardLineColor: 'rgba(22, 22, 22, 0.1)',
+    sidebarLineColor: 'rgba(22, 22, 22, 0.1)',
   },
 };
 
 export const violet = {
   ...defaultTheme,
   colors: {
+    // ======= Logo =======
+
+    logoBackgroundColor: '#ECEDFD',
+    logoFillColor: '#5255BC',
+
     // ======= Backgrounds =======
 
-    sidebarBackground: '#5255bc',
+    sidebarBackgroundColor: '#5255bc',
     headerBackgroundColor: '#FFFFFF',
     homepageBackgroundColor: '#ECEDFD',
     cardBackgroundColor: '#FFFFFF',
     authPopupBackgroundColor: '#151515',
     modalPopupBackgroundColor: '#FCFCFC',
+    activeBoardBackgroundColor: 'rgba(255, 255, 255, 0.2)',
+    needHelpBackgroundColor: 'rgba(236, 237, 253, 0.4)',
 
     // ======= Fonts =======
 
@@ -138,6 +161,7 @@ export const violet = {
 
     // ======= Other decors =======
 
-    cardLineColor: 'rgba(22, 22, 22, 0.7)',
+    cardLineColor: 'rgba(22, 22, 22, 0.1)',
+    sidebarLineColor: 'rgba(255, 255, 255, 0.1)',
   },
 };

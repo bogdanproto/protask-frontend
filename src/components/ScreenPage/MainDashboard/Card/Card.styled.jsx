@@ -69,7 +69,7 @@ export const CardDescription = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   color: ${p => p.theme.colors.thirdFontColor};
-  
+
   &.expanded {
     overflow: show;
     text-overflow: '';

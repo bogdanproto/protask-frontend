@@ -1,50 +1,47 @@
 import styled from 'styled-components';
 
 export const Boards = styled.div`
+  padding: 60px 0 0 0;
+
+  @media (min-width: 768px) {
     padding: 60px 0 0 0;
+  }
 
-    @media (min-width: 768px) {
-        padding: 60px 0 0 0;
-    }
-
-    @media (min-width: 1440px) {
-        padding: 60px 0 0 0;
-    }
+  @media (min-width: 1440px) {
+    padding: 60px 0 0 0;
+  }
 `;
 
 export const Title = styled.h2`
-    font-size: 12px;
-    opacity: 0.5;
-    font-weight: 400;
-    color: ${p => p.theme.colors.logoutText};
-    margin-bottom: 8px;
-    padding-inline: 14px;
-    letter-spacing: -0.02em;
+  font-size: 12px;
+  opacity: 0.5;
+  font-weight: 400;
+  color: ${p => p.theme.colors.secondFontColor};
+  margin-bottom: 8px;
 
-    @media (min-width: 768px) {
-        padding-inline: 24px;
-    }
+  letter-spacing: -0.02em;
+
+  @media (min-width: 768px) {
+  }
 `;
 
 export const CreateButton = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid ${p => p.theme.colors.sidebarBorder};
-    border-bottom: 1px solid ${p => p.theme.colors.sidebarBorder};
-    padding-block: 14px;
-    color: ${p => p.theme.colors.logoutText};
-    margin-inline: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid ${p => p.theme.colors.sidebarLineColor};
+  border-bottom: 1px solid ${p => p.theme.colors.sidebarLineColor};
+  padding-block: 14px;
+  color: ${p => p.theme.colors.secondFontColor};
 
-    @media (min-width: 768px) {
-        margin-inline: 24px;
-    }
+  @media (min-width: 768px) {
+  }
 
-    span {
-        max-width: 76px;
-        font-weight: 500;
-        letter-spacing: -0.02em;
-    }
+  span {
+    max-width: 76px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
 `;
 
 export const List = styled.ul`
@@ -54,56 +51,56 @@ export const List = styled.ul`
   max-height: 22vh;
   overflow: auto;
 
-    @media (min-width: 1440px) {
-        max-height: 32vh;
-    }
+  @media (min-width: 1440px) {
+    max-height: 22vh;
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
   }
 
   &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background-color: ${p => p.theme.colors.scrollbarTrackColor};
+    border-radius: 12px;
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: ${p => p.theme.colors.accentColor}; 
+    background-color: ${p => p.theme.colors.scrollbarThumbColor};
+    border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.colors.accentColorHover}; 
+    background-color: ${p => p.theme.colors.mainAccentColor};
   }
 `;
 
 export const Item = styled.li`
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-block: 20px;
-    padding-inline: 14px;
-    opacity: 0.5;
-    color: ${p => p.theme.colors.logoutText};
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 20px;
 
-    @media (min-width: 768px) {
-        padding-inline: 24px;
-    }
+  opacity: 0.5;
+  cursor: pointer;
+  color: ${p => p.theme.colors.secondFontColor};
 
-    &.active {
-        opacity: 1;
-        background-color: ${p => p.theme.colors.sidebarTabActive};
-        //border-right: 4px solid ${p => p.theme.colors.sidebarBorder2};
-    }
+  @media (min-width: 768px) {
+  }
 
-    svg {
-        fill: transparent;
-    }
+  &.active {
+    opacity: 1;
+    background-color: ${p => p.theme.colors.activeBoardBackgroundColor};
+  }
 
-    h3 {
-        color: ${p => p.theme.colors.logoutText};
-        margin-bottom: 0;
-        font-weight: 500;
-        font-size: 14px;
-        letter-spacing: -0.02em;
-    }
-  
+  svg {
+    fill: transparent;
+  }
+
+  h3 {
+    color: ${p => p.theme.colors.secondFontColor};
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+  }
 `;

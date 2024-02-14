@@ -6,7 +6,7 @@ export const Backdrop = styled.div`
   max-width: 100%;
   background: rgba(21, 21, 21, 0.3);
   position: fixed;
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
   z-index: 2;
   opacity: ${p => (p.$isvisible === 'true' ? '1' : '0')};
@@ -22,38 +22,26 @@ export const Backdrop = styled.div`
     height: auto;
     transform: translateX(0);
   }
-
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${p => p.theme.colors.accentColor};
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.colors.accentColorHover};
-  }
 `;
 
 export const SidebarStyled = styled.aside`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  width: 100%;
+  width: 225px;
   max-width: 225px;
-  padding-block: 14px;
-  background-color: ${p => p.theme.colors.sidebarBackground};
+  padding: ${p => p.theme.spacing(7)};
+  padding-bottom: ${p => p.theme.spacing(12)};
+  background-color: ${p => p.theme.colors.sidebarBackgroundColor};
   display: flex;
   flex-direction: column;
   transform: translateX(${p => (p.$isvisible === 'true' ? '0' : '-100%')});
   transition: transform ${p => p.theme.cubicTransition};
 
   @media (min-width: 768px) {
-    max-width: 260px;
-    padding-block: 24px;
+    min-width: 260px;
+    padding: ${p => p.theme.spacing(12)};
   }
 `;
 
@@ -61,44 +49,41 @@ export const LogoLink = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-inline: 14px;
 
   @media (min-width: 768px) {
-    padding-inline: 24px;
-  }
-
-  ${LogoSvgStyled} {
-    width: 32px;
-    height: 32px;
-    fill: ${p => p.theme.colors.white};
   }
 
   div {
     width: 32px;
     height: 32px;
-    background-color: ${p => p.theme.colors.logoBackground};
+    background-color: ${p => p.theme.colors.logoBackgroundColor};
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     svg {
-      fill: ${p => p.theme.colors.logoIcon};
+      fill: ${p => p.theme.colors.logoFillColor};
     }
   }
 `;
 
 export const LogoText = styled.span`
-  color: ${p => p.theme.colors.logoutText};
+  color: ${p => p.theme.colors.secondFontColor};
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.04em;
 `;
 
 export const LogOut = styled.div`
-  padding-inline: 14px;
+  margin-top: 20px;
+  padding: 4px;
+  button {
+    color: ${p => p.theme.colors.secondFontColor};
+  }
+  /* color: ${p => p.theme.colors.secondFontColor}; */
 
   @media (min-width: 768px) {
-    padding-inline: 24px;
+    /* color: ${p => p.theme.colors.secondFontColor}; */
   }
 `;
