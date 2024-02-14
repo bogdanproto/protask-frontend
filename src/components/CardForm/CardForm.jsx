@@ -18,6 +18,7 @@ import { TextAreaCardStyled } from './InputCardForm/InputCardForm.styled';
 import { BoardFormStyled } from 'components/BoardForm/BoardForm.styled';
 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import dayjs from 'dayjs';
 
 const cardSchema = Yup.object().shape({
@@ -162,6 +163,7 @@ export const CardForm = ({
             format={`MMMM DD`}
             minDate={dayjs()}
             sx={{
+              width: '176px',
               '& .MuiOutlinedInput-root': {
                 '& .MuiOutlinedInput-input:focus': {
                   borderWidth: '0',
@@ -170,9 +172,15 @@ export const CardForm = ({
                 '& .MuiOutlinedInput-notchedOutline': {
                   borderWidth: '0',
                 },
+                '& .MuiOutlinedInput-notchedOutline:focus': {
+                  borderWidth: '0',
+                },
                 '& .MuiInputBase-input': {
                   padding: '0',
                   color: '#BEDBB0',
+                },
+                '& .MuiIconButton-edgeEnd': {
+                  margin: '0',
                 },
               },
             }}
