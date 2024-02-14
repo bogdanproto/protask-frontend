@@ -11,7 +11,7 @@ export const ButtonStyled = styled.button`
   padding: 0px;
   gap: 8px;
 
-  background: ${props => props.theme.colors.btnPrimary};
+  background: ${props => props.theme.colors.mainAccentColor};
   border-radius: 8px;
 
   font-weight: 500;
@@ -20,9 +20,9 @@ export const ButtonStyled = styled.button`
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.btnPrimaryColor};
+  color: ${props => props.theme.colors.headerBackgroundColor};
 
   &:hover {
-    background: ${props => props.theme.colors.btnPrimaryHover};
+    background: ${props => props.theme.colors.secondAccentColor};
   }
 `;
