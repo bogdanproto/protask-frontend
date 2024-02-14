@@ -10,7 +10,7 @@ export const customStyles = theme => ({
   }),
   placeholder: provided => ({
     ...provided,
-    color: theme.colors.inputColor, // Колір placeholder
+    color: theme.colors.mainFontColor, // Колір placeholder
   }),
   indicatorSeparator: () => ({
     display: 'none', // Приховуємо горизонтальну лінію
@@ -21,7 +21,7 @@ export const customStyles = theme => ({
       display: 'flex',
       alignItems: 'center',
       height: '100%',
-      color: theme.colors.inputColor,
+      color: theme.colors.mainFontColor,
     };
 
     return state.isDisabled
@@ -31,17 +31,17 @@ export const customStyles = theme => ({
   option: (provided, state) => ({
     ...provided,
     color: state.isSelected
-      ? theme.colors.accentColor
-      : theme.colors.inputColor, // Колір шрифта для опцій
+      ? theme.colors.mainAccentColor
+      : theme.colors.mainFontColor, // Колір шрифта для опцій
     backgroundColor: 'transparent', // Колір фону для вибраних опцій
     '&:hover': {
       border: 'none',
-      color: theme.colors.accentColorHover, // Колір шрифта при наведенні на опцію
+      color: theme.colors.secondAccentColor, // Колір шрифта при наведенні на опцію
     },
   }),
   menu: provided => ({
     ...provided,
-    backgroundColor: theme.colors.background, // Колір фону для випадаючого меню
+    backgroundColor: theme.colors.headerBackgroundColor, // Колір фону для випадаючого меню
     borderRadius: '5px', // Радіус вспливаючого меню
     padding: '5px',
   }),

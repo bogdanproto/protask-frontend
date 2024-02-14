@@ -152,7 +152,7 @@ export const violet = {
     // ======= Accent colors =======
 
     mainAccentColor: '#5255BC',
-    secondAccentColor: '#9DC888',
+    secondAccentColor: '#7B7EDE',
 
     // ======= Scrollbar =======
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { LogoSvgStyled } from 'components/common/LogoSvg/LogoSvg.styled';
+// import { LogoSvgStyled } from 'components/common/LogoSvg/LogoSvg.styled';
 
 export const Backdrop = styled.div`
   width: 100%;
@@ -81,9 +81,7 @@ export const LogOut = styled.div`
   button {
     color: ${p => p.theme.colors.secondFontColor};
   }
-  /* color: ${p => p.theme.colors.secondFontColor}; */
 
   @media (min-width: 768px) {
-    /* color: ${p => p.theme.colors.secondFontColor}; */
   }
 `;

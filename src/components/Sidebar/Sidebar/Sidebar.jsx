@@ -5,7 +5,7 @@ import {
   LogoText,
   LogOut,
 } from './Sidebar.styled';
-import { Btn } from 'components/common/Btn/Btn';
+// import { Btn } from 'components/common/Btn/Btn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
 import { useDispatch, useSelector } from 'react-redux';

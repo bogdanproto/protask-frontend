@@ -32,5 +32,5 @@ export const TitleStyled = styled.h1`
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  color: ${p => p.theme.colors.titleColor};
+  color: ${p => p.theme.colors.mainFontColor};
 `;

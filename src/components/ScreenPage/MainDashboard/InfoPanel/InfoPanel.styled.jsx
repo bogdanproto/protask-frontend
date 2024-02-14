@@ -64,5 +64,5 @@ export const DeadlineSignal = styled.div`
 
   cursor: pointer;
   color: ${({ theme, $isPast }) =>
-    $isPast ? '#dc3030' : theme.colors.accentColor};
+    $isPast ? '#dc3030' : theme.colors.mainAccentColor};
 `;

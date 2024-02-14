@@ -8,10 +8,15 @@ export const BoardFormStyled = styled.form`
   width: 335px;
 
   border-radius: 8px;
-  background: tomato;
 
   button {
     margin-top: 10px;
+    background-color: ${props => props.theme.colors.mainAccentColor};
+    transition: all ${p => p.theme.cubicTransition};
+
+    &:hover {
+      background-color: ${props => props.theme.colors.secondAccentColor};
+    }
   }
 
   h1 {

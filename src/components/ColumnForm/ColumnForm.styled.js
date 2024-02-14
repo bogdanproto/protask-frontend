@@ -7,10 +7,15 @@ export const ColumnFormStyled = styled.form`
 
   padding: 24px;
   border-radius: 8px;
-  background: ${props => props.theme.colors.background};
 
   button {
     margin-top: 10px;
+    background-color: ${props => props.theme.colors.mainAccentColor};
+    transition: all ${p => p.theme.cubicTransition};
+
+    &:hover {
+      background-color: ${props => props.theme.colors.secondAccentColor};
+    }
   }
 
   h1 {
@@ -21,6 +26,6 @@ export const ColumnFormStyled = styled.form`
 
     letter-spacing: -0.02em;
 
-    color: ${props => props.theme.colors.titleColor};
+    color: ${props => props.theme.colors.mainFontColor};
   }
 `;
