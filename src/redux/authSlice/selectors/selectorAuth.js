@@ -10,5 +10,8 @@ export const selectThemeUser = state => state.authUser.user.theme;
 
 export const selectWithAdaptSelector = createSelector(
   [selectThemeUser],
-  value => ({ value, label: value })
+  value => ({
+    value,
+    label: value.charAt(0).toUpperCase() + value.slice(1),
+  })
 );

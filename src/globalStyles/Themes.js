@@ -61,6 +61,9 @@ export const dark = {
     firstBackgroundColor: '1F1F1F',
     secondBackgroundColor: '#121212',
     thirdBackgroundColor: '#161616',
+
+    //==========
+    radioButtonGray: '#ffffff2e',
   },
 };
 
@@ -120,6 +123,9 @@ export const light = {
     filterModalBackground: '#fcfcfc',
     modalFontLight: 'rgba(22, 22, 22, 0.5)',
     filterBorder: 'rgba(22, 22, 22, 0.1)',
+
+    //==========
+    radioButtonGray: '#0000002f',
   },
 };
 
@@ -177,5 +183,7 @@ export const violet = {
     thirdBackgroundColor: '#FCFCFC',
 
     // =============
+
+    radioButtonGray: '#0000002f',
   },
 };
