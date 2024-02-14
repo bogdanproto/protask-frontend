@@ -19,11 +19,11 @@ export const Board = () => {
 
   return (
     <ScreenPage
-      boardId={activeBoard?._id}
-      wallpaper={activeWallpaper(wallpapers, activeBoard?.backgroundImg)}
+      
     >
       <HeaderDashboard boardTitle={activeBoard?.title} />
-      <MainDashboard />
+      <MainDashboard boardId={activeBoard?._id}
+      wallpaper={activeWallpaper(wallpapers, activeBoard?.backgroundImg)}/>
     </ScreenPage>
   );
 };
