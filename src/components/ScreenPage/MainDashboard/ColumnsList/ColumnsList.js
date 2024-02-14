@@ -3,26 +3,14 @@ import { Column } from '../Column/Column';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { changeCardsColumn } from 'redux/dataSlice/operations';
-import { useState } from 'react';
 
 // ========================
 
 export const ColumnsList = ({ columns }) => {
-  // const [draggedCardId, setDraggedCardId] = useState(null);
   const dispatch = useDispatch();
 
-  // const getDraggedCardId = cardId => {
-  //   console.log('test', draggedCardId);
-  //   setDraggedCardId(cardId);
-  // };
-
-  // console.log('state', draggedCardId);
-
   const handleDraqDrop = results => {
-    console.log(results);
     const { source, destination, draggableId } = results;
-
-    // if (!draggedCardId) return;
 
     if (!destination) return;
 
@@ -30,7 +18,6 @@ export const ColumnsList = ({ columns }) => {
       return;
     }
 
-    // console.log('dispatch', draggedCardId);
     dispatch(
       changeCardsColumn({
         _id: draggableId,
