@@ -18,6 +18,7 @@ export const MainDashboard = ({ boardId }) => {
   return (
     <MainDashboardContainer>
       {columns && <ColumnsList columns={columns} />}
+
       <AddColumnButton
         type="button"
         title="Add another column"
