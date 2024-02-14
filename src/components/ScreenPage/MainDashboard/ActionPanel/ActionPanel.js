@@ -22,7 +22,6 @@ export const ActionPanel = ({ columnId, cardId, onEditButton }) => {
     () => getAvailableColumns(columns, columnId),
     [columns, columnId]
   );
-  console.log(availableColumns);
   const onDeleteButton = cardId => {
     dispatch(deleteCard(cardId));
   };
