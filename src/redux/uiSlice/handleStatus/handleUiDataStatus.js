@@ -1,6 +1,6 @@
 //--------------get wallpapers----------------
 export const handleFulfilledGetAllWallpapers = (state, action) => {
-  state.wallpapers = action.payload;
+  state.wallpapers = action.payload.reverse();
 
   state.isLoading = false;
   state.error = null;
