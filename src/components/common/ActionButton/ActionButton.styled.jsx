@@ -13,11 +13,15 @@ export const ActionButton = styled.button`
   transition: all ${p => p.theme.cubicTransition};
 
   svg {
-    color: ${p => p.theme.colors.fontColor};
+    color: ${p => p.theme.colors.mainFontColor};
     opacity: 0.5;
+    transition: all ${p => p.theme.cubicTransition};
   }
 
   &:hover {
-    background-color: ${p => p.theme.colors.accentColor};
+    svg {
+      color: ${p => p.theme.colors.mainAccentColor};
+      opacity: 1;
+    }
   }
 `;

@@ -18,7 +18,7 @@ export const AddCardButton = ({ columnId }) => {
     <>
       <AddButtonContainer type="button" onClick={toggle}>
         <IconWrapper>
-          <PlusIcon size={28} fill={'white'} />
+          <PlusIcon size={28} />
         </IconWrapper>
         <ButtonTitle>Add another card</ButtonTitle>
       </AddButtonContainer>

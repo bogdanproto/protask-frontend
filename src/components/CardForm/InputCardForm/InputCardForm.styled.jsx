@@ -35,7 +35,7 @@ export const TextAreaCardStyled = styled.textarea`
 
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.inputColor};
+  /* color: ${props => props.theme.colors.inputColor}; */
 
   &:focus {
     opacity: 1;

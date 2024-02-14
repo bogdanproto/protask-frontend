@@ -12,14 +12,13 @@ export const FiltersStyled = styled.button`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.02em;
-  color: ${p => p.theme.colors.filterFont};
-  z-index: 1;
+  color: ${p => p.theme.colors.mainFontColor};
 
   transition: all ${p => p.theme.cubicTransition};
 
-  &:hover {
-    color: ${p => p.theme.colors.accentColor};
-  }
+  /* &:hover {
+    color: ${p => p.theme.colors.mainAccentColor};
+  } */
 
   .ReactModalPortal {
     position: absolute;
@@ -30,7 +29,7 @@ export const FiltersStyled = styled.button`
 
 export const ModalStyled = styled(Modal)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
-  background: ${p => p.theme.colors.filterModalBackground};
+  background: ${p => p.theme.colors.modalPopupBackgroundColor};
   border-radius: 8px;
   padding: 24px;
   width: 300px;
@@ -40,16 +39,16 @@ export const ModalStyled = styled(Modal)`
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.02em;
-    color: ${p => p.theme.colors.filterFont2};
+    color: ${p => p.theme.colors.mainFontColor};
     padding-bottom: 14px;
-    border-bottom: 1px solid ${p => p.theme.colors.filterBorder};
+    border-bottom: 1px solid ${p => p.theme.colors.cardLineColor};
   }
 
   h3 {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
-    color: ${p => p.theme.colors.filterFont2};
+    color: ${p => p.theme.colors.mainFontColor};
     padding-block: 14px;
   }
 
@@ -58,7 +57,7 @@ export const ModalStyled = styled(Modal)`
     font-size: 12px;
     letter-spacing: -0.02em;
     text-decoration: underline;
-    color: ${p => p.theme.colors.modalFontLight};
+    color: ${p => p.theme.colors.mainFontColor};
   }
 `;
 
@@ -69,7 +68,7 @@ export const BtnClose = styled.button`
   right: 18px;
 
   svg {
-    fill: ${p => p.theme.colors.filterFont2};
+    fill: ${p => p.theme.colors.mainFontColor};
   }
 `;
 
@@ -83,7 +82,8 @@ export const SublineRow = styled.div`
     font-size: 12px;
     letter-spacing: -0.02em;
     text-decoration: underline;
-    color: ${p => p.theme.colors.modalFontLight};
+    color: ${p => p.theme.colors.mainFontColor};
+    opacity: 0.5;
     display: inline;
     cursor: pointer;
   }
@@ -103,7 +103,8 @@ export const InputRow = styled.div`
 
   label {
     display: block;
-    color: ${p => p.theme.colors.modalFontLight};
+    color: ${p => p.theme.colors.mainFontColor};
+    opacity: 0.5;
     font-size: 12px;
     letter-spacing: -0.02em;
     cursor: pointer;
@@ -137,7 +138,8 @@ export const InputRow = styled.div`
     }
     &:checked {
       + label {
-        color: ${p => p.theme.colors.filterFont2};
+        color: ${p => p.theme.colors.mainFontColor};
+        opacity: 1;
 
         &:before {
           background-color: ${p => p.theme.labelGray};

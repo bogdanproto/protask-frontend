@@ -19,7 +19,7 @@ export const ColumnTitlePlate = styled.div`
   width: 334px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
-  background-color: ${p => p.theme.colors.secondBackgroundColor};
+  background-color: ${p => p.theme.colors.cardBackgroundColor};
 `;
 
 export const ColumnTitle = styled.h3`
@@ -30,7 +30,7 @@ export const ColumnTitle = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.mainFontColor};
 `;
 
 export const ButtonBox = styled.div`

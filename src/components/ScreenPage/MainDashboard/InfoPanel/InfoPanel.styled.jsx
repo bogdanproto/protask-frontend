@@ -31,7 +31,7 @@ export const InfoTitle = styled.h5`
   line-height: 12px;
   letter-spacing: -0.02em;
   text-transform: capitalize;
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.mainFontColor};
   opacity: 0.5;
 `;
 
@@ -41,7 +41,7 @@ export const InfoText = styled.p`
   line-height: 15px;
   letter-spacing: -0.02em;
   text-transform: capitalize;
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.mainFontColor};
 `;
 
 export const PriorityWrapper = styled.div`
@@ -64,5 +64,5 @@ export const DeadlineSignal = styled.div`
 
   cursor: pointer;
   color: ${({ theme, $isPast }) =>
-    $isPast ? '#dc3030' : theme.colors.accentColor};
+    $isPast ? '#dc3030' : theme.colors.mainAccentColor};
 `;

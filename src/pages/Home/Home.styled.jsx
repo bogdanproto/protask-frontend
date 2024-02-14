@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const HomePage = styled.div`
   display: flex;
   width: 100vw;
+  background-color: ${p => p.theme.colors.homepageBackgroundColor};
 `;
 
 export const Main = styled.div`

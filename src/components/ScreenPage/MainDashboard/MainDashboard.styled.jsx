@@ -16,7 +16,7 @@ export const MainDashboardContainer = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${p => p.theme.colors.secondBackgroundColor};
+    background: ${p => p.theme.colors.scrollbarTrackColor};
     border-radius: 12px;
   }
 
@@ -26,7 +26,7 @@ export const MainDashboardContainer = styled.div`
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.colors.accentColor};
+    background: ${p => p.theme.colors.mainAccentColor};
   }
 
   background-image: ${props => `url(${props.wallpaper?.mobileCloudURL})`};

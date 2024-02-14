@@ -15,11 +15,15 @@ export const MessageText = styled.p`
   line-height: 18px;
   letter-spacing: -0.02em;
   text-align: center;
-  color: ${p => p.theme.colors.fontColor};
-  opacity: 0.7;
+  color: ${p => p.theme.colors.thirdFontColor};
 `;
 
 export const CreateMessage = styled.span`
-  color: ${p => p.theme.colors.accentColor};
+  color: ${p => p.theme.colors.mainAccentColor};
   cursor: pointer;
+  transition: all ${p => p.theme.cubicTransition};
+
+  &:hover {
+    color: ${p => p.theme.colors.secondAccentColor};
+  }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { getPriorityColor } from 'helpers/index';
 
 export const CardContainer = styled.div`
-  background-color: ${p => p.theme.colors.secondBackgroundColor};
+  background-color: ${p => p.theme.colors.cardBackgroundColor};
   display: flex;
   position: relative;
   flex-direction: column;
@@ -31,7 +31,7 @@ export const TopBox = styled.div`
   min-height: 80px;
   margin-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};
-  border-bottom: 1px solid ${p => p.theme.colors.sidebarBorder};
+  border-bottom: 1px solid ${p => p.theme.colors.cardLineColor};
   cursor: zoom-in;
 
   &.expanded {
@@ -49,7 +49,7 @@ export const CardTitle = styled.h4`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.mainFontColor};
 
   &.expanded {
     white-space: wrap;
@@ -68,8 +68,7 @@ export const CardDescription = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${p => p.theme.colors.fontColor};
-  opacity: 0.7;
+  color: ${p => p.theme.colors.thirdFontColor};
 
   &.expanded {
     overflow: show;

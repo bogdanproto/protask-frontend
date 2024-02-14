@@ -25,7 +25,7 @@ export const BoardTitle = styled.h2`
   font-weight: 500;
   line-height: 21px;
   letter-spacing: -0.02em;
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.mainFontColor};
 
   @media (min-width: 768px) {
     font-size: 18px;

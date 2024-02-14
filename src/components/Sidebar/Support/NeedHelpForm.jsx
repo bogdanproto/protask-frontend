@@ -66,7 +66,7 @@ export const NeedHelpForm = ({ closeModal }) => {
 };
 
 const Title = styled.p`
-  color: ${({ theme }) => theme.colors.titleModalFontColor};
+  color: ${({ theme }) => theme.colors.mainFontColor};
 `;
 
 const NeedFormStyled = styled.form`
