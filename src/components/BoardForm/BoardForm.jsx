@@ -40,15 +40,15 @@ export const BoardForm = ({
         dispatch(updateBoard({ ...values, _id: boardId }));
         return;
       }
-      dispatch(addBoard({ ...values, boardId }));
+      dispatch(addBoard({ ...values }));
     },
   });
 
   useEffect(() => {
-    if (isSuccessDispatch) {
+    if (isSuccessDispatch && formik.dirty) {
       closeModal();
     }
-  }, [closeModal, isSuccessDispatch]);
+  }, [closeModal, formik.dirty, isSuccessDispatch]);
 
   return (
     <>

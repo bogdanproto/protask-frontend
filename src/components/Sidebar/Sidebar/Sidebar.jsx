@@ -1,4 +1,3 @@
-import { routes } from 'const/routes/routes.js';
 import {
   Backdrop,
   SidebarStyled,
@@ -33,9 +32,9 @@ export const Sidebar = () => {
   return (
     <Backdrop $isvisible={visible.toString()} onClick={handleBackdropClick}>
       <SidebarStyled $isvisible={visible.toString()}>
-        <LogoLink to={routes.HOME}>
+        <LogoLink>
           <div>
-            <LogoIcon width={12} height={16}/>
+            <LogoIcon width={12} height={16} />
           </div>
           <LogoText>Task Pro</LogoText>
         </LogoLink>

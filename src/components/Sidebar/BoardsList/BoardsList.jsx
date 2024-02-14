@@ -4,9 +4,9 @@ import { Btn } from 'components/common/Btn/Btn';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
 import { useSelector } from 'react-redux';
-import { selectActiveBoard, selectAllBoard } from 'redux/dataSlice/selectors';
-import { useNavigate } from 'react-router';
+import { selectActiveBoardId, selectAllBoard } from 'redux/dataSlice/selectors';
 import { BoardForm } from 'components/BoardForm/BoardForm';
+import { useNavigate } from 'react-router-dom';
 
 export const BoardsList = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export const BoardsList = () => {
   const { isOpen, close, toggle } = useModal();
 
   const boards = useSelector(selectAllBoard);
-  const activeBoard = useSelector(selectActiveBoard);
+  const activeBoard = useSelector(selectActiveBoardId);
 
   const handleClick = (id, evt) => {
     if (evt.target?.closest('button')) {
@@ -34,12 +34,12 @@ export const BoardsList = () => {
         {boards.map(item => (
           <Item
             key={item._id}
-            className={activeBoard?._id === item._id ? 'active' : null}
+            className={activeBoard === item._id ? 'active' : null}
             onClick={evt => handleClick(item._id, evt)}
           >
             <BoardsItem
               board={item}
-              active={activeBoard?._id === item._id ? true : false}
+              active={activeBoard === item._id ? true : false}
             />
           </Item>
         ))}

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { LogoSvgStyled } from 'components/common/LogoSvg/LogoSvg.styled';
 
 export const Backdrop = styled.div`
@@ -10,11 +9,11 @@ export const Backdrop = styled.div`
   overflow: auto;
   height: 100vh;
   z-index: 2;
-  opacity: ${p => p.$isvisible === "true" ? "1" : "0"};
-  visibility: ${p => p.$isvisible === "true" ? "visible" : "hidden"};
+  opacity: ${p => (p.$isvisible === 'true' ? '1' : '0')};
+  visibility: ${p => (p.$isvisible === 'true' ? 'visible' : 'hidden')};
   transition: opacity ${p => p.theme.cubicTransition};
 
-  //transform: translateX(${p => p.isvisible === "true"? "0" : "-100%"});
+  //transform: translateX(${p => (p.isvisible === 'true' ? '0' : '-100%')});
   //transition: transform ${p => p.theme.cubicTransition};
 
   @media (min-width: 1440px) {
@@ -29,15 +28,15 @@ export const Backdrop = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background: ${p => p.theme.colors.accentColor}; 
+    background: ${p => p.theme.colors.accentColor};
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.colors.accentColorHover}; 
+    background: ${p => p.theme.colors.accentColorHover};
   }
 `;
 
@@ -49,7 +48,7 @@ export const SidebarStyled = styled.aside`
   background-color: ${p => p.theme.colors.sidebarBackground};
   display: flex;
   flex-direction: column;
-  transform: translateX(${p => p.$isvisible === "true"? "0" : "-100%"});
+  transform: translateX(${p => (p.$isvisible === 'true' ? '0' : '-100%')});
   transition: transform ${p => p.theme.cubicTransition};
 
   @media (min-width: 768px) {
@@ -58,7 +57,7 @@ export const SidebarStyled = styled.aside`
   }
 `;
 
-export const LogoLink = styled(Link)`
+export const LogoLink = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -87,14 +86,13 @@ export const LogoLink = styled(Link)`
       fill: ${p => p.theme.colors.logoIcon};
     }
   }
-  
 `;
 
 export const LogoText = styled.span`
-    color: ${p => p.theme.colors.logoutText};
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -0.04em;
+  color: ${p => p.theme.colors.logoutText};
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
 `;
 
 export const LogOut = styled.div`
