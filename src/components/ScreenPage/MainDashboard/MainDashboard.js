@@ -16,7 +16,7 @@ export const MainDashboard = ({ boardId, wallpaper }) => {
   const columns = useSelector(selectFilteredCardsOfBoard);
 
   return (
-    <MainDashboardContainer wallpaper={wallpaper}>
+    <MainDashboardContainer>
       {columns && <ColumnsList columns={columns} />}
 
       <AddColumnButton

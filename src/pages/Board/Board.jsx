@@ -18,12 +18,12 @@ export const Board = () => {
   };
 
   return (
-    <ScreenPage>
+    <ScreenPage
+      boardId={activeBoard?._id}
+      wallpaper={activeWallpaper(wallpapers, activeBoard?.backgroundImg)}
+    >
       <HeaderDashboard boardTitle={activeBoard?.title} />
-      <MainDashboard
-        boardId={activeBoard?._id}
-        wallpaper={activeWallpaper(wallpapers, activeBoard?.backgroundImg)}
-      />
+      <MainDashboard />
     </ScreenPage>
   );
 };
