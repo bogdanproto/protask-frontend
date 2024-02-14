@@ -9,8 +9,12 @@ import {
   PriorityWrapper,
   PriorityIcon,
 } from './InfoPanel.styled';
+import { Tooltip } from '@mui/material';
+import { getDeadlineMsg } from 'helpers';
 
 export const InfoPanel = ({ priority, deadline }) => {
+  const { msg, isToday } = getDeadlineMsg(deadline);
+
   return (
     <InfoContainer>
       <Box>
@@ -27,9 +31,15 @@ export const InfoPanel = ({ priority, deadline }) => {
         </InfoBox>
       </Box>
       <Box>
-        <DeadlineSignal>
-          <BellIcon size={16} />
-        </DeadlineSignal>
+        <Tooltip title={msg} placement="top">
+          {isToday ? (
+            <DeadlineSignal $isToday={isToday}>
+              <BellIcon size={16} />
+            </DeadlineSignal>
+          ) : (
+            <></>
+          )}
+        </Tooltip>
       </Box>
     </InfoContainer>
   );

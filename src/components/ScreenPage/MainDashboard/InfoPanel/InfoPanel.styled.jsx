@@ -61,5 +61,8 @@ export const PriorityIcon = styled.div`
 export const DeadlineSignal = styled.div`
   width: 16px;
   height: 16px;
-  color: ${p => p.theme.colors.accentColor};
+
+  cursor: pointer;
+  color: ${({ theme, $isToday }) =>
+    $isToday ? '#dc3030' : theme.colors.accentColor};
 `;

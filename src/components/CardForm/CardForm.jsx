@@ -18,7 +18,6 @@ import { TextAreaCardStyled } from './InputCardForm/InputCardForm.styled';
 import { BoardFormStyled } from 'components/BoardForm/BoardForm.styled';
 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import dayjs from 'dayjs';
 
 const cardSchema = Yup.object().shape({
@@ -181,6 +180,7 @@ export const CardForm = ({
                 },
                 '& .MuiIconButton-edgeEnd': {
                   margin: '0',
+                  color: '#BEDBB0',
                 },
               },
             }}

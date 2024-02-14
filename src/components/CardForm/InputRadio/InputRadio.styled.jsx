@@ -25,8 +25,8 @@ export const CustomRadio = styled.span`
     opacity: 1;
   }
 
-  ${props => {
-    switch (props.$mode) {
+  ${({ $mode, theme }) => {
+    switch ($mode) {
       case 'low':
         return `
           background: #8fa1d0;
@@ -106,10 +106,10 @@ export const CustomRadio = styled.span`
         `;
       default:
         return `
-            background: #FFFFFF30;
+            background: ${theme.colors.radioButtonGray};
           ${InputRadio}:checked + && {
             background: transparent;
-            border: 1px solid #FFFFFF30;
+            border: 1px solid ${theme.colors.radioButtonGray};
               &:before {
                   content: '';
 
@@ -122,7 +122,7 @@ export const CustomRadio = styled.span`
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: #FFFFFF30;
+                  background: ${theme.colors.radioButtonGray};
                   
 
                   transition: 0.2s ease-in;
