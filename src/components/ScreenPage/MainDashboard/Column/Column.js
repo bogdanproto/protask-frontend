@@ -33,8 +33,12 @@ export const Column = ({ column: { _id, title, cards } }) => {
 
   return (
     <Droppable droppableId={_id}>
-      {provided => (
-        <ColumnContainer {...provided.droppableProps} ref={provided.innerRef}>
+      {(provided, snapshot) => (
+        <ColumnContainer
+          {...provided.droppableProps}
+          ref={provided.innerRef}
+          isDraggingOver={snapshot.isDraggingOver}
+        >
           <ColumnTitlePlate>
             <ColumnTitle>{title}</ColumnTitle>
             <ButtonBox>
