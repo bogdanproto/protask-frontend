@@ -27,9 +27,9 @@ export const GlobalStyle = createGlobalStyle`
         /* width: 100%; */
     }
 
-    hr {
+    /* hr {
         border-top: 1px solid ${p => p.theme.colors.fontColor};
-    }
+    } */
 
     /* .container {
         width: 100%;
@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
 
     /* TYPOGRAPHY */
 
-    h1,
+    /* h1,
     h2,
     h3,
     h4,
@@ -74,17 +74,17 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 500;
     }
 
+    */
     p {
         margin: 0;
         letter-spacing: -0.02em;
         line-height: 1.28;
     }
-
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
-    }
+    } 
 
     a {
         color: inherit;
@@ -108,7 +108,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: inherit;
         font-weight: 500;
         line-height: inherit;
-        color: ${p => p.theme.colors.fontColor};
+        color: ${p => p.theme.colors.mainFontColor};
         transition: color ${p => p.theme.cubicTransition};
     }
 
@@ -116,8 +116,8 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 0;
         border-radius: 6px;
         padding: 8px 10px;
-        background-color: ${p => p.theme.colors.btnPlus};
-        color: ${p => p.theme.colors.fontColor};
+        background-color: ${p => p.theme.colors.mainAccentColor};
+        color: ${p => p.theme.colors.mainFontColor};
         transition: background-color ${p => p.theme.cubicTransition};
 
         &.btn-small {
@@ -198,7 +198,7 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 120px;
     }
 
-    input, textarea {
+    /* input, textarea {
         min-width: 287px;
         padding: 14px 18px;
         border-radius: 8px;
@@ -206,11 +206,11 @@ export const GlobalStyle = createGlobalStyle`
         background-color: transparent;
         color: ${p => p.theme.colors.inputColor};
         transition: border-color ${p => p.theme.cubicTransition};
-    }
+    } */
 
     input:focus,
     textarea:focus {
-        border: 1px solid ${p => p.theme.colors.accentColorHover};
+        /* border: 1px solid ${p => p.theme.colors.accentColorHover}; */
         outline: none;
     }
 
