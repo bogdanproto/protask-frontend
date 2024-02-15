@@ -15,9 +15,12 @@ import { selectActiveBoardId, selectAllBoard } from 'redux/dataSlice/selectors';
 import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useNavigate } from 'react-router-dom';
 import { PlusWhIcon } from 'components/common/IconsLibrary';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from 'redux/uiSlice';
 
 export const BoardsList = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { isOpen, close, toggle } = useModal();
 
@@ -31,12 +34,17 @@ export const BoardsList = () => {
     navigate(id);
   };
 
+  const createBoard = () => {
+    toggle();
+    dispatch(toggleSidebar());
+  };
+
   return (
     <Boards>
       <TitlePlate>
         <Title>My Boards</Title>
       </TitlePlate>
-      <CreateButton onClick={toggle}>
+      <CreateButton onClick={createBoard}>
         <span>
           Create a<br /> new board
         </span>
