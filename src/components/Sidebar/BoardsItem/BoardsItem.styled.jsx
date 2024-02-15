@@ -21,6 +21,11 @@ export const Left = styled.div`
   gap: ${p => p.theme.spacing(2)};
 `;
 
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const BoardTitle = styled.h3`
   max-width: 110px;
   font-size: 24px;

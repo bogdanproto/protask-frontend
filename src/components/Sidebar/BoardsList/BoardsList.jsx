@@ -2,18 +2,19 @@ import {
   Boards,
   Title,
   CreateButton,
+  IconWrapper,
   List,
   Item,
   TitlePlate,
 } from './BoardsList.styled';
 import { BoardsItem } from 'components/Sidebar/BoardsItem/BoardsItem';
-import { Btn } from 'components/common/Btn/Btn';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { useModal } from 'hooks/useModal';
 import { useSelector } from 'react-redux';
 import { selectActiveBoardId, selectAllBoard } from 'redux/dataSlice/selectors';
 import { BoardForm } from 'components/BoardForm/BoardForm';
 import { useNavigate } from 'react-router-dom';
+import { PlusWhIcon } from 'components/common/IconsLibrary';
 
 export const BoardsList = () => {
   const navigate = useNavigate();
@@ -39,7 +40,9 @@ export const BoardsList = () => {
         <span>
           Create a<br /> new board
         </span>
-        <Btn variant="plus"></Btn>
+        <IconWrapper>
+          <PlusWhIcon width={40} height={36} />
+        </IconWrapper>
       </CreateButton>
       <List>
         {boards.map(item => (
