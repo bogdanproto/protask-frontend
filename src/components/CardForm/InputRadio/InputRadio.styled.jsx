@@ -139,6 +139,7 @@ export const RadioButtnonBox = styled.div`
   justify-content: start;
   gap: 8px;
 `;
+
 export const RadioContainer = styled.span`
   position: relative;
   display: block;
@@ -148,6 +149,7 @@ export const Label = styled.div`
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  color: ${props => props.theme.colors.titleColor};
+  color: ${props => props.theme.colors.mainFontColor};
+  opacity: 0.5;
   margin-bottom: 4px;
 `;

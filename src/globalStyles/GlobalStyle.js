@@ -172,4 +172,5 @@ export const GlobalStyle = createGlobalStyle`
     /* label {
        display: none;
     } */
+
 `;

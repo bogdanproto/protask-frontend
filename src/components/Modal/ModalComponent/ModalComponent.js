@@ -20,7 +20,7 @@ const ModalComponent = () => {
       <button onClick={openModal}>Open modal with close button</button>
       <UniversalModal isOpen={isOpen} onClose={closeModal}>
         <ModalCloseButton onClick={closeModal}>
-          <MdClose fill={`${p => p.theme.inputColor}`} />
+          <MdClose fill={`${p => p.theme.colors.mainFontColor}`} />
         </ModalCloseButton>
         <h2>Modal Content</h2>
         <h2>Please enter your email</h2>

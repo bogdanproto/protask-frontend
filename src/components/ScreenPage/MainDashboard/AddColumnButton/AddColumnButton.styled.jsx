@@ -34,6 +34,7 @@ export const IconWrapper = styled.div`
   color: ${p => p.theme.colors.addColumnIconColor2};
   background-color: ${p => p.theme.colors.addColumnIconColor};
   border-radius: 8px;
+  transition: all ${p => p.theme.cubicTransition};
 `;
 
 export const ButtonTitle = styled.p`

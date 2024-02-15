@@ -5,9 +5,18 @@ export const BoardFormStyled = styled.form`
   flex-direction: column;
   gap: 18px;
 
-  width: 335px;
+  min-width: 232px;
+  width: calc(100vw - 88px);
+  max-width: 287px;
+  box-sizing: content-box;
+  padding: 4px;
 
   border-radius: 8px;
+
+  @media (min-width: 768px) {
+    min-width: 302px;
+    max-width: 302px;
+  }
 
   button {
     margin-top: 10px;
