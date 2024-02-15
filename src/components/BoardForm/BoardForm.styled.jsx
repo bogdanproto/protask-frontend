@@ -22,10 +22,10 @@ export const BoardFormStyled = styled.form`
     margin-top: 10px;
     background-color: ${props => props.theme.colors.mainAccentColor};
     transition: all ${p => p.theme.cubicTransition};
-
+    /* 
     &:hover {
       background-color: ${props => props.theme.colors.secondAccentColor};
-    }
+    } */
   }
 
   h3 {
