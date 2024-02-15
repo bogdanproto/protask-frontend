@@ -5,16 +5,20 @@ import {
   InputRow,
   BtnClose,
   SublineRow,
+  UnderLine,
 } from './Filters.styled';
 import { FilterIcon } from 'components/common/IconsLibrary/index';
 import { Input } from 'components/common/Input/Input';
 import { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { switchFilterCards } from 'redux/uiSlice';
+import { selectFilterCards } from 'redux/uiSlice/selectors';
 
 export const Filters = () => {
   const dispatch = useDispatch();
+  const activeFilter = useSelector(selectFilterCards);
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -50,6 +54,7 @@ export const Filters = () => {
           <IoMdClose size={18} />
         </BtnClose>
         <h2>Filters</h2>
+        <UnderLine />
         <SublineRow>
           <h3>Label color</h3>
           {/*<button type="button" id="" onClick={handleClick}>Show  all</button>*/}
@@ -58,6 +63,7 @@ export const Filters = () => {
             id="all"
             value=""
             name="filter"
+            checked={activeFilter === 'low'}
             onClick={handleClick}
           ></Input>
           <label htmlFor="all">Show all</label>
@@ -69,6 +75,7 @@ export const Filters = () => {
             id="without"
             value="without"
             name="filter"
+            checked={activeFilter === 'without'}
             onClick={handleClick}
           ></Input>
           <label htmlFor="without">Without priority</label>
@@ -79,6 +86,7 @@ export const Filters = () => {
             id="low"
             value="low"
             name="filter"
+            checked={activeFilter === 'low'}
             onClick={handleClick}
           ></Input>
           <label htmlFor="low">Low</label>
@@ -89,6 +97,7 @@ export const Filters = () => {
             id="medium"
             value="medium"
             name="filter"
+            checked={activeFilter === 'medium'}
             onClick={handleClick}
           ></Input>
           <label htmlFor="medium">Medium</label>
@@ -99,6 +108,7 @@ export const Filters = () => {
             id="high"
             value="high"
             name="filter"
+            checked={activeFilter === 'high'}
             onClick={handleClick}
           ></Input>
           <label htmlFor="high">High</label>

@@ -35,13 +35,17 @@ export const ModalStyled = styled(Modal)`
   text-align: left;
   z-index: 1;
 
+  h2 {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   h3 {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.mainFontColor};
     padding-bottom: 14px;
-    border-bottom: 1px solid ${p => p.theme.colors.cardLineColor};
   }
 
   h4 {
@@ -77,6 +81,12 @@ export const SublineRow = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  margin-bottom: 14px;
+
+  > h3 {
+    padding: 0;
+  }
+
   > label {
     font-weight: 400;
     font-size: 12px;
@@ -91,6 +101,12 @@ export const SublineRow = styled.div`
   > input {
     display: none;
   }
+`;
+
+export const UnderLine = styled.div`
+  margin-top: 14px;
+  margin-bottom: 14px;
+  border: 1px solid ${p => p.theme.colors.underlineColor};
 `;
 
 export const InputRow = styled.div`
@@ -161,7 +177,7 @@ export const InputRow = styled.div`
     input {
       + label {
         &:before {
-          background: ${p => p.theme.labelBlue};
+          background: ${p => p.theme.labelGray};
         }
       }
     }
@@ -171,13 +187,23 @@ export const InputRow = styled.div`
     input {
       + label {
         &:before {
-          background: ${p => p.theme.labelRosa};
+          background: ${p => p.theme.labelBlue};
         }
       }
     }
   }
 
   &:nth-of-type(5) {
+    input {
+      + label {
+        &:before {
+          background: ${p => p.theme.labelRosa};
+        }
+      }
+    }
+  }
+
+  &:last-of-type {
     input {
       + label {
         &:before {
