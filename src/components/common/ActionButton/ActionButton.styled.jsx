@@ -19,9 +19,9 @@ export const ActionButton = styled.div`
   }
 
   &:hover {
-    svg {
-      color: ${p => p.theme.colors.mainAccentColor};
-      opacity: 1;
-    }
+    color: ${p => p.theme.colors.mainAccentColor};
+    opacity: 1;
+    box-shadow: ${({ theme }) =>
+      `0 0 3px 3px ${theme.colors.secondAccentColor}`};
   }
 `;
