@@ -99,15 +99,15 @@ export const GlobalStyle = createGlobalStyle`
         height: 49px;
         border-radius: 8px;
         padding: 10px;
-        background-color: ${p => p.theme.colors.btnPrimary};
-        color: ${p => p.theme.colors.btnBackground};
+        background-color: ${p => p.theme.colors.mainAccentColor};
+        color: ${p => p.theme.colors.mainFontColor};
         transition: background-color ${p => p.theme.cubicTransition};
         min-width: 287px;
     }
 
     .btn.btn-primary:hover,
     .btn.btn-primary:focus {
-        background-color: ${p => p.theme.colors.btnPrimaryHover};
+        background-color: ${p => p.theme.colors.secondAccentColor};
     }
 
     .btn.btn-secondary {
