@@ -42,4 +42,22 @@ export const TextAreaCardStyled = styled.textarea`
     opacity: 1;
     border: 1px solid ${props => props.theme.colors.mainAccentColor};
   }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${p => p.theme.colors.scrollbarTrackColor};
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${p => p.theme.colors.scrollbarThumbColor};
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: ${p => p.theme.colors.mainAccentColor};
+  }
 `;

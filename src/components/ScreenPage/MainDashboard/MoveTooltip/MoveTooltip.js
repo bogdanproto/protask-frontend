@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { IconButton } from '@mui/material';
 import { ActionButton } from 'components/common/ActionButton/ActionButton.styled';
+import { ColumnTitle, TargetColumnButton } from './MoveTooltip.styled';
 
 export const MoveTooltip = ({ cardId, columns }) => {
   const dispatch = useDispatch();
@@ -53,11 +54,15 @@ export const MoveTooltip = ({ cardId, columns }) => {
         >
           {columns.map(column => (
             <MenuItem
+              style={{ display: 'flex', justifyContent: 'space-between' }}
               key={column._id}
               onClick={() => moveCard({ _id: cardId, columnId: column._id })}
             >
-              <p>{column.title}</p>
-              <MoveIcon size={16} />
+              <TargetColumnButton>
+                <ColumnTitle>{column.title}</ColumnTitle>
+
+                <MoveIcon size={16} />
+              </TargetColumnButton>
             </MenuItem>
           ))}
         </Menu>

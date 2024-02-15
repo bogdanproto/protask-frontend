@@ -40,20 +40,22 @@ export const TargetColumnButton = styled.button`
   flex-direction: row;
   gap: 8px;
   align-items: center;
+  justify-content: space-between;
   height: 29px;
   width: 135px;
+
   padding: ${p => p.theme.spacing(4)} ${p => p.theme.spacing(9)};
-  color: ${p => p.theme.colors.fontColor};
+  color: ${p => p.theme.colors.modalPopupBackgroundColor};
 
   transition: all ${p => p.theme.cubicTransition};
 
   &:hover {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.mainAccentColor};
   }
 `;
 
 export const ColumnTitle = styled.div`
-  width: 75px;
+  width: 135px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -62,10 +64,4 @@ export const ColumnTitle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
-
-export const Div = styled.div`
-  width: 130px;
-  height: 50px;
-  background-color: tomato;
 `;
