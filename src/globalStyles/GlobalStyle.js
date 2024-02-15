@@ -39,7 +39,8 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         letter-spacing: -0.02em;
         line-height: 1.28;
-    }
+        }
+        
     ul {
         margin: 0;
         padding: 0;
@@ -102,8 +103,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${p => p.theme.colors.mainAccentColor};
         color: ${p => p.theme.colors.mainFontColor};
         transition: background-color ${p => p.theme.cubicTransition};
-        min-width: 287px;
-    }
+        }
 
     .btn.btn-primary:hover,
     .btn.btn-primary:focus {

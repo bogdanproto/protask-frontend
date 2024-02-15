@@ -22,6 +22,18 @@ export const IconWrapper18 = ({ children, size }) => (
   </svg>
 );
 
+export const IconWrapper20 = ({ children, size }) => (
+  <svg
+    width={size}
+    height={size}
+    fill="none"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {children}
+  </svg>
+);
+
 export const IconWrapper28 = ({ children, size }) => (
   <svg
     width={size}

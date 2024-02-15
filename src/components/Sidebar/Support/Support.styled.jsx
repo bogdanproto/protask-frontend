@@ -33,13 +33,21 @@ export const SupportBox = styled.div`
 
 export const HelpButton = styled.button`
   display: flex;
+  flex-direction: row;
   align-items: center;
+  width: 94px;
+  height: 18px;
   gap: 8px;
   color: ${p => p.theme.colors.mainFontColor};
   font-size: 12px;
+  white-space: nowrap;
+  transition: all ${p => p.theme.cubicTransition};
 
   svg {
     stroke: ${p => p.theme.colors.mainFontColor};
-    fill: transparent;
+  }
+
+  &:hover {
+    color: ${p => p.theme.colors.secondAccentColor};
   }
 `;

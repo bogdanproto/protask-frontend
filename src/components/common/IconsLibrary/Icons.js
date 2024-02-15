@@ -1,6 +1,7 @@
 import {
   IconWrapper16,
   IconWrapper18,
+  IconWrapper20,
   IconWrapper28,
   IconWrapper28wh,
   IconWrapper32,
@@ -32,29 +33,29 @@ export const LogoIcon = ({ width, height }) => {
 
 export const HelpIcon = ({ size }) => {
   return (
-    <IconWrapper32 size={size}>
+    <IconWrapper20 size={size}>
       <path
-        strokeLinejoin="round"
+        d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6024 18.3333 10C18.3333 5.39765 14.6023 1.66669 9.99996 1.66669C5.39759 1.66669 1.66663 5.39765 1.66663 10C1.66663 14.6024 5.39759 18.3334 9.99996 18.3334Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.969-13.333-13.333-13.333-13.333 5.97-13.333 13.333c0 7.364 5.97 13.333 13.333 13.333z"
-      ></path>
+        stroke-Linejoin="round"
+      />
       <path
-        strokeLinejoin="round"
+        d="M7.57495 7.49999C7.77087 6.94304 8.15758 6.47341 8.66658 6.17426C9.17558 5.87512 9.77403 5.76577 10.3559 5.86558C10.9378 5.96539 11.4656 6.26792 11.8458 6.71959C12.2261 7.17126 12.4342 7.74292 12.4333 8.33332C12.4333 9.99999 9.93328 10.8333 9.93328 10.8333"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M12.12 12c0.313-0.891 0.932-1.643 1.747-2.121s1.772-0.654 2.703-0.494c0.931 0.16 1.776 0.644 2.384 1.366s0.941 1.637 0.94 2.582c0 2.667-4 4-4 4"
-      ></path>
+        strokeLinejoin="round"
+      />
       <path
-        strokeLinejoin="round"
+        d="M10 14.1667H10.0125"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M16 22.667h0.020"
-      ></path>
-    </IconWrapper32>
+        strokeLinejoin="round"
+      />
+    </IconWrapper20>
   );
 };
 
