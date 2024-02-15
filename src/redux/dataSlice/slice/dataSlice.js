@@ -31,6 +31,7 @@ import {
   handleFulfilledUpdateColumn,
   handleLogoutData,
   handlePendingData,
+  handlePendingDataWLoader,
   handleRejectedData,
 } from '../handleStatus';
 import {
@@ -80,6 +81,7 @@ const dataSlice = createSlice({
       .addCase(changeCardsColumn.fulfilled, handleFulfilledChangeCardsColumn)
       .addCase(deleteCard.fulfilled, handleFulfilleDeleteCard)
       .addCase(updateCard.fulfilled, handleFulfilleUpdateCard)
+      .addCase(changeCardsColumn.pending, handlePendingDataWLoader)
       .addMatcher(
         isAnyOf(
           sendToHelpDesk.pending,
@@ -94,7 +96,6 @@ const dataSlice = createSlice({
           getColumnById.pending,
           updateColumn.pending,
           addCard.pending,
-          changeCardsColumn.pending,
           deleteCard.pending,
           updateCard.pending
         ),
