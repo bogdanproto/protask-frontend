@@ -31,6 +31,7 @@ export const Card = ({
       <TopBox
         className={isExpanded ? 'expanded' : ''}
         onDoubleClick={toggleHeight}
+        onTouchStart={toggleHeight}
       >
         <CardTitle className={isExpanded ? 'expanded' : ''}>{title}</CardTitle>
         <CardDescription className={isExpanded ? 'expanded' : ''}>

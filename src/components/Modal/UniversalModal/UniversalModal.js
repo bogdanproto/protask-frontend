@@ -19,7 +19,7 @@ const UniversalModal = ({ isOpen, onClose, children, content }) => {
       ariaHideApp={false}
     >
       <ModalCloseButton onClick={onClose}>
-        <MdClose fill={theme.colors.inputColor} />
+        <MdClose fill={theme.colors.mainFontColor} />
       </ModalCloseButton>
       {children}
       {content}

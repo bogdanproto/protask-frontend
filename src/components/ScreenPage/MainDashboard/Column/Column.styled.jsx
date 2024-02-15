@@ -5,7 +5,9 @@ export const ColumnContainer = styled.div`
   flex-direction: column;
   align-items: start;
   gap: ${p => p.theme.spacing(7)};
-  width: 350px;
+  min-width: 292px;
+  width: calc(100vw - 28px);
+  max-width: 350px;
   height: 100%;
   overflow: hidden;
 `;
@@ -16,7 +18,9 @@ export const ColumnTitlePlate = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${p => p.theme.spacing(8)};
-  width: 334px;
+  min-width: 280px;
+  width: calc(100vw - 40px);
+  max-width: 335px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
   background-color: ${p => p.theme.colors.cardBackgroundColor};

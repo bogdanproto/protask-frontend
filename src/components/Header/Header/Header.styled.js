@@ -13,6 +13,10 @@ export const HeaderWrap = styled.header`
   background-color: ${p => p.theme.colors.headerBackgroundColor};
   color: ${p => p.theme.colors.mainFontColor};
 
+  @media (min-width: 768px) {
+    height: 68px;
+  }
+
   @media (min-width: 1440px) {
     justify-content: right;
   }

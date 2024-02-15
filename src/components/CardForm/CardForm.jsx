@@ -162,6 +162,7 @@ export const CardForm = ({
             format={`MMMM DD`}
             minDate={dayjs()}
             sx={{
+              gap: '20px',
               width: '176px',
               '& .MuiOutlinedInput-root': {
                 '& .MuiOutlinedInput-input:focus': {
@@ -180,7 +181,7 @@ export const CardForm = ({
                 },
                 '& .MuiIconButton-edgeEnd': {
                   margin: '0',
-                  color: '#BEDBB0',
+                  color: '#FFFFFF',
                 },
               },
             }}

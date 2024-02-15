@@ -11,7 +11,7 @@ export const ProfileIconBtn = styled.div`
   }
 
   .edit-profile-icon {
-    fill: ${p => p.theme.colors.btnSmall};
+    fill: ${p => p.theme.colors.needHelpBackgroundColor};
     border-radius: 8px;
     height: 100%;
     width: 100%;

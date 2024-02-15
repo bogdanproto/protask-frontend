@@ -12,10 +12,11 @@ const modalStyles = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     backgroundColor: `${p => p.theme.colors.modalPopupBackgroundColor}`,
-    borderRadius: '5px',
+    borderRadius: '8px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
     width: 'fit-content',
     height: 'fit-content',
+    border: `${p => p.theme.colors.modalPopupBackgroundColor}`,
   },
 };
 

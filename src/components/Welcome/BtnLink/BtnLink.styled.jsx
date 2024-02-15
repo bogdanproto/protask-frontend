@@ -2,9 +2,11 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const BtnLinkStyled = styled(NavLink)`
-  width: 335px;
+  min-width: 280px;
+  width: calc(100vw - 40px);
+  max-width: 335px;
   height: 49px;
-  background: ${props => props.theme.colors.black};
+  background: #161616;
   border-radius: 8px;
 
   display: flex;
@@ -19,10 +21,16 @@ export const BtnLinkStyled = styled(NavLink)`
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.colors.white};
+  color: #FFFFFF;
+
+  transition: all ${p => p.theme.cubicTransition};
+
+&:hover {
+  background-color: #9DC888;
+  }
 
   @media (min-width: 375px)  {
-    width: 344px;
+    max-width: 344px;
     height: 49px;
   }
 `;

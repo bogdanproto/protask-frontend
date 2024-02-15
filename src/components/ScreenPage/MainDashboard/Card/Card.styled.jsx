@@ -9,7 +9,10 @@ export const CardContainer = styled.div`
   padding: ${p => p.theme.spacing(7)} ${p => p.theme.spacing(7)}
     ${p => p.theme.spacing(5)} ${p => p.theme.spacing(12)};
 
-  width: 334px;
+  min-width: 280px;
+  width: calc(100vw - 40px);
+  max-width: 335px;
+  min-height: 154px;
   border-radius: ${p => p.theme.radius};
   overflow-x: hidden;
 
@@ -28,7 +31,7 @@ export const CardContainer = styled.div`
 `;
 
 export const TopBox = styled.div`
-  min-height: 80px;
+  min-height: 81px;
   margin-right: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(7)};
   border-bottom: 1px solid ${p => p.theme.colors.cardLineColor};

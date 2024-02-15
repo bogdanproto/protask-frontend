@@ -8,19 +8,19 @@ export const AddButtonStyled = styled.button`
   align-items: center;
   gap: ${p => p.theme.spacing(4)};
   width: 100%;
-  height: 56px;
+  height: 49px;
   border-radius: ${p => p.theme.radius};
-  background-color: ${({ theme }) => theme.colors.btnPrimary};
-  color: ${p => p.theme.colors.fontColor};
+  background-color: ${p => p.theme.colors.mainAccentColor};
+  color: ${p => p.theme.colors.secondFontColor};
   font-size: 14px;
   transition: all ${p => p.theme.cubicTransition};
 
   &:hover {
-    background-color: ${p => p.theme.colors.btnPrimaryHover};
+    background-color: ${p => p.theme.colors.secondAccentColor};
   }
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.btnDisabled};
+    background-color: ${p => p.theme.colors.cardLineColor};
   }
 `;
 
@@ -33,11 +33,11 @@ export const IconBox = styled.div`
   height: 28px;
 
   border-radius: 6px;
-  background-color: ${p => p.theme.colors.iconBox};
+  background-color: ${p => p.theme.colors.addCardButtonColor};
 
   svg {
     width: 18px;
     height: 18px;
-    fill: ${p => p.theme.colors.iconInvert};
+    fill: ${p => p.theme.colors.addCardButtonColor2};
   }
 `;

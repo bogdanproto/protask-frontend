@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const InputAuthStyled = styled.input`
   /* normal */
-
+  position: relative;
+    
   box-sizing: border-box;
 
   width: 100%;

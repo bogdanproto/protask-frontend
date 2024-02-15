@@ -7,7 +7,6 @@ export const FiltersStyled = styled.button`
   align-items: center;
   gap: ${p => p.theme.spacing(4)};
   padding: ${p => p.theme.spacing(2)};
-  padding-right: 0;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
@@ -16,9 +15,8 @@ export const FiltersStyled = styled.button`
 
   transition: all ${p => p.theme.cubicTransition};
 
-  /* &:hover {
-    color: ${p => p.theme.colors.mainAccentColor};
-  } */
+  backdrop-filter: invert(20%);
+  border-radius: ${p => p.theme.radius};
 
   .ReactModalPortal {
     position: absolute;
@@ -34,17 +32,18 @@ export const ModalStyled = styled(Modal)`
   padding: 24px;
   width: 300px;
   text-align: left;
+  z-index: 1;
 
-  h2 {
+  h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.mainFontColor};
     padding-bottom: 14px;
     border-bottom: 1px solid ${p => p.theme.colors.cardLineColor};
   }
 
-  h3 {
+  h4 {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.02em;

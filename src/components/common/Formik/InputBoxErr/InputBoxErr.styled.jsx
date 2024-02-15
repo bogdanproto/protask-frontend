@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const InputBoxErr = styled.div`
   position: relative;
+  background-color: ${p => p.theme.colors.modalPopupBackgroundColor};
 
   div {
     position: absolute;
