@@ -16,9 +16,6 @@ export const FiltersStyled = styled.button`
 
   transition: all ${p => p.theme.cubicTransition};
 
-  /* backdrop-filter: invert(20%);
-  border-radius: ${p => p.theme.radius}; */
-
   .ReactModalPortal {
     position: absolute;
     top: 0;

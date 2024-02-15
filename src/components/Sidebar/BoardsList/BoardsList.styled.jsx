@@ -50,10 +50,21 @@ export const CreateButton = styled.div`
   color: ${p => p.theme.colors.secondFontColor};
   cursor: pointer;
   margin-left: ${p => p.theme.spacing(7)};
+  transition: all ${p => p.theme.cubicTransition};
 
   @media (min-width: 768px) {
     width: calc(100% - 48px);
     margin-left: ${p => p.theme.spacing(12)};
+  }
+
+  &:hover {
+    color: ${p => p.theme.colors.secondAccentColor};
+
+    div {
+      transition: all ${p => p.theme.cubicTransition};
+      color: white;
+      background-color: ${p => p.theme.colors.secondAccentColor};
+    }
   }
 
   span {
@@ -61,6 +72,14 @@ export const CreateButton = styled.div`
     font-size: 14px;
     letter-spacing: -0.02em;
   }
+`;
+
+export const IconWrapper = styled.div`
+  color: ${p => p.theme.colors.addBoardIconColor2};
+  background-color: ${p => p.theme.colors.addBoardIconColor};
+  width: 40px;
+  height: 36px;
+  border-radius: ${p => p.theme.radius};
 `;
 
 export const List = styled.ul`

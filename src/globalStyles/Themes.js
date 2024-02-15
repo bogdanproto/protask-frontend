@@ -18,6 +18,11 @@ export const dark = {
     logoBackgroundColor: '#1F1F1F',
     logoFillColor: '#FFFFFF',
 
+    // ======= Avatar =======
+
+    AvatarBackgroundColor: '#BEDBB0',
+    PlusBackgroundColor: '#121212',
+
     // ======= Backgrounds =======
 
     sidebarBackgroundColor: '#121212',
@@ -38,6 +43,7 @@ export const dark = {
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#BEDBB0',
+    addBoardIconColor2: '#121212',
     addColumnIconColor: '#FFFFFF',
     addColumnIconColor2: '#161616',
     addCardButtonColor: '#161616',
@@ -73,6 +79,11 @@ export const light = {
     logoBackgroundColor: '#1F1F1F',
     logoFillColor: '#FFFFFF',
 
+    // ======= Avatar =======
+
+    AvatarBackgroundColor: '#BEDBB0',
+    PlusBackgroundColor: '#121212',
+
     // ======= Backgrounds =======
 
     sidebarBackgroundColor: '#FFFFFF',
@@ -93,6 +104,7 @@ export const light = {
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#BEDBB0',
+    addBoardIconColor2: '#121212',
     addColumnIconColor: '#161616',
     addColumnIconColor2: '#FFFFFF',
     addCardButtonColor: '#161616',
@@ -128,6 +140,11 @@ export const violet = {
     logoBackgroundColor: '#ECEDFD',
     logoFillColor: '#5255BC',
 
+    // ======= Avatar =======
+
+    AvatarBackgroundColor: '#B8BCFD',
+    PlusBackgroundColor: '#121212',
+
     // ======= Backgrounds =======
 
     sidebarBackgroundColor: '#5255bc',
@@ -148,6 +165,7 @@ export const violet = {
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#B8BCFD',
+    addBoardIconColor2: '#FFFFFF',
     addColumnIconColor: '#5255BC',
     addColumnIconColor2: '#FFFFFF',
     addCardButtonColor: '#FFFFFF',

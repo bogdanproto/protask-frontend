@@ -29,7 +29,7 @@ export const MoveTooltip = ({ cardId, columns }) => {
     <Tooltip title="Move" placement="top">
       <>
         <IconButton
-          color="#FFFFFF"
+          color="red"
           size="small"
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -37,7 +37,7 @@ export const MoveTooltip = ({ cardId, columns }) => {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
-          <ActionButton style={{ width: 16, height: 16 }}>
+          <ActionButton style={{ width: 24, height: 24 }}>
             <MoveIcon size={16} />
           </ActionButton>
         </IconButton>

@@ -3,14 +3,16 @@ import styled from 'styled-components';
 export const SupportBox = styled.div`
   background-color: ${p => p.theme.colors.needHelpBackgroundColor};
   border-radius: 8px;
-  padding: 14px 15px;
+  padding: ${p => p.theme.spacing(7)};
   max-height: 238px;
   width: 197px;
+  margin-left: ${p => p.theme.spacing(7)};
 
   @media (min-width: 768px) {
     max-height: 272px;
     width: 212px;
-    padding: 14px 20px;
+    padding: ${p => p.theme.spacing(7)} ${p => p.theme.spacing(10)};
+    margin-left: ${p => p.theme.spacing(12)};
   }
 
   p {

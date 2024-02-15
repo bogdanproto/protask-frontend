@@ -20,6 +20,11 @@ export const HeaderAvatar = styled.div`
     border-radius: 8px;
   }
   svg {
-    fill: ${p => p.theme.colors.mainAccentColor};
+    fill: ${p => p.theme.colors.AvatarBackgroundColor};
+    transition: all ${p => p.theme.cubicTransition};
+
+    &:hover {
+      fill: ${p => p.theme.colors.secondAccentColor};
+    }
   }
 `;
