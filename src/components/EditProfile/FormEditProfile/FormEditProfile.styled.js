@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   box-sizing: content-box;
   padding: 4px;
-  gap: 14px;
+  gap: 18px;
   input[disabled] {
     opacity: 0.5;
     background-color: #ccc;
@@ -40,9 +40,9 @@ export const StyledForm = styled.form`
     }
   }
 
-  button {
+  /* button {
     margin-top: 10px;
-  }
+  } */
 
   button[disabled] {
     opacity: 0.5;

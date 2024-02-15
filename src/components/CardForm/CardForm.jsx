@@ -163,18 +163,18 @@ export const CardForm = ({
             minDate={dayjs()}
             sx={{
               gap: '20px',
-              width: '176px',
+              width: '160px',
+
+              '.Mui-focused': {
+                borderWidth: '0',
+              },
               '& .MuiOutlinedInput-root': {
-                '& .MuiOutlinedInput-input:focus': {
-                  borderWidth: '0',
-                },
+                borderWidth: '0',
 
                 '& .MuiOutlinedInput-notchedOutline': {
                   borderWidth: '0',
                 },
-                '& .MuiOutlinedInput-notchedOutline:focus': {
-                  borderWidth: '0',
-                },
+
                 '& .MuiInputBase-input': {
                   padding: '0',
                   color: '#BEDBB0',
@@ -182,6 +182,8 @@ export const CardForm = ({
                 '& .MuiIconButton-edgeEnd': {
                   margin: '0',
                   color: '#FFFFFF',
+                  width: '34px',
+                  height: '34px',
                 },
               },
             }}

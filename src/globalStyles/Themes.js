@@ -59,6 +59,7 @@ export const dark = {
 
     cardLineColor: 'rgba(255, 255, 255, 0.1)',
     sidebarLineColor: 'rgba(255, 255, 255, 0.1)',
+    radioButtonGray: '#ffffff2e',
   },
 };
 
@@ -111,6 +112,7 @@ export const light = {
 
     cardLineColor: 'rgba(22, 22, 22, 0.1)',
     sidebarLineColor: 'rgba(22, 22, 22, 0.1)',
+    radioButtonGray: '#0000002f',
   },
 };
 
@@ -163,5 +165,6 @@ export const violet = {
 
     cardLineColor: 'rgba(22, 22, 22, 0.1)',
     sidebarLineColor: 'rgba(255, 255, 255, 0.1)',
+    radioButtonGray: '#0000002f',
   },
 };
