@@ -77,8 +77,8 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 0;
         border-radius: 6px;
         padding: 8px 10px;
-        background-color: ${p => p.theme.colors.mainAccentColor};
-        color: ${p => p.theme.colors.mainFontColor};
+        background-color: ${p => p.theme.colors.addBoardIconColor};
+        color: ${p => p.theme.colors.secondFontColor};
         transition: background-color ${p => p.theme.cubicTransition};
 
         &.btn-small {
@@ -91,9 +91,8 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
-    .btn.btn-plus:hover,
-    .btn.btn-plus:focus {
-        background-color: ${p => p.theme.colors.btnPlusHover};
+    .btn.btn-plus:hover {
+        background-color: ${p => p.theme.colors.secondFontColor};
     }
 
     .btn.btn-primary {
@@ -105,8 +104,8 @@ export const GlobalStyle = createGlobalStyle`
         transition: background-color ${p => p.theme.cubicTransition};
         }
 
-    .btn.btn-primary:hover,
-    .btn.btn-primary:focus {
+    .btn.btn-primary:hover
+    {
         background-color: ${p => p.theme.colors.secondAccentColor};
     }
 
@@ -120,8 +119,7 @@ export const GlobalStyle = createGlobalStyle`
         min-width: 287px;
     }
 
-    .btn.btn-secondary:hover,
-    .btn.btn-secondary:focus {
+    .btn.btn-secondary:hover {
         background-color: ${p => p.theme.colors.accentColorHover};
     }
 

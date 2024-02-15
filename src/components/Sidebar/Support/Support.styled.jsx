@@ -10,7 +10,7 @@ export const SupportBox = styled.div`
   @media (min-width: 768px) {
     max-height: 272px;
     width: 212px;
-    padding: 20px;
+    padding: 14px 20px;
   }
 
   p {
@@ -24,10 +24,10 @@ export const SupportBox = styled.div`
     margin-top: 14px;
     margin-bottom: 18px;
 
-    @media (min-width: 768px) {
-      font-size: 14px;
-      line-height: 20px;
-    }
+    /* @media (min-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;
+    } */
 
     span {
       color: ${p => p.theme.colors.mainAccentColor};

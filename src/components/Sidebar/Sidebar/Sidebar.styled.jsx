@@ -28,10 +28,11 @@ export const SidebarStyled = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   height: 100vh;
   width: 225px;
   max-width: 225px;
-  padding-left: ${p => p.theme.spacing(7)};
+
   padding-bottom: ${p => p.theme.spacing(12)};
   background-color: ${p => p.theme.colors.sidebarBackgroundColor};
   display: flex;
@@ -41,8 +42,11 @@ export const SidebarStyled = styled.aside`
 
   @media (min-width: 768px) {
     min-width: 260px;
-    padding-left: ${p => p.theme.spacing(12)};
   }
+`;
+
+export const Top = styled.div`
+  width: 100%;
 `;
 
 export const LogoBox = styled.div`
@@ -52,8 +56,10 @@ export const LogoBox = styled.div`
   flex-direction: row;
   gap: 8px;
   min-height: 60px;
+  margin-left: ${p => p.theme.spacing(7)};
 
   @media (min-width: 768px) {
+    maargin-left: ${p => p.theme.spacing(12)};
     min-height: 68px;
   }
 `;
@@ -83,6 +89,7 @@ export const LogOut = styled.button`
   gap: ${p => p.theme.spacing(4)};
   margin-top: 20px;
   padding: 4px;
+  margin-left: ${p => p.theme.spacing(7)};
   color: ${p => p.theme.colors.secondFontColor};
 
   transition: all ${p => p.theme.cubicTransition};
@@ -90,12 +97,16 @@ export const LogOut = styled.button`
   &:hover {
     color: ${p => p.theme.colors.secondAccentColor};
   }
+  @media (min-width: 768px) {
+    margin-left: ${p => p.theme.spacing(12)};
+  }
 `;
 
 export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${p => p.theme.colors.thirdAccentColor};
 `;
 
 export const ButtonTitle = styled.p`

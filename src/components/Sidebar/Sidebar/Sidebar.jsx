@@ -7,6 +7,7 @@ import {
   LogoIconWrapper,
   IconWrapper,
   ButtonTitle,
+  Top,
 } from './Sidebar.styled';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
@@ -34,18 +35,20 @@ export const Sidebar = () => {
   return (
     <Backdrop $isvisible={visible.toString()} onClick={handleBackdropClick}>
       <SidebarStyled $isvisible={visible.toString()}>
-        {/* <div> */}
-        <LogoBox>
-          <LogoIconWrapper>
-            <LogoIcon size={32} />
-          </LogoIconWrapper>
+        <Top>
+          <LogoBox>
+            <LogoIconWrapper>
+              <LogoIcon size={32} />
+            </LogoIconWrapper>
 
-          <LogoText>Task Pro</LogoText>
-        </LogoBox>
-        {/* </div> */}
-        <BoardsList />
+            <LogoText>Task Pro</LogoText>
+          </LogoBox>
+
+          <BoardsList />
+        </Top>
         <div>
           <Support />
+
           <LogOut type="button" onClick={() => dispatch(logOutUser())}>
             <IconWrapper>
               <LogOutIcon size={32} />

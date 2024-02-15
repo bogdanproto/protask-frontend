@@ -1,4 +1,9 @@
-import { BtnContainer } from './BoardsItem.styled';
+import {
+  BoardContainer,
+  Left,
+  BoardTitle,
+  BtnContainer,
+} from './BoardsItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteBoard } from 'redux/dataSlice/operations/board/deleteBoard';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
@@ -22,9 +27,11 @@ export const BoardsItem = ({ board, active }) => {
   };
 
   return (
-    <>
-      {getBoardIcon(board.icon)}
-      <h3>{board.title}</h3>
+    <BoardContainer>
+      <Left>
+        <div>{getBoardIcon(board.icon)}</div>
+        <BoardTitle>{board.title}</BoardTitle>
+      </Left>
 
       {active === true && (
         <BtnContainer>
@@ -49,6 +56,6 @@ export const BoardsItem = ({ board, active }) => {
           backgroundImg={board.backgroundImg}
         />
       </UniversalModal>
-    </>
+    </BoardContainer>
   );
 };

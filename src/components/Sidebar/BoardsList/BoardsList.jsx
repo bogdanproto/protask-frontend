@@ -1,4 +1,11 @@
-import { Boards, Title, CreateButton, List, Item } from './BoardsList.styled';
+import {
+  Boards,
+  Title,
+  CreateButton,
+  List,
+  Item,
+  TitlePlate,
+} from './BoardsList.styled';
 import { BoardsItem } from 'components/Sidebar/BoardsItem/BoardsItem';
 import { Btn } from 'components/common/Btn/Btn';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
@@ -25,10 +32,14 @@ export const BoardsList = () => {
 
   return (
     <Boards>
-      <Title>My Boards</Title>
-      <CreateButton>
-        <span>Create a new board</span>
-        <Btn onClick={toggle} variant="plus"></Btn>
+      <TitlePlate>
+        <Title>My Boards</Title>
+      </TitlePlate>
+      <CreateButton onClick={toggle}>
+        <span>
+          Create a<br /> new board
+        </span>
+        <Btn variant="plus"></Btn>
       </CreateButton>
       <List>
         {boards.map(item => (
