@@ -8,3 +8,13 @@ export const handleRejectedData = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
+
+//------------------------
+export const handleLogoutData = (state, action) => {
+  state.boards = [];
+  state.boardStatus = {
+    activeBoard: null,
+    isBoardLoaded: false,
+  };
+  state.columns = null;
+};

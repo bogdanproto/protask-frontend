@@ -29,6 +29,7 @@ import {
   handleFulfilledHelpDesk,
   handleFulfilledUpdateBoard,
   handleFulfilledUpdateColumn,
+  handleLogoutData,
   handlePendingData,
   handleRejectedData,
 } from '../handleStatus';
@@ -38,6 +39,7 @@ import {
   handleFulfilledAddCard,
   handleFulfilledChangeCardsColumn,
 } from '../handleStatus/handleCard';
+import { logOutUser } from 'redux/authSlice/operations';
 
 const initialState = {
   boards: [],
@@ -62,6 +64,7 @@ const dataSlice = createSlice({
   },
   extraReducers: builder => {
     builder
+      .addCase(logOutUser.fulfilled, handleLogoutData)
       .addCase(sendToHelpDesk.fulfilled, handleFulfilledHelpDesk)
       .addCase(addBoard.fulfilled, handleFulfilledAddBoard)
       .addCase(deleteBoard.fulfilled, handleFulfilledDeleteBoard)

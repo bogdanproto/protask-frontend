@@ -5,6 +5,7 @@ export const FiltersStyled = styled.button`
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 1;
   gap: ${p => p.theme.spacing(4)};
   padding: ${p => p.theme.spacing(2)};
   font-weight: 500;
