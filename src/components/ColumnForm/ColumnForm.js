@@ -40,7 +40,7 @@ export const ColumnForm = ({
 
   return (
     <ColumnFormStyled onSubmit={formik.handleSubmit}>
-      <h1>{columnId ? 'Edit column' : 'Add column'}</h1>
+      <h3>{columnId ? 'Edit column' : 'Add column'}</h3>
       <InputBoxErr>
         <Input
           id="title"

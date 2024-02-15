@@ -53,7 +53,7 @@ export const BoardForm = ({
   return (
     <>
       <BoardFormStyled onSubmit={formik.handleSubmit}>
-        <h1> {boardId ? 'Edit board' : 'Add board'}</h1>
+        <h3> {boardId ? 'Edit board' : 'Add board'}</h3>
 
         <InputBoxErr>
           <Input
@@ -70,7 +70,7 @@ export const BoardForm = ({
           ) : null}
         </InputBoxErr>
 
-        <h2>Icons</h2>
+        <h4>Icons</h4>
         <RadioBtnSvgWrapper>
           {listBoardIcon?.map(({ id, component }) => (
             <div key={id}>
@@ -86,7 +86,7 @@ export const BoardForm = ({
           ))}
         </RadioBtnSvgWrapper>
 
-        <h2>Background</h2>
+        <h4>Background</h4>
         <RadioBtnImgWrapper>
           {wallpapers?.map(({ _id, iconCloudURL }) => (
             <div key={_id}>

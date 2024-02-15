@@ -28,7 +28,7 @@ export const BoardFormStyled = styled.form`
     }
   }
 
-  h1 {
+  h3 {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -39,7 +39,7 @@ export const BoardFormStyled = styled.form`
     color: ${props => props.theme.colors.mainFontColor};
   }
 
-  h2 {
+  h4 {
     font-size: 14px;
     line-height: 21px;
     letter-spacing: -0.02em;

@@ -5,6 +5,7 @@ export const RadioBtnImgWrapper = styled.div`
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
+  padding-right: 28px;
   gap: 4px;
 
   input {
@@ -14,7 +15,8 @@ export const RadioBtnImgWrapper = styled.div`
 
   input[type='radio']:checked + label > img {
     border: 1px solid #fff;
-    box-shadow: ${({ theme }) => `0 0 3px 3px ${theme.colors.btnPrimaryHover}`};
+    box-shadow: ${({ theme }) =>
+      `0 0 3px 3px ${theme.colors.secondAccentColor}`};
   }
 
   input[type='radio'] + label > img {
@@ -30,21 +32,22 @@ export const RadioBtnSvgWrapper = styled.div`
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 8px;
+  color: ${p => p.theme.colors.thirdFontColor};
 
   input {
     position: absolute;
-    display: none;
+    opacity: 0;
+    cursor: pointer;
   }
 
   input[type='radio']:checked + label > svg {
-    color: ${({ theme }) => theme.colors.iconActiveColor};
+    color: ${p => p.theme.colors.mainFontColor};
   }
 
   input[type='radio'] + label > svg {
-    width: 22px;
-    height: 22px;
-    color: ${({ theme }) => theme.colors.iconMainColor};
+    width: 18px;
+    height: 18px;
     border-radius: 7px;
     transition: 500ms all;
   }
