@@ -36,6 +36,7 @@ export const MoveTooltip = ({ cardId, columns }) => {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
+          sx={{ padding: 0 }}
         >
           <ActionButton style={{ width: 24, height: 24 }}>
             <MoveIcon size={16} />
