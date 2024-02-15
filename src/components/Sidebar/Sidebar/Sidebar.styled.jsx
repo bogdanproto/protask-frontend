@@ -75,13 +75,33 @@ export const LogoText = styled.span`
   letter-spacing: -0.04em;
 `;
 
-export const LogOut = styled.div`
+export const LogOut = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: ${p => p.theme.spacing(4)};
   margin-top: 20px;
   padding: 4px;
-  button {
-    color: ${p => p.theme.colors.secondFontColor};
-  }
+  color: ${p => p.theme.colors.secondFontColor};
 
-  @media (min-width: 768px) {
+  transition: all ${p => p.theme.cubicTransition};
+
+  &:hover {
+    color: ${p => p.theme.colors.secondAccentColor};
   }
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ButtonTitle = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
 `;

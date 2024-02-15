@@ -2,7 +2,7 @@ import {
   InputCardStyled,
   TextAreaCardStyled,
 } from 'components/CardForm/InputCardForm/InputCardForm.styled';
-import { Button, InputBoxErr } from 'components/common';
+import { InputBoxErr } from 'components/common';
 import { needHelpSchema } from 'const/schema/needHelp/needHelpSchema';
 import { useFormik } from 'formik';
 import { useEffect } from 'react';

@@ -245,6 +245,34 @@ export const PlusIcon = ({ size, fill }) => {
   );
 };
 
+export const LogOutIcon = ({ size }) => {
+  return (
+    <IconWrapper32 size={size}>
+      <path
+        d="M11.8666 10.0801C12.28 5.28007 14.7466 3.32007 20.1466 3.32007H20.32C26.28 3.32007 28.6666 5.70674 28.6666 11.6667V20.3601C28.6666 26.3201 26.28 28.7067 20.32 28.7067H20.1466C14.7866 28.7067 12.32 26.7734 11.88 22.0534"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.66669 16H19.84"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.8666 11.5334L21.3333 16.0001L16.8666 20.4668"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </IconWrapper32>
+  );
+};
+
 export const listBoardIcon = [
   { id: 'project', component: <ProjectIcon /> },
   { id: 'star', component: <StarIcon /> },
