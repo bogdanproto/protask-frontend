@@ -31,7 +31,7 @@ export const SidebarStyled = styled.aside`
   height: 100vh;
   width: 225px;
   max-width: 225px;
-  padding: ${p => p.theme.spacing(7)};
+  padding-left: ${p => p.theme.spacing(7)};
   padding-bottom: ${p => p.theme.spacing(12)};
   background-color: ${p => p.theme.colors.sidebarBackgroundColor};
   display: flex;
@@ -41,31 +41,31 @@ export const SidebarStyled = styled.aside`
 
   @media (min-width: 768px) {
     min-width: 260px;
-    padding: ${p => p.theme.spacing(12)};
+    padding-left: ${p => p.theme.spacing(12)};
   }
 `;
 
-export const LogoLink = styled.div`
+export const LogoBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: start;
+  flex-direction: row;
   gap: 8px;
+  min-height: 60px;
 
   @media (min-width: 768px) {
+    min-height: 68px;
   }
+`;
 
-  div {
-    width: 32px;
-    height: 32px;
-    background-color: ${p => p.theme.colors.logoBackgroundColor};
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const LogoIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: ${p => p.theme.radius};
 
-    svg {
-      fill: ${p => p.theme.colors.logoFillColor};
-    }
-  }
+  color: ${p => p.theme.colors.logoFillColor};
+  background-color: ${p => p.theme.colors.logoBackgroundColor};
 `;
 
 export const LogoText = styled.span`

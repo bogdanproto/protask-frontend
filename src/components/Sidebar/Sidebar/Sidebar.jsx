@@ -1,13 +1,13 @@
 import {
   Backdrop,
   SidebarStyled,
-  LogoLink,
+  LogoBox,
   LogoText,
   LogOut,
+  LogoIconWrapper,
   IconWrapper,
   ButtonTitle,
 } from './Sidebar.styled';
-// import { Btn } from 'components/common/Btn/Btn';
 import { BoardsList } from '../BoardsList/BoardsList';
 import { Support } from '../Support/Support';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,15 +34,16 @@ export const Sidebar = () => {
   return (
     <Backdrop $isvisible={visible.toString()} onClick={handleBackdropClick}>
       <SidebarStyled $isvisible={visible.toString()}>
-        <div>
-          <LogoLink>
-            <div>
-              <LogoIcon width={12} height={16} />
-            </div>
-            <LogoText>Task Pro</LogoText>
-          </LogoLink>
-          <BoardsList />
-        </div>
+        {/* <div> */}
+        <LogoBox>
+          <LogoIconWrapper>
+            <LogoIcon size={32} />
+          </LogoIconWrapper>
+
+          <LogoText>Task Pro</LogoText>
+        </LogoBox>
+        {/* </div> */}
+        <BoardsList />
         <div>
           <Support />
           <LogOut type="button" onClick={() => dispatch(logOutUser())}>

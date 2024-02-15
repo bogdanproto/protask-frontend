@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Boards = styled.div`
+  outline: 1px solid red;
   padding: 60px 0 0 0;
 
   @media (min-width: 768px) {
