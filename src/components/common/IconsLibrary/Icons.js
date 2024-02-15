@@ -3,7 +3,7 @@ import {
   IconWrapper18,
   IconWrapper20,
   IconWrapper28,
-  // IconWrapper28wh,
+  IconWrapper28wh,
   IconWrapper32,
 } from './IconWrappers';
 
@@ -249,6 +249,28 @@ export const PlusIcon = ({ size, fill }) => {
         strokeLinejoin="round"
       />
     </IconWrapper28>
+  );
+};
+
+export const PlusWhIcon = ({ width, height, fill }) => {
+  return (
+    <IconWrapper28wh width={width} height={height}>
+      <rect width="40" height="36" rx="6" fill={fill} />
+      <path
+        d="M20 12.1666V23.8333"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.1665 18H25.8332"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </IconWrapper28wh>
   );
 };
 

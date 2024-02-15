@@ -51,7 +51,7 @@ export const IconWrapper28wh = ({ children, width, height }) => (
     width={width}
     height={height}
     fill="none"
-    viewBox="0 0 28 28"
+    viewBox="0 0 40 36"
     xmlns="http://www.w3.org/2000/svg"
   >
     {children}

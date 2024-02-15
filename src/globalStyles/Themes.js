@@ -38,6 +38,7 @@ export const dark = {
     // ======= Button Icons colors =======
 
     addBoardIconColor: '#BEDBB0',
+    addBoardIconColor2: '#121212',
     addColumnIconColor: '#FFFFFF',
     addColumnIconColor2: '#161616',
     addCardButtonColor: '#161616',

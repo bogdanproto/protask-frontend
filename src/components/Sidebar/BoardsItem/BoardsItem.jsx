@@ -1,6 +1,7 @@
 import {
   BoardContainer,
   Left,
+  IconWrapper,
   BoardTitle,
   BtnContainer,
 } from './BoardsItem.styled';
@@ -29,7 +30,7 @@ export const BoardsItem = ({ board, active }) => {
   return (
     <BoardContainer>
       <Left>
-        <div>{getBoardIcon(board.icon)}</div>
+        <IconWrapper>{getBoardIcon(board.icon)}</IconWrapper>
         <BoardTitle>{board.title}</BoardTitle>
       </Left>
 
