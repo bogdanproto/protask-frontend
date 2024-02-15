@@ -26,10 +26,10 @@ export const BoardTitle = styled.h2`
   line-height: 21px;
   letter-spacing: -0.02em;
   color: ${p => p.theme.colors.mainFontColor};
-  backdrop-filter: invert(20%);
-  padding: 0 ${p => p.theme.spacing(5)};
-  border-radius: ${p => p.theme.radius};
-    
+  /* backdrop-filter: invert(20%); */
+  /* padding: 0 ${p => p.theme.spacing(5)}; */
+  /* border-radius: ${p => p.theme.radius}; */
+
   @media (min-width: 768px) {
     font-size: 18px;
     line-height: 27px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ActionButton = styled.button`
+export const ActionButton = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 50%;

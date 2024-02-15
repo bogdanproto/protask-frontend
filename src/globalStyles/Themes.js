@@ -49,11 +49,12 @@ export const dark = {
 
     mainAccentColor: '#BEDBB0',
     secondAccentColor: '#9DC888',
+    thirdAccentColor: '#BEDBB0',
 
     // ======= Scrollbar =======
 
     scrollbarTrackColor: 'rgba(255, 255, 255, 0.08)',
-    scrollbarThumbColor: '#121212',
+    scrollbarThumbColor: 'rgba(255, 255, 255, 0.1)',
 
     // ======= Other decors =======
 
@@ -103,6 +104,7 @@ export const light = {
 
     mainAccentColor: '#BEDBB0',
     secondAccentColor: '#9DC888',
+    thirdAccentColor: '#BEDBB0',
 
     // ======= Scrollbar =======
 
@@ -157,6 +159,7 @@ export const violet = {
 
     mainAccentColor: '#5255BC',
     secondAccentColor: '#7B7EDE',
+    thirdAccentColor: '#FFFFFF',
 
     // ======= Scrollbar =======
 

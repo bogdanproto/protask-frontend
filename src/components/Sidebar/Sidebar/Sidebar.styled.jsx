@@ -28,10 +28,11 @@ export const SidebarStyled = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
   height: 100vh;
   width: 225px;
   max-width: 225px;
-  padding: ${p => p.theme.spacing(7)};
+
   padding-bottom: ${p => p.theme.spacing(12)};
   background-color: ${p => p.theme.colors.sidebarBackgroundColor};
   display: flex;
@@ -41,31 +42,36 @@ export const SidebarStyled = styled.aside`
 
   @media (min-width: 768px) {
     min-width: 260px;
-    padding: ${p => p.theme.spacing(12)};
   }
 `;
 
-export const LogoLink = styled.div`
+export const Top = styled.div`
+  width: 100%;
+`;
+
+export const LogoBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: start;
+  flex-direction: row;
   gap: 8px;
+  min-height: 60px;
+  margin-left: ${p => p.theme.spacing(7)};
 
   @media (min-width: 768px) {
+    maargin-left: ${p => p.theme.spacing(12)};
+    min-height: 68px;
   }
+`;
 
-  div {
-    width: 32px;
-    height: 32px;
-    background-color: ${p => p.theme.colors.logoBackgroundColor};
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const LogoIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: ${p => p.theme.radius};
 
-    svg {
-      fill: ${p => p.theme.colors.logoFillColor};
-    }
-  }
+  color: ${p => p.theme.colors.logoFillColor};
+  background-color: ${p => p.theme.colors.logoBackgroundColor};
 `;
 
 export const LogoText = styled.span`
@@ -75,13 +81,38 @@ export const LogoText = styled.span`
   letter-spacing: -0.04em;
 `;
 
-export const LogOut = styled.div`
+export const LogOut = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: ${p => p.theme.spacing(4)};
   margin-top: 20px;
   padding: 4px;
-  button {
-    color: ${p => p.theme.colors.secondFontColor};
-  }
+  margin-left: ${p => p.theme.spacing(7)};
+  color: ${p => p.theme.colors.secondFontColor};
 
-  @media (min-width: 768px) {
+  transition: all ${p => p.theme.cubicTransition};
+
+  &:hover {
+    color: ${p => p.theme.colors.secondAccentColor};
   }
+  @media (min-width: 768px) {
+    margin-left: ${p => p.theme.spacing(12)};
+  }
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${p => p.theme.colors.thirdAccentColor};
+`;
+
+export const ButtonTitle = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
 `;

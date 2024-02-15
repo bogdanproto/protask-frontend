@@ -1,8 +1,9 @@
 import {
   IconWrapper16,
   IconWrapper18,
+  IconWrapper20,
   IconWrapper28,
-  IconWrapper28wh,
+  // IconWrapper28wh,
   IconWrapper32,
 } from './IconWrappers';
 
@@ -22,39 +23,46 @@ const styles13 = {
   strokeLinejoin: 'round',
 };
 
-export const LogoIcon = ({ width, height }) => {
+export const LogoIcon = ({ size, fill }) => {
   return (
-    <IconWrapper28wh width={width} height={height}>
-      <path d="M6.663 30.054c0.489-2.543 0.905-5.22 1.494-7.897 0.29-1.401-0.063-1.999-1.63-1.892s-3.313 0.053-4.979 0c-1.666-0.054-1.965-0.892-1.005-2.088 4.726-5.836 9.506-11.6 14.268-17.347 0.534-0.651 1.15-1.115 2.028-0.625s0.697 1.098 0.552 1.829c-0.525 2.677-0.96 5.354-1.539 7.978-0.299 1.356 0.091 1.838 1.503 1.785 1.417-0.071 2.837-0.071 4.255 0 0.806 0 1.865-0.419 2.281 0.678s-0.462 1.562-0.905 2.213c-1.811 2.231-3.645 4.459-5.504 6.684-2.722 3.248-5.423 6.484-8.102 9.709-0.525 0.633-1.114 1.142-2.010 0.821s-0.706-1.080-0.706-1.847z"></path>
-    </IconWrapper28wh>
+    <IconWrapper32 size={size}>
+      <path
+        d="M24 0H8C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0Z"
+        fill={fill}
+      />
+      <path
+        d="M13.3314 23.0269C13.5759 21.7553 13.7841 20.4168 14.0783 19.0782C14.2232 18.3777 14.0466 18.0788 13.2635 18.1324C12.4804 18.1859 11.6068 18.1591 10.7739 18.1324C9.94105 18.1056 9.79167 17.6862 10.2715 17.0883C12.6343 14.1703 15.0243 11.2881 17.4053 8.41472C17.6724 8.08902 17.9802 7.85701 18.4193 8.1024C18.8583 8.3478 18.7678 8.6512 18.6954 9.01706C18.4328 10.3556 18.2156 11.6941 17.9259 13.0058C17.7765 13.684 17.9711 13.9249 18.6773 13.8982C19.386 13.8625 20.096 13.8625 20.8047 13.8982C21.2076 13.8982 21.7372 13.6885 21.9454 14.2373C22.1536 14.7861 21.7146 15.0181 21.4928 15.3438C20.5875 16.4592 19.6701 17.5731 18.7406 18.6856C17.3797 20.3097 16.0292 21.9278 14.6894 23.54C14.4268 23.8567 14.1326 24.1111 13.6845 23.9504C13.2364 23.7898 13.3314 23.4106 13.3314 23.0269Z"
+        fill="currentColor"
+      />
+    </IconWrapper32>
   );
 };
 
 export const HelpIcon = ({ size }) => {
   return (
-    <IconWrapper32 size={size}>
+    <IconWrapper20 size={size}>
       <path
-        strokeLinejoin="round"
+        d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6024 18.3333 10C18.3333 5.39765 14.6023 1.66669 9.99996 1.66669C5.39759 1.66669 1.66663 5.39765 1.66663 10C1.66663 14.6024 5.39759 18.3334 9.99996 18.3334Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.969-13.333-13.333-13.333-13.333 5.97-13.333 13.333c0 7.364 5.97 13.333 13.333 13.333z"
-      ></path>
+        strokeLinejoin="round"
+      />
       <path
-        strokeLinejoin="round"
+        d="M7.57495 7.49999C7.77087 6.94304 8.15758 6.47341 8.66658 6.17426C9.17558 5.87512 9.77403 5.76577 10.3559 5.86558C10.9378 5.96539 11.4656 6.26792 11.8458 6.71959C12.2261 7.17126 12.4342 7.74292 12.4333 8.33332C12.4333 9.99999 9.93328 10.8333 9.93328 10.8333"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M12.12 12c0.313-0.891 0.932-1.643 1.747-2.121s1.772-0.654 2.703-0.494c0.931 0.16 1.776 0.644 2.384 1.366s0.941 1.637 0.94 2.582c0 2.667-4 4-4 4"
-      ></path>
+        strokeLinejoin="round"
+      />
       <path
-        strokeLinejoin="round"
+        d="M10 14.1667H10.0125"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        strokeMiterlimit="4"
-        strokeWidth="2.88"
-        d="M16 22.667h0.020"
-      ></path>
-    </IconWrapper32>
+        strokeLinejoin="round"
+      />
+    </IconWrapper20>
   );
 };
 
@@ -241,6 +249,34 @@ export const PlusIcon = ({ size, fill }) => {
         strokeLinejoin="round"
       />
     </IconWrapper28>
+  );
+};
+
+export const LogOutIcon = ({ size }) => {
+  return (
+    <IconWrapper32 size={size}>
+      <path
+        d="M11.8666 10.0801C12.28 5.28007 14.7466 3.32007 20.1466 3.32007H20.32C26.28 3.32007 28.6666 5.70674 28.6666 11.6667V20.3601C28.6666 26.3201 26.28 28.7067 20.32 28.7067H20.1466C14.7866 28.7067 12.32 26.7734 11.88 22.0534"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.66669 16H19.84"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.8666 11.5334L21.3333 16.0001L16.8666 20.4668"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </IconWrapper32>
   );
 };
 

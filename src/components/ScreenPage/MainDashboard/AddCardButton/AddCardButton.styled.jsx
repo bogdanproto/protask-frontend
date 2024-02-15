@@ -5,7 +5,7 @@ export const AddButtonContainer = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: ${p => p.theme.spacing(4)};
+  gap: ${p => p.theme.spacing(7)};
   min-width: 280px;
   width: calc(100vw - 40px);
   max-width: 335px;

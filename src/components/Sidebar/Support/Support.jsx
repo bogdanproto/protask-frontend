@@ -7,7 +7,7 @@ import { useModal } from '../../../hooks/useModal';
 import { NeedHelpForm } from './NeedHelpForm';
 import UniversalModal from 'components/Modal/UniversalModal/UniversalModal';
 import { HelpIcon } from 'components/common/IconsLibrary/index';
-
+import { IconWrapper } from 'components/BoardForm/BoardForm_temp.styled';
 
 export const Support = () => {
   const { isOpen, open, close } = useModal();
@@ -22,8 +22,10 @@ export const Support = () => {
         </picture>
         <p>{supportText}</p>
         <HelpButton onClick={open} type="button">
-          <HelpIcon size={20} />
-          <span>Need help?</span>
+          <IconWrapper>
+            <HelpIcon size={20} />
+          </IconWrapper>
+          Need help?
         </HelpButton>
         <UniversalModal isOpen={isOpen} onClose={close}>
           <NeedHelpForm closeModal={close} />
