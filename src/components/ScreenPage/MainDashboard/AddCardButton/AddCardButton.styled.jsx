@@ -6,7 +6,9 @@ export const AddButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   gap: ${p => p.theme.spacing(4)};
-  min-width: 335px;
+  min-width: 280px;
+  width: calc(100vw - 40px);
+  max-width: 335px;
   height: 56px;
   border-radius: ${p => p.theme.radius};
   background-color: ${p => p.theme.colors.mainAccentColor};

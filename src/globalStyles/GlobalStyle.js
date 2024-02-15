@@ -10,11 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 14px;
         line-height: 1.28;
         font-weight: 400;
-        /* color: ${p => p.theme.colors.fontColor};
-        background-color: ${p => p.theme.colors.background};
-        margin: 0;
-        letter-spacing: -0.04em; */
-    }
+         }
 
     img {
         display: block;
@@ -24,33 +20,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     svg {
-        /* width: 100%; */
-    }
-
-    /* hr {
-        border-top: 1px solid ${p => p.theme.colors.fontColor};
-    } */
-
-    /* .container {
         width: 100%;
-        max-width: 375px;
-        padding-inline: 20px;
-        margin-left: auto;
-        margin-right: auto;
-
-        @media (min-width: 768px) {
-            max-width: 768px;
-        }
-
-        @media (min-width: 1440px) {
-            max-width: 1440px;
-            padding-inline: 24px;
-        }
-    } */
+    }
 
     /* TYPOGRAPHY */
 
-    /* h1,
+    h1,
     h2,
     h3,
     h4,
@@ -60,22 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     
     }
 
-    h1 {
-        font-size: 28px;
-        font-weight: 600;
-
-        @media (min-width: 768px) {
-            font-size: 40px;
-        }
-    }
-
-    h2 {
-        font-size: 28px;
-        font-weight: 500;
-    }
-
-    */
-    p {
+     p {
         margin: 0;
         letter-spacing: -0.02em;
         line-height: 1.28;
@@ -198,20 +158,15 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 120px;
     }
 
-    /* input, textarea {
-        min-width: 287px;
+    input, textarea {
         padding: 14px 18px;
         border-radius: 8px;
-        border: 1px solid ${p => p.theme.colors.inputBorder};
-        background-color: transparent;
-        color: ${p => p.theme.colors.inputColor};
-        transition: border-color ${p => p.theme.cubicTransition};
-    } */
+        
+    } 
 
     input:focus,
     textarea:focus {
-        /* border: 1px solid ${p => p.theme.colors.accentColorHover}; */
-        outline: none;
+            outline: none;
     }
 
     /* label {

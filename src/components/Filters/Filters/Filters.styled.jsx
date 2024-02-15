@@ -17,7 +17,6 @@ export const FiltersStyled = styled.button`
 
   backdrop-filter: invert(20%);
   border-radius: ${p => p.theme.radius};
-  
 
   .ReactModalPortal {
     position: absolute;
@@ -34,10 +33,10 @@ export const ModalStyled = styled(Modal)`
   width: 300px;
   text-align: left;
   z-index: 1;
- 
+
   h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.mainFontColor};
     padding-bottom: 14px;
